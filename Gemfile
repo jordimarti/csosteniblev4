@@ -40,9 +40,9 @@ gem 'foundation-rails', '~> 6.4', '>= 6.4.3.0'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'devise-i18n', '~> 1.6', '>= 1.6.2'
 gem 'simple_form', '~> 4.0'
-gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'sendgrid-ruby', '~> 5.2'
 gem 'cancancan', '~> 2.2'
+gem 'mini_magick', '~> 4.8'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
