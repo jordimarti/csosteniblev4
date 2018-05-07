@@ -105,5 +105,13 @@
   <%= @producte.visible %>
 </p>
 
+<% if @producte.imatge_producte.attached? %>
+  <p>
+    <strong>Imatge:</strong>
+    <br>
+    <%= image_tag @producte.imatge_producte.variant(resize: "500x500") %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_producte_path(@producte) %> |
 <%= link_to 'Back', productes_path %>

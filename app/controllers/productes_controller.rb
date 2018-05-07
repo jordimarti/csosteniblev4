@@ -58,6 +58,6 @@ class ProductesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def producte_params
-      params.require(:producte).permit(:nom_ca, :nom_es, :nom_en, :descripcio_ca, :descripcio_es, :descripcio_en, :caracteristiques_ca, :caracteristiques_es, :caracteristiques_en, :aplicacio_ca, :aplicacio_es, :aplicacio_en, :disponibilitat_ca, :disponibilitat_es, :disponibilitat_en, :destacats_ca, :destacats_es, :destacats_en, :valoracio, :ambit, :visible, ecoetiqueta_productes_attributes: [:id, :producte_id, :ecoetiqueta_id, :_destroy])
+      params.require(:producte).permit(:nom_ca, :nom_es, :nom_en, :descripcio_ca, :descripcio_es, :descripcio_en, :caracteristiques_ca, :caracteristiques_es, :caracteristiques_en, :aplicacio_ca, :aplicacio_es, :aplicacio_en, :disponibilitat_ca, :disponibilitat_es, :disponibilitat_en, :destacats_ca, :destacats_es, :destacats_en, :valoracio, :ambit, :visible, :imatge_producte, ecoetiqueta_productes_attributes: [:id, :producte_id, :ecoetiqueta_id, :_destroy])
     end
 end

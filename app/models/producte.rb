@@ -5,4 +5,6 @@ class Producte < ApplicationRecord
 	
 	has_many :document_productes
 
+	has_one_attached :imatge_producte
+
 end

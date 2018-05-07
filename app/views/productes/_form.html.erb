@@ -25,6 +25,7 @@
     <%= f.input :valoracio %>
     <%= f.input :ambit %>
     <%= f.input :visible %>
+    <%= f.input :imatge_producte, as: :file %>
     
     <div id="ecoetiquetes">
       <%= f.simple_fields_for :ecoetiqueta_productes do |ecoetiqueta| %>
