@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Producte:</strong>
+  <%= @ecoetiqueta_producte.producte_id %>
+</p>
+
+<p>
+  <strong>Ecoetiqueta:</strong>
+  <%= @ecoetiqueta_producte.ecoetiqueta_id %>
+</p>
+
+<%= link_to 'Edit', edit_ecoetiqueta_producte_path(@ecoetiqueta_producte) %> |
+<%= link_to 'Back', ecoetiqueta_productes_path %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ecoetiquetes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom ca</th>
+      <th>Nom es</th>
+      <th>Nom en</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ecoetiquetes.each do |ecoetiqueta| %>
+      <tr>
+        <td><%= ecoetiqueta.nom_ca %></td>
+        <td><%= ecoetiqueta.nom_es %></td>
+        <td><%= ecoetiqueta.nom_en %></td>
+        <td><%= link_to 'Show', ecoetiqueta %></td>
+        <td><%= link_to 'Edit', edit_ecoetiqueta_path(ecoetiqueta) %></td>
+        <td><%= link_to 'Destroy', ecoetiqueta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ecoetiqueta', new_ecoetiqueta_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_29_143850) do
+ActiveRecord::Schema.define(version: 2018_05_01_072955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,56 @@ ActiveRecord::Schema.define(version: 2018_04_29_143850) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "document_productes", force: :cascade do |t|
+    t.integer "producte_id"
+    t.string "nom_ca"
+    t.string "nom_es"
+    t.string "nom_en"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ecoetiqueta_productes", force: :cascade do |t|
+    t.integer "producte_id"
+    t.integer "ecoetiqueta_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ecoetiquetes", force: :cascade do |t|
+    t.string "nom_ca"
+    t.string "nom_es"
+    t.string "nom_en"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "productes", force: :cascade do |t|
+    t.string "nom_ca"
+    t.string "nom_es"
+    t.string "nom_en"
+    t.string "descripcio_ca"
+    t.string "descripcio_es"
+    t.string "descripcio_en"
+    t.text "caracteristiques_ca"
+    t.text "caracteristiques_es"
+    t.text "caracteristiques_en"
+    t.text "aplicacio_ca"
+    t.text "aplicacio_es"
+    t.text "aplicacio_en"
+    t.text "disponibilitat_ca"
+    t.text "disponibilitat_es"
+    t.text "disponibilitat_en"
+    t.text "destacats_ca"
+    t.text "destacats_es"
+    t.text "destacats_en"
+    t.integer "valoracio"
+    t.string "ambit"
+    t.boolean "visible"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

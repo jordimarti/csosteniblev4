@@ -1,0 +1,2 @@
+module EcoetiquetaProductesHelper
+end

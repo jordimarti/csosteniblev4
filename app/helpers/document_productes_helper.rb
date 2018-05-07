@@ -1,0 +1,2 @@
+module DocumentProductesHelper
+end

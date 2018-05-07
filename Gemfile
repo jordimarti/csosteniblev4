@@ -43,6 +43,9 @@ gem 'simple_form', '~> 4.0'
 gem 'sendgrid-ruby', '~> 5.2'
 gem 'cancancan', '~> 2.2'
 gem 'mini_magick', '~> 4.8'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'cocoon', '~> 1.2', '>= 1.2.11'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

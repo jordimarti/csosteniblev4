@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :ecoetiqueta_productes
+  resources :ecoetiquetes
+  resources :document_productes
+  resources :productes
   devise_for :users
   get 'home/index'
   root :to => "home#index"

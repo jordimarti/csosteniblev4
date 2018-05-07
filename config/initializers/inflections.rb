@@ -14,3 +14,11 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'noticia', 'noticies'
+  inflect.irregular 'cas', 'casos'
+  inflect.irregular 'tipus', 'tipus'
+  inflect.irregular 'dada', 'dades'
+  inflect.irregular 'dapcons', 'dapcons'
+  inflect.irregular 'ecoetiqueta', 'ecoetiquetes'
+end
