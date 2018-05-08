@@ -1,5 +1,13 @@
-<h1>New Producte</h1>
+<div class="grid-container">
+	<div class="grid-x">
+		<div class="cell medium-12">
+			<h1>Nou Producte</h1>
+		</div>
+	</div>
+	<div class="grid-x">
+		
+		<%= render 'form', producte: @producte %>
 
-<%= render 'form', producte: @producte %>
-
-<%= link_to 'Back', productes_path %>
+		<%= link_to 'Llistat de productes', productes_path %>
+	</div>
+</div>

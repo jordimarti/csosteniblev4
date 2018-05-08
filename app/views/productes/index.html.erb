@@ -5,27 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Nom ca</th>
-      <th>Nom es</th>
-      <th>Nom en</th>
-      <th>Descripcio ca</th>
-      <th>Descripcio es</th>
-      <th>Descripcio en</th>
-      <th>Caracteristiques ca</th>
-      <th>Caracteristiques es</th>
-      <th>Caracteristiques en</th>
-      <th>Aplicacio ca</th>
-      <th>Aplicacio es</th>
-      <th>Aplicacio en</th>
-      <th>Disponibilitat ca</th>
-      <th>Disponibilitat es</th>
-      <th>Disponibilitat en</th>
-      <th>Destacats ca</th>
-      <th>Destacats es</th>
-      <th>Destacats en</th>
-      <th>Valoracio</th>
-      <th>Ambit</th>
-      <th>Visible</th>
+      <th>Imatge</th>
+      <th>Nom</th>
+      <th>Descripció</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -33,30 +15,12 @@
   <tbody>
     <% @productes.each do |producte| %>
       <tr>
+        <td><%= image_tag producte.imatge_producte.variant(resize: "150x150") %></td>
         <td><%= producte.nom_ca %></td>
-        <td><%= producte.nom_es %></td>
-        <td><%= producte.nom_en %></td>
         <td><%= producte.descripcio_ca %></td>
-        <td><%= producte.descripcio_es %></td>
-        <td><%= producte.descripcio_en %></td>
-        <td><%= producte.caracteristiques_ca %></td>
-        <td><%= producte.caracteristiques_es %></td>
-        <td><%= producte.caracteristiques_en %></td>
-        <td><%= producte.aplicacio_ca %></td>
-        <td><%= producte.aplicacio_es %></td>
-        <td><%= producte.aplicacio_en %></td>
-        <td><%= producte.disponibilitat_ca %></td>
-        <td><%= producte.disponibilitat_es %></td>
-        <td><%= producte.disponibilitat_en %></td>
-        <td><%= producte.destacats_ca %></td>
-        <td><%= producte.destacats_es %></td>
-        <td><%= producte.destacats_en %></td>
-        <td><%= producte.valoracio %></td>
-        <td><%= producte.ambit %></td>
-        <td><%= producte.visible %></td>
-        <td><%= link_to 'Show', producte %></td>
-        <td><%= link_to 'Edit', edit_producte_path(producte) %></td>
-        <td><%= link_to 'Destroy', producte, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', producte %></td>
+        <td><%= link_to 'Editar', edit_producte_path(producte) %></td>
+        <td><%= link_to 'Eliminar', producte, method: :delete, data: { confirm: 'Segur que vols eliminar el producte?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -64,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Producte', new_producte_path %>
+<%= link_to 'Nou Producte', new_producte_path %>

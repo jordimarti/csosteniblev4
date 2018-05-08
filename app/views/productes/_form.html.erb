@@ -2,66 +2,77 @@
 <%= simple_form_for(@producte) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
+  
   <div class="form-inputs">
-    
-    <%= f.input :nom_ca %>
-    <%= f.input :nom_es %>
-    <%= f.input :nom_en %>
-    <%= f.input :descripcio_ca %>
-    <%= f.input :descripcio_es %>
-    <%= f.input :descripcio_en %>
-    <%= f.input :caracteristiques_ca %>
-    <%= f.input :caracteristiques_es %>
-    <%= f.input :caracteristiques_en %>
-    <%= f.input :aplicacio_ca %>
-    <%= f.input :aplicacio_es %>
-    <%= f.input :aplicacio_en %>
-    <%= f.input :disponibilitat_ca %>
-    <%= f.input :disponibilitat_es %>
-    <%= f.input :disponibilitat_en %>
-    <%= f.input :destacats_ca %>
-    <%= f.input :destacats_es %>
-    <%= f.input :destacats_en %>
-    <%= f.input :valoracio %>
-    <%= f.input :ambit %>
-    <%= f.input :visible %>
-    <%= f.input :imatge_producte, as: :file %>
-    
-    <div id="categories">
-      <%= f.simple_fields_for :categoria_productes do |categoria| %>
-        <%= render 'categoria_producte_fields', f: categoria %>
-      <% end %>
-
-      <div class="links">
-        <%= link_to_add_association 'afegeix categoria', f, :categoria_productes %>
+    <div class="grid-x grid-margin-x">
+      <div class="cell medium-6">
+        <%= f.input :nom_ca %>
+        <%= f.input :nom_es %>
+        <%= f.input :nom_en %>
+        <%= f.input :descripcio_ca %>
+        <%= f.input :descripcio_es %>
+        <%= f.input :descripcio_en %>
+        <%= f.input :caracteristiques_ca %>
+        <%= f.input :caracteristiques_es %>
+        <%= f.input :caracteristiques_en %>
+        <%= f.input :aplicacio_ca %>
+        <%= f.input :aplicacio_es %>
+        <%= f.input :aplicacio_en %>
+        <%= f.input :disponibilitat_ca %>
+        <%= f.input :disponibilitat_es %>
+        <%= f.input :disponibilitat_en %>
+        <%= f.input :destacats_ca %>
+        <%= f.input :destacats_es %>
+        <%= f.input :destacats_en %>
+        <%= f.input :visible %>
+        <%= f.input :imatge_producte, as: :file %>
       </div>
-    </div>
 
-    <div id="ecoetiquetes">
-      <%= f.simple_fields_for :ecoetiqueta_productes do |ecoetiqueta| %>
-        <%= render 'ecoetiqueta_producte_fields', f: ecoetiqueta %>
-      <% end %>
+      <div class="cell medium-6">
+        <div id="categories">
+          <h3>Assignar a categories de producte</h3>
+          <%= f.simple_fields_for :categoria_productes do |categoria| %>
+            <%= render 'categoria_producte_fields', f: categoria %>
+          <% end %>
 
-      <div class="links">
-        <%= link_to_add_association 'afegeix ecoetiqueta', f, :ecoetiqueta_productes %>
-      </div>
-    </div>
+          <div class="links">
+            <%= link_to_add_association 'Afegeix categoria', f, :categoria_productes, html_options = {class: "button"} %>
+          </div>
+        </div>
 
-    <div id="documents">
-      <%= f.simple_fields_for :document_productes do |document| %>
-        <%= render 'document_producte_fields', f: document %>
-      <% end %>
+        <br/>
+        <br/>
 
-      <div class="links">
-        <%= link_to_add_association 'afegeix document', f, :document_productes %>
+        <div id="ecoetiquetes">
+          <h3>Assignar ecoetiquetes</h3>
+          <%= f.simple_fields_for :ecoetiqueta_productes do |ecoetiqueta| %>
+            <%= render 'ecoetiqueta_producte_fields', f: ecoetiqueta %>
+          <% end %>
+
+          <div class="links">
+            <%= link_to_add_association 'Afegeix ecoetiqueta', f, :ecoetiqueta_productes, html_options = {class: "button"} %>
+          </div>
+        </div>
+
+        <br/>
+        <br/>
+
+        <div id="documents">
+          <h3>Adjuntar documents</h3>
+          <%= f.simple_fields_for :document_productes do |document| %>
+            <%= render 'document_producte_fields', f: document %>
+          <% end %>
+
+          <div class="links">
+            <%= link_to_add_association 'Afegeix document', f, :document_productes, html_options = {class: "button"} %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-  </div>
-
+  
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
+  
 <% end %>
