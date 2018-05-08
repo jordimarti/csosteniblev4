@@ -4,6 +4,7 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
+    
     <%= f.input :nom_ca %>
     <%= f.input :nom_es %>
     <%= f.input :nom_en %>
@@ -27,6 +28,16 @@
     <%= f.input :visible %>
     <%= f.input :imatge_producte, as: :file %>
     
+    <div id="categories">
+      <%= f.simple_fields_for :categoria_productes do |categoria| %>
+        <%= render 'categoria_producte_fields', f: categoria %>
+      <% end %>
+
+      <div class="links">
+        <%= link_to_add_association 'afegeix categoria', f, :categoria_productes %>
+      </div>
+    </div>
+
     <div id="ecoetiquetes">
       <%= f.simple_fields_for :ecoetiqueta_productes do |ecoetiqueta| %>
         <%= render 'ecoetiqueta_producte_fields', f: ecoetiqueta %>
@@ -34,6 +45,16 @@
 
       <div class="links">
         <%= link_to_add_association 'afegeix ecoetiqueta', f, :ecoetiqueta_productes %>
+      </div>
+    </div>
+
+    <div id="documents">
+      <%= f.simple_fields_for :document_productes do |document| %>
+        <%= render 'document_producte_fields', f: document %>
+      <% end %>
+
+      <div class="links">
+        <%= link_to_add_association 'afegeix document', f, :document_productes %>
       </div>
     </div>
   </div>

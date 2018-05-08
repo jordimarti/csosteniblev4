@@ -113,5 +113,14 @@
   </p>
 <% end %>
 
+<p>
+  <strong>Documents:</strong>
+  <% @producte.document_productes.each do |document| %>
+    <% adreca = url_for document.arxiu_document %>
+    <%= link_to(document.nom_ca, adreca) %>
+  <% end %>
+</p>
+
+
 <%= link_to 'Edit', edit_producte_path(@producte) %> |
 <%= link_to 'Back', productes_path %>

@@ -21,4 +21,5 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'dada', 'dades'
   inflect.irregular 'dapcons', 'dapcons'
   inflect.irregular 'ecoetiqueta', 'ecoetiquetes'
+  inflect.irregular 'categoria', 'categories'
 end

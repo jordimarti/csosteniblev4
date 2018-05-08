@@ -1,0 +1,7 @@
+		<div class="nested-fields">
+      <%= f.input :nom_ca %>
+    	<%= f.input :nom_es %>
+    	<%= f.input :nom_en %>
+    	<%= f.input :arxiu_document, as: :file %>
+      <%= link_to_remove_association "elimina document", f %>
+    </div>

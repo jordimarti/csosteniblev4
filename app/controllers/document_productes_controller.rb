@@ -69,6 +69,6 @@ class DocumentProductesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def document_producte_params
-      params.require(:document_producte).permit(:producte_id, :nom_ca, :nom_es, :nom_en)
+      params.require(:document_producte).permit(:producte_id, :nom_ca, :nom_es, :nom_en, :arxiu_document)
     end
 end

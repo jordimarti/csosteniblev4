@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :categories
+  resources :categoria_productes
   resources :ecoetiqueta_productes
   resources :ecoetiquetes
   resources :document_productes
