@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Empreses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Adreca</th>
+      <th>Codi postal</th>
+      <th>Poblacio</th>
+      <th>Telefon</th>
+      <th>Email</th>
+      <th>Web</th>
+      <th>Altres</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @empreses.each do |empresa| %>
+      <tr>
+        <td><%= empresa.nom %></td>
+        <td><%= empresa.adreca %></td>
+        <td><%= empresa.codi_postal %></td>
+        <td><%= empresa.poblacio %></td>
+        <td><%= empresa.telefon %></td>
+        <td><%= empresa.email %></td>
+        <td><%= empresa.web %></td>
+        <td><%= empresa.altres %></td>
+        <td><%= link_to 'Mostrar', empresa %></td>
+        <td><%= link_to 'Editar', edit_empresa_path(empresa) %></td>
+        <td><%= link_to 'Eliminar', empresa, method: :delete, data: { confirm: 'Segur que vols eliminar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nova Empresa', new_empresa_path %>

@@ -6,6 +6,7 @@
   <div class="form-inputs">
     <div class="grid-x grid-margin-x">
       <div class="cell medium-6">
+        <%= f.collection_select :empresa_id, Empresa.all, :id, :nom %>
         <%= f.input :nom_ca %>
         <%= f.input :nom_es %>
         <%= f.input :nom_en %>

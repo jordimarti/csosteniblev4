@@ -8,6 +8,7 @@
       <th>Imatge</th>
       <th>Nom</th>
       <th>Descripció</th>
+      <th>Empresa</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= image_tag producte.imatge_producte.variant(resize: "150x150") %></td>
         <td><%= producte.nom_ca %></td>
         <td><%= producte.descripcio_ca %></td>
+        <td><%= producte.empresa.nom %></td>
         <td><%= link_to 'Mostrar', producte %></td>
         <td><%= link_to 'Editar', edit_producte_path(producte) %></td>
         <td><%= link_to 'Eliminar', producte, method: :delete, data: { confirm: 'Segur que vols eliminar el producte?' } %></td>

@@ -22,4 +22,5 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'dapcons', 'dapcons'
   inflect.irregular 'ecoetiqueta', 'ecoetiquetes'
   inflect.irregular 'categoria', 'categories'
+  inflect.irregular 'empresa', 'empreses'
 end

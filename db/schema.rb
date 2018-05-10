@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_07_201840) do
+ActiveRecord::Schema.define(version: 2018_05_10_074712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,19 @@ ActiveRecord::Schema.define(version: 2018_05_07_201840) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "empreses", force: :cascade do |t|
+    t.string "nom"
+    t.string "adreca"
+    t.integer "codi_postal"
+    t.string "poblacio"
+    t.string "telefon"
+    t.string "email"
+    t.text "web"
+    t.text "altres"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "productes", force: :cascade do |t|
     t.string "nom_ca"
     t.string "nom_es"
@@ -99,6 +112,7 @@ ActiveRecord::Schema.define(version: 2018_05_07_201840) do
     t.boolean "visible"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "empresa_id"
   end
 
   create_table "users", force: :cascade do |t|

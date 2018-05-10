@@ -1,5 +1,7 @@
 class Producte < ApplicationRecord
 
+	belongs_to :empresa
+
 	has_many :categoria_productes, dependent: :destroy, inverse_of: :producte
 	accepts_nested_attributes_for :categoria_productes, allow_destroy: true, reject_if: ->(attrs) { attrs['categoria_id'].blank? }
 
