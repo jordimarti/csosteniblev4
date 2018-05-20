@@ -37,6 +37,7 @@ gem 'mini_magick', '~> 4.8'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem "aws-sdk-s3", require: false
 gem 'foundation-rails', '~> 6.4', '>= 6.4.3.0'
+gem 'autoprefixer-rails'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'devise-i18n', '~> 1.6', '>= 1.6.2'
 gem 'simple_form', '~> 4.0'

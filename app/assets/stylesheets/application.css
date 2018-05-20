@@ -15,3 +15,138 @@
  *= require foundation_and_overrides
 
  */
+
+@import 'foundation';
+
+@include foundation-xy-grid-classes;
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+}
+
+.logo-agenda-container {
+	text-align: center;
+}
+
+.logo-agenda {
+	width: 200px;
+	margin-bottom: 20px;
+}
+
+.menu-top-right {
+	text-align: right;
+	/*border-bottom: 1px dotted #cccccc;*/
+	height: 30px;
+}
+
+.menu-top > li {
+	border-right: 1px dotted #cccccc;
+	display: inline;
+}
+
+.menu-top > li > a {
+	color: #333333;
+	font-size: 0.8em;
+	padding: 5px 15px;
+}
+
+.vertical-divider {
+	background-color: red;
+	width: 200px;
+}
+
+.spacer {
+	height: 40px;
+}
+
+/* Menu principal */
+
+.main-menu-mobile-container{
+    background-color: #333;
+    padding: 5px 10px 10px 10px;
+}
+
+.title-bar-title {
+    color: white;
+    margin-left: 10px;
+}
+
+.top-bar, .top-bar ul {
+    background-color: #ffffff;
+    margin-top: 5px;
+}
+
+li.menu-item a{
+    color: #333;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+
+
+/* Login */
+
+.login-container {
+	border: 1px solid #ccc;
+	padding: 20px;
+	margin-top: 80px;
+	border-left: 5px solid blue;
+}
+
+h2.login-title {
+	font-size: 2em;
+	font-weight: bold;
+	margin-top: 0px;
+}
+
+.login-button {
+	
+}
+
+.session-links {
+	margin-top: 20px;
+	margin-left: 5px;
+}
+
+
+
+
+// Formularis
+
+.container-form-modificat {
+	background-color: #eaeaea;
+	padding: 20px;
+	border: 1px solid #9e9e9e;
+}
+
+input.form-modificat {
+	border: 1px solid #9e9e9e;
+	background-color: white;
+}
+
+textarea.form-modificat {
+	border: 1px solid #9e9e9e;
+	background-color: white;
+}
+
+label.string, label.text, label.file {
+	font-size: 1em;
+	color: #333;
+}
+
+label.file {
+	display: block;
+}
+
+.container-imatge-noticia {
+	border: 1px solid #9e9e9e;
+	margin: 20px 0px;
+	padding: 0px;
+}
+
+.container-imatge-noticia > img {
+	max-width: 100%;
+}

@@ -1,0 +1,80 @@
+es:
+  date:
+    order:
+      - :day
+      - :month
+      - :year
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: "No coincide con la confirmación"
+            current_password:
+              blank: "No puede estar en blanco"
+              invalid: "La contraseña no es válida"
+            password:
+              too_short: "La contraseña debe tener como mínimo 8 carácteres"
+              blank: "No puede estar en blanco"
+            email:
+              taken: "Este correo electrónico ya está registrado"
+              invalid: "Esta dirección de correo electrónico no es válida"
+              blank: "Es necesario escribir el correo electrónico"
+            first_name:
+              blank: "Es necesario escribir el nombre"
+            last_name:
+              blank: "Es necesario escribir los apellidos"
+            reset_password_token:
+              invalid: "No coincide con la confirmación"
+  layouts:
+    top:
+      register: "Registrarse"
+      sign_in: "Iniciar sesión"
+      account_configuration: "Configuración de la cuenta"
+      sign_out: "Cerrar sesión"
+      actualitat: "Actualidad"
+      temes_clau: "Temas clave"
+      videos: "Vídeos"
+      casos_practics: "Casos prácticos"
+      productes: "Productos"
+      marketcons: "MarketCons"
+      dapcons: "DAPcons"
+    dapcons_navigation:
+      programa_dapconstruccion: "PROGRAMA DAPCONSTRUCCIÓN"
+      assessors_programa: "ASESORES Y COLABORADORES DEL PROGRAMA DAPCONSTRUCCIÓN"
+      formar_part: "PARA FORMAR PARTE"
+      que_son: "¿Qué són?"
+      utilitat_dapcons: "Utilidad de las DAPCONS<sup>®</sup>"
+      organitzacions_afiliades: "Organizaciones afiliadas"
+      productes_registrats: "Productos registrados"
+      comparador: "Comparador"
+      empreses_dapcons: "Empresas DAPcons<sup>®</sup>"
+      documents_oficials: "Documentos oficiales"
+      administradors: "Administradores"
+      consell_assessor: "Consejo asesor"
+      panells_sectorials: "Paneles sectoriales"
+      eco_platform: "Eco-platform"
+      entitats_colaboradores: "Entidades colaboradoras"
+      verificadors: "Verificadores"
+      afiliacio: "Afiliación al Programa"
+      registrar_producte: "Registrar un producto"
+      contacte: "Contactar"
+  noticies:
+    show:
+      ultimes_noticies: "ÚLTIMAS NOTICIAS"
+  videos:
+    show:
+      ultims_videos: "ÚLTIMOS VÍDEOS"
+    index:
+      videos: "VÍDEOS"
+  temes_clau:
+    index:
+      temes_clau: "TEMAS CLAVE"
+  dapcons:
+    que_son:
+      que_son: "Qué son las DAPcons<sup>®</sup>?"
+    utilitat:
+      utilitat: "Utilidad y uso de las DAPcons<sup>®</sup>"
+    comparador:
+      comparador: "Comparador"

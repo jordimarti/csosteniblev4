@@ -1,0 +1,58 @@
+<div class="container">
+	<div class="grid-x">
+	  
+	  <div class="medium-12 cell menu-top-right">
+	  	<ul class="menu-top">
+			  
+			  <% if params[:locale] == 'ca' %>
+			  	<li><%= link_to 'Español', :locale => 'es' %></li>
+			  	<li><%= link_to 'English', :locale => 'en' %></li>
+			  <% elsif params[:locale] == 'es'%>
+			  	<li><%= link_to 'Català', :locale => 'ca' %></li>
+			  	<li><%= link_to 'English', :locale => 'en' %></li>
+			  <% else %>
+			  	<li><%= link_to 'Español', :locale => 'es' %></li>
+			  	<li><%= link_to 'Català', :locale => 'ca' %></li>
+			  <% end %>
+			  
+			  <% if user_signed_in? %>
+			  	<li><a href="#"><%= current_user.email %></a></li>
+			  	<ul class="dropdown">
+            <li><%= link_to t('.account_configuration'), edit_user_registration_path %></li>
+            <li><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></li>
+          </ul>
+        <% else %>
+		      
+	        <li><%= link_to t('.register'), new_user_registration_path, :class => 'sessionbar-link'  %></li>
+	        
+	        <li><%= link_to t('.sign_in'), new_user_session_path, :class => 'sessionbar-link'  %></li>
+		     
+		    <% end %>
+			</ul>
+	  </div>
+	</div>
+	<div class="grid-x">
+		<div class="medium-3 cell">
+			<%= link_to( image_tag('https://s3-eu-west-1.amazonaws.com/csosteniblev3/imatges/logo_agenda_2015_hd.png', :alt => 'Logo Agenda de la Construcció Sostenible', :class => 'logo-agenda'), {:controller => '/home', :action => 'index'}) %>
+		</div>
+		<div class="medium-9 cell">
+			<div class="main-menu-mobile-container" data-responsive-toggle="main-menu" data-hide-for="medium">
+			  <button class="menu-icon black" type="button" data-toggle="main-menu"></button>
+			  <div class="title-bar-title">Menu</div>
+			</div>
+
+			<div class="top-bar" id="main-menu">
+			  <div class="top-bar-right">
+			    <ul class="dropdown menu" data-responsive-menu="drilldown medium-dropdown">
+			      <li class="menu-item"><%= link_to t('.actualitat'), root_path %></li>
+            <li class="menu-item"><%= link_to t('.temes_clau'), root_path %></li>
+            <li class="menu-item"><%= link_to t('.videos'), root_path %></li>
+            <li class="menu-item"><%= link_to t('.casos_practics'), root_path %></li>
+            <li class="menu-item"><%= link_to t('.productes'), productes_path %></li>
+            <li class="menu-item"><%= link_to t('.dapcons'), root_path %></li>
+			    </ul>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
