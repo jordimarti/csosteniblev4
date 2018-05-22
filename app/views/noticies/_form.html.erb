@@ -1,0 +1,28 @@
+
+<%= simple_form_for(@noticia) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :titol_ca %>
+    <%= f.input :resum_ca %>
+    <%= f.input :permalink_ca %>
+    <%= f.input :contingut_ca %>
+    <%= f.input :titol_es %>
+    <%= f.input :resum_es %>
+    <%= f.input :permalink_es %>
+    <%= f.input :contingut_es %>
+    <%= f.input :titol_en %>
+    <%= f.input :resum_en %>
+    <%= f.input :permalink_en %>
+    <%= f.input :contingut_en %>
+    <%= f.input :data %>
+    <%= f.input :dapc %>
+    <%= f.input :image_data %>
+    <%= f.input :imatge_noticia, as: :file %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,3 +1,92 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hero {
+	margin-top: 10px;
+}
+
+.home-top-image-container {
+	position: relative;
+}
+
+.home-top-image-text {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color:rgba(0, 0, 0, 0.5);
+	padding: 10px;
+}
+
+.hero-title {
+	font-size: 1.6em;
+	color: white;
+}
+
+.titol-seccio {
+	border-left: 5px solid #00acc1;
+	padding: 5px 0px 5px 10px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.divider {
+	margin-top: 40px;
+	width: 100%;
+}
+
+.card-title {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.card-action {
+	text-align: right;
+}
+
+.card-action > a {
+	font-weight: bold;
+	color: #00acc1;
+}
+
+.newsletter-container {
+	padding: 15px 15px 1px 15px;
+	background-color: #00acc1;
+}
+
+.newsletter-titol {
+	color: white;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.newsletter-text {
+	color: white;
+}
+
+.noticia-breu {
+	margin-top: 8px;
+	padding-bottom: 10px;
+	margin-bottom: 12px;
+	border-bottom: 1px solid #cccccc;
+}
+
+.titol-noticia-breu {
+	margin-bottom: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.imatge-noticia-breu {
+	width: 100px;
+	float: left;
+	margin-right: 10px;
+}
+
+.text-noticia-breu {
+	
+}
+
+.link-noticia-breu {
+	text-align: right;
+}

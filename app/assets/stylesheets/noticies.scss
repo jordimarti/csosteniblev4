@@ -1,0 +1,46 @@
+// Place all the styles related to the Noticies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.img-index-noticia {
+	filter: brightness(90%);
+	height: 300px;
+	width: 100%;
+}
+
+.index-noticia-container {
+	position: relative;
+	height: 300px;
+	margin-bottom: 20px;
+}
+
+.titol-index-noticia {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color:rgba(0, 0, 0, 0.5);
+	padding: 10px;
+}
+
+.titol-index-noticia > a > h4 {
+	color: white;
+	font-size: 1.4em;
+}
+
+.titol-noticia {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.imatge-noticia {
+	margin: 20px 0px;
+}
+
+.container-noticia-lateral {
+	margin-bottom: 30px;
+}
+
+.titol-noticia-lateral {
+	font-weight: bold;
+	color: #666;
+}

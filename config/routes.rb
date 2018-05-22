@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :noticies
   resources :empreses
   resources :categories
   resources :categoria_productes

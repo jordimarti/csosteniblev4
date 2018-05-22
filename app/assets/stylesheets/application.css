@@ -75,7 +75,7 @@
 
 .top-bar, .top-bar ul {
     background-color: #ffffff;
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 li.menu-item a{
@@ -112,6 +112,16 @@ h2.login-title {
 }
 
 
+/* Titols generals */
+
+.main-title-container {
+	margin-bottom: 20px;
+}
+
+.main-title {
+	font-size: 2em;
+	font-weight: bold;
+}
 
 
 // Formularis

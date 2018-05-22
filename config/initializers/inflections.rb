@@ -23,4 +23,5 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'ecoetiqueta', 'ecoetiquetes'
   inflect.irregular 'categoria', 'categories'
   inflect.irregular 'empresa', 'empreses'
+  inflect.irregular 'noticia', 'noticies'
 end

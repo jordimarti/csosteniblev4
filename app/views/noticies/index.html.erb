@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="grid-x">
+    <div class="medium-12 cell">
+      <div class="main-title-container noticies-main-title-container">
+        <span class="main-title"><%= t('.actualitat') %></span>
+      </div>
+    </div>
+  </div>
+
+  <% counter = 0 %>
+  <div class="noticia-array-container">
+    <div class="grid-x grid-margin-x">
+      <% @noticies.each do |noticia| %>
+        <% if counter != 0 && counter % 3 == 0 %>
+          </div>
+          <div class="grid-x grid-margin-x">
+        <% end %>
+
+        <div class="medium-4 cell">
+          <div class="index-noticia-container">
+              <% if noticia.imatge_noticia.attached? %>
+                <%= link_to noticia do %>
+                  <%= image_tag noticia.imatge_noticia, class: 'img-index-noticia' %>
+                <% end %>
+              <% end %> 
+            <div class="titol-index-noticia">
+              <%= link_to noticia do %>
+                <h4><%= noticia.titol_ca %></h4>
+              <% end %>
+            </div>
+          </div>
+          
+        </div>
+        <% counter += 1 %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
