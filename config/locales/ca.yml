@@ -67,10 +67,10 @@ ca:
     show:
       ultims_videos: "ÚLTIMS VÍDEOS"
     index:
-      videos: "VÍDEOS"
+      videos: "Vídeos"
   temes_clau:
     index:
-      temes_clau: "TEMES CLAU"
+      temes_clau: "Temes clau"
   dapcons:
     que_son:
       que_son: "Què són les DAPcons<sup>®</sup>?"

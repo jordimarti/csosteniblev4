@@ -1,0 +1,72 @@
+<div class="container container-show-video">
+  <div class="grid-x grid-margin-x">
+    <div class="medium-8 cell">
+      
+      <% if params[:locale] == 'ca' %>
+        <div class="titol-video">
+          <%= @video.titol_ca %>
+        </div>
+        <div class="contingut-video">
+          <%= raw @video.contingut_ca %>
+        </div>
+      <% else %>
+        <div class="titol-video">
+          <%= @video.titol_es %>
+        </div>
+        <div class="contingut-video">
+          <%= sanitize @video.contingut_es %>
+        </div>
+      <% end %>
+
+    </div>
+    <div class="medium-4 cell">
+      <div class="titol-seccio">
+        NOTÍCIES
+      </div>
+      <div class="noticies-container">
+        <% @noticies.each do |noticia| %>
+          <div class="noticia-container">
+            <h3><%= noticia.titol_ca %></h3>
+            <p><%= noticia.resum_ca %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  
+    <div class="video-array-container">
+      <div class="grid-x grid-margin-x">
+        <% @ultims.each do |video| %>
+          <div class="medium-6 cell">
+            <div class="index-video-container">
+              
+              <div class="img-index-video">
+                <%= link_to video do %>
+                  <% if video.imatge_video.attached? %>
+                    <%= image_tag video.imatge_video %>
+                  <% end %>
+                <% end %>  
+              </div>
+              <div class="text-index-video">
+                <%= link_to video do %>
+                  <h4><%= video.titol_ca %></h4>
+                  
+                  <div class="show-for-large">
+                    <p class="resum-video"><%= truncate(video.resum_ca, :length => 200) %></p>
+                  </div>
+                  <div class="show-for-medium-only">
+                    <p class="resum-video"><%= truncate(video.resum_ca, :length => 70) %></p>
+                  </div>
+                  <div class="show-for-small-only">
+                    <p class="resum-video"><%= truncate(video.resum_ca, :length => 200) %></p>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  
+</div>

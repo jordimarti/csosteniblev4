@@ -1,0 +1,72 @@
+// Place all the styles related to the Videos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.index-video-container {
+	border: 1px solid #eaeaea;
+	height: 300px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+
+@media screen and (max-width: 63.9375em) {
+	
+	.video-array-container {
+		margin-bottom: 0px;
+	}
+
+	.index-video-container {
+		margin-bottom: 20px;
+	}
+}
+
+.img-index-video {
+	float: left;
+	width: 200px;
+}
+
+.text-index-video {
+	margin-left: 200px;
+	padding: 15px;
+}
+
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+	.index-video-container {
+		height: 150px;
+	}
+
+	.img-index-video {
+		width: 100px;
+	}
+
+	.text-index-video {
+		margin-left: 100px;
+	}
+}
+
+@media screen and (min-width: 40em) and (max-width: 55em) {
+	.resum-video {
+		display: none;
+	}
+}
+
+
+.text-index-video > a > h4 {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #333;
+}
+
+p.resum-video {
+	color: #666;
+}
+
+.container-show-video {
+	padding-top: 20px;
+}
+
+.titol-video {
+	font-size: 2em;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
