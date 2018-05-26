@@ -5,6 +5,12 @@ class ProductesController < ApplicationController
     @productes = Producte.all
   end
 
+  def llistat
+    @menu_productes_actiu = params[:categoria]
+    productes_categoria = CategoriaProducte.where(categoria_id: params[:categoria]).pluck(:producte_id)
+    @seleccio_productes = Producte.where(id: productes_categoria)
+  end
+
   def show
   end
 

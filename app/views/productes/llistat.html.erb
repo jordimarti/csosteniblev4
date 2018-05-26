@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="grid-x">
+    <div class="medium-12 cell">
+      <div class="main-title-container noticies-main-title-container">
+        <span class="main-title"><%= t('.productes') %></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-x grid-margin-x">
+    <div class="medium-4 cell">
+      <div class="menu-productes-container">
+        <ul class="vertical menu accordion-menu" data-accordion-menu>
+          
+          <li class="menu-productes-item <% if @menu_productes_actiu == 1 %>
+            menu-productes-actiu
+            <% end %>">
+            <%= link_to(t('.mitjans_equips_auxiliars'), llistat_productes_path(categoria: 1), class: 'menu-productes-link') %>
+          </li>
+
+          <li class="menu-productes-item <% if @menu_productes_actiu == 2 %>
+            menu-productes-actiu
+            <% end %>">
+            <%= link_to(t('.enderrocs_gestio_residus'), llistat_productes_path(categoria: 2), class: 'menu-productes-link') %>
+          </li>
+
+          <li class="menu-productes-item <% if @menu_productes_actiu == 3 %>
+            menu-productes-actiu
+            <% end %>">
+            <%= link_to(t('.terreny_fonaments'), llistat_productes_path(categoria: 3), class: 'menu-productes-link') %>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="medium-8 cell">
+      <% @seleccio_productes.each do |producte| %>
+        <div class="card producte-container">
+          <div class="card-divider">
+            <h4 class="titol-producte-item"><%= producte.nom_ca %></h4>
+          </div>
+          <% if producte.imatge_producte.attached? %>
+            <div class="card-image">
+              <%= image_tag producte.imatge_producte.variant(resize: "300x300"), class: 'imatge-producte-item' %>
+            </div>
+          <% end %>
+          <div class="card-section">
+            <p><%= producte.descripcio_ca %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

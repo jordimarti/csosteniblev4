@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   resources :ecoetiqueta_productes
   resources :ecoetiquetes
   resources :document_productes
+  get 'productes/llistat', to: 'productes#llistat', :as => :llistat_productes
   resources :productes
   devise_for :users
+  
   get 'temes_clau/index'
   get 'temes_clau/marc_conceptual'
   get 'temes_clau/materials'
