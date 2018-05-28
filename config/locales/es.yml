@@ -71,6 +71,27 @@ es:
   temes_clau:
     index:
       temes_clau: "Temas clave"
+  productes:
+    index:
+      mitjans_equips_auxiliars: "Medios y equipos auxiliares"
+      enderrocs_gestio_residus: "Demoliciones y gestión de residuos"
+      terreny_fonaments: "Terreno, contención y cimentaciones"
+      estructures: "Estructuras"
+      tancaments_divisories: "Cerramientos y divisorias"
+      aillaments: "Aislantes"
+      impermeabilitzacions: "Impermeabilizaciones y tratamientos de humedades"
+      revestiments: "Revestimientos"
+      instalacions: "Instalaciones"
+      instalacions_clima: "Climatización"
+      instalacions_electriques: "Electricidad"
+      instalacions_iluminacio: "Iluminación"
+      instalacions_hidrauliques: "Elementos hidráulicos"
+      instalacions_elevacio: "Elevación y transporte"
+      instalacions_monitoritzacio: "Monitorización"
+      urbanitzacio: "Urbanización"
+      empresa: "Empresa"
+      tipus_producte: "Tipo de producto"
+      destaquem: "Destacamos"
   dapcons:
     que_son:
       que_son: "Qué son las DAPcons<sup>®</sup>?"

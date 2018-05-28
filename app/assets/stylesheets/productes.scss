@@ -2,7 +2,88 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* Menú productes */
+
+.menu-productes-container > menu {
+	padding: 0px;
+}
+
+.menu-productes-link {
+	padding: 0px;
+	color: black;
+}
+
+.menu-productes-item {
+	padding: 0px;
+	border-bottom: 1px solid #eaeaea;
+}
+
+.menu-productes-subitem {
+	padding: 0px 20px;
+	border-bottom: 1px solid #eaeaea;
+}
+
+.menu-productes-actiu {
+	background-color: #eaeaea;
+}
+
+.menu-productes-actiu > a {
+	font-weight: bold;
+}
+
+
+/* Items productes */
+
 .producte-container {
+	width: 100%;
+	min-height: 250px;
+	float: clear;
+	margin-bottom: 20px;
+	border: 1px solid #eaeaea;
+}
+
+.producte-nom {
+	background-color: #666;
+	padding-left: 10px;
+}
+
+.titol-producte-item {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: white;
+}
+
+.imatge-producte {
 	float: left;
-	margin: 0px 10px 10px 0px;
+	width: 200px;
+}
+
+.imatge-producte-item {
+	max-height: 220px;
+}
+
+.text-producte {
+	margin-left: 200px;
+	padding: 10px;
+}
+
+.tipus-producte-container {
+	padding-right: 20px;
+	margin-right: 20px;
+	border-right: 1px solid #ccc;
+	float: left;
+}
+
+.empresa-container {
+	padding-left: 20px;
+}
+
+.text-tip {
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+.destacats-container {
+	float: clear;
+	margin-top: 20px;
 }

@@ -2,13 +2,9 @@ class ProductesController < ApplicationController
   before_action :set_producte, only: [:show, :edit, :update, :destroy]
 
   def index
-    @productes = Producte.all
-  end
-
-  def llistat
     @menu_productes_actiu = params[:categoria]
     productes_categoria = CategoriaProducte.where(categoria_id: params[:categoria]).pluck(:producte_id)
-    @seleccio_productes = Producte.where(id: productes_categoria)
+    @seleccio_productes = Producte.where(id: productes_categoria).order("created_at DESC")
   end
 
   def show
