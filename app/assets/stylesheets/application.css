@@ -16,9 +16,9 @@
 
  */
 
-@import 'foundation';
+/* @import 'foundation'; */
 
-@include foundation-xy-grid-classes;
+/* @include foundation-xy-grid-classes; */
 
 .container {
   margin: 0 auto;
