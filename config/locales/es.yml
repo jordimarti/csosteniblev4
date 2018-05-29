@@ -27,6 +27,11 @@ es:
               blank: "Es necesario escribir los apellidos"
             reset_password_token:
               invalid: "No coincide con la confirmación"
+  simple_form:
+    labels:
+      user:
+        first_name: 'Nombre'
+        last_name: 'Apellidos'
   layouts:
     top:
       register: "Registrarse"

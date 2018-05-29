@@ -27,6 +27,11 @@ ca:
               blank: "Cal escriure els cognoms"
             reset_password_token:
               invalid: "No coincideix amb la confirmació"
+  simple_form:
+    labels:
+      user:
+        first_name: 'Nom'
+        last_name: 'Cognoms'
   layouts:
     top:
       register: "Registrar-se"
