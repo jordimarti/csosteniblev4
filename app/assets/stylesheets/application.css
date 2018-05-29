@@ -124,7 +124,16 @@ h2.login-title {
 }
 
 
-// Formularis
+/* Registre */
+
+.login-formulari-container {
+	border: 1px solid #ccc;
+	background-color: #eaeaea;
+	padding: 20px;
+}
+
+
+/* Formularis */
 
 .container-form-modificat {
 	background-color: #eaeaea;

@@ -69,7 +69,7 @@
           <li class="menu-productes-item <% if @menu_productes_actiu == '10' %>
             menu-productes-actiu
             <% end %>">
-            <%= t('.instalacions') %>
+            <span class="menu-productes-nolink"><%= t('.instalacions') %></span>
           </li>
 
           <li class="menu-productes-subitem <% if @menu_productes_actiu == '15' %>
@@ -142,6 +142,12 @@
               <span class="text-tip"><%= t('.destaquem') %>:</span>
               <p><%= producte.destacats_ca %></p>
             </div>
+            <% if can? :update, producte %>
+              <div class="edicio-producte-container">
+                <%= link_to 'Editar', edit_producte_path(producte) %> | <%= link_to 'Eliminar', producte, method: :delete, data: { confirm: 'Segur que vols eliminar?' } %>
+              </div>
+            <% end %>
+
           </div>
         </div>
       <% end %>

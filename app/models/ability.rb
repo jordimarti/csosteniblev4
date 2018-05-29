@@ -28,5 +28,12 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+
+    can :read, :all # permissions for every user, even if not logged in    
+    if user.present?
+      if user.role == 'editor_productes'  # additional permissions for administrators
+        can :manage, Producte
+      end
+    end
   end
 end

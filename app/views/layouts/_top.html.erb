@@ -17,7 +17,7 @@
 			  
 			  <% if user_signed_in? %>
 			  	<li><a href="#"><%= current_user.email %></a></li>
-			  	<ul class="dropdown">
+			  	<ul class="dropdown menu" data-dropdown-menu>
             <li><%= link_to t('.account_configuration'), edit_user_registration_path %></li>
             <li><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></li>
           </ul>
