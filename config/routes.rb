@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  resources :producte_dapcons
+  get 'dapcons/index'
+  get 'dapcons/que_son'
+  get 'dapcons/utilitat'
+  get 'dapcons/organitzacions_afiliades'
+  get 'dapcons/productes_registrats'
+  get 'dapcons/empreses_dapcons'
+  get 'dapcons/documents_oficials'
+  get 'dapcons/administradors'
+  get 'dapcons/consell_assessor'
+  get 'dapcons/panells_sectorials'
+  get 'dapcons/eco_platform'
+  get 'dapcons/entitats_colaboradores'
+  get 'dapcons/verificadors'
+  get 'dapcons/afiliacio'
+  get 'dapcons/registrar_producte'
+  get 'dapcons/contacte'
+  get 'dapcons/comparador'
   resources :videos
   resources :noticies
   resources :empreses

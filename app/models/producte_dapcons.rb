@@ -1,0 +1,2 @@
+class ProducteDapcons < ApplicationRecord
+end

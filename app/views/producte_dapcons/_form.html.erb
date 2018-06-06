@@ -1,0 +1,26 @@
+
+<%= simple_form_for(@producte_dapcons) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :nom_ca %>
+    <%= f.input :nom_es %>
+    <%= f.input :nom_en %>
+    <%= f.input :descripcio_ca %>
+    <%= f.input :descripcio_es %>
+    <%= f.input :descripcio_en %>
+    <%= f.input :identificador %>
+    <%= f.input :rcp_ca %>
+    <%= f.input :rcp_es %>
+    <%= f.input :rcp_en %>
+    <%= f.input :validesa_inici %>
+    <%= f.input :validesa_fi %>
+    <%= f.input :empresa %>
+    <%= f.input :categoria_indicadors %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
