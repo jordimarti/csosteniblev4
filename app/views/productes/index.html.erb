@@ -117,6 +117,33 @@
       </div>
     </div>
     <div class="medium-9 cell">
+      
+      <% if params[:categoria] == nil %>
+        <div class="grid-x grid-margin-x">
+          <div class="medium-4 cell">
+            <%= link_to productes_path(categoria: 21) do %>
+              <div class="container-categoria-inici">
+                <h4>Productes amb DAPcons</h4>
+              </div>
+            <% end %>
+          </div>
+          <div class="medium-4 cell">
+            <%= link_to productes_path(categoria: 12) do %>
+              <div class="container-categoria-inici">
+                <h4>Empreses productores d'àrids reciclats</h4>
+              </div>
+            <% end %>
+          </div>
+          <div class="medium-4 cell">
+            <%= link_to productes_path(categoria: 13) do %>
+              <div class="container-categoria-inici">
+                <h4>Empreses productores de fusta reciclada</h4>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
       <% @seleccio_productes.each do |producte| %>
         <div class="producte-container">
           <div class="producte-nom">
