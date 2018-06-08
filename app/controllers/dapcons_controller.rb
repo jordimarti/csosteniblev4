@@ -50,8 +50,11 @@ class DapconsController < ApplicationController
   end
 
   def comparador
-    @productes = ProducteDapcons.all
-    @tipus_indicadors = TipusIndicador.all
+    @producte1 = params[:producte1]
+    @producte2 = params[:producte2]
+    @etapa_a1_a3 = Indicador.where(producte_dapcons_id: @producte1.id, etapa: 'A1-A3')
+    
+    @etapa_a4 = Indicador.where(etapa: 'A4')
   end
 
   private

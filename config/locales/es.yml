@@ -4,6 +4,7 @@ es:
       - :day
       - :month
       - :year
+    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
   activerecord:
     errors:
       models:
@@ -27,6 +28,10 @@ es:
               blank: "Es necesario escribir los apellidos"
             reset_password_token:
               invalid: "No coincide con la confirmación"
+        indicador:
+          attributes:
+            tipus_indicadors:
+              required: "Es necesario poner el tipo de indicador"
   simple_form:
     labels:
       user:
@@ -104,3 +109,10 @@ es:
       utilitat: "Utilidad y uso de las DAPcons<sup>®</sup>"
     comparador:
       comparador: "Comparador"
+  producte_dapcons:
+    form:
+      guardar: "Guardar cambios"
+  cocoon:
+    defaults:
+      add: "+ Añadir elemento"
+      remove: "Eliminar"

@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="grid-x">
+    <div class="medium-12 cell">
+      <div class="main-title-container">
+        <span class="main-title"><%= t('.programa_dapconstruccion') %></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-x grid-margin-x">
+	
+		<div class="medium-3 cell">
+			<div class="menu-dapcons-lateral-container">
+				<%= image_tag "https://d2dvjaugh07t30.cloudfront.net/imatges/logo_dapcons_transparent.png" %>
+				<div class="menu-dapcons-seccio"><%= t('.programa_dapconstruccion') %><sup>®</sup></div>
+				<ul class="vertical menu menu-dapcons">
+					<li><%= link_to t('.que_son'), dapcons_que_son_path %></li>
+					<li><%= link_to sanitize(t('.utilitat_dapcons')), dapcons_utilitat_path %></li>
+					<li><%= link_to t('.organitzacions_afiliades'), dapcons_organitzacions_afiliades_path %></li>
+					<li><%= link_to t('.productes_registrats'), dapcons_productes_registrats_path %></li>
+					<li><%= link_to t('.comparador'), dapcons_comparador_path(producte1: '1', producte2: '2') %></li>
+					<li><%= link_to sanitize(t('.empreses_dapcons')), dapcons_empreses_dapcons_path %></li>
+					<li><%= link_to t('.documents_oficials'), dapcons_documents_oficials_path %></li>
+				</ul>
+				<br/>
+				<div class="menu-dapcons-seccio"><%= t('.assessors_programa') %><sup>®</sup></div>
+				<ul class="vertical menu menu-dapcons">
+					<li><%= link_to t('.administradors'), dapcons_administradors_path %></li>
+					<li><%= link_to t('.consell_assessor'), dapcons_consell_assessor_path %></li>
+					<li><%= link_to t('.panells_sectorials'), dapcons_panells_sectorials_path %></li>
+					<li><%= link_to t('.eco_platform'), dapcons_eco_platform_path %></li>
+					<li><%= link_to t('.entitats_colaboradores'), dapcons_entitats_colaboradores_path %></li>
+					<li><%= link_to t('.verificadors'), dapcons_verificadors_path %></li>
+				</ul>
+				<br/>
+				<div class="menu-dapcons-seccio"><%= t('.formar_part') %></div>
+				<ul class="vertical menu menu-dapcons">
+					<li><%= link_to t('.afiliacio'), dapcons_afiliacio_path %></li>
+					<li><%= link_to t('.registrar_producte'), dapcons_registrar_producte_path %></li>
+					<li><%= link_to t('.contacte'), dapcons_contacte_path %></li>
+				</ul>
+			</div>
+		</div>

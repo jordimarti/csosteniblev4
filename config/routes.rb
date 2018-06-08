@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  resources :indicadors
+  resources :tipus_dada_inventaris
+  resources :tipus_indicadors
   resources :producte_dapcons
+  get 'dapcons', to: 'dapcons#index', :as => :dapcons
   get 'dapcons/index'
   get 'dapcons/que_son'
   get 'dapcons/utilitat'

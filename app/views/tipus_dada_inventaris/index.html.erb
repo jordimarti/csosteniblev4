@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tipus Dada Inventaris</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom ca</th>
+      <th>Nom es</th>
+      <th>Nom en</th>
+      <th>Unitats</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipus_dada_inventaris.each do |tipus_dada_inventari| %>
+      <tr>
+        <td><%= tipus_dada_inventari.nom_ca %></td>
+        <td><%= tipus_dada_inventari.nom_es %></td>
+        <td><%= tipus_dada_inventari.nom_en %></td>
+        <td><%= tipus_dada_inventari.unitats %></td>
+        <td><%= link_to 'Show', tipus_dada_inventari %></td>
+        <td><%= link_to 'Edit', edit_tipus_dada_inventari_path(tipus_dada_inventari) %></td>
+        <td><%= link_to 'Destroy', tipus_dada_inventari, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tipus Dada Inventari', new_tipus_dada_inventari_path %>

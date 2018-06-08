@@ -1,6 +1,14 @@
-<h1>Editing Producte Dapcons</h1>
+<div class="container">
+	<div class="grid-x">
+		<div class="cell medium-12">
+			<h1>Editant Producte</h1>
+		</div>
+	</div>
+	
+		
+		<%= render 'form', producte: @producte_dapcons %>
 
-<%= render 'form', producte_dapcons: @producte_dapcons %>
-
-<%= link_to 'Show', @producte_dapcons %> |
-<%= link_to 'Back', producte_dapcons_index_path %>
+		<%= link_to 'Mostrar producte', @producte_dapcons %> |
+		<%= link_to 'Llistat de productes', producte_dapcons_index_path %>
+	
+</div>

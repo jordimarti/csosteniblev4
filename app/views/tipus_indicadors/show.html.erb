@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom ca:</strong>
+  <%= @tipus_indicador.nom_ca %>
+</p>
+
+<p>
+  <strong>Nom es:</strong>
+  <%= @tipus_indicador.nom_es %>
+</p>
+
+<p>
+  <strong>Nom en:</strong>
+  <%= @tipus_indicador.nom_en %>
+</p>
+
+<p>
+  <strong>Unitats:</strong>
+  <%= @tipus_indicador.unitats %>
+</p>
+
+<%= link_to 'Edit', edit_tipus_indicador_path(@tipus_indicador) %> |
+<%= link_to 'Back', tipus_indicadors_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_23_125317) do
+ActiveRecord::Schema.define(version: 2018_06_07_095147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,15 @@ ActiveRecord::Schema.define(version: 2018_05_23_125317) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "indicadors", force: :cascade do |t|
+    t.integer "tipus_indicador_id"
+    t.integer "producte_dapcons_id"
+    t.string "etapa"
+    t.float "valor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "noticies", force: :cascade do |t|
     t.string "titol_ca"
     t.text "resum_ca"
@@ -104,6 +113,25 @@ ActiveRecord::Schema.define(version: 2018_05_23_125317) do
     t.datetime "data"
     t.boolean "dapc"
     t.text "image_data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "producte_dapcons", force: :cascade do |t|
+    t.string "nom_ca"
+    t.string "nom_es"
+    t.string "nom_en"
+    t.text "descripcio_ca"
+    t.text "descripcio_es"
+    t.text "descripcio_en"
+    t.string "identificador"
+    t.string "rcp_ca"
+    t.string "rcp_es"
+    t.string "rcp_en"
+    t.date "validesa_inici"
+    t.date "validesa_fi"
+    t.string "empresa"
+    t.string "categoria_indicadors"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -133,6 +161,24 @@ ActiveRecord::Schema.define(version: 2018_05_23_125317) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "empresa_id"
+  end
+
+  create_table "tipus_dada_inventaris", force: :cascade do |t|
+    t.string "nom_ca"
+    t.string "nom_es"
+    t.string "nom_en"
+    t.string "unitats"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tipus_indicadors", force: :cascade do |t|
+    t.string "nom_ca"
+    t.string "nom_es"
+    t.string "nom_en"
+    t.string "unitats"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

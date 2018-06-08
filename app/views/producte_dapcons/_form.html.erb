@@ -1,26 +1,76 @@
+<%= render 'shared/errors', object: @producte_dapcons %>
 
 <%= simple_form_for(@producte_dapcons) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
+
   <div class="form-inputs">
-    <%= f.input :nom_ca %>
-    <%= f.input :nom_es %>
-    <%= f.input :nom_en %>
-    <%= f.input :descripcio_ca %>
-    <%= f.input :descripcio_es %>
-    <%= f.input :descripcio_en %>
-    <%= f.input :identificador %>
-    <%= f.input :rcp_ca %>
-    <%= f.input :rcp_es %>
-    <%= f.input :rcp_en %>
-    <%= f.input :validesa_inici %>
-    <%= f.input :validesa_fi %>
-    <%= f.input :empresa %>
-    <%= f.input :categoria_indicadors %>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-4 cell">
+        <%= f.input :nom_ca %>
+      </div>
+      <div class="medium-4 cell">
+        <%= f.input :nom_es %>
+      </div>
+      <div class="medium-4 cell">
+        <%= f.input :nom_en %>
+      </div>
+      <div class="medium-4 cell">
+        <%= f.input :descripcio_ca %>
+      </div>
+      <div class="medium-4 cell">
+        <%= f.input :descripcio_es %>
+      </div>
+      <div class="medium-4 cell">
+        <%= f.input :descripcio_en %>
+      </div>
+      <div class="medium-4 cell">
+        <%= f.input :rcp_ca %>
+      </div>
+      <div class="medium-4 cell">
+        <%= f.input :rcp_es %>
+      </div>
+      <div class="medium-4 cell">
+        <%= f.input :rcp_en %>
+      </div>
+      <div class="medium-4 cell">
+        <%= f.input :identificador %>
+      </div>
+      
+      <div class="medium-4 cell">
+        <%= f.input :validesa_inici %>
+      </div>
+      <div class="medium-4 cell">
+        <%= f.input :validesa_fi %>
+      </div>
+      <div class="medium-4 cell">
+        <%= f.input :empresa %>
+      </div>
+      <div class="medium-4 cell">
+        <%= f.input :categoria_indicadors %>
+      </div>
+    </div>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-12 cell">
+        <div id="indicadors">
+          <h3>Assignar indicadors</h3>
+          <%= f.simple_fields_for :indicadors do |indicador| %>
+            <%= render 'indicador_fields', f: indicador %>
+          <% end %>
+          <div class="links">
+            <%= link_to_add_association f, :indicadors, html_options = {class: "afegir-element"} %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-12 cell">
+        <%= f.button :submit, t('.guardar') %>
+      </div>
+    </div>
   </div>
 <% end %>

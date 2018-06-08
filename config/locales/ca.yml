@@ -4,6 +4,7 @@ ca:
       - :day
       - :month
       - :year
+    month_names: [~, Gener, Febrer, Març, Abril, Maig, Juny, Juliol, Agost, Setembre, Octubre, Novembre, Desembre]
   activerecord:
     errors:
       models:
@@ -27,6 +28,10 @@ ca:
               blank: "Cal escriure els cognoms"
             reset_password_token:
               invalid: "No coincideix amb la confirmació"
+        indicador:
+          attributes:
+            tipus_indicadors:
+              required: "És necessari posar el tipus d'indicador"
   simple_form:
     labels:
       user:
@@ -104,3 +109,10 @@ ca:
       utilitat: "Utilitat i ús de les DAPcons<sup>®</sup>"
     comparador:
       comparador: "Comparador"
+  producte_dapcons:
+    form:
+      guardar: "Desar canvis"
+  cocoon:
+    defaults:
+      add: "+ Afegir element"
+      remove: "Eliminar"

@@ -1,0 +1,28 @@
+	<div class="grid-x grid-margin-x">
+		<div class="medium-12 cell">
+			<div class="contenidor-noticies-dapcons">
+				<div class="titol-seccio">
+					NOTÍCIES DAPcons<sup>®</sup>
+				</div>
+				<% counter = 0 %>
+				<div class="grid-x grid-margin-x">
+				<% @noticies.each do |noticia| %>
+	        <% if counter != 0 && counter % 3 == 0 %>
+	          </div>
+	          <div class="grid-x grid-margin-x">
+	        <% end %>
+
+	        <div class="medium-4 cell">
+						<%= link_to noticia do %>
+		          <div class="container-noticia-lateral">
+		            <%= image_tag noticia.image_url(:thumb) %>
+		            <span class="titol-noticia-lateral"><%= noticia.titol_ca %></span>
+		          </div>
+		        <% end %>
+					</div>
+					<% counter += 1 %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

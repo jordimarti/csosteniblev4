@@ -1,2 +1,46 @@
-<h1>Dapcons#comparador</h1>
-<p>Find me in app/views/dapcons/comparador.html.erb</p>
+
+  <%= render "layouts/dapcons_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="continguts-dapcons">
+				<div class="main-title-container">
+	        <span class="main-title"><%= t('.comparador') %></span>
+	      </div>
+
+	  		<div class="llistat-comparador">
+    			<ul>
+    			<% @productes.each do |producte| %>
+    				<li><%= producte.nom_ca %></li>
+    				<ul>
+    					<% producte.indicadors.each do |indicador| %>
+    						<% dades_indicador = TipusIndicador.find(indicador.tipus_indicador_id) %>
+    						<li><%= dades_indicador.nom_ca %>: <%= indicador.valor %> <%= dades_indicador.unitats %></li>
+    					<% end %>
+    				</ul>
+    			<% end %>
+    			</ul>
+    		</div>
+
+    		<div class="taula-comparador">
+    			<table>
+    				<thead>
+    					<th>Indicador</th>
+  						<th>Producte 1</th>
+  						<th>Producte 2</th>
+    				</thead>
+    				<tbody>
+    					<tr>
+    						<td>Primer</td>
+    						<td>Segon</td>
+    					</tr>
+    					<tr>
+    						<td>Tercer</td>
+    						<td>Quart</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    		</div>
+    	</div>
+    </div>
+	
+	<%= render "layouts/dapcons_noticies" %>    	
