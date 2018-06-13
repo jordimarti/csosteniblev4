@@ -7,38 +7,147 @@
 	        <span class="main-title"><%= t('.comparador') %></span>
 	      </div>
 
-	  		<div class="llistat-comparador">
-    			<ul>
-    			<% @productes.each do |producte| %>
-    				<li><%= producte.nom_ca %></li>
-    				<ul>
-    					<% producte.indicadors.each do |indicador| %>
-    						<% dades_indicador = TipusIndicador.find(indicador.tipus_indicador_id) %>
-    						<li><%= dades_indicador.nom_ca %>: <%= indicador.valor %> <%= dades_indicador.unitats %></li>
-    					<% end %>
-    				</ul>
-    			<% end %>
-    			</ul>
-    		</div>
+        <div class="alerta-unitat-funcional">
+          <span class="titol-unitat-funcional">Unitats declarades</span>
+          <p>És important tenir en compte les unitats declarades que s'han utilitzat per a crear els indicadors de cada producte. No compareu pomes amb peres!</p>
+          <h4>
+            <% if params[:tipus_producte1] == 'usuari' %>
+              <%= @producte1.nom %>
+            <% else %>
+              <% if params[:locale] == 'es' %>
+                <%= @producte1.nom_es %>
+              <% elsif params[:locale] == 'en' %>
+                <%= @producte1.nom_en %>
+              <% else %>
+                <%= @producte1.nom_ca %>
+              <% end %>
+            <% end %>
+          </h4>
+          <p>
+            <% if params[:tipus_producte1] == 'usuari' %>
+              <%= @producte1.unitat_declarada %>
+            <% else %>
+              <% if params[:locale] == 'es' %>
+                <%= @producte1.unitat_declarada_es %>
+              <% elsif params[:locale] == 'en' %>
+                <%= @producte1.unitat_declarada_en %>
+              <% else %>
+                <%= @producte1.unitat_declarada_ca %>
+              <% end %>
+            <% end %>
+          </p>
+          <h4>
+            <% if params[:tipus_producte2] == 'usuari' %>
+              <%= @producte2.nom %>
+            <% else %>
+              <% if params[:locale] == 'es' %>
+                <%= @producte2.nom_es %>
+              <% elsif params[:locale] == 'en' %>
+                <%= @producte2.nom_en %>
+              <% else %>
+                <%= @producte2.nom_ca %>
+              <% end %>
+            <% end %>
+          </h4>
+          <p>
+            <% if params[:tipus_producte2] == 'usuari' %>
+              <%= @producte2.unitat_declarada %>
+            <% else %>
+              <% if params[:locale] == 'es' %>
+                <%= @producte2.unitat_declarada_es %>
+              <% elsif params[:locale] == 'en' %>
+                <%= @producte2.unitat_declarada_en %>
+              <% else %>
+                <%= @producte2.unitat_declarada_ca %>
+              <% end %>
+            <% end %>
+          </p>
+        </div>
+
+	  		
+        <% etapes = [["A1-A3", t('.a1-a3')], ["A4", t('.a4')], ["A5", t('.a5')], ["B1", t('.b1')], ["B2", t('.b2')], ["B3", t('.b3')], ["B4-B7", t('.b4-b7')], ["C1", t('.c1')], ["C2", t('.c2')], ["C3", t('.c3')], ["C4", t('.c4')]] %>
 
     		<div class="taula-comparador">
-    			<table>
-    				<thead>
-    					<th>Indicador</th>
-  						<th>Producte 1</th>
-  						<th>Producte 2</th>
-    				</thead>
-    				<tbody>
-    					<tr>
-    						<td>Primer</td>
-    						<td>Segon</td>
-    					</tr>
-    					<tr>
-    						<td>Tercer</td>
-    						<td>Quart</td>
-    					</tr>
-    				</tbody>
-    			</table>
+          <% etapes.each do |etapa| %>
+            <h3 class="titol-etapa">Etapa <%= etapa[0] %>: <%= etapa[1] %></h3>
+      			<table class="unstriped">
+      				<thead>
+      					<th class="header-cell-indicadors"><%= t('.indicador') %></th>
+    						<th class="header-cell-indicadors">
+                  <% if params[:tipus_producte1] == 'usuari' %>
+                    <%= @producte1.nom %>
+                  <% else %>
+                    <% if params[:locale] == 'es' %>
+                      <%= @producte1.nom_es %>
+                    <% elsif params[:locale] == 'en' %>
+                      <%= @producte1.nom_en %>
+                    <% else %>
+                      <%= @producte1.nom_ca %>
+                    <% end %>
+                  <% end %>
+                </th>
+    						<th class="header-cell-indicadors">
+                  <% if params[:tipus_producte2] == 'usuari' %>
+                    <%= @producte2.nom %>
+                  <% else %>
+                    <% if params[:locale] == 'es' %>
+                      <%= @producte2.nom_es %>
+                    <% elsif params[:locale] == 'en' %>
+                      <%= @producte2.nom_en %>
+                    <% else %>
+                      <%= @producte2.nom_ca %>
+                    <% end %>
+                  <% end %>
+                    
+                </th>
+      				</thead>
+      				<tbody>
+                <% @tipus_indicadors.each do |tipus_indicador| %>
+                  <tr>
+                    <td class="body-cell-indicadors"><%= tipus_indicador.nom_ca %> <span class="unitats-indicadors">(<%= tipus_indicador.unitats %>)</span></td>
+                    <% 
+                    if params[:tipus_producte1] == 'usuari' 
+                      indicador1 = IndicadorUsuari.where(producte_dapcons_usuari_id: @producte1.id, tipus_indicador_id: tipus_indicador.id, etapa: etapa).last
+                    else
+                      indicador1 = Indicador.where(producte_dapcons_id: @producte1.id, tipus_indicador_id: tipus_indicador.id, etapa: etapa).last
+                    end
+                    if params[:tipus_producte2] == 'usuari' 
+                      indicador2 = IndicadorUsuari.where(producte_dapcons_usuari_id: @producte2.id, tipus_indicador_id: tipus_indicador.id, etapa: etapa).last
+                    else
+                      indicador2 = Indicador.where(producte_dapcons_id: @producte2.id, tipus_indicador_id: tipus_indicador.id, etapa: etapa).last
+                    end
+                    %>
+
+                    <% 
+                    if indicador1.present? && indicador2.present?
+                      if indicador1.valor.to_f < indicador2.valor.to_f
+                        cell1_class = 'highlight'
+                        cell2_class = 'no_highlight'
+                      elsif indicador1.valor.to_f == indicador2.valor.to_f
+                        cell1_class = 'no_highlight'
+                        cell2_class = 'no_highlight'
+                      else
+                        cell1_class = 'no_highlight'
+                        cell2_class = 'highlight'
+                      end
+                    end
+                    %>
+                    <td class="body-cell-indicadors <%= cell1_class %>">
+                      <% if indicador1.present? %>
+                        <%= indicador1.valor %>
+                      <% end %>
+                    </td>
+                    
+                    <td class="body-cell-indicadors <%= cell2_class %>">
+                      <% if indicador2.present? %>
+                        <%= indicador2.valor %>
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+      				</tbody>
+      			</table>
+          <% end %>
     		</div>
     	</div>
     </div>

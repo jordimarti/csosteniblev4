@@ -1,0 +1,31 @@
+<%= render 'shared/errors', object: @producte_dapcons_usuari %>
+
+<%= simple_form_for(@producte_dapcons_usuari) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
+    <%= f.input :nom %>
+    <%= f.input :empresa %>
+    <%= f.input :descripcio %>
+    <%= f.input :unitat_declarada %>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-12 cell">
+        <div id="indicadors">
+          <h3>Assignar indicadors</h3>
+          <%= f.simple_fields_for :indicador_usuaris do |indicador| %>
+            <%= render 'indicador_usuari_fields', f: indicador %>
+          <% end %>
+          <div class="links">
+            <%= link_to_add_association f, :indicador_usuaris, html_options = {class: "afegir-element"} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

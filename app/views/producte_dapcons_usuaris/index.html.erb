@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Producte Dapcons Usuaris</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Empresa</th>
+      <th>Descripcio</th>
+      <th>Unitat declarada</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @producte_dapcons_usuaris.each do |producte_dapcons_usuari| %>
+      <tr>
+        <td><%= producte_dapcons_usuari.nom %></td>
+        <td><%= producte_dapcons_usuari.empresa %></td>
+        <td><%= producte_dapcons_usuari.descripcio %></td>
+        <td><%= producte_dapcons_usuari.unitat_declarada %></td>
+        <td><%= link_to 'Show', producte_dapcons_usuari %></td>
+        <td><%= link_to 'Edit', edit_producte_dapcons_usuari_path(producte_dapcons_usuari) %></td>
+        <td><%= link_to 'Destroy', producte_dapcons_usuari, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Producte Dapcons Usuari', new_producte_dapcons_usuari_path %>

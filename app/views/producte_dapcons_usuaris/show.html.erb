@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @producte_dapcons_usuari.user_id %>: <%= @producte_dapcons_usuari.nom %>
+</p>
+
+<p>
+  <strong>Empresa:</strong>
+  <%= @producte_dapcons_usuari.empresa %>
+</p>
+
+<p>
+  <strong>Descripcio:</strong>
+  <%= @producte_dapcons_usuari.descripcio %>
+</p>
+
+<p>
+  <strong>Unitat declarada:</strong>
+  <%= @producte_dapcons_usuari.unitat_declarada %>
+</p>
+
+<%= link_to 'Edit', edit_producte_dapcons_usuari_path(@producte_dapcons_usuari) %> |
+<%= link_to 'Back', producte_dapcons_usuaris_path %>

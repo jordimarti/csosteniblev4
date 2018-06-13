@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Indicador Usuaris</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipus indicador</th>
+      <th>Producte dapcons usuari</th>
+      <th>Etapa</th>
+      <th>Valor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @indicador_usuaris.each do |indicador_usuari| %>
+      <tr>
+        <td><%= indicador_usuari.tipus_indicador_id %></td>
+        <td><%= indicador_usuari.producte_dapcons_usuari_id %></td>
+        <td><%= indicador_usuari.etapa %></td>
+        <td><%= indicador_usuari.valor %></td>
+        <td><%= link_to 'Show', indicador_usuari %></td>
+        <td><%= link_to 'Edit', edit_indicador_usuari_path(indicador_usuari) %></td>
+        <td><%= link_to 'Destroy', indicador_usuari, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Indicador Usuari', new_indicador_usuari_path %>

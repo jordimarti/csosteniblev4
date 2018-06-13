@@ -1,10 +1,57 @@
 es:
   date:
+    abbr_day_names:
+    - dom
+    - lun
+    - mar
+    - mié
+    - jue
+    - vie
+    - sáb
+    abbr_month_names:
+    -
+    - ene
+    - feb
+    - mar
+    - abr
+    - may
+    - jun
+    - jul
+    - ago
+    - sep
+    - oct
+    - nov
+    - dic
+    day_names:
+    - domingo
+    - lunes
+    - martes
+    - miércoles
+    - jueves
+    - viernes
+    - sábado
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %b"
+    month_names:
+    -
+    - enero
+    - febrero
+    - marzo
+    - abril
+    - mayo
+    - junio
+    - julio
+    - agosto
+    - septiembre
+    - octubre
+    - noviembre
+    - diciembre
     order:
-      - :day
-      - :month
-      - :year
-    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+    - :day
+    - :month
+    - :year
   activerecord:
     errors:
       models:
@@ -109,6 +156,18 @@ es:
       utilitat: "Utilidad y uso de las DAPcons<sup>®</sup>"
     comparador:
       comparador: "Comparador"
+      a1-a3: "Extracción, transporte y fabricación"
+      a4: "Transporte del producto a obra"
+      a5: "Instalación del producto y construcción"
+      b1: "Uso"
+      b2: "Mantenimiento"
+      b3: "Reparación"
+      b4-b7: "Sustitución, rehabilitación y uso de la energía y agua operacional"
+      c1: "Deconstrucción y derribo"
+      c2: "Transporte"
+      c3: "Gestión de los residuos para reutilización, recuperación y reciclaje"
+      c4: "Eliminación final"
+      d: "Potencial de reutilización, recuperación y reciclaje"
   producte_dapcons:
     form:
       guardar: "Guardar cambios"

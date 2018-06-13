@@ -49,12 +49,26 @@ class DapconsController < ApplicationController
   def contacte
   end
 
+  def llistat_productes
+    @aillants_termics = ProducteDapcons.where(categoria_indicadors: '001')
+    @revestiments_ceramics = ProducteDapcons.where(categoria_indicadors: '002')
+    @pedra_natural = ProducteDapcons.where(categoria_indicadors: '004')
+    @productes_general = ProducteDapcons.where(categoria_indicadors: '100')
+    @productes_usuari = ProducteDapconsUsuari.where(user_id: current_user.id).order(created_at: :desc)
+  end
+
   def comparador
-    @producte1 = params[:producte1]
-    @producte2 = params[:producte2]
-    @etapa_a1_a3 = Indicador.where(producte_dapcons_id: @producte1.id, etapa: 'A1-A3')
-    
-    @etapa_a4 = Indicador.where(etapa: 'A4')
+    if params[:tipus_producte1] == 'sistema'
+      @producte1 = ProducteDapcons.find(params[:producte1])
+    else
+      @producte1 = ProducteDapconsUsuari.find(params[:producte1])
+    end
+    if params[:tipus_producte2] == 'sistema'
+      @producte2 = ProducteDapcons.find(params[:producte2])
+    else
+      @producte2 = ProducteDapconsUsuari.find(params[:producte2])
+    end
+    @tipus_indicadors = TipusIndicador.all
   end
 
   private

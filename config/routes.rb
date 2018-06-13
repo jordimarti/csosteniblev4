@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :indicador_usuaris
+  resources :producte_dapcons_usuaris
   resources :indicadors
   resources :tipus_dada_inventaris
   resources :tipus_indicadors
@@ -21,6 +23,7 @@ Rails.application.routes.draw do
   get 'dapcons/registrar_producte'
   get 'dapcons/contacte'
   get 'dapcons/comparador'
+  get 'dapcons/llistat_productes'
   resources :videos
   resources :noticies
   resources :empreses

@@ -1,3 +1,43 @@
 // Place all the styles related to the Dapcons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h3.titol-etapa {
+	font-size: 1.2em;
+	font-weight: bold;	
+}
+
+span.unitats-indicadors {
+	font-size: 0.8em;
+}
+
+.highlight {
+	background-color: #DEF3DE;
+}
+
+.header-cell-indicadors {
+	border: 1px solid #999;
+
+}
+
+.body-cell-indicadors {
+	border: 1px solid #999;
+	padding: 5px;
+}
+
+.comparador-dapcons-item {
+	border: 1px solid #999;
+	padding: 10px 20px;
+	background-color: #eaeaea;
+	margin-bottom: 20px;
+}
+
+.comparador-dapcons-item-nom {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.item-seleccionat {
+	background-color: #DEF3DE;
+	border-left: 6px solid #6ABE6A;
+}

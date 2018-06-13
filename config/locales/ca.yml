@@ -1,10 +1,57 @@
 ca:
   date:
+    abbr_day_names:
+    - Dg
+    - Dl
+    - Dm
+    - Dc
+    - Dj
+    - Dv
+    - Ds
+    abbr_month_names:
+    -
+    - Gen
+    - Feb
+    - Mar
+    - Abr
+    - Mai
+    - Jun
+    - Jul
+    - Ago
+    - Set
+    - Oct
+    - Nov
+    - Des
+    day_names:
+    - Diumenge
+    - Dilluns
+    - Dimarts
+    - Dimecres
+    - Dijous
+    - Divendres
+    - Dissabte
+    formats:
+      default: "%d-%m-%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %b"
+    month_names:
+    -
+    - Gener
+    - Febrer
+    - Març
+    - Abril
+    - Maig
+    - Juny
+    - Juliol
+    - Agost
+    - Setembre
+    - Octubre
+    - Novembre
+    - Desembre
     order:
-      - :day
-      - :month
-      - :year
-    month_names: [~, Gener, Febrer, Març, Abril, Maig, Juny, Juliol, Agost, Setembre, Octubre, Novembre, Desembre]
+    - :day
+    - :month
+    - :year
   activerecord:
     errors:
       models:
@@ -109,6 +156,18 @@ ca:
       utilitat: "Utilitat i ús de les DAPcons<sup>®</sup>"
     comparador:
       comparador: "Comparador"
+      a1-a3: "Extracció, transport i fabricació"
+      a4: "Transport del producte a obra"
+      a5: "Instal·lació del producte i construcció"
+      b1: "Ús"
+      b2: "Manteniment"
+      b3: "Reparació"
+      b4-b7: "Substitució, rehabilitació i ús d'energia i aigua operacional"
+      c1: "Deconstrucció i enderroc"
+      c2: "Transport"
+      c3: "Gestió de residus per reutilització, recuperació i reciclatge"
+      c4: "Eliminació final"
+      d: "Potencial de reutilització, recuperació i reciclatge"
   producte_dapcons:
     form:
       guardar: "Desar canvis"

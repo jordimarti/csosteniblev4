@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipus indicador:</strong>
+  <%= @indicador_usuari.tipus_indicador_id %>
+</p>
+
+<p>
+  <strong>Producte dapcons usuari:</strong>
+  <%= @indicador_usuari.producte_dapcons_usuari_id %>
+</p>
+
+<p>
+  <strong>Etapa:</strong>
+  <%= @indicador_usuari.etapa %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @indicador_usuari.valor %>
+</p>
+
+<%= link_to 'Edit', edit_indicador_usuari_path(@indicador_usuari) %> |
+<%= link_to 'Back', indicador_usuaris_path %>

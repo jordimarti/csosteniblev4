@@ -1,0 +1,16 @@
+
+<%= simple_form_for(@indicador_usuari) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :tipus_indicador_id %>
+    <%= f.input :producte_dapcons_usuari_id %>
+    <%= f.input :etapa %>
+    <%= f.input :valor %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

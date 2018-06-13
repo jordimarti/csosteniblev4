@@ -69,6 +69,6 @@ class ProducteDapconsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def producte_dapcons_params
-      params.require(:producte_dapcons).permit(:nom_ca, :nom_es, :nom_en, :descripcio_ca, :descripcio_es, :descripcio_en, :identificador, :rcp_ca, :rcp_es, :rcp_en, :validesa_inici, :validesa_fi, :empresa, :categoria_indicadors, indicadors_attributes: [:id, :tipus_indicador_id, :producte_dapcons_id, :etapa, :valor, :_destroy])
+      params.require(:producte_dapcons).permit(:nom_ca, :nom_es, :nom_en, :descripcio_ca, :descripcio_es, :descripcio_en, :identificador, :rcp_ca, :rcp_es, :rcp_en, :validesa_inici, :validesa_fi, :empresa, :categoria_indicadors, :unitat_declarada_ca, :unitat_declarada_es, :unitat_declarada_en, indicadors_attributes: [:id, :tipus_indicador_id, :producte_dapcons_id, :etapa, :valor, :_destroy])
     end
 end

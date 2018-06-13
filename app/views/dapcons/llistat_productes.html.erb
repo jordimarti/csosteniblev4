@@ -1,0 +1,145 @@
+<%= render "layouts/dapcons_navigation" %>
+
+	<div class="medium-9 cell">
+		<div class="continguts-dapcons">
+			<div class="main-title-container">
+        <span class="main-title"><%= t('.comparador') %></span>
+      </div>
+
+      <div class="seleccio-productes">
+      	<div class="notice-seleccio-productes">
+      		<h3>Selecciona els productes a comparar</h3>
+      	</div>
+      	
+	      	<div class="llistat-productes">
+	      		<div class="titol-categoria">
+	      			<h4>Aïllants tèrmics</h4>
+	      		</div>
+	      		<div class="productes-categoria">
+	      			<div class="grid-x grid-margin-x">
+	      				<% @aillants_termics.each do |producte| %>
+		      				<div class="medium-6 cell">
+				      			<div class="comparador-dapcons-item" tipus="sistema" valor="<%= producte.id %>">
+				      				<div class="comparador-dapcons-item-nom">
+				      					<%= producte.nom_ca %>
+				      				</div>
+				      				<div class="comparador-dapcons-item-empresa">
+				      					<%= producte.empresa %>
+				      				</div>
+				      			</div>
+				      		</div>
+				      	<% end %>
+				      </div>
+				    </div>
+
+				    <div class="titol-categoria">
+	      			<h4>Revestiments ceràmics</h4>
+	      		</div>
+	      		<div class="productes-categoria">
+	      			<div class="grid-x grid-margin-x">
+	      				<% @revestiments_ceramics.each do |producte| %>
+		      				<div class="medium-6 cell">
+				      			<div class="comparador-dapcons-item" tipus="sistema" valor="<%= producte.id %>">
+				      				<div class="comparador-dapcons-item-nom">
+				      					<%= producte.nom_ca %>
+				      				</div>
+				      				<div class="comparador-dapcons-item-empresa">
+				      					<%= producte.empresa %>
+				      				</div>
+				      			</div>
+				      		</div>
+				      	<% end %>
+				      </div>
+				    </div>
+
+				    <div class="titol-categoria">
+	      			<h4>Pedra natural</h4>
+	      		</div>
+	      		<div class="productes-categoria">
+	      			<div class="grid-x grid-margin-x">
+	      				<% @pedra_natural.each do |producte| %>
+		      				<div class="medium-6 cell">
+				      			<div class="comparador-dapcons-item" tipus="sistema" valor="<%= producte.id %>">
+				      				<div class="comparador-dapcons-item-nom">
+				      					<%= producte.nom_ca %>
+				      				</div>
+				      				<div class="comparador-dapcons-item-empresa">
+				      					<%= producte.empresa %>
+				      				</div>
+				      			</div>
+				      		</div>
+				      	<% end %>
+				      </div>
+				    </div>
+
+				    <div class="titol-categoria">
+	      			<h4>Productes de construcció en general</h4>
+	      		</div>
+	      		<div class="productes-categoria">
+	      			<div class="grid-x grid-margin-x">
+	      				<% @productes_general.each do |producte| %>
+		      				<div class="medium-6 cell">
+				      			<div class="comparador-dapcons-item" tipus="sistema" valor="<%= producte.id %>">
+				      				<div class="comparador-dapcons-item-nom">
+				      					<%= producte.nom_ca %>
+				      				</div>
+				      				<div class="comparador-dapcons-item-empresa">
+				      					<%= producte.empresa %>
+				      				</div>
+				      			</div>
+				      		</div>
+				      	<% end %>
+				      </div>
+				    </div>
+
+				    <div class="titol-categoria">
+	      			<h4>Els teus productes</h4>
+	      			<p>Productes creats per l'usuari</p>
+	      		</div>
+	      		<div class="productes-categoria">
+	      			<div class="grid-x grid-margin-x">
+	      				<% @productes_usuari.each do |producte| %>
+		      				<div class="medium-6 cell">
+				      			<div class="comparador-dapcons-item" tipus="usuari" valor="<%= producte.id %>">
+				      				<div class="comparador-dapcons-item-nom">
+				      					<%= producte.nom %>
+				      				</div>
+				      				<div class="comparador-dapcons-item-empresa">
+				      					<%= producte.empresa %>
+				      				</div>
+				      			</div>
+				      		</div>
+				      	<% end %>
+				      </div>
+				    </div>
+			      		
+      		</div>
+      	
+      </div>
+    </div>
+	</div>
+	
+<%= render "layouts/dapcons_noticies" %>    	
+
+<script>
+function goToURL(tipus_producte1, producte1, tipus_producte2, producte2) {
+	location.href = 'comparador?tipus_producte1=' + tipus_producte1 + '&producte1=' + producte1 +'&tipus_producte2=' + tipus_producte2 + '&producte2=' + producte2;
+}
+var counter = 0;
+var producte1;
+var producte2;
+$( ".comparador-dapcons-item" ).on( "click", function( event ) {
+	counter ++;
+	if (counter == 1) {
+		$(this).addClass("item-seleccionat");
+		producte1 = $(this).attr( "valor" );
+		tipus_producte1 = $(this).attr( "tipus" );
+	};
+	if (counter == 2) {
+		$(this).addClass("item-seleccionat");
+		producte2 = $(this).attr( "valor" );
+		tipus_producte2 = $(this).attr( "tipus" );
+		goToURL(tipus_producte1, producte1, tipus_producte2, producte2);
+	}
+});
+</script>

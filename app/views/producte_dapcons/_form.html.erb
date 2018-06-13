@@ -35,20 +35,28 @@
         <%= f.input :rcp_en %>
       </div>
       <div class="medium-4 cell">
+        <%= f.input :unitat_declarada_ca %>
+      </div>
+      <div class="medium-4 cell">
+        <%= f.input :unitat_declarada_es %>
+      </div>
+      <div class="medium-4 cell">
+        <%= f.input :unitat_declarada_en %>
+      </div>
+      <div class="medium-3 cell">
         <%= f.input :identificador %>
       </div>
-      
-      <div class="medium-4 cell">
-        <%= f.input :validesa_inici %>
-      </div>
-      <div class="medium-4 cell">
-        <%= f.input :validesa_fi %>
-      </div>
-      <div class="medium-4 cell">
+      <div class="medium-3 cell">
         <%= f.input :empresa %>
       </div>
-      <div class="medium-4 cell">
-        <%= f.input :categoria_indicadors %>
+      <div class="medium-3 cell">
+        <%= f.input :validesa_inici, as: :string, format: :short %>
+      </div>
+      <div class="medium-3 cell">
+        <%= f.input :validesa_fi, as: :string %>
+      </div>
+      <div class="medium-3 cell">
+        <%= f.input :categoria_indicadors, collection: [['Aïllants tèrmics', '001'], ['Revestiments ceràmics', '002'], ['Productes de pedra natural', '004'], ['Productes de construcció en general', '100']] %>
       </div>
     </div>
     <div class="grid-x grid-margin-x">
@@ -74,3 +82,24 @@
     </div>
   </div>
 <% end %>
+
+<script>
+  $( function() {
+    $( "#producte_dapcons_validesa_inici" ).datepicker({
+      dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      regional: "es"
+    })
+  });
+  $( function() {
+    $( "#producte_dapcons_validesa_fi" ).datepicker({
+      dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      regional: "es"
+    })
+  });
+</script>
+
+

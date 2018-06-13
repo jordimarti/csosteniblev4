@@ -1,0 +1,19 @@
+        <div class="nested-fields">
+			<div class="grid-x grid-margin-x">
+        <div class="medium-6 cell">
+        	<label class="select optional" for="tipus_indicador_id">Tipus indicador</label>
+    			<%= f.collection_select :tipus_indicador_id, TipusIndicador.all, :id, :nom_ca %>
+    		</div>
+    		<div class="medium-3 cell">
+    			<%= f.input :etapa, collection: ['A1-A3', 'A4', 'A5'] %>
+    		</div>
+    		<div class="medium-2 cell">
+    			<%= f.input :valor %>
+    		</div>
+    		<div class="medium-1 cell">
+    			<div class="eliminar-indicador">
+    				<%= link_to_remove_association f %>
+    			</div>
+    		</div>
+    	</div>
+    </div>

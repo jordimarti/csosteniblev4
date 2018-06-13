@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_07_095147) do
+ActiveRecord::Schema.define(version: 2018_06_13_142736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,15 @@ ActiveRecord::Schema.define(version: 2018_06_07_095147) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "indicador_usuaris", force: :cascade do |t|
+    t.integer "tipus_indicador_id"
+    t.integer "producte_dapcons_usuari_id"
+    t.string "etapa"
+    t.float "valor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "indicadors", force: :cascade do |t|
     t.integer "tipus_indicador_id"
     t.integer "producte_dapcons_id"
@@ -134,6 +143,19 @@ ActiveRecord::Schema.define(version: 2018_06_07_095147) do
     t.string "categoria_indicadors"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "unitat_declarada_ca"
+    t.text "unitat_declarada_es"
+    t.text "unitat_declarada_en"
+  end
+
+  create_table "producte_dapcons_usuaris", force: :cascade do |t|
+    t.string "nom"
+    t.string "empresa"
+    t.text "descripcio"
+    t.text "unitat_declarada"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "productes", force: :cascade do |t|

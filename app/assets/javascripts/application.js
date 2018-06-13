@@ -15,6 +15,8 @@
 //= require foundation
 //= require activestorage
 //= require cocoon
+//= require jquery-ui/widgets/datepicker
+//= require jquery-ui/i18n/datepicker-es
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
