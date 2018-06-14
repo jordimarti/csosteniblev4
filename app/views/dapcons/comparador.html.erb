@@ -7,10 +7,12 @@
 	        <span class="main-title"><%= t('.comparador') %></span>
 	      </div>
 
-        <div class="alerta-unitat-funcional">
-          <span class="titol-unitat-funcional">Unitats declarades</span>
-          <p>És important tenir en compte les unitats declarades que s'han utilitzat per a crear els indicadors de cada producte. No compareu pomes amb peres!</p>
-          <h4>
+        <div class="callout warning">
+          <div class="container-titol-unitat-funcional">
+            <span class="titol-unitat-funcional">Unitats declarades</span>
+          </div>
+          <p>
+          <span class="nom-producte-unitats-declarades">
             <% if params[:tipus_producte1] == 'usuari' %>
               <%= @producte1.nom %>
             <% else %>
@@ -22,8 +24,7 @@
                 <%= @producte1.nom_ca %>
               <% end %>
             <% end %>
-          </h4>
-          <p>
+          :</span>
             <% if params[:tipus_producte1] == 'usuari' %>
               <%= @producte1.unitat_declarada %>
             <% else %>
@@ -35,8 +36,8 @@
                 <%= @producte1.unitat_declarada_ca %>
               <% end %>
             <% end %>
-          </p>
-          <h4>
+          <br/>
+          <span class="nom-producte-unitats-declarades">
             <% if params[:tipus_producte2] == 'usuari' %>
               <%= @producte2.nom %>
             <% else %>
@@ -48,8 +49,7 @@
                 <%= @producte2.nom_ca %>
               <% end %>
             <% end %>
-          </h4>
-          <p>
+          :</span>
             <% if params[:tipus_producte2] == 'usuari' %>
               <%= @producte2.unitat_declarada %>
             <% else %>
@@ -62,6 +62,7 @@
               <% end %>
             <% end %>
           </p>
+          <p>És important tenir en compte les unitats declarades que s'han utilitzat per a crear els indicadors de cada producte. No compareu pomes amb peres!</p>
         </div>
 
 	  		
