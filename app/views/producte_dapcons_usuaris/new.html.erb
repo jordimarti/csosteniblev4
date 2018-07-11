@@ -1,5 +1,21 @@
-<h1>New Producte Dapcons Usuari</h1>
+<div class="container">
+  <div class="grid-x grid-margin-x">
+    <div class="medium-12 cell">
+      <div class="main-title-container">
+        <span class="main-title"><%= t('.panell') %></span>
+        <br/>
+        <span class="secondary-title"><%= t('.producte_dapcons_usuari') %></span>
+      </div>
+    </div>
+  </div>
 
-<%= render 'form', producte_dapcons_usuari: @producte_dapcons_usuari %>
+  <div class="grid-x grid-margin-x">
+    <div class="medium-12 cell">
 
-<%= link_to 'Back', producte_dapcons_usuaris_path %>
+			<%= render 'form', producte_dapcons_usuari: @producte_dapcons_usuari %>
+		</div>
+		<div class="medium-12 cell">
+			<%= link_to t('.llistat_productes'), producte_dapcons_usuaris_path %>
+		</div>
+	</div>
+</div>

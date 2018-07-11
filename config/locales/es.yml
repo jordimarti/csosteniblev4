@@ -82,8 +82,13 @@ es:
   simple_form:
     labels:
       user:
-        first_name: 'Nombre'
-        last_name: 'Apellidos'
+        first_name: "Nombre"
+        last_name: "Apellidos"
+      producte_dapcons_usuari:
+        nom: "Nombre del producto"
+        empresa: "Empresa"
+        descripcio: "Descripción"
+        unitat_declarada: "Unidad declarada"
   layouts:
     top:
       register: "Registrarse"
@@ -168,9 +173,50 @@ es:
       c3: "Gestión de los residuos para reutilización, recuperación y reciclaje"
       c4: "Eliminación final"
       d: "Potencial de reutilización, recuperación y reciclaje"
+      unitats_declarades: "Unidades declaradas"
+    llistat_productes:
+      comparador: "Comparador"
+      selecciona_productes: "Selecciona los productos a comparar"
+      aillants_termics: "Aislantes térmicos"
+      revestiments_ceramics: "Revestimientos cerámicos"
+      pedra_natural: "Productos de piedra natural y áridos"
+      construccio_general: "Productos de construcción en general"
+      teus_productes: "Tus productos"
+      productes_usuari: "Productos creados por el usuario"
   producte_dapcons:
     form:
       guardar: "Guardar cambios"
+  producte_dapcons_usuaris:
+    index:
+      panell: "Panel de control"
+      producte_dapcons_usuari: "Productos con información ambiental"
+      nom: "Nombre"
+      empresa: "Empresa"
+      descripcio: "Descripción"
+      unitat_declarada: "Unidad declarada"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      confirmacio_eliminar: "Seguro que quieres eliminar este producto?"
+      nou_producte: "Nuevo producto"
+    new:
+      panell: "Panell de control"
+      producte_dapcons_usuari: "Nou producte"
+    form:
+      guardar: "Guardar"
+    indicador_usuari_fields:
+      a1-a3: "A1-A3: Extracción, transporte y fabricación"
+      a4: "A4: Transporte del producto a obra"
+      a5: "A5: Instalación del producto y construcción"
+      b1: "B1: Uso"
+      b2: "B2: Mantenimiento"
+      b3: "B3: Reparación"
+      b4-b7: "B4-B7: Sustitución, rehabilitación y uso de la energía y agua operacional"
+      c1: "C1: Deconstrucción y derribo"
+      c2: "C2: Transporte"
+      c3: "C3: Gestión de los residuos para reutilización, recuperación y reciclaje"
+      c4: "C4: Eliminación final"
+      d: "D: Potencial de reutilización, recuperación y reciclaje"
   cocoon:
     defaults:
       add: "+ Añadir elemento"

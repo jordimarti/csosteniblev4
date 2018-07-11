@@ -82,8 +82,13 @@ ca:
   simple_form:
     labels:
       user:
-        first_name: 'Nom'
-        last_name: 'Cognoms'
+        first_name: "Nom"
+        last_name: "Cognoms"
+      producte_dapcons_usuari:
+        nom: "Nom del producte"
+        empresa: "Empresa"
+        descripcio: "Descripció"
+        unitat_declarada: "Unitat declarada"
   layouts:
     top:
       register: "Registrar-se"
@@ -98,6 +103,7 @@ ca:
       marketcons: "MarketCons"
       dapcons: "DAPcons"
     dapcons_navigation:
+      titol_programa_dapconstruccion: "Programa DAPconstrucción"
       programa_dapconstruccion: "PROGRAMA DAPCONSTRUCCIÓN"
       assessors_programa: "ASSESSORS I COL·LABORADORS DEL PROGRAMA DAPCONSTRUCCIÓN"
       formar_part: "PER FORMAR PART"
@@ -117,6 +123,11 @@ ca:
       afiliacio: "Afiliació al Programa"
       registrar_producte: "Registrar un producte"
       contacte: "Contactar-nos"
+  home:
+    panel:
+      panell: "Panell de control"
+      declaracions: "Declaracions Ambientals de Producte"
+      text_declaracions: "Crea un producte per a les comparacions de les Declaracions Ambientals de Producte"
   noticies:
     show:
       ultimes_noticies: "ÚLTIMES NOTÍCIES"
@@ -168,9 +179,52 @@ ca:
       c3: "Gestió de residus per reutilització, recuperació i reciclatge"
       c4: "Eliminació final"
       d: "Potencial de reutilització, recuperació i reciclatge"
+      unitats_declarades: "Unitats declarades"
+    llistat_productes:
+      comparador: "Comparador"
+      selecciona_productes: "Selecciona els productes a comparar"
+      aillants_termics: "Aïllants tèrmics"
+      revestiments_ceramics: "Revestiments ceràmics"
+      pedra_natural: "Productes de pedra natural i àrids"
+      construccio_general: "Productes de construcció en general"
+      teus_productes: "Els teus productes"
+      productes_usuari: "Productes creats per l'usuari"
+      gestor_productes: "Anar al gestor de productes"
   producte_dapcons:
     form:
       guardar: "Desar canvis"
+  producte_dapcons_usuaris:
+    index:
+      panell: "Panell de control"
+      producte_dapcons_usuari: "Productes amb informació ambiental"
+      nom: "Nom"
+      empresa: "Empresa"
+      descripcio: "Descripció"
+      unitat_declarada: "Unitat declarada"
+      show: "Mostrar"
+      edit: "Editar"
+      destroy: "Eliminar"
+      confirmacio_eliminar: "Segur que vols eliminar aquest producte?"
+      nou_producte: "Nou producte"
+    new:
+      panell: "Panell de control"
+      producte_dapcons_usuari: "Nou producte"
+      llistat_productes: "Llistat de productes"
+    form:
+      guardar: "Guardar"
+    indicador_usuari_fields:
+      a1-a3: "A1-A3: Extracció, transport i fabricació"
+      a4: "A4: Transport del producte a obra"
+      a5: "A5: Instal·lació del producte i construcció"
+      b1: "B1: Ús"
+      b2: "B2: Manteniment"
+      b3: "B3: Reparació"
+      b4-b7: "B4-B7: Substitució, rehabilitació i ús d'energia i aigua operacional"
+      c1: "C1: Deconstrucció i enderroc"
+      c2: "C2: Transport"
+      c3: "C3: Gestió de residus per reutilització, recuperació i reciclatge"
+      c4: "C4: Eliminació final"
+      d: "D: Potencial de reutilització, recuperació i reciclatge"
   cocoon:
     defaults:
       add: "+ Afegir element"

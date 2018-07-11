@@ -4,7 +4,7 @@ class ProducteDapconsUsuarisController < ApplicationController
   # GET /producte_dapcons_usuaris
   # GET /producte_dapcons_usuaris.json
   def index
-    @producte_dapcons_usuaris = ProducteDapconsUsuari.all
+    @producte_dapcons_usuaris = ProducteDapconsUsuari.where(user_id: current_user.id).order(created_at: :desc)
   end
 
   # GET /producte_dapcons_usuaris/1
@@ -28,7 +28,7 @@ class ProducteDapconsUsuarisController < ApplicationController
 
     respond_to do |format|
       if @producte_dapcons_usuari.save
-        format.html { redirect_to @producte_dapcons_usuari, notice: 'Producte dapcons usuari was successfully created.' }
+        format.html { redirect_to producte_dapcons_usuaris_path, notice: 'Producte dapcons usuari was successfully created.' }
         format.json { render :show, status: :created, location: @producte_dapcons_usuari }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ProducteDapconsUsuarisController < ApplicationController
   def update
     respond_to do |format|
       if @producte_dapcons_usuari.update(producte_dapcons_usuari_params)
-        format.html { redirect_to @producte_dapcons_usuari, notice: 'Producte dapcons usuari was successfully updated.' }
+        format.html { redirect_to producte_dapcons_usuaris_path, notice: 'Producte dapcons usuari was successfully updated.' }
         format.json { render :show, status: :ok, location: @producte_dapcons_usuari }
       else
         format.html { render :edit }

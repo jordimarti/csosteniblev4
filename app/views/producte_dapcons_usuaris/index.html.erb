@@ -1,33 +1,49 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="grid-x grid-margin-x">
+    <div class="medium-12 cell">
+      <div class="main-title-container">
+        <span class="main-title"><%= t('.panell') %></span>
+        <br/>
+        <span class="secondary-title"><%= t('.producte_dapcons_usuari') %></span>
+      </div>
+    </div>
+  </div>
 
-<h1>Producte Dapcons Usuaris</h1>
+  <div class="grid-x grid-margin-x">
+    <div class="medium-12 cell">
+      <table>
+        <thead>
+          <tr>
+            <th><%= t('.nom') %></th>
+            <th><%= t('.empresa') %></th>
+            <th><%= t('.descripcio') %></th>
+            <th><%= t('.unitat_declarada') %></th>
+            <th></th>
+          </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Empresa</th>
-      <th>Descripcio</th>
-      <th>Unitat declarada</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <tbody>
+          <% @producte_dapcons_usuaris.each do |producte_dapcons_usuari| %>
+            <tr>
+              <td><%= link_to producte_dapcons_usuari.nom, edit_producte_dapcons_usuari_path(producte_dapcons_usuari) %></td>
+              <td><%= producte_dapcons_usuari.empresa %></td>
+              <td><%= producte_dapcons_usuari.descripcio %></td>
+              <td><%= producte_dapcons_usuari.unitat_declarada %></td>
+              <td><%= link_to t('.destroy'), producte_dapcons_usuari, method: :delete, data: { confirm: t('.confirmacio_eliminar') } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="medium-12 cell">
+      <%= link_to t('.nou_producte'), new_producte_dapcons_usuari_path, class: 'button' %>
+    </div>
+  </div>
+  
+</div>
 
-  <tbody>
-    <% @producte_dapcons_usuaris.each do |producte_dapcons_usuari| %>
-      <tr>
-        <td><%= producte_dapcons_usuari.nom %></td>
-        <td><%= producte_dapcons_usuari.empresa %></td>
-        <td><%= producte_dapcons_usuari.descripcio %></td>
-        <td><%= producte_dapcons_usuari.unitat_declarada %></td>
-        <td><%= link_to 'Show', producte_dapcons_usuari %></td>
-        <td><%= link_to 'Edit', edit_producte_dapcons_usuari_path(producte_dapcons_usuari) %></td>
-        <td><%= link_to 'Destroy', producte_dapcons_usuari, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
 
 <br>
 
-<%= link_to 'New Producte Dapcons Usuari', new_producte_dapcons_usuari_path %>
+

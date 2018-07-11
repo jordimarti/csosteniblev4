@@ -6,6 +6,9 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Agenda de la Construcció Sostenible" %></title>
 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/trix/0.11.4/trix.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trix/0.11.4/trix.js"></script>
+
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>

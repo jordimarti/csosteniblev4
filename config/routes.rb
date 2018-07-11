@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   get 'temes_clau/residus'
   get 'temes_clau/salut'
   get 'home/index'
+  get 'home/panel'
   root :to => "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

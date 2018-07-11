@@ -90,3 +90,50 @@
 .link-noticia-breu {
 	text-align: right;
 }
+
+/*********************/
+/* Panell de control */
+/*********************/
+
+.panell-control-item {
+	border-radius: 5px;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 3px 3px 5px #ccc; 
+}
+
+.panell-control-item:hover {
+	-webkit-box-shadow: 6px 6px 5px 6px #ccc;
+  -moz-box-shadow: 6px 6px 5px 6px #ccc;
+  box-shadow: 6px 6px 5px #ccc; 
+  transition: .3s ease;
+}
+
+.imatge-item-panell-control {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.text-item-panell-control {
+	padding: 20px;
+	min-height: 250px;
+	/*background-color: #7DD1E1;*/
+	background-color: #eaeaea;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+h3.panell-control-item-title {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+a > .panell-control-item > .text-item-panell-control > h3 {
+	color: black;
+}
+
+a > .panell-control-item > .text-item-panell-control > p {
+	color: black;
+}
+
+

@@ -56,3 +56,25 @@ span.unitats-indicadors {
 	font-size: 1em;
 	font-weight: bold;
 }
+
+.accordion-item {
+	background-color: #999;
+}
+
+a.accordion-title {
+	color: white;
+	font-weight: bold;
+}
+
+a.accordion-title:hover {
+	color: #333;
+	font-weight: bold;
+}
+
+.menu-dapcons > li > a {
+	color: #333;
+}
+
+.menu-dapcons > li:hover {
+	background-color: #eaeaea;
+}

@@ -7,13 +7,13 @@
       </div>
 
       <div class="seleccio-productes">
-      	<div class="notice-seleccio-productes">
-      		<h3>Selecciona els productes a comparar</h3>
+      	<div class="notice-seleccio-productes callout primary">
+      		<%= t('.selecciona_productes') %>
       	</div>
       	
 	      	<div class="llistat-productes">
 	      		<div class="titol-categoria">
-	      			<h4>Aïllants tèrmics</h4>
+	      			<h4><%= t('.aillants_termics') %></h4>
 	      		</div>
 	      		<div class="productes-categoria">
 	      			<div class="grid-x grid-margin-x">
@@ -33,7 +33,7 @@
 				    </div>
 
 				    <div class="titol-categoria">
-	      			<h4>Revestiments ceràmics</h4>
+	      			<h4><%= t('.revestiments_ceramics') %></h4>
 	      		</div>
 	      		<div class="productes-categoria">
 	      			<div class="grid-x grid-margin-x">
@@ -53,7 +53,7 @@
 				    </div>
 
 				    <div class="titol-categoria">
-	      			<h4>Pedra natural</h4>
+	      			<h4><%= t('.pedra_natural') %></h4>
 	      		</div>
 	      		<div class="productes-categoria">
 	      			<div class="grid-x grid-margin-x">
@@ -73,7 +73,7 @@
 				    </div>
 
 				    <div class="titol-categoria">
-	      			<h4>Productes de construcció en general</h4>
+	      			<h4><%= t('.construccio_general') %></h4>
 	      		</div>
 	      		<div class="productes-categoria">
 	      			<div class="grid-x grid-margin-x">
@@ -93,8 +93,8 @@
 				    </div>
 
 				    <div class="titol-categoria">
-	      			<h4>Els teus productes</h4>
-	      			<p>Productes creats per l'usuari</p>
+	      			<h4><%= t('.teus_productes') %></h4>
+	      			<p><%= t('.productes_usuari') %></p>
 	      		</div>
 	      		<div class="productes-categoria">
 	      			<div class="grid-x grid-margin-x">
@@ -112,6 +112,10 @@
 				      	<% end %>
 				      </div>
 				    </div>
+
+				    <div class="nou-producte-usuari">
+				    	<%= link_to t('.gestor_productes'), producte_dapcons_usuaris_path, class: 'button' %>
+				    </div>
 			      		
       		</div>
       	
@@ -123,7 +127,7 @@
 
 <script>
 function goToURL(tipus_producte1, producte1, tipus_producte2, producte2) {
-	location.href = 'comparador?tipus_producte1=' + tipus_producte1 + '&producte1=' + producte1 +'&tipus_producte2=' + tipus_producte2 + '&producte2=' + producte2;
+	location.href = 'comparador?tipus_producte1=' + tipus_producte1 + '&producte1=' + producte1 +'&tipus_producte2=' + tipus_producte2 + '&producte2=' + producte2 + '&locale=<%= params[:locale] %>';
 }
 var counter = 0;
 var producte1;
@@ -136,10 +140,17 @@ $( ".comparador-dapcons-item" ).on( "click", function( event ) {
 		tipus_producte1 = $(this).attr( "tipus" );
 	};
 	if (counter == 2) {
-		$(this).addClass("item-seleccionat");
-		producte2 = $(this).attr( "valor" );
-		tipus_producte2 = $(this).attr( "tipus" );
-		goToURL(tipus_producte1, producte1, tipus_producte2, producte2);
+		if ($(this).attr( "valor" ) == producte1 && $(this).attr( "tipus" ) == tipus_producte1) {
+			counter = 0;
+			$(this).removeClass("item-seleccionat");
+		}
+		else {
+			$(this).addClass("item-seleccionat");
+			producte2 = $(this).attr( "valor" );
+			tipus_producte2 = $(this).attr( "tipus" );
+			goToURL(tipus_producte1, producte1, tipus_producte2, producte2);
+		}
+		
 	}
 });
 </script>

@@ -26,5 +26,6 @@ Ecoetiqueta.create(nom_ca: "NF Environment", nom_es: "NF Environment", nom_en: "
 Ecoetiqueta.create(nom_ca: "DAPconstrucción", nom_es: "DAPconstrucción", nom_en: "DAPconstrucción")
 Ecoetiqueta.create(nom_ca: "DAP Alemania", nom_es: "DAP Alemania", nom_en: "DAP Alemania")
 Ecoetiqueta.create(nom_ca: "DAP Suècia", nom_es: "DAP Suècia", nom_en: "DAP Suècia")
+TipusIndicador.create(nom_ca: "Esgotament de recursos abiòtics per recursos no fòssils", nom_es: "Agotamiento de recursos abióticos para recursos no fósiles", nom_en: "Depletion of abiotical resources for non fossil resources")
 
 
