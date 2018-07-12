@@ -89,6 +89,19 @@ ca:
         empresa: "Empresa"
         descripcio: "Descripció"
         unitat_declarada: "Unitat declarada"
+      noticia:
+        imatge_noticia: "Imatge"
+        data: "Data"
+        dapc: "Notícia DAPconstrucción"
+        titol_ca: "Títol"
+        resum_ca: "Resum"
+        permalink_ca: "Permalink"
+        titol_es: "Títol"
+        resum_es: "Resum"
+        permalink_es: "Permalink"
+        titol_en: "Títol"
+        resum_en: "Resum"
+        permalink_en: "Permalink"
   layouts:
     top:
       register: "Registrar-se"

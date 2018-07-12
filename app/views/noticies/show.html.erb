@@ -1,7 +1,8 @@
 <div class="container">
   <div class="grid-x">
     <div class="cell medium-12">
-      <h1>@noticia.titol_ca</h1>
+      <h1><%= @noticia.titol_ca %></h1>
+      <p class="data-noticia"><%= @noticia.data.strftime("%-d-%m-%Y") %></p>
     </div>
   </div>
 
@@ -9,82 +10,12 @@
     <div class="medium-6 cell">
       <%= image_tag @noticia.imatge_noticia, class: 'img-noticia' %>
     </div>
+    <div class="medium-6 cell">
+      <%= @noticia.contingut_ca.html_safe %>
+    </div>
   </div>
+</div>
 
-<p>
-  <strong>Titol ca:</strong>
-  <%= @noticia.titol_ca %>
-</p>
-
-<p>
-  <strong>Resum ca:</strong>
-  <%= @noticia.resum_ca %>
-</p>
-
-<p>
-  <strong>Permalink ca:</strong>
-  <%= @noticia.permalink_ca %>
-</p>
-
-<p>
-  <strong>Contingut ca:</strong>
-  <%= @noticia.contingut_ca.html_safe %>
-</p>
-
-<p>
-  <strong>Titol es:</strong>
-  <%= @noticia.titol_es %>
-</p>
-
-<p>
-  <strong>Resum es:</strong>
-  <%= @noticia.resum_es %>
-</p>
-
-<p>
-  <strong>Permalink es:</strong>
-  <%= @noticia.permalink_es %>
-</p>
-
-<p>
-  <strong>Contingut es:</strong>
-  <%= @noticia.contingut_es %>
-</p>
-
-<p>
-  <strong>Titol en:</strong>
-  <%= @noticia.titol_en %>
-</p>
-
-<p>
-  <strong>Resum en:</strong>
-  <%= @noticia.resum_en %>
-</p>
-
-<p>
-  <strong>Permalink en:</strong>
-  <%= @noticia.permalink_en %>
-</p>
-
-<p>
-  <strong>Contingut en:</strong>
-  <%= @noticia.contingut_en %>
-</p>
-
-<p>
-  <strong>Data:</strong>
-  <%= @noticia.data %>
-</p>
-
-<p>
-  <strong>Dapc:</strong>
-  <%= @noticia.dapc %>
-</p>
-
-<p>
-  <strong>Image data:</strong>
-  <%= @noticia.image_data %>
-</p>
 
 <%= link_to 'Edit', edit_noticia_path(@noticia) %> |
 <%= link_to 'Back', noticies_path %>
