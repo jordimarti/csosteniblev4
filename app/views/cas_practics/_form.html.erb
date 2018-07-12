@@ -1,0 +1,57 @@
+
+<%= simple_form_for(@cas_practic) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :titol_ca %>
+    <%= f.input :resum_ca %>
+    <%= f.input :permalink_ca %>
+    <%= f.input :descripcio_ca %>
+    <%= f.input :emplacament_ca %>
+    <%= f.input :arquitectura_ca %>
+    <%= f.input :materials_ca %>
+    <%= f.input :energia_ca %>
+    <%= f.input :aigua_ca %>
+    <%= f.input :certificacions_ca %>
+    <%= f.input :arquitectes_ca %>
+    <%= f.input :emplacament_ca %>
+    <%= f.input :any_construccio_ca %>
+    <%= f.input :us_edifici_ca %>
+    <%= f.input :tipus_promocio_ca %>
+    <%= f.input :titol_es %>
+    <%= f.input :resum_es %>
+    <%= f.input :permalink_es %>
+    <%= f.input :descripcio_es %>
+    <%= f.input :emplacament_es %>
+    <%= f.input :arquitectura_es %>
+    <%= f.input :materials_es %>
+    <%= f.input :energia_es %>
+    <%= f.input :aigua_es %>
+    <%= f.input :certificacions_es %>
+    <%= f.input :arquitectes_es %>
+    <%= f.input :emplacament_es %>
+    <%= f.input :any_construccio_es %>
+    <%= f.input :us_edifici_es %>
+    <%= f.input :tipus_promocio_es %>
+    <%= f.input :titol_en %>
+    <%= f.input :resum_en %>
+    <%= f.input :permalink_en %>
+    <%= f.input :descripcio_en %>
+    <%= f.input :emplacament_en %>
+    <%= f.input :arquitectura_en %>
+    <%= f.input :materials_en %>
+    <%= f.input :energia_en %>
+    <%= f.input :aigua_en %>
+    <%= f.input :certificacions_en %>
+    <%= f.input :arquitectes_en %>
+    <%= f.input :emplacament_en %>
+    <%= f.input :any_construccio_en %>
+    <%= f.input :us_edifici_en %>
+    <%= f.input :tipus_promocio_en %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

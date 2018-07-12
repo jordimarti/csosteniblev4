@@ -1,0 +1,2 @@
+class CasPractic < ApplicationRecord
+end

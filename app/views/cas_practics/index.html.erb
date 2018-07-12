@@ -1,0 +1,115 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cas Practics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titol ca</th>
+      <th>Resum ca</th>
+      <th>Permalink ca</th>
+      <th>Descripcio ca</th>
+      <th>Emplacament ca</th>
+      <th>Arquitectura ca</th>
+      <th>Materials ca</th>
+      <th>Energia ca</th>
+      <th>Aigua ca</th>
+      <th>Certificacions ca</th>
+      <th>Arquitectes ca</th>
+      <th>Emplacament ca</th>
+      <th>Any construccio ca</th>
+      <th>Us edifici ca</th>
+      <th>Tipus promocio ca</th>
+      <th>Titol es</th>
+      <th>Resum es</th>
+      <th>Permalink es</th>
+      <th>Descripcio es</th>
+      <th>Emplacament es</th>
+      <th>Arquitectura es</th>
+      <th>Materials es</th>
+      <th>Energia es</th>
+      <th>Aigua es</th>
+      <th>Certificacions es</th>
+      <th>Arquitectes es</th>
+      <th>Emplacament es</th>
+      <th>Any construccio es</th>
+      <th>Us edifici es</th>
+      <th>Tipus promocio es</th>
+      <th>Titol en</th>
+      <th>Resum en</th>
+      <th>Permalink en</th>
+      <th>Descripcio en</th>
+      <th>Emplacament en</th>
+      <th>Arquitectura en</th>
+      <th>Materials en</th>
+      <th>Energia en</th>
+      <th>Aigua en</th>
+      <th>Certificacions en</th>
+      <th>Arquitectes en</th>
+      <th>Emplacament en</th>
+      <th>Any construccio en</th>
+      <th>Us edifici en</th>
+      <th>Tipus promocio en</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cas_practics.each do |cas_practic| %>
+      <tr>
+        <td><%= cas_practic.titol_ca %></td>
+        <td><%= cas_practic.resum_ca %></td>
+        <td><%= cas_practic.permalink_ca %></td>
+        <td><%= cas_practic.descripcio_ca %></td>
+        <td><%= cas_practic.emplacament_ca %></td>
+        <td><%= cas_practic.arquitectura_ca %></td>
+        <td><%= cas_practic.materials_ca %></td>
+        <td><%= cas_practic.energia_ca %></td>
+        <td><%= cas_practic.aigua_ca %></td>
+        <td><%= cas_practic.certificacions_ca %></td>
+        <td><%= cas_practic.arquitectes_ca %></td>
+        <td><%= cas_practic.emplacament_ca %></td>
+        <td><%= cas_practic.any_construccio_ca %></td>
+        <td><%= cas_practic.us_edifici_ca %></td>
+        <td><%= cas_practic.tipus_promocio_ca %></td>
+        <td><%= cas_practic.titol_es %></td>
+        <td><%= cas_practic.resum_es %></td>
+        <td><%= cas_practic.permalink_es %></td>
+        <td><%= cas_practic.descripcio_es %></td>
+        <td><%= cas_practic.emplacament_es %></td>
+        <td><%= cas_practic.arquitectura_es %></td>
+        <td><%= cas_practic.materials_es %></td>
+        <td><%= cas_practic.energia_es %></td>
+        <td><%= cas_practic.aigua_es %></td>
+        <td><%= cas_practic.certificacions_es %></td>
+        <td><%= cas_practic.arquitectes_es %></td>
+        <td><%= cas_practic.emplacament_es %></td>
+        <td><%= cas_practic.any_construccio_es %></td>
+        <td><%= cas_practic.us_edifici_es %></td>
+        <td><%= cas_practic.tipus_promocio_es %></td>
+        <td><%= cas_practic.titol_en %></td>
+        <td><%= cas_practic.resum_en %></td>
+        <td><%= cas_practic.permalink_en %></td>
+        <td><%= cas_practic.descripcio_en %></td>
+        <td><%= cas_practic.emplacament_en %></td>
+        <td><%= cas_practic.arquitectura_en %></td>
+        <td><%= cas_practic.materials_en %></td>
+        <td><%= cas_practic.energia_en %></td>
+        <td><%= cas_practic.aigua_en %></td>
+        <td><%= cas_practic.certificacions_en %></td>
+        <td><%= cas_practic.arquitectes_en %></td>
+        <td><%= cas_practic.emplacament_en %></td>
+        <td><%= cas_practic.any_construccio_en %></td>
+        <td><%= cas_practic.us_edifici_en %></td>
+        <td><%= cas_practic.tipus_promocio_en %></td>
+        <td><%= link_to 'Show', cas_practic %></td>
+        <td><%= link_to 'Edit', edit_cas_practic_path(cas_practic) %></td>
+        <td><%= link_to 'Destroy', cas_practic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cas Practic', new_cas_practic_path %>

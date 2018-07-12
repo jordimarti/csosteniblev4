@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_13_142736) do
+ActiveRecord::Schema.define(version: 2018_07_12_154559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,53 @@ ActiveRecord::Schema.define(version: 2018_06_13_142736) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "cas_practics", force: :cascade do |t|
+    t.string "titol_ca"
+    t.text "resum_ca"
+    t.string "permalink_ca"
+    t.text "descripcio_ca"
+    t.string "emplacament_ca"
+    t.text "arquitectura_ca"
+    t.text "materials_ca"
+    t.text "energia_ca"
+    t.text "aigua_ca"
+    t.text "certificacions_ca"
+    t.string "arquitectes_ca"
+    t.string "any_construccio_ca"
+    t.string "us_edifici_ca"
+    t.string "tipus_promocio_ca"
+    t.string "titol_es"
+    t.text "resum_es"
+    t.string "permalink_es"
+    t.text "descripcio_es"
+    t.string "emplacament_es"
+    t.text "arquitectura_es"
+    t.text "materials_es"
+    t.text "energia_es"
+    t.text "aigua_es"
+    t.text "certificacions_es"
+    t.string "arquitectes_es"
+    t.string "any_construccio_es"
+    t.string "us_edifici_es"
+    t.string "tipus_promocio_es"
+    t.string "titol_en"
+    t.text "resum_en"
+    t.string "permalink_en"
+    t.text "descripcio_en"
+    t.string "emplacament_en"
+    t.text "arquitectura_en"
+    t.text "materials_en"
+    t.text "energia_en"
+    t.text "aigua_en"
+    t.text "certificacions_en"
+    t.string "arquitectes_en"
+    t.string "any_construccio_en"
+    t.string "us_edifici_en"
+    t.string "tipus_promocio_en"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categoria_productes", force: :cascade do |t|

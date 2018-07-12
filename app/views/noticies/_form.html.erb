@@ -14,7 +14,9 @@
           <%= f.input :imatge_noticia, as: :file %>
         </div>
         <div class="medium-5 cell">
-          <%= image_tag @noticia.imatge_noticia, class: 'img-noticia' %>
+          <% if @noticia.imatge_noticia.attached? %>
+            <%= image_tag @noticia.imatge_noticia, class: 'img-noticia' %>
+          <% end %>
         </div>
       </div>
     </div>

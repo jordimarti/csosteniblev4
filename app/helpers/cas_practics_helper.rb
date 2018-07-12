@@ -1,0 +1,2 @@
+module CasPracticsHelper
+end

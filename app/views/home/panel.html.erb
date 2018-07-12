@@ -22,6 +22,21 @@
       </div>
     <% end %>
     <div class="medium-4 large-3 cell">
+      <%= link_to new_producte_path do %>
+        <div class="panell-control-item">
+          <%= image_tag("https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/producte_fusta.jpg", class: 'imatge-item-panell-control') %>
+          <div class="text-item-panell-control">
+            <h3 class="panell-control-item-title">Productes</h3>
+            <% if current_user.role == 'editor' %>
+              <p>Administra els productes o crea'n un de nou</p>
+            <% else %>
+              <p>Introdueix un producte</p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="medium-4 large-3 cell">
       <div class="panell-control-item">
         <%= image_tag("https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/cas12_max_2.jpg", class: 'imatge-item-panell-control') %>
         <div class="text-item-panell-control">
