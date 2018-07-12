@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="grid-x">
+    <div class="medium-12 cell">
+      <div class="main-title-container noticies-main-title-container">
+        <span class="main-title"><%= t('.administracio_noticies') %></span>
+      </div>
+
+      <div class="llistat-noticies">
+      	<table>
+				  <thead>
+				    <tr>
+				      <th>Data</th>
+				      <th>Títol</th>
+				      <th></th>
+				     </tr>
+				  </thead>
+				  <tbody>
+				  	<% @noticies.each do |noticia| %>
+				  		<tr>
+				  			<td><%= noticia.data.strftime("%-d-%m-%Y") %></td>
+				  			<td><%= link_to noticia.titol_ca, edit_noticia_path(noticia) %></td>
+				  			<td><%= link_to 'Eliminar', noticia, method: :delete, data: { confirm: 'Segur que vols eliminar aquesta notícia?' } %></td>
+				  		</tr>
+				  	<% end %>
+				  </tbody>
+      	</table>
+      </div>
+    </div>
+  </div>
+</div>

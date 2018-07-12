@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'dapcons/comparador'
   get 'dapcons/llistat_productes'
   resources :videos
+  get 'noticies/llistat'
   resources :noticies
   resources :empreses
   resources :categories

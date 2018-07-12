@@ -144,6 +144,10 @@ ca:
   noticies:
     show:
       ultimes_noticies: "ÚLTIMES NOTÍCIES"
+    form:
+      guardar: "Desar canvis"
+    llistat:
+      administracio_noticies: "Administració de les notícies"
   videos:
     show:
       ultims_videos: "ÚLTIMS VÍDEOS"
