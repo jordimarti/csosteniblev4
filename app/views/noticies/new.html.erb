@@ -1,5 +1,11 @@
-<h1>New Noticia</h1>
+<div class="container">
+	<div class="grid-x">
+		<div class="cell medium-12">
+			<h1>Nova notícia</h1>
+		</div>
+	</div>
 
-<%= render 'form', noticia: @noticia %>
+	<%= render 'form', noticia: @noticia %>
 
-<%= link_to 'Back', noticies_path %>
+	<%= link_to 'Back', noticies_path %>
+</div>

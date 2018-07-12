@@ -1,4 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="grid-x">
+    <div class="cell medium-12">
+      <h1>@noticia.titol_ca</h1>
+    </div>
+  </div>
+
+  <div class="grid-x grid-margin-x">
+    <div class="medium-6 cell">
+      <%= image_tag noticia.imatge_noticia, class: 'img-noticia' %>
+    </div>
+  </div>
 
 <p>
   <strong>Titol ca:</strong>
@@ -17,7 +28,7 @@
 
 <p>
   <strong>Contingut ca:</strong>
-  <%= @noticia.contingut_ca %>
+  <%= @noticia.contingut_ca.html_safe %>
 </p>
 
 <p>
