@@ -15,7 +15,16 @@
 	        <div class="medium-4 cell">
 						<%= link_to noticia do %>
 		          <div class="container-noticia-lateral">
-		            <%= image_tag noticia.image_url(:thumb) %>
+		            <% if noticia.imatge_noticia.attached? %>
+	                <%= link_to noticia do %>
+	                  <%= image_tag noticia.imatge_noticia.variant(resize: "500x500"), class: 'img-index-noticia' %>
+	                <% end %>
+	              <% end %> 
+		            <div class="titol-index-noticia">
+		              <%= link_to noticia do %>
+		                <h4><%= noticia.titol_ca %></h4>
+		              <% end %>
+		            </div>
 		            <span class="titol-noticia-lateral"><%= noticia.titol_ca %></span>
 		          </div>
 		        <% end %>
