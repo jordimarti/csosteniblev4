@@ -250,6 +250,14 @@ ca:
     index:
       panell: "Panell de control"
       tipus_indicadors: "Tipus d'indicadors"
+    new:
+      panell: "Panell de control"
+      nova_categoria_indicador: "Nova categoria d'indicador"
+    edit:
+      panell: "Panell de control"
+      editar_tipus_indicador: "Editar el tipus d'indicador"
+    form:
+      guardar: "Guardar"
   cocoon:
     defaults:
       add: "+ Afegir element"
