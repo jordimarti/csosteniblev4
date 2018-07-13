@@ -1,33 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="grid-x grid-margin-x">
+    <div class="medium-12 cell">
+      <div class="main-title-container">
+        <span class="main-title"><%= t('.panell') %></span>
+        <br/>
+        <span class="secondary-title"><%= t('.tipus_indicadors') %></span>
+      </div>
+    </div>
+  </div>
 
-<h1>Tipus Indicadors</h1>
+  <div class="grid-x grid-margin-x">
+    <div class="medium-12 cell">
+      <table>
+        <thead>
+          <tr>
+            <th>Indicadors</th>
+            <th>Unitats</th>
+            <th></th>
+          </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nom ca</th>
-      <th>Nom es</th>
-      <th>Nom en</th>
-      <th>Unitats</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tipus_indicadors.each do |tipus_indicador| %>
-      <tr>
-        <td><%= tipus_indicador.nom_ca %></td>
-        <td><%= tipus_indicador.nom_es %></td>
-        <td><%= tipus_indicador.nom_en %></td>
-        <td><%= tipus_indicador.unitats %></td>
-        <td><%= link_to 'Show', tipus_indicador %></td>
-        <td><%= link_to 'Edit', edit_tipus_indicador_path(tipus_indicador) %></td>
-        <td><%= link_to 'Destroy', tipus_indicador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Tipus Indicador', new_tipus_indicador_path %>
+        <tbody>
+          <% @tipus_indicadors.each do |tipus_indicador| %>
+            <tr>
+              <td><%= link_to tipus_indicador.nom_ca , edit_tipus_indicador_path(tipus_indicador) %></td>
+              <td><%= tipus_indicador.unitats %></td>
+              <td><%= link_to 'Eliminar', tipus_indicador, method: :delete, data: { confirm: 'Segur que vols eliminar aquest indicador?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="medium-12 cell">
+      <%= link_to t('.nou_tipus_indicador'), new_tipus_indicador_path, class: 'button' %>
+    </div>
+  </div>
+  
+</div>

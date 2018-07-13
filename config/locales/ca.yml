@@ -210,6 +210,10 @@ ca:
   producte_dapcons:
     form:
       guardar: "Desar canvis"
+    index:
+      panell: "Panell de control"
+      producte_dapcons: "Producte DAPcons®"
+      nou_producte: "Nou producte"
   producte_dapcons_usuaris:
     index:
       panell: "Panell de control"
@@ -242,6 +246,10 @@ ca:
       c3: "C3: Gestió de residus per reutilització, recuperació i reciclatge"
       c4: "C4: Eliminació final"
       d: "D: Potencial de reutilització, recuperació i reciclatge"
+  tipus_indicadors:
+    index:
+      panell: "Panell de control"
+      tipus_indicadors: "Tipus d'indicadors"
   cocoon:
     defaults:
       add: "+ Afegir element"
