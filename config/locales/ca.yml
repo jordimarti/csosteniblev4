@@ -140,7 +140,8 @@ ca:
     panel:
       panell: "Panell de control"
       declaracions: "Declaracions Ambientals de Producte"
-      text_declaracions: "Crea un producte per a les comparacions de les Declaracions Ambientals de Producte"
+      text_declaracions_editor: "Administra els productes del sistema DAPcons"
+      text_declaracions_usuari: "Crea un producte per a les comparacions de les Declaracions Ambientals de Producte"
   noticies:
     show:
       ultimes_noticies: "ÚLTIMES NOTÍCIES"

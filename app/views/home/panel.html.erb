@@ -55,7 +55,11 @@
           <%= image_tag("https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/taula_dades3.jpg", class: 'imatge-item-panell-control') %>
           <div class="text-item-panell-control">
             <h3 class="panell-control-item-title"><%= t('.declaracions') %></h3>
-            <p><%= t('.text_declaracions') %></p>
+            <% if current_user.role == 'editor' %>
+              <p><%= t('.text_declaracions_editor') %></p>
+            <% else %>
+              <p><%= t('.text_declaracions_usuari') %></p>
+            <% end %>
           </div>
         </div>
       <% end %>
