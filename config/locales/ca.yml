@@ -229,6 +229,8 @@ ca:
   producte_dapcons:
     form:
       guardar: "Desar canvis"
+      indicador_fields:
+        a1-a3: "Primer"
     index:
       panell: "Panell de control"
       producte_dapcons: "Producte DAPcons®"
