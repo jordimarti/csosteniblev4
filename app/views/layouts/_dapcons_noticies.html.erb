@@ -6,8 +6,9 @@
 					NOTÍCIES DAPcons<sup>®</sup>
 				</div>
 				<div class="grid-x grid-margin-x">
-					<div class="medium-2 cell">
-						<% @noticies.each do |noticia| %>
+					
+					<% @noticies.each do |noticia| %>
+						<div class="medium-2 cell">
 							<div class="container-noticia-lateral">
 								<% if noticia.imatge_noticia.attached? %>
 		              <%= link_to noticia do %>
@@ -20,8 +21,9 @@
 		              <% end %>
 		            </div>
 							</div>
-						<% end %>
-					</div>
+						</div>
+					<% end %>
+					
 				</div>
 			</div>
 		</div>
