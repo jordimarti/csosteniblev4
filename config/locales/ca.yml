@@ -229,14 +229,25 @@ ca:
   producte_dapcons:
     form:
       guardar: "Desar canvis"
-      indicador_fields:
-        a1-a3: "Primer"
     index:
       panell: "Panell de control"
       producte_dapcons: "Producte DAPcons®"
       nou_producte: "Nou producte"
     new:
       nou_producte: "Nousss producte"
+    indicador_fields:
+      a1-a3: "A1-A3: Extracció, transport i fabricació"
+      a4: "A4: Transport del producte a obra"
+      a5: "A5: Instal·lació del producte i construcció"
+      b1: "B1: Ús"
+      b2: "B2: Manteniment"
+      b3: "B3: Reparació"
+      b4-b7: "B4-B7: Substitució, rehabilitació i ús d'energia i aigua operacional"
+      c1: "C1: Deconstrucció i enderroc"
+      c2: "C2: Transport"
+      c3: "C3: Gestió de residus per reutilització, recuperació i reciclatge"
+      c4: "C4: Eliminació final"
+      d: "D: Potencial de reutilització, recuperació i reciclatge"
   producte_dapcons_usuaris:
     index:
       panell: "Panell de control"
