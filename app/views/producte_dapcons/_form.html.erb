@@ -8,41 +8,43 @@
   <div class="form-inputs">
     <div class="grid-x grid-margin-x">
       <div class="medium-4 cell">
-        <%= f.input :nom_ca %>
+        <div class="editor-producte-dapcons-container">
+          <div class="titol-editor-producte-dapcons">
+            <h3>Català</h3>
+          </div>
+          <%= f.input :nom_ca %>
+          <%= f.input :descripcio_ca %>
+          <%= f.input :rcp_ca %>
+          <%= f.input :unitat_declarada_ca %>
+        </div>
       </div>
       <div class="medium-4 cell">
-        <%= f.input :nom_es %>
+        <div class="editor-producte-dapcons-container">
+          <div class="titol-editor-producte-dapcons">
+            <h3>Castellà</h3>
+          </div>
+          <%= f.input :nom_es %>
+          <%= f.input :descripcio_es %>
+          <%= f.input :rcp_es %>
+          <%= f.input :unitat_declarada_es %>
+        </div>
       </div>
       <div class="medium-4 cell">
-        <%= f.input :nom_en %>
+        <div class="editor-producte-dapcons-container">
+          <div class="titol-editor-producte-dapcons">
+            <h3>Anglès</h3>
+          </div>
+          <%= f.input :nom_ca %>
+          <%= f.input :descripcio_ca %>
+          <%= f.input :rcp_ca %>
+          <%= f.input :unitat_declarada_ca %>
+        </div>
       </div>
-      <div class="medium-4 cell">
-        <%= f.input :descripcio_ca %>
-      </div>
-      <div class="medium-4 cell">
-        <%= f.input :descripcio_es %>
-      </div>
-      <div class="medium-4 cell">
-        <%= f.input :descripcio_en %>
-      </div>
-      <div class="medium-4 cell">
-        <%= f.input :rcp_ca %>
-      </div>
-      <div class="medium-4 cell">
-        <%= f.input :rcp_es %>
-      </div>
-      <div class="medium-4 cell">
-        <%= f.input :rcp_en %>
-      </div>
-      <div class="medium-4 cell">
-        <%= f.input :unitat_declarada_ca %>
-      </div>
-      <div class="medium-4 cell">
-        <%= f.input :unitat_declarada_es %>
-      </div>
-      <div class="medium-4 cell">
-        <%= f.input :unitat_declarada_en %>
-      </div>
+    </div>
+
+
+
+    <div class="grid-x grid-margin-x">
       <div class="medium-3 cell">
         <%= f.input :identificador %>
       </div>

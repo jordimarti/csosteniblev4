@@ -84,6 +84,24 @@ ca:
       user:
         first_name: "Nom"
         last_name: "Cognoms"
+      producte_dapcons:
+        nom_ca: "Nom"
+        nom_es: "Nom"
+        nom_en: "Nom"
+        descripcio_ca: "Descripció"
+        descripcio_es: "Descripció"
+        descripcio_en: "Descripció"
+        rcp_ca: "Regles de Categoria de Producte"
+        rcp_es: "Regles de Categoria de Producte"
+        rcp_en: "Regles de Categoria de Producte"
+        unitat_declarada_ca: "Unitat declarada"
+        unitat_declarada_es: "Unitat declarada"
+        unitat_declarada_en: "Unitat declarada"
+        identificador: "Identificador"
+        empresa: "Empresa"
+        validesa_inici: "Data inici validesa"
+        validesa_fi: "Data fi validesa"
+        categoria_indicadors: "Categoria"
       producte_dapcons_usuari:
         nom: "Nom del producte"
         empresa: "Empresa"
@@ -215,6 +233,8 @@ ca:
       panell: "Panell de control"
       producte_dapcons: "Producte DAPcons®"
       nou_producte: "Nou producte"
+    new:
+      nou_producte: "Nousss producte"
   producte_dapcons_usuaris:
     index:
       panell: "Panell de control"
