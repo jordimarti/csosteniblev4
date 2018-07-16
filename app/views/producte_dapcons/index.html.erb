@@ -24,7 +24,7 @@
         <tbody>
         <% @producte_dapcons.each do |producte_dapcons| %>
           <tr>
-            <td><%= producte_dapcons.nom_ca %></td>
+            <td><%= link_to producte_dapcons.nom_ca, edit_producte_dapcons_path(producte_dapcons) %></td>
             <td><%= producte_dapcons.empresa %></td>
             <td><%= producte_dapcons.descripcio_ca %></td>
             <td><%= producte_dapcons.unitat_declarada_ca %></td>
