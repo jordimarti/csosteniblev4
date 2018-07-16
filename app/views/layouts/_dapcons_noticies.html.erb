@@ -4,34 +4,25 @@
 				<div class="titol-seccio">
 					NOTÍCIES DAPcons<sup>®</sup>
 				</div>
-				<% counter = 0 %>
 				<div class="grid-x grid-margin-x">
-				<% @noticies.each do |noticia| %>
-	        <% if counter != 0 && counter % 3 == 0 %>
-	          </div>
-	          <div class="grid-x grid-margin-x">
-	        <% end %>
-
-	        <div class="medium-4 cell">
-						<%= link_to noticia do %>
-		          <div class="container-noticia-lateral">
-		            <% if noticia.imatge_noticia.attached? %>
-	                <%= link_to noticia do %>
-	                  <%= image_tag noticia.imatge_noticia.variant(resize: "500x500"), class: 'img-index-noticia' %>
-	                <% end %>
-	              <% end %> 
-		            <div class="titol-index-noticia">
+					<div class="medium-2 cell">
+						<% @noticies.each do |noticia| %>
+							<div class="container-noticia-lateral">
+								<% if noticia.imatge_noticia.attached? %>
+		              <%= link_to noticia do %>
+		                <%= image_tag noticia.imatge_noticia.variant(resize: "500x500"), class: 'img-noticia-dapcons' %>
+		              <% end %>
+		            <% end %> 
+		            <div class="titol-noticia-dapcons">
 		              <%= link_to noticia do %>
 		                <h4><%= noticia.titol_ca %></h4>
 		              <% end %>
 		            </div>
-		            <span class="titol-noticia-lateral"><%= noticia.titol_ca %></span>
-		          </div>
-		        <% end %>
+							</div>
+						<% end %>
 					</div>
-					<% counter += 1 %>
-				<% end %>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+
