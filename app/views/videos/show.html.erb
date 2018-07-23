@@ -9,25 +9,34 @@
         <div class="contingut-video">
           <%= raw @video.contingut_ca %>
         </div>
-      <% else %>
+      <% elsif params[:locale] == 'es' %>
         <div class="titol-video">
           <%= @video.titol_es %>
         </div>
         <div class="contingut-video">
-          <%= sanitize @video.contingut_es %>
+          <%= raw @video.contingut_es %>
+        </div>
+      <% else %>
+        <div class="titol-video">
+          <%= @video.titol_en %>
+        </div>
+        <div class="contingut-video">
+          <%= raw @video.contingut_en %>
         </div>
       <% end %>
 
     </div>
-    <div class="medium-4 cell">
+    <div class="medium-4 large-3 large-offset-1 cell">
       <div class="titol-seccio">
         NOTÍCIES
       </div>
       <div class="noticies-container">
         <% @noticies.each do |noticia| %>
-          <div class="noticia-container">
-            <h3><%= noticia.titol_ca %></h3>
-            <p><%= noticia.resum_ca %></p>
+          <div class="noticia-lateral-container">
+            <% if noticia.imatge_noticia.attached? %>
+              <%= image_tag noticia.imatge_noticia %>
+            <% end %>
+            <h3 class="noticia-lateral-titol"><%= noticia.titol_ca %></h3>
           </div>
         <% end %>
       </div>
