@@ -85,6 +85,28 @@
 	.resum-video {
 		display: none;
 	}
+
+	.img-index-video {
+		width: 100px;
+	}
+}
+
+@media screen and (max-width: 40em) {
+	.resum-video {
+		display: none;
+	}
+
+	.img-index-video {
+		width: 100px;
+	}
+
+	.text-index-video {
+		margin-left: 100px;
+	}
+
+	.index-video-container {
+		height: 150px;
+	}
 }
 
 
