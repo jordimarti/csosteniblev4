@@ -12,32 +12,36 @@
 	      		<div class="medium-6 cell">
 	      			<div class="filtre-dapcons-container">
 				      	<select name="filtre-dapcons" id="filtre-dapcons">
-						      <option selected="selected">Ordenar per data de realització de DAPcons</option>
-						      <option>Ordendar per nom d'empresa</option>
-						      <option>Agrupar per categories</option>
+						      <option value="data" <% if params[:filtre] == 'data' %> selected="selected" <% end %>>Ordenar per data de realització de DAPcons</option>
+						      <option value="nom" <% if params[:filtre] == 'nom' %> selected="selected" <% end %>>Ordendar per nom d'empresa</option>
+						      <option value="categoria" <% if params[:filtre] == 'categoria' %> selected="selected" <% end %>>Agrupar per categories</option>
 						    </select>
 						  </div>
 					  </div>
 					  <div class="medium-3 cell">
 					  	<div class="checkbox-vigent-container">
-	    					<input type="checkbox" name="checkbox-vigent" id="checkbox-vigent">
+	    					<input type="checkbox" name="checkbox-vigent" id="checkbox-vigent" <% if params[:validesa] == 'true' %> checked <% end %>>
 	    					<label for="checkbox-vigent">DAPcons vigent</label>
 	    				</div>
 					  </div>
 					  <div class="medium-3 cell">
 					  	<div class="button-actualitzar-container">
-					  		<button class="ui-button ui-widget ui-corner-all">Actualitzar llistat</button>
+					  		<button class="ui-button ui-widget ui-corner-all" id="actualitzar">Actualitzar llistat</button>
 					  	</div>
 					  </div>
 					</div>
 	      </div>
 
 	      <div class="llistat-productes-dapcons">
-	      	<% @productes.each do |producte| %>
-	      		<div class="item-producte-dapcons">
-	      			<%= producte.nom_ca %> - <%= producte.validesa_inici %> - <%= producte.validesa_fi %>
-	      		</div>
-	      	<% end %>
+	      	<% if @categoria == true %>
+		      	<p>Aquí categories</p>
+		      <% else %>
+		      	<% @productes.each do |producte| %>
+		      		<div class="item-producte-dapcons">
+		      			<%= producte.nom_ca %> - <%= producte.validesa_inici %> - <%= producte.validesa_fi %>
+		      		</div>
+		      	<% end %>
+		      <% end %>
 	      </div>
 	  
     	</div>
@@ -45,3 +49,14 @@
 
 </div>
 <%= render "layouts/dapcons_noticies" %>
+
+<script>
+function goToURL(filtre, validesa) {
+	location.href = 'productes_registrats?filtre=' + filtre + '&validesa=' + validesa + '&locale=<%= params[:locale] %>';
+}
+$( "#actualitzar" ).on( "click", function( event ) {
+	filtre = $("#filtre-dapcons").val();
+	validesa = $("#checkbox-vigent").is(":checked");
+	goToURL(filtre, validesa)
+});
+</script>

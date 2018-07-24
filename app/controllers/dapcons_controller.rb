@@ -14,8 +14,26 @@ class DapconsController < ApplicationController
   end
 
   def productes_registrats
-    #@productes = ProducteDapcons.all.order(validesa_inici: :desc)
-    @productes = ProducteDapcons.where(created_at: (Time.now.midnight - 1.day)..Time.now.midnight).order(validesa_inici: :desc)
+    #fins que no es digui el contrari no s'han de separar productes per categoria
+    @categoria = false
+    #productes vàlids
+    if params[:validesa] == 'true'
+      productes_valids = ProducteDapcons.where("validesa_fi > ?", Date.today).order(validesa_inici: :desc)
+    else
+      productes_valids = ProducteDapcons.all.order(validesa_inici: :desc)
+    end
+    #filtres
+    if params[:filtre] == 'data'
+      @productes = productes_valids.order(validesa_inici: :desc)
+    elsif params[:filtre] == 'nom'
+      @productes = productes_valids.order(empresa: :asc)
+    elsif params[:filtre] == 'categoria'
+      @categoria = true
+      @aillants_termics = productes_valids.where(categoria_indicadors: '001')
+      @revestiments_ceramics = productes_valids.where(categoria_indicadors: '002')
+      @pedra_natural = productes_valids.where(categoria_indicadors: '004')
+      @productes_general = productes_valids.where(categoria_indicadors: '100')
+    end
   end
 
   def empreses_dapcons
