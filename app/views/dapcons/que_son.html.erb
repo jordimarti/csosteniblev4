@@ -1,2 +1,42 @@
-<h1>Dapcons#que_son</h1>
-<p>Find me in app/views/dapcons/que_son.html.erb</p>
+<div class="container">
+  <%= render "layouts/dapcons_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="continguts-dapcons">
+				<div class="sub-title-container">
+	        <span class="sub-title"><%= raw t('.que_son') %></span>
+	      </div>
+	  
+    		<p>Les DAPcons<sup>®</sup> es fonamenten en diverses directrius ISO i s’han desenvolupant des de l'any 2000. A Europa, a partir del mandat de la Comissió Europea per al desenvolupament d’una normativa en el camp de la sostenibilitat dels treballs constructius, s’han desenvolupat a països com França, Alemanya, Suècia, Regne Unit, Holanda, Finlàndia, Noruega i Espanya. D’altres països, fora de l’UE ahn estat els EUA, Canadà, Japó o Corea.</p>
+
+    		<p>Les DAPcons<sup>®</sup> són les Declaracions Ambientals de Producte de Construcció i són un instrument útil per a la millora ambiental en el sector de la construcció i per al compliment de la legislació nacional i internacional. </p>
+
+    		<p>Existeixen també les  DAPcons<sup>®</sup> sectorials, que mostren els valors mitjans d’un nombre de productes amb característiques funcionals similars. Aquestes resultaran especialment útils per al tècnic en la primera etapa de projecte on es requereix conèixer l’impacte ambiental d’un producte tipus sense conèixer el model ni la marca exacta. </p>
+
+				<div class="grid-x grid-margin-x">
+					<div class="small-3 cell">
+						<%= link_to video_path(14) do %>
+							<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/video_dapcons2.jpg", class: "video2-dapcons" %>
+						<% end %>
+					</div>
+					<div class="small-9 cell">
+						<p><span class="text-negreta">Declaració Ambiental de Productes de Construcció</span><br/>
+						En aquest vídeo de l'Agenda de la Construcció Sostenible s'explica què són les Declaracions Ambientals de Producte, també anomenades EPD.</p>
+					</div>
+				</div>
+				<br/>
+				<div class="grid-x grid-margin-x">
+					<div class="small-3 cell">
+						<%= link_to "https://dcyqocdz7x3wj.cloudfront.net/documents/DAPcons.pdf" do %>
+							<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/pdf_dapcons.png", class: "pdf-dapcons" %>
+						<% end %>
+					</div>
+					<div class="small-9 cell">
+						<p><a href="">Descarregueu el díptic en PDF</a> per a més informació.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+</div>
+<%= render "layouts/dapcons_noticies" %>
