@@ -14,6 +14,8 @@ class DapconsController < ApplicationController
   end
 
   def productes_registrats
+    #@productes = ProducteDapcons.all.order(validesa_inici: :desc)
+    @productes = ProducteDapcons.where(created_at: (Time.now.midnight - 1.day)..Time.now.midnight).order(validesa_inici: :desc)
   end
 
   def empreses_dapcons

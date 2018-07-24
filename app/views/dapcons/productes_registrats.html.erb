@@ -1,2 +1,47 @@
-<h1>Dapcons#productes_registrats</h1>
-<p>Find me in app/views/dapcons/productes_registrats.html.erb</p>
+<div class="container">
+  <%= render "layouts/dapcons_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="continguts-dapcons">
+				<div class="sub-title-container">
+	        <span class="sub-title"><%= raw t('.productes_registrats') %></span>
+	      </div>
+
+	      <div class="filtres-productes-dapcons">
+	      	<div class="grid-x grid-margin-x">
+	      		<div class="medium-6 cell">
+	      			<div class="filtre-dapcons-container">
+				      	<select name="filtre-dapcons" id="filtre-dapcons">
+						      <option selected="selected">Ordenar per data de realització de DAPcons</option>
+						      <option>Ordendar per nom d'empresa</option>
+						      <option>Agrupar per categories</option>
+						    </select>
+						  </div>
+					  </div>
+					  <div class="medium-3 cell">
+					  	<div class="checkbox-vigent-container">
+	    					<input type="checkbox" name="checkbox-vigent" id="checkbox-vigent">
+	    					<label for="checkbox-vigent">DAPcons vigent</label>
+	    				</div>
+					  </div>
+					  <div class="medium-3 cell">
+					  	<div class="button-actualitzar-container">
+					  		<button class="ui-button ui-widget ui-corner-all">Actualitzar llistat</button>
+					  	</div>
+					  </div>
+					</div>
+	      </div>
+
+	      <div class="llistat-productes-dapcons">
+	      	<% @productes.each do |producte| %>
+	      		<div class="item-producte-dapcons">
+	      			<%= producte.nom_ca %> - <%= producte.validesa_inici %> - <%= producte.validesa_fi %>
+	      		</div>
+	      	<% end %>
+	      </div>
+	  
+    	</div>
+    </div>
+
+</div>
+<%= render "layouts/dapcons_noticies" %>
