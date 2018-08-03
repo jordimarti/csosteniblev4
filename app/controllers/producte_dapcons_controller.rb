@@ -4,7 +4,7 @@ class ProducteDapconsController < ApplicationController
   # GET /producte_dapcons
   # GET /producte_dapcons.json
   def index
-    @producte_dapcons = ProducteDapcons.all
+    @producte_dapcons = ProducteDapcons.all.order(validesa_inici: :asc)
   end
 
   # GET /producte_dapcons/1

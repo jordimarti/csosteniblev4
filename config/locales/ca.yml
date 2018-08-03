@@ -234,6 +234,10 @@ ca:
       panell: "Panell de control"
       producte_dapcons: "Producte DAPcons®"
       nou_producte: "Nou producte"
+      nom: "Nom"
+      empresa: "Empresa"
+      validesa_inici: "Inici validesa"
+      validesa_fi: "Fi validesa"
     new:
       nou_producte: "Nousss producte"
     indicador_fields:
