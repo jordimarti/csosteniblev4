@@ -238,6 +238,7 @@ ca:
       empresa: "Empresa"
       validesa_inici: "Inici validesa"
       validesa_fi: "Fi validesa"
+      identificador: "Identificador"
     new:
       nou_producte: "Nousss producte"
     indicador_fields:
