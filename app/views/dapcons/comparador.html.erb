@@ -1,3 +1,5 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
 <div class="container">
   <%= render "layouts/dapcons_navigation" %>
 
@@ -103,7 +105,11 @@
                 </th>
       				</thead>
       				<tbody>
+                <% valors_indicador1 = Array.new %>
+                <% valors_indicador2 = Array.new %>
+                <% noms_indicador = Array.new %>
                 <% @tipus_indicadors.each do |tipus_indicador| %>
+                  <% noms_indicador.push(tipus_indicador.nom_ca) %>
                   <tr>
                     <td class="body-cell-indicadors"><%= tipus_indicador.nom_ca %> <span class="unitats-indicadors">(<%= tipus_indicador.unitats %>)</span></td>
                     <% 
@@ -136,18 +142,85 @@
                     <td class="body-cell-indicadors <%= cell1_class %>">
                       <% if indicador1.present? %>
                         <%= indicador1.valor %>
+                        <% valors_indicador1.push(indicador1.valor) %>
                       <% end %>
                     </td>
                     
                     <td class="body-cell-indicadors <%= cell2_class %>">
                       <% if indicador2.present? %>
                         <%= indicador2.valor %>
+                        <% valors_indicador2.push(indicador2.valor) %>
                       <% end %>
                     </td>
                   </tr>
                 <% end %>
       				</tbody>
       			</table>
+
+            <div class="grafic-comparador">
+              <% 
+              # Volem que el número gran sigui 100 i el petit el percentatge que correspongui, per això creem un Array de valors transformats
+              valors_transformats_indicador1 = Array.new
+              valors_transformats_indicador2 = Array.new
+              puts("*****************************")
+              puts(valors_indicador2[1])
+              
+                for i in 0..6
+                  # Primer comprovem quin és més gran
+                  if valors_indicador1[i].present? && valors_indicador2[i].present?
+                    if valors_indicador1[i] > valors_indicador2[i]
+                      numero_gran = valors_indicador1[i]
+                    else
+                      numero_gran = valors_indicador2[i]
+                    end
+                  
+                    # Trobem per quin número hem de multiplicar els valors perquè el més gran dóni 100
+                    if numero_gran == 0
+                      multiplicador = 0
+                      else
+                      multiplicador = 100/numero_gran
+                    end
+                    # Transformem els valors per a tenir els percentatges
+                    val1 = ((valors_indicador1[i] * multiplicador)*100).round / 100
+                    val2 = ((valors_indicador2[i] * multiplicador)*100).round / 100
+                    valors_transformats_indicador1.push(val1)
+                    valors_transformats_indicador2.push(val2)
+                  end
+                end
+              
+              %>
+
+              <canvas id="<%= etapa[0] %>" width="400" height="150"></canvas>
+              <script>
+              var ctx = document.getElementById("<%= etapa[0] %>").getContext('2d');
+              var myChart = new Chart(ctx, {
+                  type: 'horizontalBar',
+                  data: {
+                      labels: ["Potencial d'escalfament global", "Potencial d'esgotament d'ozó estratosfèric", "Potencial d'acidificació", "Esgotament de recursos abiòtics - combustibles fòssils", "Esgotament de recursos abiòtics - elements", "Potencial d'eutrofització", "Potencial de formació d'ozó fotoquímic"],
+                      datasets: [{
+                          label: "<%= @producte1.nom_ca %>",
+                          data: <%= valors_transformats_indicador1 %>,
+                          backgroundColor: 'rgba(255,99,132,1)'
+                      },
+                      {
+                          label: "<%= @producte2.nom_ca %>",
+                          data: <%= valors_transformats_indicador2 %>,
+                          backgroundColor: 'rgba(54, 162, 235, 1)'
+                          
+                      }]
+                  },
+                  options: {
+                      scales: {
+                          yAxes: [{
+                              ticks: {
+                                  beginAtZero:true
+                              }
+                          }]
+                      }
+                  }
+              });
+              </script>
+            </div>
           <% end %>
     		</div>
     	</div>
@@ -155,3 +228,4 @@
   
 </div>
 	<%= render "layouts/dapcons_noticies" %>    	
+
