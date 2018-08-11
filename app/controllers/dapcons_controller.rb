@@ -74,7 +74,9 @@ class DapconsController < ApplicationController
     @revestiments_ceramics = ProducteDapcons.where(categoria_indicadors: '002')
     @pedra_natural = ProducteDapcons.where(categoria_indicadors: '004')
     @productes_general = ProducteDapcons.where(categoria_indicadors: '100')
-    @productes_usuari = ProducteDapconsUsuari.where(user_id: current_user.id).order(created_at: :desc)
+    if user_signed_in?
+      @productes_usuari = ProducteDapconsUsuari.where(user_id: current_user.id).order(created_at: :desc)
+    end
   end
 
   def comparador

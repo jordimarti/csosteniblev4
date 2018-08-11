@@ -94,31 +94,32 @@
 				      </div>
 				    </div>
 
-				    <div class="titol-categoria">
-	      			<h4><%= t('.teus_productes') %></h4>
-	      			<p><%= t('.productes_usuari') %></p>
-	      		</div>
-	      		<div class="productes-categoria">
-	      			<div class="grid-x grid-margin-x">
-	      				<% @productes_usuari.each do |producte| %>
-		      				<div class="medium-6 cell">
-				      			<div class="comparador-dapcons-item" tipus="usuari" valor="<%= producte.id %>">
-				      				<div class="comparador-dapcons-item-nom">
-				      					<%= producte.nom %>
-				      				</div>
-				      				<div class="comparador-dapcons-item-empresa">
-				      					<%= producte.empresa %>
-				      				</div>
-				      			</div>
-				      		</div>
-				      	<% end %>
-				      </div>
-				    </div>
+				    <% if user_signed_in? %>
+					    <div class="titol-categoria">
+		      			<h4><%= t('.teus_productes') %></h4>
+		      			<p><%= t('.productes_usuari') %></p>
+		      		</div>
+		      		<div class="productes-categoria">
+		      			<div class="grid-x grid-margin-x">
+		      				<% @productes_usuari.each do |producte| %>
+			      				<div class="medium-6 cell">
+					      			<div class="comparador-dapcons-item" tipus="usuari" valor="<%= producte.id %>">
+					      				<div class="comparador-dapcons-item-nom">
+					      					<%= producte.nom %>
+					      				</div>
+					      				<div class="comparador-dapcons-item-empresa">
+					      					<%= producte.empresa %>
+					      				</div>
+					      			</div>
+					      		</div>
+					      	<% end %>
+					      </div>
+					    </div>
 
-				    <div class="nou-producte-usuari">
-				    	<%= link_to t('.gestor_productes'), producte_dapcons_usuaris_path, class: 'button' %>
-				    </div>
-			      		
+					    <div class="nou-producte-usuari">
+					    	<%= link_to t('.gestor_productes'), producte_dapcons_usuaris_path, class: 'button' %>
+					    </div>
+			      <% end %>
       		</div>
       	
       </div>
