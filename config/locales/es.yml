@@ -84,11 +84,42 @@ es:
       user:
         first_name: "Nombre"
         last_name: "Apellidos"
+      producte_dapcons:
+        nom_ca: "Nombre"
+        nom_es: "Nombre"
+        nom_en: "Nombre"
+        descripcio_ca: "Descripción"
+        descripcio_es: "Descripción"
+        descripcio_en: "Descripción"
+        rcp_ca: "Reglas de Categoría de Producto"
+        rcp_es: "Reglas de Categoría de Producto"
+        rcp_en: "Reglas de Categoría de Producto"
+        unitat_declarada_ca: "Unidad declarada"
+        unitat_declarada_es: "Unidad declarada"
+        unitat_declarada_en: "Unidad declarada"
+        identificador: "Identificador"
+        empresa: "Empresa"
+        validesa_inici: "Fecha inicio validez"
+        validesa_fi: "Fecha fin validez"
+        categoria_indicadors: "Categoría"
       producte_dapcons_usuari:
         nom: "Nombre del producto"
         empresa: "Empresa"
         descripcio: "Descripción"
         unitat_declarada: "Unidad declarada"
+      noticia:
+        imatge_noticia: "Imagen"
+        data: "Fecha"
+        dapc: "Noticia DAPconstrucción"
+        titol_ca: "Título"
+        resum_ca: "Resumen"
+        permalink_ca: "Permalink"
+        titol_es: "Título"
+        resum_es: "Resumen"
+        permalink_es: "Permalink"
+        titol_en: "Título"
+        resum_en: "Resumen"
+        permalink_en: "Permalink"
   layouts:
     top:
       register: "Registrarse"
@@ -103,6 +134,8 @@ es:
       marketcons: "MarketCons"
       dapcons: "DAPcons"
     dapcons_navigation:
+      titol_programa_dapconstruccion: "Programa DAPconstrucción"
+      subtitol_programa_dapconstruccion: "Declaración Ambiental de Productos de Construcción"
       programa_dapconstruccion: "PROGRAMA DAPCONSTRUCCIÓN"
       assessors_programa: "ASESORES Y COLABORADORES DEL PROGRAMA DAPCONSTRUCCIÓN"
       formar_part: "PARA FORMAR PARTE"
@@ -122,9 +155,19 @@ es:
       afiliacio: "Afiliación al Programa"
       registrar_producte: "Registrar un producto"
       contacte: "Contactar"
+  home:
+    panel:
+      panell: "Panel de control"
+      declaracions: "Declaraciones Ambientales de Producto"
+      text_declaracions_editor: "Administra los productos del sistema DAPcons"
+      text_declaracions_usuari: "Crea un producto para las comparacions de les Declaracions Ambientales de Producto"
   noticies:
     show:
       ultimes_noticies: "ÚLTIMAS NOTICIAS"
+    form:
+      guardar: "Guardar cambios"
+    llistat:
+      administracio_noticies: "Administración de las noticias"
   videos:
     show:
       ultims_videos: "ÚLTIMOS VÍDEOS"
@@ -183,9 +226,32 @@ es:
       construccio_general: "Productos de construcción en general"
       teus_productes: "Tus productos"
       productes_usuari: "Productos creados por el usuario"
+      gestor_productes: "Ir al gestor de productos"
   producte_dapcons:
     form:
       guardar: "Guardar cambios"
+    index:
+      panell: "Panel de control"
+      producte_dapcons: "Producto DAPcons®"
+      nou_producte: "Nuevo producto"
+      nom: "Nombre"
+      empresa: "Empresa"
+      validesa_inici: "Inicio validez"
+      validesa_fi: "Fin validez"
+      identificador: "Identificador"
+    indicador_fields:
+      a1-a3: "A1-A3: Extracción, transporte y fabricación"
+      a4: "A4: Transporte del producto a obra"
+      a5: "A5: Instalación del producto y construcción"
+      b1: "B1: Uso"
+      b2: "B2: Mantenimiento"
+      b3: "B3: Reparación"
+      b4-b7: "B4-B7: Sustitución, rehabilitación y uso de la energía y agua operacional"
+      c1: "C1: Deconstrucción y derribo"
+      c2: "C2: Transporte"
+      c3: "C3: Gestión de los residuos para reutilización, recuperación y reciclaje"
+      c4: "C4: Eliminación final"
+      d: "D: Potencial de reutilización, recuperación y reciclaje"
   producte_dapcons_usuaris:
     index:
       panell: "Panel de control"
@@ -200,8 +266,9 @@ es:
       confirmacio_eliminar: "Seguro que quieres eliminar este producto?"
       nou_producte: "Nuevo producto"
     new:
-      panell: "Panell de control"
-      producte_dapcons_usuari: "Nou producte"
+      panell: "Panel de control"
+      producte_dapcons_usuari: "Nuevo producto"
+      llistat_productes: "Listado de productos"
     form:
       guardar: "Guardar"
     indicador_usuari_fields:
@@ -217,6 +284,18 @@ es:
       c3: "C3: Gestión de los residuos para reutilización, recuperación y reciclaje"
       c4: "C4: Eliminación final"
       d: "D: Potencial de reutilización, recuperación y reciclaje"
+  tipus_indicadors:
+    index:
+      panell: "Panel de control"
+      tipus_indicadors: "Tipo de indicadores"
+    new:
+      panell: "Panel de control"
+      nova_categoria_indicador: "Nueva categoria de indicador"
+    edit:
+      panell: "Panel de control"
+      editar_tipus_indicador: "Editar el tipo de indicador"
+    form:
+      guardar: "Guardar"
   cocoon:
     defaults:
       add: "+ Añadir elemento"

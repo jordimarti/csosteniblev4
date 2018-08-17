@@ -3,31 +3,65 @@
 
   	<div class="medium-9 cell">
   		<div class="continguts-dapcons">
-				<div class="sub-title-container">
-	        <span class="sub-title"><%= t('.sistema_dapcons') %></span>
-	      </div>
-	  
-    		<p>El Programa DAPconstrucción® és un programa que aglutina empreses fabricants de productes i materials de construcció que tenen un compromís amb la sostenibilitat i el medi ambient, i que volen avançar en l’anàlisi dels impactes mediambientals dels seus productes.</p>
+				
+				<% if params[:locale] == 'ca' %>
 
-				<p>L’objectiu és aglutinar aquelles empreses fabricants que volen comprometre’s amb la millora ambiental dels seus processos productius amb la finalitat de dotar al sector de la construcció de la transparència mediambiental necessària perquè els tècnics i professionals puguin prendre les decisions oportunes a l’hora d’escollir els productes a utilitzar en els seus projectes.</p>
+					<div class="sub-title-container">
+		        <span class="sub-title"><%= t('.sistema_dapcons') %></span>
+		      </div>
+		  		
+	    		<p>El Programa DAPconstrucción® és un programa que aglutina empreses fabricants de productes i materials de construcció que tenen un compromís amb la sostenibilitat i el medi ambient, i que volen avançar en l’anàlisi dels impactes mediambientals dels seus productes.</p>
 
-				<p>Mitjançant la transparència mediambiental del sector de la construcció, els tècnics i professionals poden escollir els productes segons criteris mediambientals, més enllà dels estètics, econòmics i funcionals.</p>
+					<p>L’objectiu és aglutinar aquelles empreses fabricants que volen comprometre’s amb la millora ambiental dels seus processos productius amb la finalitat de dotar al sector de la construcció de la transparència mediambiental necessària perquè els tècnics i professionals puguin prendre les decisions oportunes a l’hora d’escollir els productes a utilitzar en els seus projectes.</p>
 
-				<p>La certificació DAPcons® és un programa d’ecoetiquetatge d’EPD de la construcció pioner a Espanya seguint les directrius europees i regulat per les normes ISO 14025 i 15804.</p>
+					<p>Mitjançant la transparència mediambiental del sector de la construcció, els tècnics i professionals poden escollir els productes segons criteris mediambientals, més enllà dels estètics, econòmics i funcionals.</p>
 
-				<p><span class="text-negreta">Saber-ne més:</span></p>
+					<p>La certificació DAPcons® és un programa d’ecoetiquetatge d’EPD de la construcció pioner a Espanya seguint les directrius europees i regulat per les normes ISO 14025 i 15804.</p>
 
-				<div class="grid-x grid-margin-x">
-					<div class="small-4 cell">
-						<%= link_to video_path(13) do %>
-							<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/video_ecoetiquetes.jpg", class: "video1-dapcons" %>
-						<% end %>
+					<p><span class="text-negreta">Saber-ne més:</span></p>
+
+					<div class="grid-x grid-margin-x">
+						<div class="small-4 cell">
+							<%= link_to video_path(13) do %>
+								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/video_ecoetiquetes.jpg", class: "video1-dapcons" %>
+							<% end %>
+						</div>
+						<div class="small-8 cell">
+							<p><span class="text-negreta">Ecoetiquetes en el sector de la construcció</span><br/>
+							Les ecoetiquetes són útils per a distingir ràpidament els millors productes des del punt de vista ambiental. En aquest vídeo de l'Agenda de la Construcció Sostenible s'expliquen les principals diferències entre les ecoetiquetes de tipus I, II i III.</p>
+						</div>
 					</div>
-					<div class="small-8 cell">
-						<p><span class="text-negreta">Ecoetiquetes en el sector de la construcció</span><br/>
-						Les ecoetiquetes són útils per a distingir ràpidament els millors productes des del punt de vista ambiental. En aquest vídeo de l'Agenda de la Construcció Sostenible s'expliquen les principals diferències entre les ecoetiquetes de tipus I, II i III.</p>
+
+				<% else %>
+
+					<div class="sub-title-container">
+		        <span class="sub-title"><%= t('.sistema_dapcons') %></span>
+		      </div>
+
+					<p>El Programa DAPconstrucción® es un programa que aglutina empresas fabricantes de productos y materiales de construcción que tienen un compromiso con la sostenibilidad y el medio ambiente, y desean avanzar en el análisis de los impactos medioambientales de sus productos.</p>
+
+					<p>El objetivo es aglutinar a aquellas empresas fabricantes que desean comprometerse con la mejora ambiental de sus procesos productivos con la finalidad de dotar al sector de la construcción de la transparencia medioambiental necesaria para que los técnicos y profesionales puedan tomar las decisiones oportunas a la hora de escoger los productos a utilizar en sus proyectos.</p>
+
+					<p>Mediante la transparencia medioambiental del sector de la construcción, los técnicos y profesionales pueden seleccionar los productos según criterios medioambientales, más allá de los estéticos, económicos y funcionales.</p>
+
+					<p>La Certificación DAPcons® es un programa de ecoetiquetado de EPD de la construcción pionero en España siguiendo las directrices europeas y regulado por las normas ISO 14025 y 15804.</p>
+
+					<p><span class="text-negreta">Para saber más sobre el tema:</span></p>
+
+					<div class="grid-x grid-margin-x">
+						<div class="small-4 cell">
+							<%= link_to video_path(13) do %>
+								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/video_ecoetiquetes.jpg", class: "video1-dapcons" %>
+							<% end %>
+						</div>
+						<div class="small-8 cell">
+							<p><span class="text-negreta">Ecoetiquetas en el sector de la construcción</span><br/>
+							Las ecoetiquetas son útiles para distinguir rápidamente los mejores productos desde el punto de vista ambiental. En este vídeo de la Agenda de la Construcción Sostenible se explican las principales diferencias entre las ecoetiquetas de tipo I, II y III.</p>
+						</div>
 					</div>
-				</div>
+
+
+				<% end %>
 			</div>
 		</div>
 

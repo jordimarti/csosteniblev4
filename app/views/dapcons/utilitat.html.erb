@@ -3,21 +3,48 @@
 
   	<div class="medium-9 cell">
   		<div class="continguts-dapcons">
-				<div class="sub-title-container">
-	        <span class="sub-title"><%= raw t('.utilitat') %></span>
-	      </div>
 
-				<h4 class="titol-seccio-dapcons">Per a tècnics i professionals</h4>
-				<p class="paragraf-seccio-dapcons">Las DAPcons<sup>®</sup>  permeten quantificar els impactes dels components de l’edifici, i permeten escollir els  productes mediambientalment més respectuosos. El paper clau que ha de dur a terme el tècnic entorn a l’estudi de l’impacte ambiental dels edificis en l’etapa de projecte, construcció, ús i fi de vida, és determinant per reduir les emissions vinculades a la construcció d’edificis.</p>
+  			<% if params[:locale] == 'ca' %>
 
-				<h4 class="titol-seccio-dapcons">Per a empreses fabricants</h4>
-				<p class="paragraf-seccio-dapcons">Les DAPcons<sup>®</sup>, són una eina per aconseguir donar resposta a exigències legals en un món global més competitiu. Aporten un valor afegit al producte i un mètode objectiu de quantificació de l’impacte ambiental dels processos de fabricació de productes de la construcció. La realització de l’Anàlisi del Cicle de Vida (ACV), imprescindible per obtenir una DAPcons<sup>®</sup>, permet a les empreses incidir de forma significativa sobre la millora dels seus processos i realitzar un estalvi econòmic important.</p>
+					<div class="sub-title-container">
+		        <span class="sub-title"><%= raw t('.utilitat') %></span>
+		      </div>
 
-				<h4 class="titol-seccio-dapcons">Per als usuaris</h4>
-				<p class="paragraf-seccio-dapcons">Les DAPcons<sup>®</sup> comporten una major transparència i un bon coneixement de l’impacte global d’un edifici durant el seu cicle de vida, permeten establir criteris objectius de sostenibilitat d’un edifici i enfortir una etiqueta valorada, que és el que necessita l’usuari final.</p>
+		      <p>Les Declaracions Ambientals de Producte de Construcció DAPcons<sup>®</sup>, són una eina imprescindible per a la millora ambiental en el sector de la construcció i, per tant, una eina útil per a tècnics, fabricants i usuaris. Les certificacions DAPcons<sup>®</sup> abasteixen productes de les diferents etapes d’un edifici. Ens permeten disposar d’informació objectiva, consensuada i verificada sobre el producte.</p>
 
-				<h4 class="titol-seccio-dapcons">Per a les administracions</h4>
-				<p class="paragraf-seccio-dapcons">Les DAPcons<sup>®</sup>  són sol·licitades  i valorades per les administracions, doncs els productes contenen informació homogènia sobre el seu impacte ambiental i ajuden a tenir una major informació sobre l’edifici.</p>
+					<h4 class="titol-seccio-dapcons">Per a tècnics i professionals</h4>
+					<p class="paragraf-seccio-dapcons">Las DAPcons<sup>®</sup> permeten quantificar els impactes dels components de l’edifici, i permeten escollir els  productes mediambientalment més respectuosos. El paper clau que ha de dur a terme el tècnic entorn a l’estudi de l’impacte ambiental dels edificis en l’etapa de projecte, construcció, ús i fi de vida, és determinant per reduir les emissions vinculades a la construcció d’edificis.</p>
+
+					<h4 class="titol-seccio-dapcons">Per a empreses fabricants</h4>
+					<p class="paragraf-seccio-dapcons">Les DAPcons<sup>®</sup>, són una eina per aconseguir donar resposta a exigències legals en un món global més competitiu. Aporten un valor afegit al producte i un mètode objectiu de quantificació de l’impacte ambiental dels processos de fabricació de productes de la construcció. La realització de l’Anàlisi del Cicle de Vida (ACV), imprescindible per obtenir una DAPcons<sup>®</sup>, permet a les empreses incidir de forma significativa sobre la millora dels seus processos i realitzar un estalvi econòmic important.</p>
+
+					<h4 class="titol-seccio-dapcons">Per als usuaris</h4>
+					<p class="paragraf-seccio-dapcons">Les DAPcons<sup>®</sup> comporten una major transparència i un bon coneixement de l’impacte global d’un edifici durant el seu cicle de vida, permeten establir criteris objectius de sostenibilitat d’un edifici i enfortir una etiqueta valorada, que és el que necessita l’usuari final.</p>
+
+					<h4 class="titol-seccio-dapcons">Per a les administracions</h4>
+					<p class="paragraf-seccio-dapcons">Les DAPcons<sup>®</sup>  són sol·licitades  i valorades per les administracions, doncs els productes contenen informació homogènia sobre el seu impacte ambiental i ajuden a tenir una major informació sobre l’edifici.</p>
+
+				<% else %>
+
+					<div class="sub-title-container">
+		        <span class="sub-title"><%= raw t('.utilitat') %></span>
+		      </div>
+
+		      <p>Las Declaraciones Ambientales de Producto de Construcción (DAPcons<sup>®</sup>) son un instrumento imprescindible para la mejora ambiental en el sector de la construcción y, por tanto, una herramienta útil para técnicos, fabricantes y usuarios. Las certificaciones DAPcons<sup>®</sup> abarcan productos de las diferentes etapas de un edificio. Nos permiten disponer de información objetiva, consensuada y verificada sobre un producto.</p>
+
+					<h4 class="titol-seccio-dapcons">Para técnicos y profesionales</h4>
+					<p class="paragraf-seccio-dapcons">Las DAPcons<sup>®</sup> permiten cuantificar los impactos de los componentes del edificio, y permiten escoger los productos medioambientalmente más respetuosos. El papel clave que debe llevar a cabo el técnico al entorno del estudio del impacto ambiental de los edificios en el periodo de proyecto, construcción, uso y fin de vida, es determinante para reducir las emisiones vinculadas a la construcción de edificios.</p>
+
+					<h4 class="titol-seccio-dapcons">Para empresas fabricantes</h4>
+					<p class="paragraf-seccio-dapcons">Las DAPcons<sup>®</sup> son una herramienta para lograr dar respuesta a exigencias legales en un mundo global más competitivo. Aportan un valor añadido al producto y un método objetivo de cuantificación del impacto ambiental de los procesos de fabricación de productos de la construcción. La realización del Análisis del Ciclo de Vida (ACV), imprescindible para obtener una DAPcons<sup>®</sup>, permite a las empresas incidir de forma significativa en la mejora de sus procesos y realizar un ahorro económico importante.</p>
+
+					<h4 class="titol-seccio-dapcons">Para los usuarios</h4>
+					<p class="paragraf-seccio-dapcons">Las DAPcons<sup>®</sup> comportan una mayor transparencia y un buen conocimiento del impacto global de un edificio durante su ciclo de vida, permiten establecer criterios objetivos de sostenibilidad de un edificio y fortalecer una etiqueta valorada, que es lo que necesita el usuario final.</p>
+
+					<h4 class="titol-seccio-dapcons">Para las administraciones</h4>
+					<p class="paragraf-seccio-dapcons">Las DAPcons<sup>®</sup> son solicitadas y valoradas por las administraciones pues los productos contienen información homogénea sobre su impacto ambiental y ayudan a tener una mayor información sobre el edificio.</p>
+
+				<% end %>
 				
 			</div>
 		</div>
