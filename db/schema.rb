@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_17_203315) do
+ActiveRecord::Schema.define(version: 2018_08_18_145033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,17 @@ ActiveRecord::Schema.define(version: 2018_08_17_203315) do
     t.string "nom_ca"
     t.string "nom_es"
     t.string "nom_en"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "document_dapcons", force: :cascade do |t|
+    t.integer "producte_dapcons_id"
+    t.string "nom_ca"
+    t.string "nom_es"
+    t.string "nom_en"
+    t.string "idioma"
+    t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

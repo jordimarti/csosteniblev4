@@ -34,6 +34,7 @@
 
 	      <div class="llistat-productes-dapcons">
 	      	<% if @categoria == true %>
+		      	
 		      	<div class="titol-categoria-productes-dapcons">
 		      		<%= t('.aillants_termics') %>
 		      	</div>
@@ -41,7 +42,15 @@
 		      		<% @aillants_termics.each do |producte| %>
 		      			<%= render partial: "item_producte_dapcons", locals: { producte: producte } %>
 		      		<% end %>
+		      	</div>
 
+		      	<div class="titol-categoria-productes-dapcons">
+		      		<%= t('.revestiments_ceramics') %>
+		      	</div>
+		      	<div class="categoria-productes-dapcons">
+		      		<% @revestiments_ceramics.each do |producte| %>
+		      			<%= render partial: "item_producte_dapcons", locals: { producte: producte } %>
+		      		<% end %>
 		      	</div>
 		      <% else %>
 		      	<% @productes.each do |producte| %>

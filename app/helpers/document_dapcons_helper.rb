@@ -1,0 +1,2 @@
+module DocumentDapconsHelper
+end

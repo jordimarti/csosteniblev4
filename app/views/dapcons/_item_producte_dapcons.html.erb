@@ -57,6 +57,9 @@
 		      						</div>
 		      						<div class="medium-6 cell">
 		      							<span class="titol-dada-producte-dapcons"><%= t('.documents') %>:</span><br/>
+		      							<% producte.document_dapcons.each do |document| %>
+		      								<%= link_to document.nom_ca, document.link %><br/>
+		      							<% end %>
 		      						</div>
 		      					</div>
 	      					</div>

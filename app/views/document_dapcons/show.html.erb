@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Producte dapcons:</strong>
+  <%= @document_dapcons.producte_dapcons_id %>
+</p>
+
+<p>
+  <strong>Nom ca:</strong>
+  <%= @document_dapcons.nom_ca %>
+</p>
+
+<p>
+  <strong>Nom es:</strong>
+  <%= @document_dapcons.nom_es %>
+</p>
+
+<p>
+  <strong>Nom en:</strong>
+  <%= @document_dapcons.nom_en %>
+</p>
+
+<p>
+  <strong>Idioma:</strong>
+  <%= @document_dapcons.idioma %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @document_dapcons.link %>
+</p>
+
+<%= link_to 'Edit', edit_document_dapcons_path(@document_dapcons) %> |
+<%= link_to 'Back', document_dapcons_index_path %>
