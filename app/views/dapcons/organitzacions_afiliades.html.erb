@@ -7,22 +7,22 @@
   			<% if params[:locale] == 'ca' %>
 
 					<div class="sub-title-container">
-		        <span class="sub-title"><%= raw t('.empreses_membre') %></span>
+		        <span class="sub-title"><%= t('.empreses_membre') %></span>
 		      </div>
 
 		      <div class="llistat-empreses-membre">
 		      	<table class="organitzacions-afiliades">
 		      		<thead>
 						    <tr>
-						      <th>Membre núm.</th>
-						      <th>Empresa</th>
-						      <th>Dades de l'empresa</th>
-						      <th>Certificacions</th>
+						      <th><%= t('.membre_num') %></th>
+						      <th><%= t('.empresa') %></th>
+						      <th><%= t('.dades') %></th>
+						      <th><%= t('.certificacions') %></th>
 						    </tr>
 						  <tbody>
 				      <% @empreses.each do |empresa| %>
 				      	<tr>
-				      		<td><%= empresa.numero_membre %>
+				      		<td class="num_organitzacio"><%= empresa.numero_membre %></td>
 					      	<td>
 					      		<% if empresa.imatge_organitzacio.attached? %>
 						      		<%= image_tag empresa.imatge_organitzacio, class: 'img-organitzacio' %>
@@ -38,7 +38,42 @@
 					      	</td>
 				      <% end %>
 				    	</tbody>
-			    </table>
+			    	</table>
+		    	</div>
+
+		    	<div class="sub-title-container">
+		        <span class="sub-title"><%= t('.entitats_membre') %></span>
+		      </div>
+
+		      <div class="llistat-entitats-membre">
+		      	<table class="organitzacions-afiliades">
+		      		<thead>
+						    <tr>
+						      <th><%= t('.membre_num') %></th>
+						      <th><%= t('.entitat') %></th>
+						      <th><%= t('.dades') %></th>
+						      <th><%= t('.certificacions') %></th>
+						    </tr>
+						  <tbody>
+				      <% @entitats.each do |entitat| %>
+				      	<tr>
+				      		<td class="num_organitzacio"><%= entitat.numero_membre %></td>
+					      	<td>
+					      		<% if entitat.imatge_organitzacio.attached? %>
+						      		<%= image_tag entitat.imatge_organitzacio, class: 'img-organitzacio' %>
+						      	<% end %>
+					      	</td>
+					      	<td>
+					      		<span class="nom-organitzacio-membre"><%= entitat.nom %></span><br/>
+					      		<%= raw entitat.dades %></td>
+					      	<td>
+					      		<% if entitat.link_iso.present? %>
+					      			<%= link_to "ISO 14.001", entitat.link_iso %>
+					      		<% end %>
+					      	</td>
+				      <% end %>
+				    	</tbody>
+			    	</table>
 		    	</div>
 
 		    <% else %>

@@ -227,6 +227,14 @@ es:
       teus_productes: "Tus productos"
       productes_usuari: "Productos creados por el usuario"
       gestor_productes: "Ir al gestor de productos"
+    organitzacions_afiliades:
+      empreses_membre: "Empresas miembro"
+      entitats_membre: "Entidades miembro"
+      membre_num: "Miembro núm."
+      empresa: "Empresa"
+      dades: "Datos"
+      certificacions: "Certificaciones"
+      entitat: "Entidad"
   producte_dapcons:
     form:
       guardar: "Guardar cambios"
