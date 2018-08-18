@@ -245,6 +245,9 @@ ca:
       rcp_referencia: "RCP de referència"
       descripcio: "Descripció del producte"
       documents: "Documents"
+    productes_registrats:
+      revestiments_ceramics: "REVESTIMENTS CERÀMICS"
+      aillants_termics: "AÏLLANTS TÈRMICS"
   producte_dapcons:
     form:
       guardar: "Desar canvis"

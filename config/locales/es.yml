@@ -235,6 +235,19 @@ es:
       dades: "Datos"
       certificacions: "Certificaciones"
       entitat: "Entidad"
+    item_producte_dapcons:
+      validesa: "Validez"
+      vigent: "vigente"
+      no_vigent: "no vigente"
+      de: "De"
+      a: "a"
+      identificador: "Identificador"
+      rcp_referencia: "RCP de referencia"
+      descripcio: "Descripción del producto"
+      documents: "Documentos"
+    productes_registrats:
+      revestiments_ceramics: "REVESTIMIENTOS CERÁMICOS"
+      aillants_termics: "AISLANTES TÉRMICOS"
   producte_dapcons:
     form:
       guardar: "Guardar cambios"
