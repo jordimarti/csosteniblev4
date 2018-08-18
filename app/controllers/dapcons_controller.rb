@@ -11,6 +11,8 @@ class DapconsController < ApplicationController
   end
 
   def organitzacions_afiliades
+    @empreses = OrganitzacioAfiliada.where(tipus: 'Empresa').order(numero_membre: :asc)
+    @entitats = OrganitzacioAfiliada.where(tipus: 'Entitat').order(numero_membre: :asc)
   end
 
   def productes_registrats

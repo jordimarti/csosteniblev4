@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :organitzacio_afiliades
   resources :cas_practics
   resources :indicador_usuaris
   resources :producte_dapcons_usuaris

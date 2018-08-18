@@ -1,2 +1,53 @@
-<h1>Dapcons#organitzacions_afiliades</h1>
-<p>Find me in app/views/dapcons/organitzacions_afiliades.html.erb</p>
+<div class="container">
+  <%= render "layouts/dapcons_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="continguts-dapcons">
+
+  			<% if params[:locale] == 'ca' %>
+
+					<div class="sub-title-container">
+		        <span class="sub-title"><%= raw t('.empreses_membre') %></span>
+		      </div>
+
+		      <div class="llistat-empreses-membre">
+		      	<table class="organitzacions-afiliades">
+		      		<thead>
+						    <tr>
+						      <th>Membre núm.</th>
+						      <th>Empresa</th>
+						      <th>Dades de l'empresa</th>
+						      <th>Certificacions</th>
+						    </tr>
+						  <tbody>
+				      <% @empreses.each do |empresa| %>
+				      	<tr>
+				      		<td><%= empresa.numero_membre %>
+					      	<td>
+					      		<% if empresa.imatge_organitzacio.attached? %>
+						      		<%= image_tag empresa.imatge_organitzacio, class: 'img-organitzacio' %>
+						      	<% end %>
+					      	</td>
+					      	<td>
+					      		<span class="nom-organitzacio-membre"><%= empresa.nom %></span><br/>
+					      		<%= raw empresa.dades %></td>
+					      	<td>
+					      		<% if empresa.link_iso.present? %>
+					      			<%= link_to "ISO 14.001", empresa.link_iso %>
+					      		<% end %>
+					      	</td>
+				      <% end %>
+				    	</tbody>
+			    </table>
+		    	</div>
+
+		    <% else %>
+
+
+		    <% end %>
+				
+			</div>
+		</div>
+
+</div>
+<%= render "layouts/dapcons_noticies" %>

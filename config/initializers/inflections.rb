@@ -24,4 +24,6 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'categoria', 'categories'
   inflect.irregular 'empresa', 'empreses'
   inflect.irregular 'noticia', 'noticies'
+  inflect.irregular 'organitzacio', 'organitzacions'
+  inflect.irregular 'afiliada', 'afiliades'
 end

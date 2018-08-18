@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_154559) do
+ActiveRecord::Schema.define(version: 2018_08_17_203315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,6 +169,16 @@ ActiveRecord::Schema.define(version: 2018_07_12_154559) do
     t.datetime "data"
     t.boolean "dapc"
     t.text "image_data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "organitzacio_afiliades", force: :cascade do |t|
+    t.string "numero_membre"
+    t.string "nom"
+    t.text "dades"
+    t.string "link_iso"
+    t.string "tipus"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numero membre:</strong>
+  <%= @organitzacio_afiliada.numero_membre %>
+</p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @organitzacio_afiliada.nom %>
+</p>
+
+<p>
+  <strong>Dades:</strong>
+  <%= @organitzacio_afiliada.dades %>
+</p>
+
+<p>
+  <strong>Link iso:</strong>
+  <%= @organitzacio_afiliada.link_iso %>
+</p>
+
+<p>
+  <strong>Tipus:</strong>
+  <%= @organitzacio_afiliada.tipus %>
+</p>
+
+<%= link_to 'Edit', edit_organitzacio_afiliada_path(@organitzacio_afiliada) %> |
+<%= link_to 'Back', organitzacio_afiliades_path %>
