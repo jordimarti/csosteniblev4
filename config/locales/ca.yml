@@ -235,6 +235,16 @@ ca:
       dades: "Dades"
       certificacions: "Certificacions"
       entitat: "Entitat"
+    item_producte_dapcons:
+      validesa: "Validesa"
+      vigent: "vigent"
+      no_vigent: "no vigent"
+      de: "De"
+      a: "a"
+      identificador: "Identificador"
+      rcp_referencia: "RCP de referència"
+      descripcio: "Descripció del producte"
+      documents: "Documents"
   producte_dapcons:
     form:
       guardar: "Desar canvis"

@@ -1,0 +1,64 @@
+						
+								<div class="item-categoria-productes-dapcons">
+		      				<div class="apartat-item-categoria-productes-dapcons">
+		      					<div class="grid-x grid-margin-x">
+		      						<div class="medium-12 cell">
+			      						<span class="nom-producte-dapcons">
+			      							<% if params[:locale] == 'ca' %>
+			      								<%= producte.nom_ca %>
+			      							<% elsif params[:locale] == 'es' %>
+			      								<%= producte.nom_es %>
+			      							<% else %>
+			      								<%= producte.nom_en %>
+			      							<% end %>
+			      						</span> - <%= producte.empresa %>
+			      					</div>
+			      				</div>
+		      				</div>
+		      				<div class="apartat-item-categoria-productes-dapcons">
+		      					<div class="grid-x grid-margin-x">
+			      					<div class="medium-4 cell">
+			      						<span class="titol-dada-producte-dapcons"><%= t('.validesa') %>:</span> 
+			      						<% if producte.validesa_fi > Date.today %>
+			      							<span class="valid-producte-dapcons">DAPcons<sup>®</sup> <%= t('.vigent') %></span>
+			      						<% else %>
+			      							<span class="no-valid-producte-dapcons">DAPcons<sup>®</sup> <%= t('.no_vigent') %></span>
+			      						<% end %>
+			      						<br/>
+			      						<%= t('.de') %> <%= producte.validesa_inici %><br/><%= t('.a') %> <%= producte.validesa_fi %>
+			      					</div>
+			      					<div class="medium-3 cell">
+			      						<span class="titol-dada-producte-dapcons"><%= t('.identificador') %>:</span><br/>
+			      						<%= producte.identificador %>
+			      					</div>
+			      					<div class="medium-5 cell">
+			      						<span class="titol-dada-producte-dapcons"><%= t('.rcp_referencia') %>:</span><br/>
+		      							<% if params[:locale] == 'ca' %>
+		      								<%= producte.rcp_ca %><br/>
+		      							<% elsif params[:locale] == 'es' %>
+		      								<%= producte.rcp_es %><br/>
+		      							<% else %>
+		      								<%= producte.rcp_en %><br/>
+		      							<% end %>
+			      					</div>
+			      				</div>
+		      				</div>
+		      				<div class="apartat-item-categoria-productes-dapcons">
+		      					<div class="grid-x grid-margin-x">
+	      							<div class="medium-6 cell">
+		      							<span class="titol-dada-producte-dapcons"><%= t('.descripcio') %>:</span><br/>
+		      							<% if params[:locale] == 'ca' %>
+		      								<%= producte.descripcio_ca %><br/>
+		      							<% elsif params[:locale] == 'es' %>
+		      								<%= producte.descripcio_es %><br/>
+		      							<% else %>
+		      								<%= producte.descripcio_en %><br/>
+		      							<% end %>
+		      						</div>
+		      						<div class="medium-6 cell">
+		      							<span class="titol-dada-producte-dapcons"><%= t('.documents') %>:</span><br/>
+		      						</div>
+		      					</div>
+	      					</div>
+		      			</div>
+		      		

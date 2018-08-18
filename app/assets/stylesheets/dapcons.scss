@@ -71,6 +71,43 @@ td.num_organitzacio {
 	padding-top: 5px;
 }
 
+.llistat-productes-dapcons {
+	background-color: #eaeaea;
+	padding: 15px;
+}
+
+.item-categoria-productes-dapcons {
+	background-color: white;
+	margin: 15px 0px;
+}
+
+span.nom-producte-dapcons {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+span.titol-dada-producte-dapcons {
+	font-weight: bold;
+}
+
+span.valid-producte-dapcons {
+	background-color: #A5BE63;
+	padding: 4px 10px;
+	font-size: 0.8em;
+	color: white;
+}
+
+span.no-valid-producte-dapcons {
+	background-color: #D8130E;
+	padding: 4px 10px;
+	font-size: 0.8em;
+	color: white;
+}
+
+.apartat-item-categoria-productes-dapcons {
+	padding: 15px;
+}
+
 /**** Comparador ****/
 
 h3.titol-etapa {
