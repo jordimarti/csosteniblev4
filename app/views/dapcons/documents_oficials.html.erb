@@ -1,2 +1,69 @@
-<h1>Dapcons#documents_oficials</h1>
-<p>Find me in app/views/dapcons/documents_oficials.html.erb</p>
+<div class="container">
+  <%= render "layouts/dapcons_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="continguts-dapcons">
+				
+				<% if params[:locale] == 'ca' %>
+
+					<div class="sub-title-container">
+		        <span class="sub-title">Documents oficials DAPcons<sup>®</sup></span>
+		      </div>
+
+		      <p>Els documents que regeixen el programa DAPconstrucción<sup>®</sup>:</p>
+
+		      <h4>Instruccions Generals del Programa</h4>
+		      <p>Les Instruccions Generals del Programa (IGP) estableixen de manera clara i ordenada, els criteris, les bases normatives, els objectius, els procediments, els agents participants, les quotes, així com la resta de documents que conformen el programa.</p>
+
+		      <p><%= link_to "Instruccions Generals del Programa", "https://s3-eu-west-1.amazonaws.com/csosteniblev4/documents/INSTRUCCIONES%2BGENERALES%2BDEL%2BPROGRAMA%2BDAPcons%2B2017.pdf" %></p>
+		      <p><%= link_to "Instruccions Generals del Programa (versió en anglès)", "https://s3-eu-west-1.amazonaws.com/csosteniblev4/documents/INSTRUCCIONES%2BGENERALES%2BDEL%2BPROGRAMA%2BDAPcons%2Bang%2B2017.pdf" %></p>
+
+		      <h4>Regles de Categoria de Producte</h4>
+		      <p>El desenvolupament d’una DAPcons<sup>®</sup> es basa en l’aplicació d’unes directrius que marquen com s’ha de realitzar l’estudi de Anàlisi del Cicle de Vida (ACV) del producte. Aquestes directrius són les denominades, Regles de Categoria de Producte (RCP).</p>
+
+		      <p>Les Regles de Categoria de Producte (RCP) recullen els requisits i directrius que s’han de seguir per desenvolupar una declaració ambiental de producte, incloent-hi l’estudi de l’anàlisi del cicle de via corresponent que pot variar segons, per exemple, la funció del producte, la incorporació de material reciclat o la complexitat del procés productiu.</p>
+
+		      <p>Actualment s’han desenvolupat i estan a disposició de les empreses afiliades al Programa DAPcons<sup>®</sup>:
+		      	<ul>
+		      		<li>RCP d’aïllants tèrmics</li>
+		      		<li>RCP de revestiments ceràmics</li>
+		      		<li>RCP de pedra i àrids</li>
+		      		<li>RCP de productes de construcció en general</li>
+		      	</ul>
+		      </p>
+
+		    <% else %>
+
+		    	<div class="sub-title-container">
+		        <span class="sub-title">Documentos oficiales DAPcons<sup>®</sup></span>
+		      </div>
+
+		      <p>Los documentos que rigen el Programa DAPconstrucción<sup>®</sup>:</p>
+
+		      <h4>Instrucciones Generales del Programa</h4>
+		      <p>Las Instrucciones Generales del Programa (IGP) establecen de manera clara y ordenada, los criterios, las bases normativas, los objetivos, los procedimientos, los agentes participantes, las cuotas así como del resto de documentos que conforman el programa.</p>
+
+		      <p><%= link_to "Instrucciones Generales del Programa", "https://s3-eu-west-1.amazonaws.com/csosteniblev4/documents/INSTRUCCIONES%2BGENERALES%2BDEL%2BPROGRAMA%2BDAPcons%2B2017.pdf" %></p>
+		      <p><%= link_to "Instrucciones Generales del Programa (versión en inglés)", "https://s3-eu-west-1.amazonaws.com/csosteniblev4/documents/INSTRUCCIONES%2BGENERALES%2BDEL%2BPROGRAMA%2BDAPcons%2Bang%2B2017.pdf" %></p>
+
+		      <h4>Reglas de Categoría de Producto</h4>
+		      <p>El desarrollo de una DAPcons<sup>®</sup> se basa en la aplicación de unas directrices que marcan como se debe realizar el estudio de Análisis del Ciclo de Vida (ACV) del producto en cuestión. Estas directrices son las denominadas Reglas de Categoría de Producto (RCP).</p>
+
+		      <p>Las Reglas de Categoría de Producto (RCP) recogen los requisitos y directrices que deben seguir para desarrollar la declaración ambiental de producto, incluyendo el estudio del análisis del ciclo de vida correspondiente que puede variar según, por ejemplo, la función del producto, la incorporación de material reciclado o la complejidad del proceso productivo.</p>
+
+		      <p>Actualmente se han desarrollado y están a disposición de las empresas afiliadas al Programa DAPcons<sup>®</sup>:
+		      	<ul>
+		      		<li>RCP de aislantes térmicos</li>
+		      		<li>RCP de revestimientos cerámicos</li>
+		      		<li>RCP de piedra y áridos</li>
+		      		<li>RCP de productos de construcción en general</li>
+		      	</ul>
+		      </p>
+
+		    <% end %>
+		  </div>
+		</div>
+
+</div>
+<%= render "layouts/dapcons_noticies" %>
+
