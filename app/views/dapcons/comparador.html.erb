@@ -72,42 +72,24 @@
 
     		<div class="taula-comparador">
           <% etapes.each do |etapa| %>
+          <div id="container-etapa-<%= etapa[0] %>">
             <h3 class="titol-etapa">Etapa <%= etapa[0] %>: <%= etapa[1] %></h3>
-      			<table class="unstriped">
+            <table class="unstriped">
       				<thead>
       					<th class="header-cell-indicadors"><%= t('.indicador') %></th>
     						<th class="header-cell-indicadors">
-                  <% if params[:tipus_producte1] == 'usuari' %>
-                    <%= @producte1.nom %>
-                  <% else %>
-                    <% if params[:locale] == 'es' %>
-                      <%= @producte1.nom_es %>
-                    <% elsif params[:locale] == 'en' %>
-                      <%= @producte1.nom_en %>
-                    <% else %>
-                      <%= @producte1.nom_ca %>
-                    <% end %>
-                  <% end %>
+                  <%= @nom_producte1 %>
                 </th>
     						<th class="header-cell-indicadors">
-                  <% if params[:tipus_producte2] == 'usuari' %>
-                    <%= @producte2.nom %>
-                  <% else %>
-                    <% if params[:locale] == 'es' %>
-                      <%= @producte2.nom_es %>
-                    <% elsif params[:locale] == 'en' %>
-                      <%= @producte2.nom_en %>
-                    <% else %>
-                      <%= @producte2.nom_ca %>
-                    <% end %>
-                  <% end %>
-                    
+                  <%= @nom_producte2 %>
                 </th>
       				</thead>
       				<tbody>
                 <% valors_indicador1 = Array.new %>
                 <% valors_indicador2 = Array.new %>
                 <% noms_indicador = Array.new %>
+                <% valor_total_indicadors_producte1 = 0 %>
+                <% valor_total_indicadors_producte2 = 0 %>
                 <% @tipus_indicadors.each do |tipus_indicador| %>
                   <% noms_indicador.push(tipus_indicador.nom_ca) %>
                   <tr>
@@ -143,6 +125,9 @@
                       <% if indicador1.present? %>
                         <%= indicador1.valor %>
                         <% valors_indicador1.push(indicador1.valor) %>
+                        <% valor_total_indicadors_producte1 += indicador1.valor %>
+                      <% else %>
+                        <% valors_indicador1.push(0) %>
                       <% end %>
                     </td>
                     
@@ -150,6 +135,9 @@
                       <% if indicador2.present? %>
                         <%= indicador2.valor %>
                         <% valors_indicador2.push(indicador2.valor) %>
+                        <% valor_total_indicadors_producte2 += indicador2.valor %>
+                      <% else %>
+                        <% valors_indicador2.push(0) %>
                       <% end %>
                     </td>
                   </tr>
@@ -162,34 +150,32 @@
               # Volem que el número gran sigui 100 i el petit el percentatge que correspongui, per això creem un Array de valors transformats
               valors_transformats_indicador1 = Array.new
               valors_transformats_indicador2 = Array.new
-              puts("*****************************")
-              puts(valors_indicador2[1])
               
-                for i in 0..6
-                  # Primer comprovem quin és més gran
-                  if valors_indicador1[i].present? && valors_indicador2[i].present?
-                    if valors_indicador1[i] > valors_indicador2[i]
-                      numero_gran = valors_indicador1[i]
-                    else
-                      numero_gran = valors_indicador2[i]
-                    end
-                  
-                    # Trobem per quin número hem de multiplicar els valors perquè el més gran dóni 100
-                    if numero_gran == 0
-                      multiplicador = 0
-                      else
-                      multiplicador = 100/numero_gran
-                    end
-                    # Transformem els valors per a tenir els percentatges
-                    val1 = ((valors_indicador1[i] * multiplicador)*100).round / 100
-                    val2 = ((valors_indicador2[i] * multiplicador)*100).round / 100
-                    valors_transformats_indicador1.push(val1)
-                    valors_transformats_indicador2.push(val2)
+              for i in 0..6
+                # Primer comprovem quin és més gran
+                if valors_indicador1[i].present? && valors_indicador2[i].present?
+                  if valors_indicador1[i] > valors_indicador2[i]
+                    numero_gran = valors_indicador1[i]
+                  else
+                    numero_gran = valors_indicador2[i]
                   end
+                
+                  # Trobem per quin número hem de multiplicar els valors perquè el més gran dóni 100
+                  if numero_gran == 0
+                    multiplicador = 0
+                    else
+                    multiplicador = 100/numero_gran
+                  end
+                  # Transformem els valors per a tenir els percentatges
+                  val1 = ((valors_indicador1[i] * multiplicador)*100).round / 100
+                  val2 = ((valors_indicador2[i] * multiplicador)*100).round / 100
                 end
+                valors_transformats_indicador1.push(val1)
+                valors_transformats_indicador2.push(val2)
+              end
               
               %>
-
+              <div class="titol-grafic-comparador"><%= t('.titol_grafic') %></div>
               <canvas id="<%= etapa[0] %>" width="400" height="150"></canvas>
               <script>
               var ctx = document.getElementById("<%= etapa[0] %>").getContext('2d');
@@ -198,12 +184,12 @@
                   data: {
                       labels: ["Potencial d'escalfament global", "Potencial d'esgotament d'ozó estratosfèric", "Potencial d'acidificació", "Esgotament de recursos abiòtics - combustibles fòssils", "Esgotament de recursos abiòtics - elements", "Potencial d'eutrofització", "Potencial de formació d'ozó fotoquímic"],
                       datasets: [{
-                          label: "<%= @producte1.nom_ca %>",
+                          label: "<%= @nom_producte1 %>",
                           data: <%= valors_transformats_indicador1 %>,
                           backgroundColor: 'rgba(255,99,132,1)'
                       },
                       {
-                          label: "<%= @producte2.nom_ca %>",
+                          label: "<%= @nom_producte2 %>",
                           data: <%= valors_transformats_indicador2 %>,
                           backgroundColor: 'rgba(54, 162, 235, 1)'
                           
@@ -221,6 +207,15 @@
               });
               </script>
             </div>
+            <script>
+              // Si cap dels dos productes té indicadors en una etapa aquesta no es mostra
+              $( document ).ready(function() {
+                <% if valor_total_indicadors_producte1 == 0 && valor_total_indicadors_producte2 == 0 %>
+                  $( "#container-etapa-<%= etapa[0] %>" ).hide();
+                <% end %>
+              });
+            </script>
+          </div>
           <% end %>
     		</div>
     	</div>

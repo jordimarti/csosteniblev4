@@ -104,6 +104,29 @@ class DapconsController < ApplicationController
       @producte2 = ProducteDapconsUsuari.find(params[:producte2])
     end
     @tipus_indicadors = TipusIndicador.all
+    if params[:tipus_producte1] == 'usuari'
+      @nom_producte1 = @producte1.nom
+    else
+      if params[:locale] == 'es'
+        @nom_producte1 = @producte1.nom_es
+      elsif params[:locale] == 'en'
+        @nom_producte1 = @producte1.nom_en
+      else
+        @nom_producte1 = @producte1.nom_ca
+      end
+    end
+    if params[:tipus_producte2] == 'usuari'
+      @nom_producte2 = @producte2.nom
+    else
+      if params[:locale] == 'es'
+        @nom_producte2 = @producte2.nom_es
+      elsif params[:locale] == 'en'
+        @nom_producte2 = @producte2.nom_en
+      else
+        @nom_producte2 = @producte2.nom_ca
+      end
+    end
+                  
   end
 
   private

@@ -217,6 +217,7 @@ es:
       c4: "Eliminación final"
       d: "Potencial de reutilización, recuperación y reciclaje"
       unitats_declarades: "Unidades declaradas"
+      titol_grafic: "Comparación de los indicadores en %"
     llistat_productes:
       comparador: "Comparador"
       selecciona_productes: "Selecciona los productos a comparar"
