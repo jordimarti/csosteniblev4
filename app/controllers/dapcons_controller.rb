@@ -16,20 +16,31 @@ class DapconsController < ApplicationController
   end
 
   def productes_registrats
+    #si no hi ha params, per exemple perquè s'ha canviat d'idioma i s'esborren, ens assegurem d'assignar-ne uns per defecte
+    if params[:validesa] == nil
+      validesa = 'false'
+    else
+      validesa = params[:validesa]
+    end
+    if params[:filtre] == nil
+      filtre = 'data'
+    else
+      filtre = params[:filtre]
+    end
     #fins que no es digui el contrari no s'han de separar productes per categoria
     @categoria = false
     #productes vàlids
-    if params[:validesa] == 'true'
-      productes_valids = ProducteDapcons.where("validesa_fi > ?", Date.today).order(validesa_inici: :desc)
+    if validesa == 'true'
+      productes_valids = ProducteDapcons.where("validesa_fi > ?", Date.today)
     else
-      productes_valids = ProducteDapcons.all.order(validesa_inici: :desc)
+      productes_valids = ProducteDapcons.all
     end
     #filtres
-    if params[:filtre] == 'data'
+    if filtre == 'data'
       @productes = productes_valids.order(validesa_inici: :desc)
-    elsif params[:filtre] == 'nom'
+    elsif filtre == 'nom'
       @productes = productes_valids.order(empresa: :asc)
-    elsif params[:filtre] == 'categoria'
+    elsif filtre == 'categoria'
       @categoria = true
       @aillants_termics = productes_valids.where(categoria_indicadors: '001')
       @revestiments_ceramics = productes_valids.where(categoria_indicadors: '002')

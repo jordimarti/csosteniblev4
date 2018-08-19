@@ -248,6 +248,9 @@ ca:
     productes_registrats:
       revestiments_ceramics: "REVESTIMENTS CERÀMICS"
       aillants_termics: "AÏLLANTS TÈRMICS"
+      pedra_natural: "PEDRA NATURAL"
+      productes_general: "PRODUCTES DE CONSTRUCCIÓ EN GENERAL"
+      no_productes: "No hi ha productes en aquesta categoria"
   producte_dapcons:
     form:
       guardar: "Desar canvis"

@@ -39,9 +39,13 @@
 		      		<%= t('.revestiments_ceramics') %>
 		      	</div>
 		      	<div class="categoria-productes-dapcons">
-		      		<% @revestiments_ceramics.each do |producte| %>
-		      			<%= render partial: "item_producte_dapcons", locals: { producte: producte } %>
-		      		<% end %>
+		      		<% if @revestiments_ceramics.count == 0 %>
+		      			<p><%= t('.no_productes') %></p>
+		      		<% else %>
+			      		<% @revestiments_ceramics.each do |producte| %>
+			      			<%= render partial: "item_producte_dapcons", locals: { producte: producte } %>
+			      		<% end %>
+			      	<% end %>
 		      	</div>
 
 		      	<div class="separador-categoria-productes-dapcons"></div>
@@ -50,16 +54,48 @@
 		      		<%= t('.aillants_termics') %>
 		      	</div>
 		      	<div class="categoria-productes-dapcons">
-		      		<% @aillants_termics.each do |producte| %>
-		      			<%= render partial: "item_producte_dapcons", locals: { producte: producte } %>
-		      		<% end %>
+		      		<% if @aillants_termics.count == 0 %>
+		      			<p><%= t('.no_productes') %></p>
+		      		<% else %>
+			      		<% @aillants_termics.each do |producte| %>
+			      			<%= render partial: "item_producte_dapcons", locals: { producte: producte } %>
+			      		<% end %>
+			      	<% end %>
+		      	</div>
+
+		      	<div class="separador-categoria-productes-dapcons"></div>
+
+		      	<div class="titol-categoria-productes-dapcons">
+		      		<%= t('.pedra_natural') %>
+		      	</div>
+		      	<div class="categoria-productes-dapcons">
+		      		<% if @pedra_natural.count == 0 %>
+		      			<p><%= t('.no_productes') %></p>
+		      		<% else %>
+			      		<% @pedra_natural.each do |producte| %>
+			      			<%= render partial: "item_producte_dapcons", locals: { producte: producte } %>
+			      		<% end %>
+			      	<% end %>
+		      	</div>
+
+		      	<div class="separador-categoria-productes-dapcons"></div>
+
+		      	<div class="titol-categoria-productes-dapcons">
+		      		<%= t('.productes_general') %>
+		      	</div>
+		      	<div class="categoria-productes-dapcons">
+		      		<% if @productes_general.count == 0 %>
+		      			<p><%= t('.no_productes') %></p>
+		      		<% else %>
+			      		<% @productes_general.each do |producte| %>
+			      			<%= render partial: "item_producte_dapcons", locals: { producte: producte } %>
+			      		<% end %>
+			      	<% end %>
 		      	</div>
 
 		      <% else %>
 		      	<% @productes.each do |producte| %>
-		      		<div class="item-producte-dapcons">
-		      			<%= producte.nom_ca %> - <%= producte.validesa_inici %> - <%= producte.validesa_fi %>
-		      		</div>
+		      		<%= render partial: "item_producte_dapcons", locals: { producte: producte } %>
 		      	<% end %>
 		      <% end %>
 	      </div>
