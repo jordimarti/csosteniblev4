@@ -93,40 +93,44 @@ class DapconsController < ApplicationController
   end
 
   def comparador
-    if params[:tipus_producte1] == 'sistema'
-      @producte1 = ProducteDapcons.find(params[:producte1])
+    #Si es canvia d'idioma es perden els params de la url, per això dirigirem a llistat de productes
+    if params[:tipus_producte1] == nil
+      redirect_to dapcons_llistat_productes_path
     else
-      @producte1 = ProducteDapconsUsuari.find(params[:producte1])
-    end
-    if params[:tipus_producte2] == 'sistema'
-      @producte2 = ProducteDapcons.find(params[:producte2])
-    else
-      @producte2 = ProducteDapconsUsuari.find(params[:producte2])
-    end
-    @tipus_indicadors = TipusIndicador.all
-    if params[:tipus_producte1] == 'usuari'
-      @nom_producte1 = @producte1.nom
-    else
-      if params[:locale] == 'es'
-        @nom_producte1 = @producte1.nom_es
-      elsif params[:locale] == 'en'
-        @nom_producte1 = @producte1.nom_en
+      if params[:tipus_producte1] == 'sistema'
+        @producte1 = ProducteDapcons.find(params[:producte1])
       else
-        @nom_producte1 = @producte1.nom_ca
+        @producte1 = ProducteDapconsUsuari.find(params[:producte1])
       end
-    end
-    if params[:tipus_producte2] == 'usuari'
-      @nom_producte2 = @producte2.nom
-    else
-      if params[:locale] == 'es'
-        @nom_producte2 = @producte2.nom_es
-      elsif params[:locale] == 'en'
-        @nom_producte2 = @producte2.nom_en
+      if params[:tipus_producte2] == 'sistema'
+        @producte2 = ProducteDapcons.find(params[:producte2])
       else
-        @nom_producte2 = @producte2.nom_ca
+        @producte2 = ProducteDapconsUsuari.find(params[:producte2])
       end
-    end
-                  
+      @tipus_indicadors = TipusIndicador.all
+      if params[:tipus_producte1] == 'usuari'
+        @nom_producte1 = @producte1.nom
+      else
+        if params[:locale] == 'es'
+          @nom_producte1 = @producte1.nom_es
+        elsif params[:locale] == 'en'
+          @nom_producte1 = @producte1.nom_en
+        else
+          @nom_producte1 = @producte1.nom_ca
+        end
+      end
+      if params[:tipus_producte2] == 'usuari'
+        @nom_producte2 = @producte2.nom
+      else
+        if params[:locale] == 'es'
+          @nom_producte2 = @producte2.nom_es
+        elsif params[:locale] == 'en'
+          @nom_producte2 = @producte2.nom_en
+        else
+          @nom_producte2 = @producte2.nom_ca
+        end
+      end
+    end          
   end
 
   private
