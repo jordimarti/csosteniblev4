@@ -1,2 +1,144 @@
-<h1>Dapcons#consell_assessor</h1>
-<p>Find me in app/views/dapcons/consell_assessor.html.erb</p>
+<div class="container">
+  <%= render "layouts/dapcons_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="continguts-dapcons">
+				
+				<% if params[:locale] == 'ca' %>
+
+					<div class="sub-title-container">
+		        <span class="sub-title">Consell assessor</span>
+		      </div>
+
+		      <p>Està format per experts diversos que representen a les parts interessades en el desenvolupament de les declaracions ambientals del producte en el sector de la construcció.</p>
+
+		      <p>
+		      	<ul>
+		      		<li>APCE (Asociación de Promotores Constructores de España)
+						    </li>
+						  <li>APPLUS
+						    </li>
+						  <li>AVS (Promotores Públicos de Vivienda y Suelo)
+						    </li>
+						  <li>BUREAU VERITAS
+						    </li>
+						  <li>CAATEEB. Col·legi d'Aparelladors, Arquitectes Tècnics i Enginyers d'Edificació de Barcelona
+						    </li>
+						  <li>CECCPC. Col·legi d'Enginyers de Camins, Canals i Ports de Catalunya
+						    </li>
+						  <li>CEIC. Col·legi d'Enginyers Industrials de Catalunya
+						    </li>
+						  <li>Centre Tecnològic ASCAMM
+						    </li>
+						  <li>CETIB. Col·legi d'Enginyers Tècnics Industrials de Barcelona
+						    </li>
+						  <li>COAC. Col·legi d'Arquitectes de Catalunya
+						    </li>
+						  <li>CSIC. Instituto Ciencias de la Construcción Eduardo Torroja
+						    </li>
+						  <li>Direcció General de Qualitat Ambiental (Generalitat de Catalunya)
+						    </li>
+						  <li>Direcció General de Qualitat de l'Edificació i Rehabilitació de l'Habitatge (Agència de l'Habitatge)
+						    </li>
+						  <li>Dirección General de Arquitectura y Política de Vivienda (Ministerio de Fomento)
+						    </li>
+						  <li>ETSAV. Escuela Tècnica Superior de Arquitectura del Vallès (UPC)
+						    </li>
+						  <li>GBCE 
+						    </li>
+						  <li>INFRAESTRUCTURES.CAT (Generalitat de Catalunya)
+						    </li>
+						  <li>INCASÒL (Generalitat de Catalunya)
+						  </li>
+						  <li>INEDIT 
+						    </li>
+						  <li>Institut de Ciència i Tecnologia Ambientals (ICTA-UAB)
+						    </li>
+						  <li>LABEIN – Tecnália
+						    </li>
+						  <li>LAVOLA
+						    </li>
+							<li>LEiTaT
+								</li>
+						  <li>ReMa
+						    </li>
+						  <li>UAB. Universitat Autònoma de Barcelona
+						    </li>
+						  <li>UPC. ETSAV, Escola Enginyers de Camins
+						    </li>
+						  <li>UPM. Escuela Técnica Superior de Ingenieros Agrónomos
+						  	</li>
+						</ul>
+		      </p>
+
+		    <% else %>
+
+		    	<div class="sub-title-container">
+		        <span class="sub-title">Consejo asesor</span>
+		      </div>
+
+		      <p>Está formado por expertos diversos que representan a las partes interesadas en el desarrollo de las declaraciones ambientales del producto en el sector de la construcción: </p>
+
+					<p>
+						<ul>
+						  <li>APCE (Asociación de Promotores Constructores de España)
+						    </li>
+						  <li>APPLUS
+						    </li>
+						  <li>AVS (Promotores Públicos de Vivienda y Suelo)
+						    </li>
+						  <li>BUREAU VERITAS
+						    </li>
+						  <li>CAATEEB. Col·legi d'Aparelladors, Arquitectes Tècnics i Enginyers d'Edificació de Barcelona
+						    </li>
+						  <li>CECCPC. Col·legi d'Enginyers de Camins, Canals i Ports de Catalunya
+						    </li>
+						  <li>CEIC. Col·legi d'Enginyers Industrials de Catalunya
+						    </li>
+						  <li>Centre Tecnològic ASCAMM
+						    </li>
+						  <li>CETIB. Col·legi d'Enginyers Tècnics Industrials de Barcelona
+						    </li>
+						  <li>COAC. Col·legi d'Arquitectes de Catalunya
+						    </li>
+						  <li>CSIC. Instituto Ciencias de la Construcción Eduardo Torroja
+						    </li>
+						  <li>Direcció General de Qualitat Ambiental (Generalitat de Catalunya)
+						    </li>
+						  <li>Direcció General de Qualitat de l'Edificació i Rehabilitació de l'Habitatge (Agència de l'Habitatge)
+						    </li>
+						  <li>Dirección General de Arquitectura y Política de Vivienda (Ministerio de Fomento)
+						    </li>
+						  <li>ETSAV. Escuela Tècnica Superior de Arquitectura del Vallès (UPC)
+						    </li>
+						  <li>GBCE 
+						    </li>
+						  <li>INFRAESTRUCTURES.CAT (Generalitat de Catalunya)
+						    </li>
+						  <li>INCASÒL (Generalitat de Catalunya)
+						  </li>
+						  <li>INEDIT 
+						    </li>
+						  <li>Institut de Ciència i Tecnologia Ambientals (ICTA-UAB)
+						    </li>
+						  <li>LABEIN – Tecnália
+						    </li>
+						  <li>LAVOLA
+						    </li>
+							<li>LEiTaT
+								</li>
+						  <li>ReMa
+						    </li>
+						  <li>UAB. Universitat Autònoma de Barcelona
+						    </li>
+						  <li>UPC. ETSAV, Escola Enginyers de Camins
+						    </li>
+						  <li>UPM. Escuela Técnica Superior de Ingenieros Agrónomos
+						  	</li>
+						</ul>
+					</p>
+		    <% end %>
+		  </div>
+		</div>
+</div>
+<%= render "layouts/dapcons_noticies" %>

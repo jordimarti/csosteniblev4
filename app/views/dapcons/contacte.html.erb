@@ -1,2 +1,27 @@
-<h1>Dapcons#contacte</h1>
-<p>Find me in app/views/dapcons/contacte.html.erb</p>
+<div class="container">
+  <%= render "layouts/dapcons_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="continguts-dapcons">
+				
+				<% if params[:locale] == 'ca' %>
+
+					<div class="sub-title-container">
+		        <span class="sub-title">Contactar</span>
+		      </div>
+
+		      <p>Si voleu més informació sobre DAPcons<sup>®</sup> ens podeu contactar a: <a href="mailto:sostenible@apabcn.cat">sostenible@apabcn.cat</a>.</p>
+
+		    <% else %>
+
+		    	<div class="sub-title-container">
+		        <span class="sub-title">Contactar</span>
+		      </div>
+
+		      <p>Si quieren más información sobre DAPcons<sup>®</sup> podéis contactar a: <a href="mailto:sostenible@apabcn.cat">sostenible@apabcn.cat</a>.</p>
+
+		    <% end %>
+		  </div>
+		</div>
+</div>
+<%= render "layouts/dapcons_noticies" %>

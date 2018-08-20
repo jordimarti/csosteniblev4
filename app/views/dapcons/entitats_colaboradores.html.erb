@@ -1,2 +1,31 @@
-<h1>Dapcons#entitats_colaboradores</h1>
-<p>Find me in app/views/dapcons/entitats_colaboradores.html.erb</p>
+<div class="container">
+  <%= render "layouts/dapcons_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="continguts-dapcons">
+				
+				<% if params[:locale] == 'ca' %>
+
+					<div class="sub-title-container">
+		        <span class="sub-title">Entitats col·laboradores</span>
+		      </div>
+
+		      <p>El Programa DAPcons<sup>®</sup> i Green Building Council d’Espanya tenen un conveni de col·laboració per potenciar la promoció de l’edificació sostenible en el territori espanyol. Entre els seus acords es troba el reconeixement de les Declaracions Ambientals de Producte de construcció en la certificació VERDE.</p>
+
+		      <div class="imatge-dapcons-centrada"><%= image_tag "https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/logo_gbce.gif" %></div>
+
+		    <% else %>
+
+		    	<div class="sub-title-container">
+		        <span class="sub-title">Entidades colaboradoras</span>
+		      </div>
+
+		      <p>El Programa DAPcons<sup>®</sup> y el Green Building Council de España tienen un convenio de colaboración para potenciar la promoción de la edificación sostenible en el territorio español. Entre sus acuerdos también se encuentra el reconocimiento de las Declaracions Ambientales de Producto de construcción en la certificación VERDE.</p>
+
+		      <div class="imatge-dapcons-centrada"><%= image_tag "https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/logo_gbce.gif" %></div>
+
+		    <% end %>
+		  </div>
+		</div>
+</div>
+<%= render "layouts/dapcons_noticies" %>

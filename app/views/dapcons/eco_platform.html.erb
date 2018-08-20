@@ -1,2 +1,35 @@
-<h1>Dapcons#eco_platform</h1>
-<p>Find me in app/views/dapcons/eco_platform.html.erb</p>
+<div class="container">
+  <%= render "layouts/dapcons_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="continguts-dapcons">
+				
+				<% if params[:locale] == 'ca' %>
+
+					<div class="sub-title-container">
+		        <span class="sub-title">Eco-Platform</span>
+		      </div>
+
+		      <p>L’Eco-Platform és una organització internacional, constituïda el 4 de juny de 2013, que aglutina tots els operadors europeus d’EPD o Declaracions Ambientals de Producte (DAP) del sector de la construcció entre els quals es troba el Programa DAPcons<sup>®</sup> espanyol del CAATEEB.</p>
+
+		      <div class="imatge-dapcons-centrada"><%= image_tag "https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/logo_ecoplatform.png" %></div>
+
+		      <p>La Junta de Gobierno de ECO Platform está formada por los Programas DAP que se pueden consultar en el siguiente enlace: <a href="http://www.eco-platform.org/the-board.html">http://www.eco-platform.org/the-board.html</a></p>
+
+		    <% else %>
+
+		    	<div class="sub-title-container">
+		        <span class="sub-title">Administradores del Programa</span>
+		      </div>
+
+		      <p>Eco-Platfom es una organización internacional, constituida el 4 de junio de 2013, que aglutina a todos los operadores europeos d’EPD o Declaraciones Ambientales de Producto (DAP) del sector de la construcción entre los cuales se encuentra el Programa DAPcons<sup>®</sup> español del CAATEEB.</p>
+
+		      <div class="imatge-dapcons-centrada"><%= image_tag "https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/logo_ecoplatform.png" %></div>
+
+		      <p>La Junta de Govern de l’ECO Platform està formada pels Programes DAP que és poden consultar en el següent enllaç: <a href="http://www.eco-platform.org/the-board.html">http://www.eco-platform.org/the-board.html</a></p>
+
+		    <% end %>
+		  </div>
+		</div>
+</div>
+<%= render "layouts/dapcons_noticies" %>

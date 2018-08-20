@@ -1,2 +1,31 @@
-<h1>Dapcons#panells_sectorials</h1>
-<p>Find me in app/views/dapcons/panells_sectorials.html.erb</p>
+<div class="container">
+  <%= render "layouts/dapcons_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="continguts-dapcons">
+				
+				<% if params[:locale] == 'ca' %>
+
+					<div class="sub-title-container">
+		        <span class="sub-title">Panells sectorials</span>
+		      </div>
+
+		      <p>Els panells sectorials són un mecanisme de consulta i participació de las parts interessats en el procés de desenvolupament de les Regles de Categoria de Producte (RCP). Han estat formats panells per als aïllaments tèrmics, ceràmics, pedra i àrids.</p>
+
+					<p>Els panells estan formats per representants d’empreses, associacions empresarials o altres entitats o experts dins de determinades categories de producte i es convoquen en funció de l’interès d’empreses subministradores de productes de la construccions per obtenir una DAPcons<sup>®</sup>.</p>
+
+		    <% else %>
+
+		    	<div class="sub-title-container">
+		        <span class="sub-title">Paneles sectoriales</span>
+		      </div>
+
+		      <p>Los paneles sectoriales son un mecanismo de consulta y participación de las partes interesadas en el proceso de desarrollo de las Reglas de Categoría de Producto (RCP). Han sido creados paneles para los aislantes térmicos, cerámicas, piedra y áridos.</p>
+
+					<p>Los paneles están formados por representantes de empresas, asociaciones empresariales u otras entidades o expertos dentro de determinadas categorías de producto y se convocan en función del interés de empresas suministradoras de productos de la construcción para obtener una DAPcons<sup>®</sup>.</p>
+
+		    <% end %>
+		  </div>
+		</div>
+</div>
+<%= render "layouts/dapcons_noticies" %>

@@ -1,2 +1,106 @@
-<h1>Dapcons#registrar_producte</h1>
-<p>Find me in app/views/dapcons/registrar_producte.html.erb</p>
+<div class="container">
+  <%= render "layouts/dapcons_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="continguts-dapcons">
+				
+				<% if params[:locale] == 'ca' %>
+
+					<div class="sub-title-container">
+		        <span class="sub-title">Registrar un producte en el programa DAPconstrucción<sup>®</sup></span>
+		      </div>
+
+		      <p>Les DAPcons<sup>®</sup> tenen una validesa de 5 anys. Si durant el període de validesa es produeixen canvis a nivell tecnològic que poden produir una variació de l’impacte ambiental en el rang d’entre el 5i el 10% del producte afectat per la DAPcons<sup>®</sup>, l’organització n’haurà d’informar a l’administrador i posar en marxa una revisió.</p>
+
+<h4>Procediment per registrar un producte</h4>
+<p>Les organitzacions que vulguin registrar un producte en el programa DAPconstrucción<sup>®</sup> han de:
+<ol>
+<li>Contactar amb l’administrador del Programa (CAATEEB) per obtenir el procediment de desenvolupament d’una DAPcons<sup>®</sup> i les Regles de Categoria de Producte (RCP) aplicables al seu producte. En el suposat que encara no s’hagi desenvolupat el document de RCP per al producte concret, farà falta posar en marxa el procediment per a la seva creació, o bé utilitzar les RCP genèriques, prèvia aprovació de l’administrador del programa.</li>
+
+<li>Desenvolupar un estudi de l’Anàlisi del Cicle de Vida (ACV) d’acord amb les Regles de Categoria del Producte (RCP) corresponents. L’informe de l’ACV seguirà el format determinat per les RCP.</li>
+
+<li>Redactar un esborrany de la DAPcons<sup>®</sup>  a partir de l’estudi d’ACV, seguint les directrius del procediment i de les RCP corresponents.</li>
+
+<li>Procedir a la verificació de les dades mitjançant un verificador independent acreditat.</li> 
+
+<li>Una vegada finalitzada la verificació, si el resultat és positiu, l’organització haurà de presentar a l’administrador del Programa (CAATEEB) tota la documentació necessària i d’acord amb els models establers: DAPcons<sup>®</sup> informe de verificació i informe d’ACV.</li>
+
+<li>Inscripció de la DAPcons<sup>®</sup> en el registre oficial del Programa, previ pagament de la quota corresponent. </li>
+</ol>
+</p>
+<p class="centrat"><img src="https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/quadre_registre_CA.png" alt="Esquema DAPcons"></p>
+
+<h4>Quota per certificar un producte DAPcons<sup>®</sup>:</h4>
+
+<p>Tramitació de l’ecoetiqueta tipus III (DAPcons<sup>®</sup>) documentació i registre. Validesa: 5 anys
+<ul>
+<li>Primera DAPcons<sup>®</sup> 1.200 €</li>
+<li>Segona DAPcons<sup>®</sup> 600 €</li>
+<li>Tercera DAPcons<sup>®</sup> 450 €</li>
+<li>Quarta i següents DAPcons<sup>®</sup> 300 €</li>
+</ul>
+</p>
+
+<p>Renovació de l’ecoetiqueta tipus III (DAPcons<sup>®</sup>) documentació i registre. Validesa 5 anys
+<ul>
+<li>Primera DAPcons<sup>®</sup> 600 €</li>
+<li>Segona DAPcons<sup>®</sup> 325 €</li>
+<li>Tercera DAPcons<sup>®</sup> 250 €</li>
+<li>Quarta i següents DAPcons<sup>®</sup> 175 €</li>
+</ul>
+</p>
+
+		    <% else %>
+
+		    	<div class="sub-title-container">
+		        <span class="sub-title">Registrar un producto en el programa DAPconstrucción<sup>®</sup></span>
+		      </div>
+
+		      <p>Las DAPcons<sup>®</sup> tienen un periodo de validez definido de 5 años. Si durante el período de validez se producen cambios a nivel tecnológico que puedan conllevar a una variación del impacto ambiental en el rango del 5-10% del producto afectado por la DAPcons<sup>®</sup>, la organización deberá informar al administrador y poner en marcha su revisión.</p>
+
+
+<h4>Procedimiento para registrar un producto</h4>
+<p>Las organizaciones que quieran registrar un producto en el programa DAPcons<sup>®</sup>trucción tienen que: 
+<ol>
+<li>Contactar con el administrador del Programa (CAATEEB) para obtener el procedimiento de desarrollo de una DAPcons<sup>®</sup>  y las Reglas de Categoría de Producto (RCP) aplicables a su producto. En el supuesto de que todavía no se haya desarrollado el documento de RCP para el producto, hará falta poner en marcha el procedimiento para su creación, o bien utilizar las RCP genéricas, previa aprobación del administrador del programa.</li>
+
+<li>Desarrollar un estudio de Análisis de Ciclo de Vida (ACV) de acuerdo con las Reglas de Categoría de Producto (RCP) correspondientes. El informe del ACV seguirá el formato determinado por las RCP. </li>
+
+<li>Redactar un borrador de la DAPcons<sup>®</sup>  a partir del estudio de ACV y siguiendo las directrices del procedimiento y de las RCP correspondientes. </li>
+
+<li>Llevar a cabo la verificación de datos mediante un verificador independiente acreditado. </li>
+
+<li>Una vez finalizada la verificación y si el resultado es positivo, la organización deberá presentar al administrador del Programa (CAATEEB) toda la documentación necesaria y de acuerdo con los modelos establecidos: DAPcons<sup>®</sup> informe de verificación e informe de ACV.</li>
+
+<li>Inscripción de la DAPcons<sup>®</sup> en el registro oficial del Programa, previo pago de la cuota correspondiente.</li>
+</ol>
+</p>
+
+<p class="centrat"><img src="https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/cuadro_registro_ES.png" alt="Esquema DAPcons"></p>
+
+
+<h4>Cuota para certificar un producto DAPcons<sup>®</sup></h4>
+
+<p>Tramitación de la ecoetiqueta tipo III (DAPcons<sup>®</sup>) documentación y registro. Validez: 5 años
+<ul>
+<li>Primera DAPcons<sup>®</sup> 1.200 €</li>
+<li>Segunda DAPcons<sup>®</sup> 600 €</li>
+<li>Tercera DAPcons<sup>®</sup> 450 €</li>
+<li>Cuarta y siguientes DAPcons<sup>®</sup> 300 €</li>
+</ul>         
+</p>
+
+<p>Renovación de la ecoetiqueta tipo III (DAPcons<sup>®</sup>) documentación y registro. Validez 5 años
+<ul>
+<li>Primera DAPcons<sup>®</sup> 600 €</li>
+<li>Segunda DAPcons<sup>®</sup> 325 €</li>
+<li>Tercera DAPcons<sup>®</sup> 250 €</li>
+<li>Cuarta y siguientes DAPcons<sup>®</sup> 175 €</li>
+</ul>
+</p>
+
+		    <% end %>
+		  </div>
+		</div>
+</div>
+<%= render "layouts/dapcons_noticies" %>

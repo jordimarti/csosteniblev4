@@ -1,2 +1,35 @@
-<h1>Dapcons#administradors</h1>
-<p>Find me in app/views/dapcons/administradors.html.erb</p>
+<div class="container">
+  <%= render "layouts/dapcons_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="continguts-dapcons">
+				
+				<% if params[:locale] == 'ca' %>
+
+					<div class="sub-title-container">
+		        <span class="sub-title">Administradors del Programa</span>
+		      </div>
+
+		      <p>El <a href="https://www.apabcn.cat/">CAATEEB</a> treballa per promoure la reducció del impacte de l’activitat constructiva i la dels seus professionals sobre l’entorn, és l’administrador del Programa DAPconstrucción<sup>®</sup>.</p>
+
+		      <div class="imatge-dapcons-centrada"><%= image_tag "https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/logo_caateeb.png" %></div>
+
+		      <p>El programa disposa de diferents experts i assessors que col·laboren en la consecució del programa, així com amb diversos òrgans de consulta.</p>
+
+		    <% else %>
+
+		    	<div class="sub-title-container">
+		        <span class="sub-title">Administradores del Programa</span>
+		      </div>
+
+		      <p>El <a href="https://www.apabcn.cat/">CAATEEB</a> trabaja para promover la reducción del impacto de la actividad constructiva y la de sus profesionales sobre el entorno, es el administrador del Programa DAPconstrucción<sup>®</sup>.</p>
+
+		      <div class="imatge-dapcons-centrada"><%= image_tag "https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/logo_caateeb.png" %></div>
+
+		      <p>El programa cuenta con diferentes expertos y asesores que colaboran en la consecución del programa así como con diversos órganos de consulta.</p>
+
+		    <% end %>
+		  </div>
+		</div>
+</div>
+<%= render "layouts/dapcons_noticies" %>
