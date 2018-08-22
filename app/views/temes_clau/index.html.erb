@@ -40,7 +40,7 @@
 	</div>
 </div>
 
-<% else %>
+<% elsif params[:locale] == 'es' %>
 <div class="container">
 	<div class="grid-x">
 		<div class="medium-12 cell">
@@ -78,6 +78,48 @@
 		</div>
 		<div class="medium-4 cell">
 			<%= link_to image_tag('https://s3-eu-west-1.amazonaws.com/csostenible/imatges/temes_clau/salut_petit_es.jpg'), temes_clau_salut_path, alt: "Salud", class: "responsive-img" %>
+		</div>
+	</div>
+</div>
+
+<% else %>
+<div class="container">
+	<div class="grid-x">
+		<div class="medium-12 cell">
+			<div class="main-title-container">
+				<span class="main-title"><%= t('.temes_clau') %></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="grid-x grid-margin-x grid-margin-y">
+
+		<div class="medium-4 cell">
+			<%= link_to image_tag('https://s3-eu-west-1.amazonaws.com/csostenible/imatges/temes_clau/marc_conceptual_petit_en.jpg'), temes_clau_marc_conceptual_path, alt: "Conceptual framework", class: "responsive-img" %>	
+		</div>
+		<div class="medium-4 cell">
+			<%= link_to image_tag('https://s3-eu-west-1.amazonaws.com/csostenible/imatges/temes_clau/materials_petit_ca.jpg'), temes_clau_materials_path, alt: "Materiales", class: "responsive-img" %>	
+		</div>
+		<div class="medium-4 cell">
+			<%= link_to image_tag('https://s3-eu-west-1.amazonaws.com/csostenible/imatges/temes_clau/passius_petit_en.jpg'), temes_clau_energia_passius_path, alt: "Energía: sistemas pasivos", class: "responsive-img" %>
+		</div>
+	
+	
+		<div class="medium-4 cell">
+			<%= link_to image_tag('https://s3-eu-west-1.amazonaws.com/csostenible/imatges/temes_clau/actius_petit_en.jpg'), temes_clau_energia_actius_path, alt: "Energía: sistemas activos", class: "responsive-img" %>
+		</div>
+		<div class="medium-4 cell">
+			<%= link_to image_tag('https://s3-eu-west-1.amazonaws.com/csostenible/imatges/temes_clau/renovables_petit_en.jpg'), temes_clau_energia_renovables_path, alt: "Energía: renovables", class: "responsive-img" %>
+		</div>
+		<div class="medium-4 cell">
+			<%= link_to image_tag('https://s3-eu-west-1.amazonaws.com/csostenible/imatges/temes_clau/aigua_petit_en.jpg'), temes_clau_aigua_path, alt: "Agua", class: "responsive-img" %>
+		</div>
+	
+		<div class="medium-4 cell">
+			<%= link_to image_tag('https://s3-eu-west-1.amazonaws.com/csostenible/imatges/temes_clau/residus_petit_en.jpg'), temes_clau_residus_path, alt: "Residuos", class: "responsive-img" %>
+		</div>
+		<div class="medium-4 cell">
+			<%= link_to image_tag('https://s3-eu-west-1.amazonaws.com/csostenible/imatges/temes_clau/salut_petit_en.jpg'), temes_clau_salut_path, alt: "Salud", class: "responsive-img" %>
 		</div>
 	</div>
 </div>
