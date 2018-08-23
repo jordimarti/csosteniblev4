@@ -88,11 +88,28 @@ li.menu-item a{
 
 /* Login */
 
+.login-formulari-container {
+	/*border: 1px solid #ccc;*/
+	background: #eaeaea;
+	padding: 20px;
+}
+
 .login-container {
-	border: 1px solid #ccc;
+	border: 1px solid #066986;
 	padding: 20px;
 	margin-top: 80px;
 	border-left: 5px solid blue;
+}
+
+.shared-links-crear-compte {
+	margin-top: 20px;
+}
+
+.shared-links-recuperar-contrasenya {
+	border-top: 1px solid #ccc;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	padding-top: 15px;
 }
 
 h2.login-title {
@@ -110,6 +127,28 @@ h2.login-title {
 	margin-left: 5px;
 }
 
+.container-imatge-inici-sessio {
+	text-align: center;
+	padding: 0px 50px;
+	margin-bottom: 40px;
+}
+
+.imatge-inici-sessio {
+	max-width: 500px;
+}
+
+.container-text-inici-sessio {
+	text-align: center;
+	
+}
+
+.text-inici-sessio {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #666;
+	max-width: 500px;
+	margin: 0 auto;
+}
 
 /* Titols generals */
 
@@ -125,15 +164,6 @@ h2.login-title {
 .secondary-title {
 	font-size: 1.5em;
 	font-weight: bold;
-}
-
-
-/* Registre */
-
-.login-formulari-container {
-	border: 1px solid #ccc;
-	background-color: #eaeaea;
-	padding: 20px;
 }
 
 

@@ -8,7 +8,7 @@
   </div>
 
   <div class="grid-x grid-margin-x">
-    <div class="large-4 medium-6 large-offset-4 medium-offset-3 cell">
+    <div class="large-4 medium-6 cell">
     	<div class="login-formulari-container">
     		<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 				  <%= f.error_notification %>
@@ -26,7 +26,21 @@
 				  </div>
 				<% end %>
     	</div>
-
+      <div class="links-sessions">
+        <div class="shared-links-crear-compte">
+          <%= t('.if_registered') %> <%= link_to t('.login_here'), new_user_session_path %>.
+        </div>
+      </div>
+    </div>
+    <div class="large-8 medium-6 cell">
+      <div class="container-imatge-inici-sessio">
+        <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/registre2.jpg', :class => 'responsive-img imatge-inici-sessio') %>
+      </div> 
+      <div class="container-text-inici-sessio">
+        <div class="text-inici-sessio">
+          Uneix-te a la comunitat de l'Agenda de la Construcció Sostenible i contribueix a sostenibilitzar el sector de l'edificació.
+        </div>
+      </div>
     </div>
   </div>
 </div>
