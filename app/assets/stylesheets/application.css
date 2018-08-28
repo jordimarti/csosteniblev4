@@ -169,6 +169,10 @@ h2.login-title {
 
 /* Formularis */
 
+trix-editor {
+	background-color: white;
+}
+
 .container-form-modificat {
 	background-color: #eaeaea;
 	padding: 20px;

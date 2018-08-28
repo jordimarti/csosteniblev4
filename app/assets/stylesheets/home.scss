@@ -100,6 +100,7 @@
 	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
   -moz-box-shadow: 3px 3px 5px 6px #ccc;
   box-shadow: 3px 3px 5px #ccc; 
+  margin-bottom: 20px;
 }
 
 .panell-control-item:hover {
@@ -136,4 +137,12 @@ a > .panell-control-item > .text-item-panell-control > p {
 	color: black;
 }
 
+.back-button {
+	padding: 10px 20px;
+	background-color: #eaeaea;
+}
+
+span.text-destacat {
+	font-weight: bold;
+}
 

@@ -1,6 +1,15 @@
-<h1>Editing Cas Practic</h1>
+<div class="container">
+	<div class="grid-x grid-margin-x">
+    <div class="cell medium-12">
+    	<%= link_to t('.tornar_llistat_casos'), cas_practics_llistat_path, class:'button' %>
+    	<div class="main-title-container">
+				<span class="main-title"><%= t('.titol_editar') %></span>
+			</div>
 
-<%= render 'form', cas_practic: @cas_practic %>
+			<%= render 'form', cas_practic: @cas_practic %>
 
-<%= link_to 'Show', @cas_practic %> |
-<%= link_to 'Back', cas_practics_path %>
+		</div>
+	</div>
+</div>
+
+

@@ -1,33 +1,434 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: "Doesn't match with confirmation"
+            current_password:
+              blank: "Can't be blank"
+              invalid: "Password not valid"
+            password:
+              too_short: "Password must be at least 8 characters long"
+              blank: "Can't be blank"
+            email:
+              taken: "This email is already registered"
+              invalid: "This email is not valid"
+              blank: "You must write the email"
+            first_name:
+              blank: "You must write your first name"
+            last_name:
+              blank: "You must write your last name"
+            reset_password_token:
+              invalid: "Doesn't match with confirmation"
+        indicador:
+          attributes:
+            tipus_indicadors:
+              required: "It is necessary to set the type of indicator"
+  simple_form:
+    labels:
+      user:
+        first_name: "First name"
+        last_name: "Last name"
+      producte_dapcons:
+        nom_ca: "Name"
+        nom_es: "Name"
+        nom_en: "Name"
+        descripcio_ca: "Description"
+        descripcio_es: "Description"
+        descripcio_en: "Description"
+        rcp_ca: "Product Category Rules"
+        rcp_es: "Product Category Rules"
+        rcp_en: "Product Category Rules"
+        unitat_declarada_ca: "Unit declared"
+        unitat_declarada_es: "Unit declared"
+        unitat_declarada_en: "Unit declared"
+        identificador: "Identifier"
+        empresa: "Company"
+        validesa_inici: "Validity start date"
+        validesa_fi: "Validity end date"
+        categoria_indicadors: "Category"
+      producte_dapcons_usuari:
+        nom: "Product name"
+        empresa: "Company"
+        descripcio: "Description"
+        unitat_declarada: "Declared unit"
+      noticia:
+        imatge_noticia: "Image"
+        data: "Date"
+        dapc: "DAPconstrucción News"
+        titol_ca: "Title"
+        resum_ca: "Summary"
+        permalink_ca: "Permalink"
+        titol_es: "Title"
+        resum_es: "Summary"
+        permalink_es: "Permalink"
+        titol_en: "Title"
+        resum_en: "Summary"
+        permalink_en: "Permalink"
+      cas_practic:
+        titol_ca: "Project name"
+        resum_ca: "Project's summary"
+        emplacament_ca: "Site"
+        any_construccio_ca: "Construction year"
+        us_edifici_ca: "Building use"
+        tipus_promocio_ca: "Type of promotion"
+        imatge_cas_principal: "Main image"
+        imatge_cas_1: "Image 1"
+        imatge_cas_2: "Image 2"
+        imatge_cas_3: "Image 3"
+        imatge_cas_4: "Image 4"
+        text_imatge_cas_principal_ca: "Main image description"
+        text_imatge_cas_1_ca: "Description image 1"
+        text_imatge_cas_2_ca: "Description image 2"
+        text_imatge_cas_3_ca: "Description image 3"
+        text_imatge_cas_4_ca: "Description image 4"
+        titol_es: "Project name"
+        resum_es: "Project's summary"
+        emplacament_es: "Site"
+        any_construccio_es: "Construction year"
+        us_edifici_es: "Building use"
+        tipus_promocio_es: "Type of promotion"
+        text_imatge_cas_principal_es: "Main image description"
+        text_imatge_cas_1_es: "Description image 1"
+        text_imatge_cas_2_es: "Description image 2"
+        text_imatge_cas_3_es: "Description image 3"
+        text_imatge_cas_4_es: "Description image 4"
+        titol_en: "Project name"
+        resum_en: "Project's summary"
+        emplacament_en: "Site"
+        any_construccio_en: "Construction year"
+        us_edifici_en: "Building use"
+        tipus_promocio_en: "Type of promotion"
+        text_imatge_cas_principal_en: "Main image description"
+        text_imatge_cas_1_en: "Description image 1"
+        text_imatge_cas_2_en: "Description image 2"
+        text_imatge_cas_3_en: "Description image 3"
+        text_imatge_cas_4_en: "Description image 4"
+  layouts:
+    top:
+      register: "Register"
+      sign_in: "Sign in"
+      account_configuration: "Account configuration"
+      sign_out: "Close session"
+      actualitat: "News"
+      temes_clau: "Main themes"
+      videos: "Videos"
+      casos_practics: "Case studies"
+      productes: "Products"
+      marketcons: "MarketCons"
+      dapcons: "DAPcons"
+    dapcons_navigation:
+      titol_programa_dapconstruccion: "DAPconstrucción"
+      subtitol_programa_dapconstruccion: "Environmental Construction Product Declaration"
+      programa_dapconstruccion: "DAPCONSTRUCCIÓN PROGRAM"
+      assessors_programa: "ADVISORS AND COLLABORATORS OF THE DAPCONSTRUCCIÓN PROGRAM"
+      formar_part: "FORMING PART"
+      que_son: "What are they?"
+      utilitat_dapcons: "Utility of the DAPCONS <sup>®</sup>"
+      organitzacions_afiliades: "Affiliated organizations"
+      productes_registrats: "Registered products"
+      comparador: "Comparator"
+      empreses_dapcons: "DAPcons<sup>®</sup> companies"
+      documents_oficials: "Official documents"
+      administradors: "Administrators"
+      consell_assessor: "Advisory council"
+      panells_sectorials: "Sectorial panels"
+      eco_platform: "Eco-platform"
+      entitats_colaboradores: "Collaborating entities"
+      verificadors: "Verifiers"
+      afiliacio: "Program affiliation"
+      registrar_producte: "Register a product"
+      contacte: "Contact us"
+  home:
+    panel:
+      panell: "Dashboard"
+      noticies: "News"
+      text_noticies: "Manage the existing news or create a new one"
+      productes: "Products"
+      text_1_productes: "Manage the products or create a new one"
+      text_2_productes: "Insert a product"
+      casos_practics: "Case studies"
+      text_1_casos_practics: "Manage case studies or create a new one"
+      text_2_casos_practics: "Create a case study"
+      declaracions: "Environmental Product Declarations"
+      text_declaracions_editor: "Administer productos of the DAPcons system"
+      text_declaracions_usuari: "Create a product for the Environmental Product Declarations comparisons"
+      continguts_pendents_moderacio: "There is content pending moderation"
+      casos_practics: "Study cases"
+      un_cas_pendent: "There is a study case pending moderation"
+      hi_ha: "There are"
+      casos_pendents: "study cases pending moderation"
+  noticies:
+    index:
+      actualitat: "News"
+    show:
+      ultimes_noticies: "LATEST NEWS"
+    form:
+      guardar: "Save changes"
+    llistat:
+      administracio_noticies: "News administration"
+  videos:
+    show:
+      noticies: "NEWS"
+    index:
+      videos: "Videos"
+  temes_clau:
+    index:
+      temes_clau: "Main themes"
+  cas_practics:
+    index:
+      casos_practics: "Case studies"
+    llistat:
+      panell: "<- Return to dashboard"
+      cas_practics: "Case studies"
+      editar_ca: "Catalan"
+      editar_es: "Spanish"
+      editar_en: "English"
+      eliminar: "Delete"
+      confirmacio_eliminar: "Are you sure you want to delete this case study?"
+      nou_cas: "New case study"
+      publicat: "Published"
+      no_publicat: "Not published"
+      cas_plublicat: "Published"
+      pendent_de_publicacio: "Publication pending"
+    form_ca:
+      catala: "Contents in catalan"
+      espanyol: "Contents in spanish"
+      angles: "Contents in english"
+      titol_descripcio: "Project description"
+      text_descripcio: "Explain the main features of the project, such as the functional program and the most relevant features."
+      titol_arquitectura: "Architecture"
+      text_arquitectura: "Explain how the project has been designed from an architectural point of view. Is the shape relevant? The orientation Integration with the environment?"
+      titol_materials: "Materials"
+      text_materials: "What materials have been used to build the building? Highlight the most relevant from an environmental point of view."
+      titol_energia: "Energy"
+      text_energia: "Do you know the consumption of the building? What has been done to ensure that you have low consumption?"
+      titol_aigua: "Water"
+      text_aigua: "Does the building incorporate systems for saving or recovering water?"
+      titol_certificacions: "Certifications"
+      text_certificacions: "Is the building certified in any way? Have you gotten an energy rating A? Or LEED certification, Green, Passivhaus ..."
+      titol_arquitectes: "Team"
+      text_arquitectes: "Who worked on the project? Architects, quantity surveyors, consultants, etc."
+      guardar: "Save"
+    form_es:
+      catala: "Contents in catalan"
+      espanyol: "Contents in spanish"
+      angles: "Contents in english"
+      titol_descripcio: "Project description"
+      text_descripcio: "Explain the main features of the project, such as the functional program and the most relevant features."
+      titol_arquitectura: "Architecture"
+      text_arquitectura: "Explain how the project has been designed from an architectural point of view. Is the shape relevant? The orientation Integration with the environment?"
+      titol_materials: "Materials"
+      text_materials: "What materials have been used to build the building? Highlight the most relevant from an environmental point of view."
+      titol_energia: "Energy"
+      text_energia: "Do you know the consumption of the building? What has been done to ensure that you have low consumption?"
+      titol_aigua: "Water"
+      text_aigua: "Does the building incorporate systems for saving or recovering water?"
+      titol_certificacions: "Certifications"
+      text_certificacions: "Is the building certified in any way? Have you gotten an energy rating A? Or LEED certification, Green, Passivhaus ..."
+      titol_arquitectes: "Team"
+      text_arquitectes: "Who worked on the project? Architects, quantity surveyors, consultants, etc."
+      guardar: "Save"
+    form_en:
+      catala: "Contents in catalan"
+      espanyol: "Contents in spanish"
+      angles: "Contents in english"
+      titol_descripcio: "Project description"
+      text_descripcio: "Explain the main features of the project, such as the functional program and the most relevant features."
+      titol_arquitectura: "Architecture"
+      text_arquitectura: "Explain how the project has been designed from an architectural point of view. Is the shape relevant? The orientation Integration with the environment?"
+      titol_materials: "Materials"
+      text_materials: "What materials have been used to build the building? Highlight the most relevant from an environmental point of view."
+      titol_energia: "Energy"
+      text_energia: "Do you know the consumption of the building? What has been done to ensure that you have low consumption?"
+      titol_aigua: "Water"
+      text_aigua: "Does the building incorporate systems for saving or recovering water?"
+      titol_certificacions: "Certifications"
+      text_certificacions: "Is the building certified in any way? Have you gotten an energy rating A? Or LEED certification, Green, Passivhaus ..."
+      titol_arquitectes: "Team"
+      text_arquitectes: "Who worked on the project? Architects, quantity surveyors, consultants, etc."
+      guardar: "Save"
+    form:
+      titol_descripcio: "Project description"
+      text_descripcio: "Explain the main features of the project, such as the functional program and the most relevant features."
+      titol_arquitectura: "Architecture"
+      text_arquitectura: "Explain how the project has been designed from an architectural point of view. Is the shape relevant? The orientation Integration with the environment?"
+      titol_materials: "Materials"
+      text_materials: "What materials have been used to build the building? Highlight the most relevant from an environmental point of view."
+      titol_energia: "Energy"
+      text_energia: "Do you know the consumption of the building? What has been done to ensure that you have low consumption?"
+      titol_aigua: "Water"
+      text_aigua: "Does the building incorporate systems for saving or recovering water?"
+      titol_certificacions: "Certifications"
+      text_certificacions: "Is the building certified in any way? Have you gotten an energy rating A? Or LEED certification, Green, Passivhaus ..."
+      titol_arquitectes: "Team"
+      text_arquitectes: "Who worked on the project? Architects, quantity surveyors, consultants, etc."
+      guardar: "Save"
+    edit_ca:
+      titol_editar: "Edit case"
+    edit_es:
+      titol_editar: "Edit case"
+    edit_en:
+      titol_editar: "Edit case"
+    new:
+      titol_nou: "Create a new case study"
+      tornar_llistat_casos: "<- Return to the case studies list"
+  productes:
+    index:
+      mitjans_equips_auxiliars: "Media and auxiliary equipment"
+      enderrocs_gestio_residus: "Demolition and waste management"
+      terreny_fonaments: "Land, containment and foundation"
+      estructures: "Structures"
+      tancaments_divisories: "Enclosures and partitions"
+      aillaments: "Insulation"
+      impermeabilitzacions: "Waterproofing and humidity treatments"
+      revestiments: "Coatings"
+      instalacions: "Facilities"
+      instalacions_clima: "Air conditioning"
+      instalacions_electriques: "Electricity"
+      instalacions_iluminacio: "Lighting"
+      instalacions_hidrauliques: "Hydraulic elements"
+      instalacions_elevacio: "Elevation and transport"
+      instalacions_monitoritzacio: "Monitoring"
+      urbanitzacio: "Urbanization"
+      empresa: "Company"
+      tipus_producte: "Type of product"
+      destaquem: "Stand out"
+  dapcons:
+    que_son:
+      que_son: "What are DAPcons<sup>®</sup>?"
+    utilitat:
+      utilitat: "Utility and use of DAPcons<sup>®</sup>"
+    comparador:
+      comparador: "Comparator"
+      a1-a3: "Extraction, transport and manufacture"
+      a4: "Transport of the product to construction site"
+      a5: "Installation of the product and construction"
+      b1: "Use"
+      b2: "Maintenance"
+      b3: "Repair"
+      b4-b7: "Replacement, rehabilitation and use of energy and operational water"
+      c1: "Deconstruction and demolition"
+      c2: "Transport"
+      c3: "Waste management for reuse, recovery and recycling"
+      c4: "Final elimination"
+      d: "Potential for reuse, recovery and recycling"
+      unitats_declarades: "Declared units"
+      titol_grafic: "Comparison of indicators in %"
+      advertencia_comparador: "It is important to take into account the declared units that have been used to create the indicators for each product. Do not compare apples with oranges!"
+      escalfament_global: "Potential of global warming"
+      ozo: "Potential of stratospheric ozone depletion"
+      acidificacio: "Potential for acidification"
+      recursos_abiotics: "Exhaustion of abiotic resources - fossil fuels"
+      recursos_abiotics_elements: "Exhaustion of abiotic resources - elements"
+      eutrofitzacio: "Potential for eutrophication"
+      ozo_fotoquimic: "Potential for photochemical ozone formation"
+    llistat_productes:
+      comparador: "Comparator"
+      selecciona_productes: "Select the products to compare"
+      aillants_termics: "Thermal insulation"
+      revestiments_ceramics: "Ceramic coatings"
+      pedra_natural: "Products of natural stone and aggregates"
+      construccio_general: "Construction products in general"
+      teus_productes: "Your products"
+      productes_usuari: "Products created by the user"
+      gestor_productes: "Go to the product manager"
+    organitzacions_afiliades:
+      empreses_membre: "Member companies"
+      entitats_membre: "Member entities"
+      membre_num: "Member number"
+      empresa: "Company"
+      dades: "Data"
+      certificacions: "Certifications"
+      entitat: "Entity"
+    item_producte_dapcons:
+      validesa: "Validity"
+      vigent: "current"
+      no_vigent: "not current"
+      de: "From"
+      a: "to"
+      identificador: "Identificator"
+      rcp_referencia: "Reference PCR"
+      descripcio: "Description of the product"
+      documents: "Documents"
+    productes_registrats:
+      revestiments_ceramics: "CERAMIC COATINGS"
+      aillants_termics: "THERMAL INSULATION"
+      pedra_natural: "NATURAL STONE"
+      productes_general: "CONSTRUCTION PRODUCTS IN GENERAL"
+      no_productes: "No products in this category"
+  producte_dapcons:
+    form:
+      guardar: "Save changes"
+    index:
+      panell: "Dashboard"
+      producte_dapcons: "DAPcons® product"
+      nou_producte: "New product"
+      nom: "Name"
+      empresa: "Company"
+      validesa_inici: "Valid from"
+      validesa_fi: "Valid until"
+      identificador: "Identifier"
+    indicador_fields:
+      a1-a3: "A1-A3: Extraction, transport and manufacture"
+      a4: "A4: Transport of the product to construction site"
+      a5: "A5: Installation of the product and construction"
+      b1: "B1: Use"
+      b2: "B2: Maintenance"
+      b3: "B3: Repair"
+      b4-b7: "B4-B7: Replacement, rehabilitation and use of energy and operational water"
+      c1: "C1: Deconstruction and demolition"
+      c2: "C2: Transport"
+      c3: "C3: Waste management for reuse, recovery and recycling"
+      c4: "C4: Final elimination"
+      d: "D: Potential for reuse, recovery and recycling"
+  producte_dapcons_usuaris:
+    index:
+      panell: "Dashboard"
+      producte_dapcons_usuari: "Products with environmental information"
+      nom: "Name"
+      empresa: "Company"
+      descripcio: "Description"
+      unitat_declarada: "Declared unit"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Delete"
+      confirmacio_eliminar: "Are you sure you want to delete this product?"
+      nou_producte: "New product"
+    new:
+      panell: "Dashboard"
+      producte_dapcons_usuari: "New product"
+      llistat_productes: "Product list"
+    form:
+      guardar: "Save"
+    indicador_usuari_fields:
+      a1-a3: "A1-A3: Extraction, transport and manufacture"
+      a4: "A4: Transport of the product to construction site"
+      a5: "A5: Installation of the product and construction"
+      b1: "B1: Use"
+      b2: "B2: Maintenance"
+      b3: "B3: Repair"
+      b4-b7: "B4-B7: Replacement, rehabilitation and use of energy and operational water"
+      c1: "C1: Deconstruction and demolition"
+      c2: "C2: Transport"
+      c3: "C3: Waste management for reuse, recovery and recycling"
+      c4: "C4: Final elimination"
+      d: "D: Potential for reuse, recovery and recycling"
+  tipus_indicadors:
+    index:
+      panell: "Dashboard"
+      tipus_indicadors: "Types of indicators"
+    new:
+      panell: "Dashboard"
+      nova_categoria_indicador: "New indicator category"
+    edit:
+      panell: "Dashboard"
+      editar_tipus_indicador: "Edit the indicator type"
+    form:
+      guardar: "Save"
+  cocoon:
+    defaults:
+      add: "+ Add element"
+      remove: "Delete"

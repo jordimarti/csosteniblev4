@@ -1,3 +1,28 @@
 // Place all the styles related to the CasPractics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container-formulari-cas-practic {
+	background-color: #eaeaea;
+	padding: 20px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+}
+
+.separador-formulari-cas-practic {
+	height: 40px;
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+}
+
+.titol-formulari-cas-practic {
+	font-size: 2em;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+h4.titol-text-camp-cas-practic {
+	font-size: 1.2em;
+	font-weight: bold;
+}

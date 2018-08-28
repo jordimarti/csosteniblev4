@@ -10,11 +10,16 @@
           <div class="grid-x grid-margin-x">
             <div class="cell medium-12">
               <div class="container-formulari-cas-practic">
+                <div class="titol-formulari-cas-practic">
+                  <%= t('.catala') %>
+                </div>
+            
 
 
                 <div class="grid-x grid-margin-x">
                   <div class="cell medium-6">
                     <%= f.input :titol_ca %>
+                    <%= f.input :visible %>
                   </div>
                   <div class="cell medium-6">
                     <%= f.input :resum_ca %>

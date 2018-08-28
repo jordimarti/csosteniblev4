@@ -25,7 +25,13 @@
               <% end %> 
             <div class="titol-index-noticia">
               <%= link_to noticia do %>
-                <h4><%= noticia.titol_ca %></h4>
+                <% if params[:locale] == 'ca' %>
+                  <h4><%= noticia.titol_ca %></h4>
+                <% elsif params[:locale] == 'es' %>
+                  <h4><%= noticia.titol_es %></h4>
+                <% else %>
+                  <h4><%= noticia.titol_en %></h4>
+                <% end %>
               <% end %>
             </div>
           </div>

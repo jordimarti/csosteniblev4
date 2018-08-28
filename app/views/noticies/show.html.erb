@@ -1,7 +1,14 @@
 <div class="container">
   <div class="grid-x">
     <div class="cell medium-12">
-      <h1><%= @noticia.titol_ca %></h1>
+      <% if params[:locale] == 'ca' %>
+        <h1><%= @noticia.titol_ca %></h1>
+      <% elsif params[:locale] == 'es' %>
+        <h1><%= @noticia.titol_es %></h1>
+      <% else %>
+        <h1><%= @noticia.titol_en %></h1>
+      <% end %>
+
       <p class="data-noticia"><%= @noticia.data.strftime("%-d-%m-%Y") %></p>
     </div>
   </div>
@@ -11,7 +18,13 @@
       <%= image_tag @noticia.imatge_noticia, class: 'img-noticia' %>
     </div>
     <div class="medium-6 cell">
-      <%= @noticia.contingut_ca.html_safe %>
+      <% if params[:locale] == 'ca' %>
+        <%= @noticia.contingut_ca.html_safe %>
+      <% elsif params[:locale] == 'es' %>
+        ><%= @noticia.contingut_es.html_safe %>
+      <% else %>
+        <%= @noticia.contingut_en.html_safe %>
+      <% end %>
     </div>
   </div>
 </div>

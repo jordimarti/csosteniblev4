@@ -64,7 +64,7 @@
               <% end %>
             <% end %>
           </p>
-          <p>És important tenir en compte les unitats declarades que s'han utilitzat per a crear els indicadors de cada producte. No compareu pomes amb peres!</p>
+          <p><%= t('.advertencia_comparador') %></p>
         </div>
 
 	  		
@@ -93,7 +93,15 @@
                 <% @tipus_indicadors.each do |tipus_indicador| %>
                   <% noms_indicador.push(tipus_indicador.nom_ca) %>
                   <tr>
-                    <td class="body-cell-indicadors"><%= tipus_indicador.nom_ca %> <span class="unitats-indicadors">(<%= tipus_indicador.unitats %>)</span></td>
+                    <td class="body-cell-indicadors">
+                      <% if params[:locale] == 'ca' %>
+                        <%= tipus_indicador.nom_ca %>
+                      <% elsif params[:locale] == 'es' %>
+                        <%= tipus_indicador.nom_es %>
+                      <% else %>
+                        <%= tipus_indicador.nom_en %>
+                      <% end %>
+                       <span class="unitats-indicadors">(<%= tipus_indicador.unitats %>)</span></td>
                     <% 
                     if params[:tipus_producte1] == 'usuari' 
                       indicador1 = IndicadorUsuari.where(producte_dapcons_usuari_id: @producte1.id, tipus_indicador_id: tipus_indicador.id, etapa: etapa).last
@@ -182,7 +190,7 @@
               var myChart = new Chart(ctx, {
                   type: 'horizontalBar',
                   data: {
-                      labels: ["Potencial d'escalfament global", "Potencial d'esgotament d'ozó estratosfèric", "Potencial d'acidificació", "Esgotament de recursos abiòtics - combustibles fòssils", "Esgotament de recursos abiòtics - elements", "Potencial d'eutrofització", "Potencial de formació d'ozó fotoquímic"],
+                      labels: ["<%= t('.escalfament_global') %>", "<%= t('.ozo') %>", "<%= t('.ozo') %>", "<%= t('.recursos_abiotics') %>", "<%= t('.recursos_abiotics_elements') %>", "<%= t('.eutrofitzacio') %>", "<%= t('.ozo_fotoquimic') %>"],
                       datasets: [{
                           label: "<%= @nom_producte1 %>",
                           data: <%= valors_transformats_indicador1 %>,

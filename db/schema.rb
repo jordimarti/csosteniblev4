@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_18_145033) do
+ActiveRecord::Schema.define(version: 2018_08_24_171217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2018_08_18_145033) do
     t.text "energia_ca"
     t.text "aigua_ca"
     t.text "certificacions_ca"
-    t.string "arquitectes_ca"
+    t.text "arquitectes_ca"
     t.string "any_construccio_ca"
     t.string "us_edifici_ca"
     t.string "tipus_promocio_ca"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2018_08_18_145033) do
     t.text "energia_es"
     t.text "aigua_es"
     t.text "certificacions_es"
-    t.string "arquitectes_es"
+    t.text "arquitectes_es"
     t.string "any_construccio_es"
     t.string "us_edifici_es"
     t.string "tipus_promocio_es"
@@ -75,12 +75,29 @@ ActiveRecord::Schema.define(version: 2018_08_18_145033) do
     t.text "energia_en"
     t.text "aigua_en"
     t.text "certificacions_en"
-    t.string "arquitectes_en"
+    t.text "arquitectes_en"
     t.string "any_construccio_en"
     t.string "us_edifici_en"
     t.string "tipus_promocio_en"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "visible"
+    t.text "text_imatge_cas_principal_ca"
+    t.text "text_imatge_cas_1_ca"
+    t.text "text_imatge_cas_2_ca"
+    t.text "text_imatge_cas_3_ca"
+    t.text "text_imatge_cas_4_ca"
+    t.text "text_imatge_cas_principal_es"
+    t.text "text_imatge_cas_1_es"
+    t.text "text_imatge_cas_2_es"
+    t.text "text_imatge_cas_3_es"
+    t.text "text_imatge_cas_4_es"
+    t.text "text_imatge_cas_principal_en"
+    t.text "text_imatge_cas_1_en"
+    t.text "text_imatge_cas_2_en"
+    t.text "text_imatge_cas_3_en"
+    t.text "text_imatge_cas_4_en"
+    t.integer "user_id"
   end
 
   create_table "categoria_productes", force: :cascade do |t|

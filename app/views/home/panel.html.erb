@@ -12,10 +12,10 @@
       <div class="medium-4 large-3 cell">
         <%= link_to noticies_llistat_path do %>
           <div class="panell-control-item">
-            <%= image_tag("https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/reunio_verificadors_1.jpg", class: 'imatge-item-panell-control') %>
+            <%= image_tag("https://dcyqocdz7x3wj.cloudfront.net/imatges/reunio_verificadors_1.jpg", class: 'imatge-item-panell-control') %>
             <div class="text-item-panell-control">
-              <h3 class="panell-control-item-title">Notícies</h3>
-              <p>Administra les notícies existents o crea'n una de nova</p>
+              <h3 class="panell-control-item-title"><%= t('.noticies') %></h3>
+              <p><%= t('.text_noticies') %></p>
             </div> 
           </div>
         <% end %>
@@ -24,36 +24,38 @@
     <div class="medium-4 large-3 cell">
       <%= link_to new_producte_path do %>
         <div class="panell-control-item">
-          <%= image_tag("https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/producte_fusta.jpg", class: 'imatge-item-panell-control') %>
+          <%= image_tag("https://dcyqocdz7x3wj.cloudfront.net/imatges/producte_fusta.jpg", class: 'imatge-item-panell-control') %>
           <div class="text-item-panell-control">
-            <h3 class="panell-control-item-title">Productes</h3>
+            <h3 class="panell-control-item-title"><%= t('.productes') %></h3>
             <% if current_user.role == 'editor' %>
-              <p>Administra els productes o crea'n un de nou</p>
+              <p><%= t('.text_1_productes') %></p>
             <% else %>
-              <p>Introdueix un producte</p>
+              <p><%= t('.text_2_productes') %></p>
             <% end %>
           </div>
         </div>
       <% end %>
     </div>
     <div class="medium-4 large-3 cell">
-      <div class="panell-control-item">
-        <%= image_tag("https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/cas12_max_2.jpg", class: 'imatge-item-panell-control') %>
-        <div class="text-item-panell-control">
-          <h3 class="panell-control-item-title">Casos pràctics</h3>
-          <% if current_user.role == 'editor' %>
-            <p>Administra els casos pràctics o crea'n un de nou</p>
-          <% else %>
-            <p>Crea un cas pràctic</p>
-          <% end %>
+      <%= link_to cas_practics_llistat_path do %>
+        <div class="panell-control-item">
+          <%= image_tag("https://dcyqocdz7x3wj.cloudfront.net/imatges/cas12_max_2.jpg", class: 'imatge-item-panell-control') %>
+          <div class="text-item-panell-control">
+            <h3 class="panell-control-item-title"><%= t('.casos_practics') %></h3>
+            <% if current_user.role == 'editor' %>
+              <p><%= t('.text_1_casos_practics') %></p>
+            <% else %>
+              <p><%= t('.text_1_casos_practics') %></p>
+            <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>  
     </div>
     <div class="medium-4 large-3 cell">
       <% if current_user.role == 'editor' %>
         <%= link_to producte_dapcons_index_path do %>
           <div class="panell-control-item">
-            <%= image_tag("https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/taula_dades3.jpg", class: 'imatge-item-panell-control') %>
+            <%= image_tag("https://dcyqocdz7x3wj.cloudfront.net/imatges/taula_dades3.jpg", class: 'imatge-item-panell-control') %>
             <div class="text-item-panell-control">
               <h3 class="panell-control-item-title"><%= t('.declaracions') %></h3>
               <p><%= t('.text_declaracions_editor') %></p>
@@ -63,7 +65,7 @@
       <% else %>
         <%= link_to producte_dapcons_usuaris_path do %>
           <div class="panell-control-item">
-            <%= image_tag("https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/taula_dades3.jpg", class: 'imatge-item-panell-control') %>
+            <%= image_tag("https://dcyqocdz7x3wj.cloudfront.net/imatges/taula_dades3.jpg", class: 'imatge-item-panell-control') %>
             <div class="text-item-panell-control">
               <h3 class="panell-control-item-title"><%= t('.declaracions') %></h3>
               <p><%= t('.text_declaracions_usuari') %></p>
@@ -72,8 +74,24 @@
         <% end %>
       <% end %>
     </div>
-    <div class="medium-3 cell">
-      
-    </div>
   </div>
+
+  <% if @casos_practics.count > 0 %>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-12 cell">
+        <div class="callout alert">
+          <%= t('.continguts_pendents_moderacio') %>
+        </div>
+      </div>
+      <div class="medium-12 cell">
+        <div class="container-continguts-pendents-moderacio">
+          <span class="text-destacat"><%= t('.casos_practics') %>:</span> 
+          <% if @casos_practics.count == 1 %>
+            <%= link_to t('.un_cas_pendent'), cas_practics_llistat_path %>
+          <% else %>
+            <%= t('.hi_ha') %> <%= @casos_practics.count %> <%= link_to t('.casos_pendents'), cas_practics_llistat_path %>
+          <% end %>
+        </div>
+    </div>
+  <% end %>
 </div>

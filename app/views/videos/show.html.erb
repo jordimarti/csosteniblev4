@@ -28,7 +28,7 @@
     </div>
     <div class="medium-4 large-3 large-offset-1 cell">
       <div class="titol-seccio">
-        NOTÍCIES
+        <%= t('.noticies') %>
       </div>
       <div class="noticies-container">
         <% @noticies.each do |noticia| %>
@@ -36,7 +36,15 @@
             <% if noticia.imatge_noticia.attached? %>
               <%= image_tag noticia.imatge_noticia %>
             <% end %>
-            <h3 class="noticia-lateral-titol"><%= noticia.titol_ca %></h3>
+            <h3 class="noticia-lateral-titol">
+              <% if params[:locale] == 'ca' %>
+                <%= noticia.titol_ca %>
+              <% elsif params[:locale] == 'es' %>
+                <%= noticia.titol_es %>
+              <% else %>
+                <%= noticia.titol_en %>
+              <% end %>
+            </h3>
           </div>
         <% end %>
       </div>
@@ -59,17 +67,42 @@
               </div>
               <div class="text-index-video">
                 <%= link_to video do %>
-                  <h4><%= video.titol_ca %></h4>
-                  
-                  <div class="show-for-large">
-                    <p class="resum-video"><%= truncate(video.resum_ca, :length => 200) %></p>
-                  </div>
-                  <div class="show-for-medium-only">
-                    <p class="resum-video"><%= truncate(video.resum_ca, :length => 70) %></p>
-                  </div>
-                  <div class="show-for-small-only">
-                    <p class="resum-video"><%= truncate(video.resum_ca, :length => 200) %></p>
-                  </div>
+
+                  <% if params[:locale] == 'ca' %>
+                    <h4><%= video.titol_ca %></h4>
+                    <div class="show-for-large">
+                      <p class="resum-video"><%= truncate(video.resum_ca, :length => 200) %></p>
+                    </div>
+                    <div class="show-for-medium-only">
+                      <p class="resum-video"><%= truncate(video.resum_ca, :length => 70) %></p>
+                    </div>
+                    <div class="show-for-small-only">
+                      <p class="resum-video"><%= truncate(video.resum_ca, :length => 200) %></p>
+                    </div>
+                  <% elsif params[:locale] == 'es' %>
+                    <h4><%= video.titol_es %></h4>
+                    <div class="show-for-large">
+                      <p class="resum-video"><%= truncate(video.resum_es, :length => 200) %></p>
+                    </div>
+                    <div class="show-for-medium-only">
+                      <p class="resum-video"><%= truncate(video.resum_es, :length => 70) %></p>
+                    </div>
+                    <div class="show-for-small-only">
+                      <p class="resum-video"><%= truncate(video.resum_es, :length => 200) %></p>
+                    </div>
+                  <% else %>
+                    <h4><%= video.titol_en %></h4>
+                    <div class="show-for-large">
+                      <p class="resum-video"><%= truncate(video.resum_en, :length => 200) %></p>
+                    </div>
+                    <div class="show-for-medium-only">
+                      <p class="resum-video"><%= truncate(video.resum_en, :length => 70) %></p>
+                    </div>
+                    <div class="show-for-small-only">
+                      <p class="resum-video"><%= truncate(video.resum_en, :length => 200) %></p>
+                    </div>
+                  <% end %>
+
                 <% end %>
               </div>
             </div>

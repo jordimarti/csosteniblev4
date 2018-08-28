@@ -8,6 +8,7 @@ ca:
         create_account: "crear un compte"
         login_needed: "És necessari iniciar sessió per veure els teus projectes."
         login_button: "Inicia sessió"
+        text_inici_sessio: "Al iniciar sessió podràs publicar casos pràctics, utilitzar eines com el comparador de DAPcons<sup>®</sup> i molt més."
     registrations:
       new:
         register_title: "Crear un compte d'usuari"

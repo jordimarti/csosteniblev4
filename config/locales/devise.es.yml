@@ -8,6 +8,7 @@ es:
         create_account: "crear una cuenta"
         login_needed: "Es necesario iniciar sesión para ver tus proyectos."
         login_button: "Inicia sesión"
+        text_inici_sessio: "Al iniciar sesión podrás publicar casos prácticos, utilizar herramientas como el comparador de DAPcons<sup>®</sup> y mucho más."
     registrations:
       new:
         register_title: "Crear una cuenta de usuario"

@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="grid-x grid-margin-x">
+    <div class="medium-12 cell">
+      <div class="main-title-container">
+        <%= link_to t('.panell'), home_panel_path, class:'button' %>
+        
+        <br/>
+        <span class="secondary-title"><%= t('.cas_practics') %></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-x grid-margin-x">
+    <div class="medium-12 cell">
+
+<table>
+  <tbody>
+    <% @cas_practics.each do |cas_practic| %>
+      <% if current_user.role == 'editor' %>
+        <tr>
+          <td><%= cas_practic.titol_ca %></td>
+          <% if cas_practic.visible == true %>
+            <td><%= t('.publicat') %></td>
+          <% else %>
+            <td><%= t('.no_publicat') %></td>
+          <% end %>
+          <td><%= link_to t('.editar_ca'), cas_practics_edit_ca_path(cas_practics_id: cas_practic.id) %></td>
+          <td><%= link_to t('.editar_es'), cas_practics_edit_es_path(cas_practics_id: cas_practic.id) %></td>
+          <td><%= link_to t('.editar_en'), cas_practics_edit_en_path(cas_practics_id: cas_practic.id) %></td>
+          <td><%= link_to t('.eliminar'), cas_practic, method: :delete, data: { confirm: t('.confirmacio_eliminar') } %></td>
+        </tr>
+      <% else %>
+        <tr>
+          <% if cas_practic.visible == true %>
+            <td><%= cas_practic.titol_ca %></td>
+            <td><%= t('.cas_publicat') %></td>
+          <% else %>
+            <td><%= link_to cas_practic.titol_ca, edit_cas_practic_path(cas_practic) %></td>
+            <td><%= t('.pendent_de_publicacio') %></td>
+            <td><%= link_to t('.eliminar'), cas_practic, method: :delete, data: { confirm: t('.confirmacio_eliminar') } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
+
+<%= link_to t('.nou_cas'), new_cas_practic_path %>

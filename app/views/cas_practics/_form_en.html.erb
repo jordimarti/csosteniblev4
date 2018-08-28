@@ -10,14 +10,18 @@
           <div class="grid-x grid-margin-x">
             <div class="cell medium-12">
               <div class="container-formulari-cas-practic">
+                <div class="titol-formulari-cas-practic">
+                  <%= t('.angles') %>
+                </div>
+            
 
 
                 <div class="grid-x grid-margin-x">
                   <div class="cell medium-6">
-                    <%= f.input :titol_ca %>
+                    <%= f.input :titol_en %>
                   </div>
                   <div class="cell medium-6">
-                    <%= f.input :resum_ca %>
+                    <%= f.input :resum_en %>
                   </div>
                 </div>
 
@@ -29,8 +33,8 @@
                     <%= t('.text_descripcio') %>
                   </div>
                   <div class="cell medium-8">
-                    <input id="cas_practic_descripcio_ca" type="hidden" name="cas_practic[descripcio_ca]" value="<%= @cas_practic.descripcio_ca %>">
-                    <trix-editor input="cas_practic_descripcio_ca"></trix-editor>
+                    <input id="cas_practic_descripcio_en" type="hidden" name="cas_practic[descripcio_en]" value="<%= @cas_practic.descripcio_en %>">
+                    <trix-editor input="cas_practic_descripcio_en"></trix-editor>
                   </div>
                 </div>
 
@@ -42,8 +46,8 @@
                     <%= t('.text_arquitectura') %>
                   </div>
                   <div class="cell medium-8">
-                    <input id="cas_practic_arquitectura_ca" type="hidden" name="cas_practic[arquitectura_ca]" value="<%= @cas_practic.arquitectura_ca %>">
-                    <trix-editor input="cas_practic_arquitectura_ca"></trix-editor>
+                    <input id="cas_practic_arquitectura_en" type="hidden" name="cas_practic[arquitectura_en]" value="<%= @cas_practic.arquitectura_en %>">
+                    <trix-editor input="cas_practic_arquitectura_en"></trix-editor>
                   </div>
                 </div>
 
@@ -55,8 +59,8 @@
                     <%= t('.text_materials') %>
                   </div>
                   <div class="cell medium-8">
-                    <input id="cas_practic_materials_ca" type="hidden" name="cas_practic[materials_ca]" value="<%= @cas_practic.materials_ca %>">
-                    <trix-editor input="cas_practic_materials_ca"></trix-editor>
+                    <input id="cas_practic_materials_en" type="hidden" name="cas_practic[materials_en]" value="<%= @cas_practic.materials_en %>">
+                    <trix-editor input="cas_practic_materials_en"></trix-editor>
                   </div>
                 </div>
 
@@ -68,8 +72,8 @@
                     <%= t('.text_energia') %>
                   </div>
                   <div class="cell medium-8">
-                    <input id="cas_practic_energia_ca" type="hidden" name="cas_practic[energia_ca]" value="<%= @cas_practic.energia_ca %>">
-                    <trix-editor input="cas_practic_energia_ca"></trix-editor>
+                    <input id="cas_practic_energia_en" type="hidden" name="cas_practic[energia_en]" value="<%= @cas_practic.energia_en %>">
+                    <trix-editor input="cas_practic_energia_en"></trix-editor>
                   </div>
                 </div>
 
@@ -81,8 +85,8 @@
                     <%= t('.text_aigua') %>
                   </div>
                   <div class="cell medium-8">
-                    <input id="cas_practic_aigua_ca" type="hidden" name="cas_practic[aigua_ca]" value="<%= @cas_practic.aigua_ca %>">
-                    <trix-editor input="cas_practic_aigua_ca"></trix-editor>
+                    <input id="cas_practic_aigua_en" type="hidden" name="cas_practic[aigua_en]" value="<%= @cas_practic.aigua_en %>">
+                    <trix-editor input="cas_practic_aigua_en"></trix-editor>
                   </div>
                 </div>
 
@@ -94,8 +98,8 @@
                     <%= t('.text_certificacions') %>
                   </div>
                   <div class="cell medium-8">
-                    <input id="cas_practic_certificacions_ca" type="hidden" name="cas_practic[certificacions_ca]" value="<%= @cas_practic.certificacions_ca %>">
-                    <trix-editor input="cas_practic_certificacions_ca"></trix-editor>
+                    <input id="cas_practic_certificacions_en" type="hidden" name="cas_practic[certificacions_en]" value="<%= @cas_practic.certificacions_en %>">
+                    <trix-editor input="cas_practic_certificacions_en"></trix-editor>
                   </div>
                 </div>
 
@@ -107,8 +111,8 @@
                     <%= t('.text_arquitectes') %>
                   </div>
                   <div class="cell medium-8">
-                    <input id="cas_practic_arquitectes_ca" type="hidden" name="cas_practic[arquitectes_ca]" value="<%= @cas_practic.arquitectes_ca %>">
-                    <trix-editor input="cas_practic_arquitectes_ca"></trix-editor>
+                    <input id="cas_practic_arquitectes_en" type="hidden" name="cas_practic[arquitectes_en]" value="<%= @cas_practic.arquitectes_en %>">
+                    <trix-editor input="cas_practic_arquitectes_en"></trix-editor>
                   </div>
                 </div>
 
@@ -116,12 +120,12 @@
 
                 <div class="grid-x grid-margin-x">
                   <div class="cell medium-6">
-                    <%= f.input :emplacament_ca %>
-                    <%= f.input :any_construccio_ca %>
+                    <%= f.input :emplacament_en %>
+                    <%= f.input :any_construccio_en %>
                   </div>
                   <div class="cell medium-6">
-                    <%= f.input :us_edifici_ca %>
-                    <%= f.input :tipus_promocio_ca, collection: ['Privada', 'Pública'] %>
+                    <%= f.input :us_edifici_en %>
+                    <%= f.input :tipus_promocio_en, collection: ['Privada', 'Pública'] %>
                   </div>
                 </div>
 
@@ -132,10 +136,10 @@
                     <% if @cas_practic.imatge_cas_principal.attached? %>
                       <%= image_tag @cas_practic.imatge_cas_principal %>
                     <% end %>
-                    <%= f.input :imatge_cas_principal, as: :file %>
+                    
                   </div>
                   <div class="cell medium-6">
-                    <%= f.input :text_imatge_cas_principal_ca %>
+                    <%= f.input :text_imatge_cas_principal_en %>
                   </div>
                 </div>
                 <div class="grid-x grid-margin-x">
@@ -143,10 +147,10 @@
                     <% if @cas_practic.imatge_cas_1.attached? %>
                       <%= image_tag @cas_practic.imatge_cas_1 %>
                     <% end %>
-                    <%= f.input :imatge_cas_1, as: :file %>
+                    
                   </div>
                   <div class="cell medium-6">
-                    <%= f.input :text_imatge_cas_1_ca %>
+                    <%= f.input :text_imatge_cas_1_en %>
                   </div>
                 </div>
                 <div class="grid-x grid-margin-x">
@@ -154,10 +158,10 @@
                     <% if @cas_practic.imatge_cas_2.attached? %>
                       <%= image_tag @cas_practic.imatge_cas_2 %>
                     <% end %>
-                    <%= f.input :imatge_cas_2, as: :file %>
+                    
                   </div>
                   <div class="cell medium-6">
-                    <%= f.input :text_imatge_cas_2_ca %>
+                    <%= f.input :text_imatge_cas_2_en %>
                   </div>
                 </div>
                 <div class="grid-x grid-margin-x">
@@ -165,10 +169,10 @@
                     <% if @cas_practic.imatge_cas_3.attached? %>
                       <%= image_tag @cas_practic.imatge_cas_3 %>
                     <% end %>
-                    <%= f.input :imatge_cas_3, as: :file %>
+                    
                   </div>
                   <div class="cell medium-6">
-                    <%= f.input :text_imatge_cas_3_ca %>
+                    <%= f.input :text_imatge_cas_3_en %>
                   </div>
                 </div>
                 <div class="grid-x grid-margin-x">
@@ -176,16 +180,15 @@
                     <% if @cas_practic.imatge_cas_4.attached? %>
                       <%= image_tag @cas_practic.imatge_cas_4 %>
                     <% end %>
-                    <%= f.input :imatge_cas_4, as: :file %>
+                    
                   </div>
                   <div class="cell medium-6">
-                    <%= f.input :text_imatge_cas_4_ca %>
+                    <%= f.input :text_imatge_cas_4_en %>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        
       </div>
     </div>
   </div>

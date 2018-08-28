@@ -23,17 +23,42 @@
               </div>
               <div class="text-index-video">
                 <%= link_to video do %>
-                  <h4><%= video.titol_ca %></h4>
                   
-                  <div class="show-for-large">
-                    <p class="resum-video"><%= truncate(video.resum_ca, :length => 200) %></p>
-                  </div>
-                  <div class="show-for-medium-only">
-                    <p class="resum-video"><%= truncate(video.resum_ca, :length => 70) %></p>
-                  </div>
-                  <div class="show-for-small-only">
-                    <p class="resum-video"><%= truncate(video.resum_ca, :length => 200) %></p>
-                  </div>
+                  <% if params[:locale] == 'ca' %>
+                    <h4><%= video.titol_ca %></h4>
+                    <div class="show-for-large">
+                      <p class="resum-video"><%= truncate(video.resum_ca, :length => 200) %></p>
+                    </div>
+                    <div class="show-for-medium-only">
+                      <p class="resum-video"><%= truncate(video.resum_ca, :length => 70) %></p>
+                    </div>
+                    <div class="show-for-small-only">
+                      <p class="resum-video"><%= truncate(video.resum_ca, :length => 200) %></p>
+                    </div>
+                  <% elsif params[:locale] == 'es' %>
+                    <h4><%= video.titol_es %></h4>
+                    <div class="show-for-large">
+                      <p class="resum-video"><%= truncate(video.resum_es, :length => 200) %></p>
+                    </div>
+                    <div class="show-for-medium-only">
+                      <p class="resum-video"><%= truncate(video.resum_es, :length => 70) %></p>
+                    </div>
+                    <div class="show-for-small-only">
+                      <p class="resum-video"><%= truncate(video.resum_es, :length => 200) %></p>
+                    </div>
+                  <% else %>
+                    <h4><%= video.titol_en %></h4>
+                    <div class="show-for-large">
+                      <p class="resum-video"><%= truncate(video.resum_en, :length => 200) %></p>
+                    </div>
+                    <div class="show-for-medium-only">
+                      <p class="resum-video"><%= truncate(video.resum_en, :length => 70) %></p>
+                    </div>
+                    <div class="show-for-small-only">
+                      <p class="resum-video"><%= truncate(video.resum_en, :length => 200) %></p>
+                    </div>
+                  <% end %>
+                  
                 <% end %>
               </div>
             </div>

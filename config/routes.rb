@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :document_dapcons
   resources :organitzacio_afiliades
+  get 'cas_practics/llistat'
   resources :cas_practics
   resources :indicador_usuaris
   resources :producte_dapcons_usuaris
@@ -48,6 +49,13 @@ Rails.application.routes.draw do
   get 'temes_clau/aigua'
   get 'temes_clau/residus'
   get 'temes_clau/salut'
+
+
+  get 'cas_practics/:cas_practics_id/edit_ca', to: 'cas_practics#edit_ca', :as => :cas_practics_edit_ca
+  get 'cas_practics/:cas_practics_id/edit_es', to: 'cas_practics#edit_es', :as => :cas_practics_edit_es
+  get 'cas_practics/:cas_practics_id/edit_en', to: 'cas_practics#edit_en', :as => :cas_practics_edit_en
+
+
   get 'home/index'
   get 'home/panel'
   root :to => "home#index"

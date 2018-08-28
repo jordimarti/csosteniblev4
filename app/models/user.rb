@@ -7,5 +7,8 @@ class User < ApplicationRecord
   def name
     [first_name, last_name].compact.join(' ')
   end
+
+  has_many :cas_practics
+  has_many :producte_dapcons_usuari
   
 end
