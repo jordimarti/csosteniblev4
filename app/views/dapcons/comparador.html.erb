@@ -76,12 +76,14 @@
             <h3 class="titol-etapa">Etapa <%= etapa[0] %>: <%= etapa[1] %></h3>
             <table class="unstriped">
       				<thead>
-      					<th class="header-cell-indicadors"><%= t('.indicador') %></th>
+      					<th class="header-cell-indicadors"><%= t('.parametre') %></th>
     						<th class="header-cell-indicadors">
-                  <%= @nom_producte1 %>
+                  <%= @nom_producte1 %><br/>
+                  <span class="taula-comparador-nom-empresa"><%= @producte1.empresa %></span>
                 </th>
     						<th class="header-cell-indicadors">
-                  <%= @nom_producte2 %>
+                  <%= @nom_producte2 %><br/>
+                  <span class="taula-comparador-nom-empresa"><%= @producte2.empresa %></span>
                 </th>
       				</thead>
       				<tbody>
@@ -185,12 +187,43 @@
               %>
               <div class="titol-grafic-comparador"><%= t('.titol_grafic') %></div>
               <canvas id="<%= etapa[0] %>" width="400" height="150"></canvas>
-              <script>
+              <script charset="utf-8">
+              var rails_locale = "<%= params[:locale] %>"
+              switch(rails_locale) {
+                case 'ca':
+                  var esgotament_recursos_no_fossils = "Esgotament de recursos abiòtics  per a recursos no fòssils";
+                  var esgotament_recursos_fossils = "Esgotament de recursos abiòtics per a recursos fòssils";
+                  var acidificacio = "Acidificació del sòl i dels recursos de l'aigua";
+                  var esgotament_ozo = "Esgotament de la capa d'ozó estratosfèric";
+                  var escalfament_global = "Escalfament global";
+                  var eutrofitzacio = "Eutrofització";
+                  var ozo_troposferic = "Formació d'ozó troposfèric, POCP";
+                  break;
+                case 'es':
+                  var esgotament_recursos_no_fossils = "Agotamiento de recursos abióticos para recursos no fósiles";
+                  var esgotament_recursos_fossils = "Agotamiento de recursos abióticos para recursos fósiles";
+                  var acidificacio = "Acidificación del suelo y de los recursos del agua";
+                  var esgotament_ozo = "Agotamiento de la capa de ozono estratosférico";
+                  var escalfament_global = "Calentamiento global";
+                  var eutrofitzacio = "Eutrofización";
+                  var ozo_troposferic = "Formación de ozono troposférico, POCP";
+                  break;
+                default:
+                  var esgotament_recursos_no_fossils = "Depletion of abiotic resources for non-fossil resources";
+                  var esgotament_recursos_fossils = "Depletion of abiotic resources for fossil resources";
+                  var acidificacio = "Acidification of soil and water resources";
+                  var esgotament_ozo = "Depletion of the stratospheric ozone layer";
+                  var escalfament_global = "Global warming";
+                  var eutrofitzacio = "Eutrophication";
+                  var ozo_troposferic = "Tropospheric ozone formation, POCP";
+
+              }
+
               var ctx = document.getElementById("<%= etapa[0] %>").getContext('2d');
               var myChart = new Chart(ctx, {
                   type: 'horizontalBar',
                   data: {
-                      labels: ["<%= t('.escalfament_global') %>", "<%= t('.ozo') %>", "<%= t('.ozo') %>", "<%= t('.recursos_abiotics') %>", "<%= t('.recursos_abiotics_elements') %>", "<%= t('.eutrofitzacio') %>", "<%= t('.ozo_fotoquimic') %>"],
+                      labels: [escalfament_global, esgotament_ozo, acidificacio, esgotament_recursos_fossils, esgotament_recursos_no_fossils, eutrofitzacio, ozo_troposferic],
                       datasets: [{
                           label: "<%= @nom_producte1 %>",
                           data: <%= valors_transformats_indicador1 %>,

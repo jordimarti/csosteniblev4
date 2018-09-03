@@ -316,6 +316,7 @@ en:
       c4: "Final elimination"
       d: "Potential for reuse, recovery and recycling"
       unitats_declarades: "Declared units"
+      parametre: "Parameter"
       titol_grafic: "Comparison of indicators in %"
       advertencia_comparador: "It is important to take into account the declared units that have been used to create the indicators for each product. Do not compare apples with oranges!"
       escalfament_global: "Potential of global warming"

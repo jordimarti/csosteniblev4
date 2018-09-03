@@ -375,6 +375,7 @@ ca:
       c4: "Eliminació final"
       d: "Potencial de reutilització, recuperació i reciclatge"
       unitats_declarades: "Unitats declarades"
+      parametre: "Paràmetre"
       titol_grafic: "Comparació dels indicadors en %"
       advertencia_comparador: "És important tenir en compte les unitats declarades que s'han utilitzat per a crear els indicadors de cada producte. No compareu pomes amb peres!"
       escalfament_global: "Potencial d'escalfament global"

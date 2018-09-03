@@ -107,7 +107,7 @@ class DapconsController < ApplicationController
       else
         @producte2 = ProducteDapconsUsuari.find(params[:producte2])
       end
-      @tipus_indicadors = TipusIndicador.all
+      @tipus_indicadors = TipusIndicador.all.order(id: :asc)
       if params[:tipus_producte1] == 'usuari'
         @nom_producte1 = @producte1.nom
       else
