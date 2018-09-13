@@ -4,15 +4,15 @@
 	  <div class="medium-12 cell menu-top-right">
 	  	<ul class="menu-top dropdown menu float-right" data-dropdown-menu>
 			  
-			  <% if params[:locale] == 'ca' %>
+			  <% if params[:locale] == 'en' %>
 			  	<li><%= link_to 'Español', :locale => 'es' %></li>
-			  	<li><%= link_to 'English', :locale => 'en' %></li>
+			  	<li><%= link_to 'Català', :locale => 'ca' %></li>
 			  <% elsif params[:locale] == 'es'%>
 			  	<li><%= link_to 'Català', :locale => 'ca' %></li>
 			  	<li><%= link_to 'English', :locale => 'en' %></li>
 			  <% else %>
 			  	<li><%= link_to 'Español', :locale => 'es' %></li>
-			  	<li><%= link_to 'Català', :locale => 'ca' %></li>
+			  	<li><%= link_to 'English', :locale => 'en' %></li>
 			  <% end %>
 			  
 			  <% if user_signed_in? %>
