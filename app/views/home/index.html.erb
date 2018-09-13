@@ -3,9 +3,13 @@
 		<div class="grid-x grid-margin-x">
 			<div class="medium-6 cell">
 				<div class="home-top-image-container">
-          <% if params[:locale] == 'es' || params[:locale] == 'en' %>
+          <% if params[:locale] == 'es' %>
           	<%= link_to video_path(60) do %>
           		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/poster_fusta2_ES.jpg', :class => 'responsive-img') %>
+          	<% end %>
+          <% elsif params[:locale] == 'en' %>
+          	<%= link_to video_path(60) do %>
+          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/poster_fusta2_EN.jpg', :class => 'responsive-img') %>
           	<% end %>
           <% else %>
           	<%= link_to video_path(60) do %>
@@ -16,9 +20,13 @@
 			</div>
 			<div class="medium-6 cell">
 				<div class="home-top-image-container">
-					<% if params[:locale] == 'es' || params[:locale] == 'en' %>
+					<% if params[:locale] == 'es' %>
 						<%= link_to video_path(59) do %>
           		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/poster_fusta_ES.jpg', :class => 'responsive-img') %>
+          	<% end %>
+          <% elsif params[:locale] == 'en' %>
+          	<%= link_to video_path(60) do %>
+          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/poster_fusta_EN.jpg', :class => 'responsive-img') %>
           	<% end %>
           <% else %>
           	<%= link_to video_path(59) do %>
@@ -42,47 +50,95 @@
 	<div class="grid-x grid-margin-x">
 		<div class="medium-8 cell">
 			<div class="titol-seccio">
-				NOVETATS AL WEB
+				<%= t('.novetats_web') %>
 			</div>
 			<div class="grid-x grid-margin-x">
 				<div class="medium-6 cell">
 					<div class="card">
-		        <div class="card-image">
-		          <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/comparador_dapcons2.png', :class => 'responsive-img') %>
-		        </div>
-		        <div class="card-section">
-		          <p>Presentem una nova eina, el comparador de productes DAPcons<sup>®</sup>. Les Declaracions Ambientals de Producte ens proporcionen diferents indicadors ambientals dels productes, com el potencial d'escalfament global o de formació d'ozó fotoquímic.</p>
-		          <p>Gràcies al comparador podeu valorar millor les diferències entre els diferents productes DAPcons<sup>®</sup> i l'eina també us permet introduir informació de nous productes per a fer comparacions.</p>
-		          <div class="card-action">
-	              <a href="#">Anar al comparador</a>
-	            </div>
-		        </div>
+						<% if params[:locale] == 'es' %>
+			        <div class="card-image">
+			          <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/comparador_es.png', :class => 'responsive-img') %>
+			        </div>
+			        <div class="card-section">
+			          <p>Presentamos una nueva herramienta, el comparador de productos DAPcons<sup>®</sup>. Las Declaraciones Ambientales de Producto nos proporcionan diferentes indicadores ambientales de los productos, como el potencial de calentamiento global o de formación de ozono fotoquímico.</p>
+								<p>Gracias al comparador podéis valorar mejor las diferencias entre los diferentes productos DAPcons<sup>®</sup> y la herramienta también os permite introducir información de nuevos productos para hacer comparaciones.</p>
+			          <div class="card-action">
+		              <a href="#">Ir al comparador</a>
+		            </div>
+			        </div>
+			      <% elsif params[:locale] == 'en' %>
+			      	<div class="card-image">
+			          <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/comparador_en.png', :class => 'responsive-img') %>
+			        </div>
+			        <div class="card-section">
+			          <p>We present a new tool, the DAPcons<sup>®</sup> product comparator. Environmental Product Declarations provide us different environmental indicators of products, such as the potential for global warming or photochemical ozone formation.</p>
+								<p>Thanks to the comparator you can better assess the differences between the different DAPcons<sup>®</sup> products. The tool also allows you to enter information about new products to make comparisons.</p>
+			          <div class="card-action">
+		              <a href="#">Go to de comparator</a>
+		            </div>
+			        </div>
+			      <% else %>
+			      	<div class="card-image">
+			          <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/comparador_dapcons2.png', :class => 'responsive-img') %>
+			        </div>
+			        <div class="card-section">
+			          <p>Presentem una nova eina, el comparador de productes DAPcons<sup>®</sup>. Les Declaracions Ambientals de Producte ens proporcionen diferents indicadors ambientals dels productes, com el potencial d'escalfament global o de formació d'ozó fotoquímic.</p>
+			          <p>Gràcies al comparador podeu valorar millor les diferències entre els diferents productes DAPcons<sup>®</sup> i l'eina també us permet introduir informació de nous productes per a fer comparacions.</p>
+			          <div class="card-action">
+		              <a href="#">Anar al comparador</a>
+		            </div>
+			        </div>
+			      <% end %>
 		      </div>
 				</div>
 				<div class="medium-6 cell">
 					<div class="card">
-		        <div class="card-image">
-		          <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/casos_practics2.png', :class => 'responsive-img') %>
-		        </div>
-		        <div class="card-section">
-		          <p>Ara pots publicar els teus propis casos pràctics al web per tal de donar a conèixer els projectes més destacats des del punt de vista ambiental. Si l'edifici destaca per estar construit amb materials de baix impacte ambiental, o té un consum d'energia molt baix, o utilitza solucions innovadores en general, segur que a la comunitat li interessa conèixer-lo. </p>
-		          <p>Una vegada hagis introduït la informació del projecte nosaltres el valorarem i el publicarem al web per a que hi pugui accedir tothom.</p>
-		          <div class="card-action">
-	              <a href="#">Publica el teu primer projecte</a>
-	            </div>
-		        </div>
+						<% if params[:locale] == 'es' %>
+			        <div class="card-image">
+			          <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/casos_es.png', :class => 'responsive-img') %>
+			        </div>
+			        <div class="card-section">
+			          <p>Ahora puedes publicar tus propios casos prácticos en la web para dar a conocer los proyectos más destacados desde el punto de vista ambiental. Si el edificio destaca por estar construido con materiales de bajo impacto ambiental, o tiene un consumo de energía muy bajo, o utiliza soluciones innovadoras en general, seguro que a la comunidad le interesa conocerlo.</p>
+								<p>Una vez hayas introducido la información del proyecto nosotros lo valoraremos y lo publicaremos en la web para que pueda acceder todo el mundo.</p>
+			          <div class="card-action">
+		              <a href="#">Publica tu primer proyecto</a>
+		            </div>
+			        </div>
+			      <% elsif params[:locale] == 'en' %>
+			      	<div class="card-image">
+			          <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/casos_en.png', :class => 'responsive-img') %>
+			        </div>
+			        <div class="card-section">
+			          <p>Now you can publish your own case studies on the web in order to publicize the most outstanding projects from an environmental point of view. If the building stands out because it is built with materials with low environmental impact, or has a very low power consumption, or uses innovative solutions in general, surely the community is interested in knowing it.</p>
+								<p>Once you have entered the information on the project, we will evaluate it and publish it on the web so that it can be accessed by everyone.</p>
+			          <div class="card-action">
+		              <a href="#">Publish your first project</a>
+		            </div>
+			        </div>
+			      <% else %>
+			      	<div class="card-image">
+			          <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/casos_practics2.png', :class => 'responsive-img') %>
+			        </div>
+			        <div class="card-section">
+			          <p>Ara pots publicar els teus propis casos pràctics al web per tal de donar a conèixer els projectes més destacats des del punt de vista ambiental. Si l'edifici destaca per estar construit amb materials de baix impacte ambiental, o té un consum d'energia molt baix, o utilitza solucions innovadores en general, segur que a la comunitat li interessa conèixer-lo. </p>
+			          <p>Una vegada hagis introduït la informació del projecte nosaltres el valorarem i el publicarem al web per a que hi pugui accedir tothom.</p>
+			          <div class="card-action">
+		              <a href="#">Publica el teu primer projecte</a>
+		            </div>
+			        </div>
+			      <% end %>
 		      </div>
 				</div>
 			</div>
 		</div>
 		<div class="medium-4 cell">
 			<div class="titol-seccio">
-				NEWSLETTER
+				<%= t('.newsletter') %>
 			</div>
 			<a href="http://eepurl.com/VGTzD">
 				<div class="newsletter-container">
-          <span class="newsletter-titol">Subscriu-te al nostre newsletter</span>
-          <p><span class="newsletter-text">Així sabràs quan hi ha novetats al web</span></p>
+          <span class="newsletter-titol"><%= t('.subscriu_newsletter') %></span>
+          <p><span class="newsletter-text"><%= t('.text_newsletter') %></span></p>
 	      </div>
 	    </a>
 		
@@ -92,35 +148,26 @@
 		
 			<div class="spacer"></div>
 			<div class="titol-seccio">
-				NOTÍCIES
+				<%= t('.noticies') %>
 			</div>
-			<div class="noticia-breu">
-				<div class="titol-noticia-breu">
-					DAPcons® en el Barcelona Building Construmat
-				</div>
-				<div class="imatge-noticia-breu">
-					<%= image_tag('https://s3-eu-west-1.amazonaws.com/csostenible/imatges/construmat.jpg', :class => 'responsive-img') %>
-				</div>
-				<div class="text-noticia-breu">
-					<p>S'han realitzat presentacions personalitzades a grups d’agents del sector interessats en els productes sostenibles.</p>
-				</div>
-				<div class="link-noticia-breu">
-					<a href="#">+ Més informació</a>
-				</div>
-			</div>
-
-			<div class="noticia-breu">
-				<div class="titol-noticia-breu">
-					DAPcons® present en el Congrés de les Professions
-				</div>
-				
-				<div class="text-noticia-breu">
-					<p>GBCe i el CAATEEB han organitzat una jornada pel proper dia 15 de juny que sota el títol ”Sostenibilidad en l’edificació: la importància dels materials de construcció” es celebrarà dins el marc del Congrés de les Professions.</p>
-				</div>
-				<div class="link-noticia-breu">
-					<a href="#">+ Més informació</a>
-				</div>
-			</div>
+			<div class="noticies-container">
+        <% @noticies.each do |noticia| %>
+          <div class="noticia-lateral-container">
+            <% if noticia.imatge_noticia.attached? %>
+              <%= image_tag noticia.imatge_noticia %>
+            <% end %>
+            <h3 class="noticia-lateral-titol">
+              <% if params[:locale] == 'ca' %>
+                <%= noticia.titol_ca %>
+              <% elsif params[:locale] == 'es' %>
+                <%= noticia.titol_es %>
+              <% else %>
+                <%= noticia.titol_en %>
+              <% end %>
+            </h3>
+          </div>
+        <% end %>
+      </div>
 
 		</div>
 	</div>

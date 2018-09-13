@@ -142,6 +142,12 @@ en:
       registrar_producte: "Register a product"
       contacte: "Contact us"
   home:
+    index:
+      novetats_web: "NEWS ON THE WEB"
+      newsletter: "NEWSLETTER"
+      subscriu_newsletter: "Subscribe to our newsletter"
+      text_newsletter: "So you'll know when there's news on the web"
+      noticies: "NEWS"
     panel:
       panell: "Dashboard"
       noticies: "News"

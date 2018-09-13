@@ -60,6 +60,14 @@
 	height: 40px;
 }
 
+.footer-container {
+	height: 200px;
+	background-color: #666;
+	margin-top: 50px;
+	padding-top: 40px;
+	text-align: center;
+	color: white;
+}
 /* Menu principal */
 
 .main-menu-mobile-container{

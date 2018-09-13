@@ -195,6 +195,12 @@ es:
       registrar_producte: "Registrar un producto"
       contacte: "Contactar"
   home:
+    index:
+      novetats_web: "NOVEDADES EN LA WEB"
+      newsletter: "NEWSLETTER"
+      subscriu_newsletter: "Suscríbete a nuestro newsletter"
+      text_newsletter: "Así sabrás cuando hay novedades en la web"
+      noticies: "NOTICIAS"
     panel:
       panell: "Panel de control"
       noticies: "Noticias"
