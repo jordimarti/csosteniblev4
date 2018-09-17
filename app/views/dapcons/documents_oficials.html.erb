@@ -7,7 +7,7 @@
 				<% if params[:locale] == 'ca' %>
 
 					<div class="sub-title-container">
-		        <span class="sub-title">Documents oficials DAPcons<sup>®</sup></span>
+		        <span class="sub-title">Documents oficials DAPconstrucción<sup>®</sup></span>
 		      </div>
 
 		      <p>Els documents que regeixen el programa DAPconstrucción<sup>®</sup>:</p>
@@ -32,10 +32,10 @@
 		      	</ul>
 		      </p>
 
-		    <% else %>
+		    <% elsif params[:locale] == 'es' %>
 
 		    	<div class="sub-title-container">
-		        <span class="sub-title">Documentos oficiales DAPcons<sup>®</sup></span>
+		        <span class="sub-title">Documentos oficiales DAPconstrucción<sup>®</sup></span>
 		      </div>
 
 		      <p>Los documentos que rigen el Programa DAPconstrucción<sup>®</sup>:</p>
@@ -57,6 +57,34 @@
 		      		<li>RCP de revestimientos cerámicos</li>
 		      		<li>RCP de piedra y áridos</li>
 		      		<li>RCP de productos de construcción en general</li>
+		      	</ul>
+		      </p>
+
+		    <% else %>
+
+		    	<div class="sub-title-container">
+		        <span class="sub-title">Official documents DAPconstrucción<sup>®</sup></span>
+		      </div>
+
+		      <p>The documents that govern the DAPconstruction<sup>®</sup> Program:</p>
+
+		      <h4>General Instructions of the Program</h4>
+		      <p>The General Instructions of the Program (IGP) establish in a clear and orderly manner, the criteria, the normative bases, the objectives, the procedures, the participating agents, the quotas as well as the rest of the documents that make up the program.</p>
+
+		      <p><%= link_to "General Instructions of the Program", "https://s3-eu-west-1.amazonaws.com/csosteniblev4/documents/INSTRUCCIONES%2BGENERALES%2BDEL%2BPROGRAMA%2BDAPcons%2B2017.pdf" %></p>
+		      <p><%= link_to "General Instructions of the Program (english version)", "https://s3-eu-west-1.amazonaws.com/csosteniblev4/documents/INSTRUCCIONES%2BGENERALES%2BDEL%2BPROGRAMA%2BDAPcons%2Bang%2B2017.pdf" %></p>
+
+		      <h4>Product Category Rules</h4>
+		      <p>The development of a DAPcons <sup>®</sup> is based on the application of guidelines that indicate how the Life Cycle Analysis (LCA) study of the product in question should be carried out. These guidelines are the so-called Product Category Rules (RCP).</p>
+
+		      <p>The Product Category Rules (RCP) contain the requirements and guidelines that must be followed to develop the environmental product declaration, including the study of the corresponding life cycle analysis that may vary according to, for example, the function of the product, the incorporation of recycled material or the complexity of the production process.</p>
+
+		      <p>Currently they have been developed and are available to companies affiliated with the DAPcons<sup>®</sup> Program:
+		      	<ul>
+		      		<li>PCR thermal insulators</li>
+		      		<li>PCR ceramic coatings</li>
+		      		<li>PCR stone and aggregates</li>
+		      		<li>PCR construction products in general</li>
 		      	</ul>
 		      </p>
 

@@ -14,7 +14,7 @@
 
 		      <div class="imatge-dapcons-centrada"><%= image_tag "https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/logo_gbce.gif" %></div>
 
-		    <% else %>
+		    <% elsif params[:locale] == 'es' %>
 
 		    	<div class="sub-title-container">
 		        <span class="sub-title">Entidades colaboradoras</span>
@@ -24,6 +24,16 @@
 
 		      <div class="imatge-dapcons-centrada"><%= image_tag "https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/logo_gbce.gif" %></div>
 
+		    <% else %>
+
+		    	<div class="sub-title-container">
+		        <span class="sub-title">Associates</span>
+		      </div>
+
+		      <p>The DAPcons<sup>®</sup> Program and the Green Building Council of Spain have a collaboration agreement to promote the promotion of sustainable building in Spain. Among its agreements is also the recognition of the Environmental Declarations of Construction Product in the GREEN certification.</p>
+
+		      <div class="imatge-dapcons-centrada"><%= image_tag "https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/logo_gbce.gif" %></div>
+		      
 		    <% end %>
 		  </div>
 		</div>

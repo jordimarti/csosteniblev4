@@ -24,7 +24,7 @@
 					<h4 class="titol-seccio-dapcons">Per a les administracions</h4>
 					<p class="paragraf-seccio-dapcons">Les DAPcons<sup>®</sup>  són sol·licitades  i valorades per les administracions, doncs els productes contenen informació homogènia sobre el seu impacte ambiental i ajuden a tenir una major informació sobre l’edifici.</p>
 
-				<% else %>
+				<% elsif params[:locale] == 'es' %>
 
 					<div class="sub-title-container">
 		        <span class="sub-title"><%= raw t('.utilitat') %></span>
@@ -43,6 +43,27 @@
 
 					<h4 class="titol-seccio-dapcons">Para las administraciones</h4>
 					<p class="paragraf-seccio-dapcons">Las DAPcons<sup>®</sup> son solicitadas y valoradas por las administraciones pues los productos contienen información homogénea sobre su impacto ambiental y ayudan a tener una mayor información sobre el edificio.</p>
+					
+
+				<% else %>
+
+					<div class="sub-title-container">
+		        <span class="sub-title"><%= raw t('.utilitat') %></span>
+		      </div>
+
+		      <p>The Environmental Declarations of Construction Products (DAPcons<sup>®</sup>) are an essential tool for environmental improvement in the construction sector and, therefore, a useful tool for technicians, manufacturers and users. The DAPcons<sup>®</sup> certifications cover products from the different stages of a building. They allow us to have objective, consensual and verified information about a product.</p>
+
+					<h4 class="titol-seccio-dapcons">For technicians and professionals</h4>
+					<p class="paragraf-seccio-dapcons">DAPcons<sup>®</sup> allow to quantify the impacts of the components of the building, and allow to choose the environmentally most respectful products. The key role that the technician must perform in the environment of studying the environmental impact of buildings in the period of design, construction, use and end of life, is crucial to reduce emissions related to the construction of buildings.</p>
+
+					<h4 class="titol-seccio-dapcons">For manufacturing companies</h4>
+					<p class="paragraf-seccio-dapcons">DAPcons<sup>®</sup> are a tool to meet legal requirements in a more competitive global world. They provide an added value to the product and an objective method of quantifying the environmental impact of the manufacturing processes of construction products. The realization of the Life Cycle Analysis (LCA), essential to obtain a DAPcons <sup>®</sup>, allows companies to significantly influence the improvement of their processes and make significant financial savings.</p>
+
+					<h4 class="titol-seccio-dapcons">For the users</h4>
+					<p class="paragraf-seccio-dapcons">The DAPcons<sup>®</sup> involve greater transparency and a good knowledge of the overall impact of a building during its life cycle, allow establishing objective criteria of sustainability of a building and strengthen a valued label, which is what you need the end user.</p>
+
+					<h4 class="titol-seccio-dapcons">For administrations</h4>
+					<p class="paragraf-seccio-dapcons">DAPcons <sup>®</sup> are requested and valued by the administrations because the products contain homogeneous information about their environmental impact and help to have more information about the building.</p>
 
 				<% end %>
 				

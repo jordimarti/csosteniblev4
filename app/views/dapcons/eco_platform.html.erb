@@ -14,9 +14,9 @@
 
 		      <div class="imatge-dapcons-centrada"><%= image_tag "https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/logo_ecoplatform.png" %></div>
 
-		      <p>La Junta de Gobierno de ECO Platform está formada por los Programas DAP que se pueden consultar en el siguiente enlace: <a href="http://www.eco-platform.org/the-board.html">http://www.eco-platform.org/the-board.html</a></p>
+		      <p>La Junta de Govern de l’ECO Platform està formada pels Programes DAP que és poden consultar en el següent enllaç: <a href="http://www.eco-platform.org/the-board.html">http://www.eco-platform.org/the-board.html</a></p>
 
-		    <% else %>
+		    <% elsif params[:locale] == 'es' %>
 
 		    	<div class="sub-title-container">
 		        <span class="sub-title">Administradores del Programa</span>
@@ -26,7 +26,19 @@
 
 		      <div class="imatge-dapcons-centrada"><%= image_tag "https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/logo_ecoplatform.png" %></div>
 
-		      <p>La Junta de Govern de l’ECO Platform està formada pels Programes DAP que és poden consultar en el següent enllaç: <a href="http://www.eco-platform.org/the-board.html">http://www.eco-platform.org/the-board.html</a></p>
+		      <p>La Junta de Gobierno de ECO Platform está formada por los Programas DAP que se pueden consultar en el siguiente enlace: <a href="http://www.eco-platform.org/the-board.html">http://www.eco-platform.org/the-board.html</a></p>
+
+		    <% else %>
+
+		    	<div class="sub-title-container">
+		        <span class="sub-title">Program Administrators</span>
+		      </div>
+
+		      <p>Eco-Platfom is an international organization, formed on June 4, 2013, which brings together all European operators EPD or Environmental Product Declarations (DAP) of the construction sector among which is the DAPcons<sup>®</sup> Program Spanish of CAATEEB.</p>
+
+		      <div class="imatge-dapcons-centrada"><%= image_tag "https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/logo_ecoplatform.png" %></div>
+
+		      <p>The Board of Governors of the ECO Platform is formed pels DAP Programs that can be consulted in the next section: <a href="http://www.eco-platform.org/the-board.html">http://www.eco-platform.org/the-board.html</a></p>
 
 		    <% end %>
 		  </div>

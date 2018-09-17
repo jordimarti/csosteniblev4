@@ -14,7 +14,7 @@
 
 					<p>Els panells estan formats per representants d’empreses, associacions empresarials o altres entitats o experts dins de determinades categories de producte i es convoquen en funció de l’interès d’empreses subministradores de productes de la construccions per obtenir una DAPcons<sup>®</sup>.</p>
 
-		    <% else %>
+		    <% elsif params[:locale] == 'es' %>
 
 		    	<div class="sub-title-container">
 		        <span class="sub-title">Paneles sectoriales</span>
@@ -23,6 +23,16 @@
 		      <p>Los paneles sectoriales son un mecanismo de consulta y participación de las partes interesadas en el proceso de desarrollo de las Reglas de Categoría de Producto (RCP). Han sido creados paneles para los aislantes térmicos, cerámicas, piedra y áridos.</p>
 
 					<p>Los paneles están formados por representantes de empresas, asociaciones empresariales u otras entidades o expertos dentro de determinadas categorías de producto y se convocan en función del interés de empresas suministradoras de productos de la construcción para obtener una DAPcons<sup>®</sup>.</p>
+
+				<% else %>
+
+					<div class="sub-title-container">
+		        <span class="sub-title">Sectoral panels</span>
+		      </div>
+
+		      <p>The sectoral panels are a mechanism for consultation and participation of interested parties in the process of developing the Product Category Rules (RCP). Panels have been created for thermal insulation, ceramics, stone and aggregates.</p>
+
+					<p>The panels are formed by representatives of companies, business associations or other entities or experts within certain product categories and are convened based on the interest of companies supplying construction products to obtain a DAPcons <sup>®</sup>.</p>
 
 		    <% end %>
 		  </div>

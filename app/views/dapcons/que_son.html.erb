@@ -41,7 +41,7 @@
 						</div>
 					</div>
 
-				<% else %>
+				<% elsif params[:locale] == 'es' %>
 
 					<div class="sub-title-container">
 		        <span class="sub-title"><%= raw t('.que_son') %></span>
@@ -77,6 +77,44 @@
 							<p><%= link_to "Descargad el díptico en PDF", "https://dcyqocdz7x3wj.cloudfront.net/documents/DAPcons.pdf" %> para más información.</p>
 						</div>
 					</div>
+
+				<% else %>
+
+					<div class="sub-title-container">
+		        <span class="sub-title"><%= raw t('.que_son') %></span>
+		      </div>
+
+		      <p>The Environmental Product Declarations (EPD), provide quantitative information on the environmental impacts of a product throughout its life cycle. They are known as "Eco-labels" type III. The information contained in a DAP is based on the analysis of the life cycle (LCA) of a material or system: energy consumption; depletion of resources; water consumption; Solid waste; climate change; atmospheric acidification; air and water pollution; ozone layer destruction; formation of photochemical ozone ...</p>
+		  
+	    		<p>The DAPcons <sup>®</sup> are based on various ISO guidelines and have been developed since 2000. In Europe, based on the mandate of the European Commission for the development of regulations in the field of sustainability of the Construction work has been carried out in countries such as France, Germany, Sweden, the United Kingdom, the Netherlands, Finland, Norway and Spain. In other countries outside the EU such as the USA, Canada, Japan or Korea.</p>
+
+	    		<p>The DAPcons <sup>®</sup> are the Environmental Declarations of Construction Product and are a useful instrument for environmental improvement in the construction sector and for compliance with national and international legislation.</p>
+
+	    		<p>There are also sectoral DAPcons <sup>®</sup>, which show the average values of a product with similar functional characteristics. These will be especially useful for the technician in the first stage of a project in which it is required to know the environmental impact of a typical product without knowing the model or the exact mark.</p>
+
+					<div class="grid-x grid-margin-x">
+						<div class="small-3 cell">
+							<%= link_to video_path(14) do %>
+								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/video_dapcons2.jpg", class: "video2-dapcons" %>
+							<% end %>
+						</div>
+						<div class="small-9 cell">
+							<p><span class="text-negreta">Environmental Declaration of Construction Products</span><br/>
+							This video of the Sustainable Construction Agenda explains what the Environmental Product Declarations, also called EPD, are.</p>
+						</div>
+					</div>
+					<br/>
+					<div class="grid-x grid-margin-x">
+						<div class="small-3 cell">
+							<%= link_to "https://dcyqocdz7x3wj.cloudfront.net/documents/DAPcons.pdf" do %>
+								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/pdf_dapcons.png", class: "pdf-dapcons" %>
+							<% end %>
+						</div>
+						<div class="small-9 cell">
+							<p><%= link_to "Download the diptych in PDF", "https://dcyqocdz7x3wj.cloudfront.net/documents/DAPcons.pdf" %> for more information.</p>
+						</div>
+					</div>
+
 
 				<% end %>
 			</div>

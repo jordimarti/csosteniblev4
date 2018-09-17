@@ -16,7 +16,7 @@
 
 		      <p>El programa disposa de diferents experts i assessors que col·laboren en la consecució del programa, així com amb diversos òrgans de consulta.</p>
 
-		    <% else %>
+		    <% elsif params[:locale] == 'es' %>
 
 		    	<div class="sub-title-container">
 		        <span class="sub-title">Administradores del Programa</span>
@@ -27,6 +27,18 @@
 		      <div class="imatge-dapcons-centrada"><%= image_tag "https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/logo_caateeb.png" %></div>
 
 		      <p>El programa cuenta con diferentes expertos y asesores que colaboran en la consecución del programa así como con diversos órganos de consulta.</p>
+
+		    <% else %>
+
+		    	<div class="sub-title-container">
+		        <span class="sub-title">Program Administrators</span>
+		      </div>
+
+		      <p>The <a href="https://www.apabcn.cat/">CAATEEB</a> works to promote the reduction of the impact of the constructive activity and that of its professionals on the environment, is the administrator of the DAPconstrucción<sup>®</sup> Program.</p>
+
+		      <div class="imatge-dapcons-centrada"><%= image_tag "https://s3-eu-west-1.amazonaws.com/csosteniblev4/imatges/logo_caateeb.png" %></div>
+
+		      <p>The program has different experts and advisors who collaborate in the achievement of the program as well as with various consultation bodies.</p>
 
 		    <% end %>
 		  </div>

@@ -32,7 +32,7 @@
 						</div>
 					</div>
 
-				<% else %>
+				<% elsif params[:locale] == 'es' %>
 
 					<div class="sub-title-container">
 		        <span class="sub-title"><%= t('.sistema_dapcons') %></span>
@@ -60,6 +60,33 @@
 						</div>
 					</div>
 
+				<% else %>
+
+					<div class="sub-title-container">
+		        <span class="sub-title"><%= t('.sistema_dapcons') %></span>
+		      </div>
+
+					<p>The DAPconstrucción® Program is a program that brings together manufacturers of products and construction materials that are committed to sustainability and the environment, and wish to advance in the analysis of the environmental impacts of their products.</p>
+
+					<p>The objective is to bring together those manufacturing companies that wish to commit themselves to the environmental improvement of their production processes in order to provide the construction sector with the necessary environmental transparency so that technicians and professionals can make the right decisions when choosing the products to use in their projects.</p>
+
+					<p>Through the environmental transparency of the construction sector, technicians and professionals can select products according to environmental criteria, beyond aesthetic, economic and functional.</p>
+
+					<p>The DAPcons® Certification is an EPD eco-labeling program of pioneering construction in Spain following European guidelines and regulated by ISO 14025 and 15804 standards.</p>
+
+					<p><span class="text-negreta">To know more about the subject:</span></p>
+
+					<div class="grid-x grid-margin-x">
+						<div class="small-4 cell">
+							<%= link_to video_path(13) do %>
+								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/video_ecoetiquetes.jpg", class: "video1-dapcons" %>
+							<% end %>
+						</div>
+						<div class="small-8 cell">
+							<p><span class="text-negreta">Ecolabels in the construction field</span><br/>
+							Ecolabels are useful to quickly distinguish the best products from the environmental point of view. In this video of the Sustainable Construction Agenda, the main differences between type I, II and III eco-labels are explained.</p>
+						</div>
+					</div>
 
 				<% end %>
 			</div>
@@ -67,5 +94,3 @@
 
 </div>
 <%= render "layouts/dapcons_noticies" %>
-
- 

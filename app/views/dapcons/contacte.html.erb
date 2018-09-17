@@ -12,13 +12,21 @@
 
 		      <p>Si voleu més informació sobre DAPcons<sup>®</sup> ens podeu contactar a: <a href="mailto:sostenible@apabcn.cat">sostenible@apabcn.cat</a>.</p>
 
-		    <% else %>
+		    <% elsif params[:locale] == 'es' %>
 
 		    	<div class="sub-title-container">
 		        <span class="sub-title">Contactar</span>
 		      </div>
 
 		      <p>Si quieren más información sobre DAPcons<sup>®</sup> podéis contactar a: <a href="mailto:sostenible@apabcn.cat">sostenible@apabcn.cat</a>.</p>
+
+		    <% else %>
+
+		    	<div class="sub-title-container">
+		        <span class="sub-title">Contact</span>
+		      </div>
+
+		      <p>If you want more information about DAPcons<sup>®</sup> you can contact: <a href="mailto:sostenible@apabcn.cat">sostenible@apabcn.cat</a>.</p>
 
 		    <% end %>
 		  </div>
