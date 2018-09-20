@@ -97,11 +97,11 @@
                   <tr>
                     <td class="body-cell-indicadors">
                       <% if params[:locale] == 'ca' %>
-                        <%= tipus_indicador.nom_ca %>
+                        <span data-tooltip tabindex="1" title="<%= tipus_indicador.descripcio_ca %>"><%= tipus_indicador.nom_ca %></span>
                       <% elsif params[:locale] == 'es' %>
-                        <%= tipus_indicador.nom_es %>
+                        <span data-tooltip tabindex="1" title="<%= tipus_indicador.descripcio_es %>"><%= tipus_indicador.nom_es %></span>
                       <% else %>
-                        <%= tipus_indicador.nom_en %>
+                        <span data-tooltip tabindex="1" title="<%= tipus_indicador.descripcio_en %>"><%= tipus_indicador.nom_en %></span>
                       <% end %>
                        <span class="unitats-indicadors">(<%= tipus_indicador.unitats %>)</span></td>
                     <% 

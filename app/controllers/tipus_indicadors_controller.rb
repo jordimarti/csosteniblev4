@@ -69,6 +69,6 @@ class TipusIndicadorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tipus_indicador_params
-      params.require(:tipus_indicador).permit(:nom_ca, :nom_es, :nom_en, :unitats)
+      params.require(:tipus_indicador).permit(:nom_ca, :nom_es, :nom_en, :unitats, :descripcio_ca, :descripcio_es, :descripcio_en)
     end
 end
