@@ -225,12 +225,12 @@
                   data: {
                       labels: [escalfament_global, esgotament_ozo, acidificacio, esgotament_recursos_fossils, esgotament_recursos_no_fossils, eutrofitzacio, ozo_troposferic],
                       datasets: [{
-                          label: "<%= @nom_producte1 %>",
+                          label: "<%= @nom_producte1 %> - <%= @producte1.empresa %>",
                           data: <%= valors_transformats_indicador1 %>,
                           backgroundColor: 'rgba(255,99,132,1)'
                       },
                       {
-                          label: "<%= @nom_producte2 %>",
+                          label: "<%= @nom_producte2 %> - <%= @producte2.empresa %>",
                           data: <%= valors_transformats_indicador2 %>,
                           backgroundColor: 'rgba(54, 162, 235, 1)'
                           
