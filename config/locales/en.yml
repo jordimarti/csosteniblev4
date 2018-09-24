@@ -335,6 +335,7 @@ en:
     llistat_productes:
       comparador: "Comparator"
       selecciona_productes: "Select the products to compare"
+      mes_info: "About de comparator"
       aillants_termics: "Thermal insulation"
       revestiments_ceramics: "Ceramic coatings"
       pedra_natural: "Products of natural stone and aggregates"

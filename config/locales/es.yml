@@ -391,6 +391,7 @@ es:
     llistat_productes:
       comparador: "Comparador"
       selecciona_productes: "Selecciona los productos a comparar"
+      mes_info: "Más información sobre el comparador"
       aillants_termics: "Aislantes térmicos"
       revestiments_ceramics: "Revestimientos cerámicos"
       pedra_natural: "Productos de piedra natural y áridos"

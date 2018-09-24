@@ -76,22 +76,24 @@
     </div>
   </div>
 
-  <% if @casos_practics.count > 0 %>
-    <div class="grid-x grid-margin-x">
-      <div class="medium-12 cell">
-        <div class="callout alert">
-          <%= t('.continguts_pendents_moderacio') %>
+  <% if current_user.role == 'editor' %>
+    <% if @casos_practics.count > 0 %>
+      <div class="grid-x grid-margin-x">
+        <div class="medium-12 cell">
+          <div class="callout alert">
+            <%= t('.continguts_pendents_moderacio') %>
+          </div>
         </div>
+        <div class="medium-12 cell">
+          <div class="container-continguts-pendents-moderacio">
+            <span class="text-destacat"><%= t('.casos_practics') %>:</span> 
+            <% if @casos_practics.count == 1 %>
+              <%= link_to t('.un_cas_pendent'), cas_practics_llistat_path %>
+            <% else %>
+              <%= t('.hi_ha') %> <%= @casos_practics.count %> <%= link_to t('.casos_pendents'), cas_practics_llistat_path %>
+            <% end %>
+          </div>
       </div>
-      <div class="medium-12 cell">
-        <div class="container-continguts-pendents-moderacio">
-          <span class="text-destacat"><%= t('.casos_practics') %>:</span> 
-          <% if @casos_practics.count == 1 %>
-            <%= link_to t('.un_cas_pendent'), cas_practics_llistat_path %>
-          <% else %>
-            <%= t('.hi_ha') %> <%= @casos_practics.count %> <%= link_to t('.casos_pendents'), cas_practics_llistat_path %>
-          <% end %>
-        </div>
-    </div>
+    <% end %>
   <% end %>
 </div>

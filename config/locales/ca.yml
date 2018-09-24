@@ -399,6 +399,7 @@ ca:
     llistat_productes:
       comparador: "Comparador"
       selecciona_productes: "Selecciona els productes a comparar"
+      mes_info: "Més informació sobre el comparador"
       aillants_termics: "Aïllants tèrmics"
       revestiments_ceramics: "Revestiments ceràmics"
       pedra_natural: "Productes de pedra natural i àrids"

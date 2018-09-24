@@ -10,7 +10,41 @@
 
       <div class="seleccio-productes">
       	<div class="notice-seleccio-productes callout primary">
-      		<%= t('.selecciona_productes') %>
+      		<p><%= t('.selecciona_productes') %></p>
+      		<p><a id="show">+ <%= t('.mes_info') %></a></p>
+      		<div id="explicacio">
+      			<% if params[:locale] == 'ca' %>
+	      			<p>El comparador és una eina gratuïta que ajuda a visualitzar, analitzar i prendre decisions sobre la comparació dels paràmetres de dos Declaracions Ambientals de Productes -DAP-.</p>
+
+							<p>L'eina permet comparar de forma automàtica les declaracions registrades en el Programa DAPconstrucción® i també permet comparar una DAPcons® amb una altra DAP registrada en un altre programa operador. En aquest segon cas cal registrar-se com usuari, el que permet que les dades siguin guardades per poder ser utilitzats en posteriors ocasions.</p>
+
+							<p>La comparació es realitza per cada etapa, mitjançant una taula i un diagrama de barres percentual de cada paràmetre ambiental contingut en la DAP. Passant a sobre de cada paràmetre s'obre una finestra amb un text explicatiu. A la taula s'assenyala en color verd l'indicador menor. La gràfica és percentual.</p>
+
+							<p>L'objectiu del comparador és promoure i estimular la presa de decisions ambientals en el sector de l'edificació, ajudant a triar el millor producte per a cada projecte.</p>
+
+							<p><a id="hide">Ocultar texto</a></p>
+						<% elsif params[:locale] == 'es' %>
+	      			<p>El comparador es una herramienta gratuita que ayuda a visualizar, analizar y tomar decisiones sobre la comparación de los parámetros de dos Declaraciones Ambientales de Productos -DAP-.</p>
+
+							<p>La herramienta permite comparar de forma automática las declaraciones registradas en el Programa DAPconstrucción® y también permite comparar una DAPcons® con otra DAP registrada en otro programa operador. En este segundo caso es necesario registrarse como usuario, lo que permite que los datos sean guardados para poder ser utilizados en posteriores ocasiones.</p>
+
+							<p>La comparación se realiza por cada etapa, mediante una tabla y un diagrama de barras porcentual de cada parámetro ambiental contenido en la DAP. Pasando encima de cada parámetro se abre una ventana con un texto explicativo. En la tabla se señala en color verde el indicador menor. La grafica es porcentual.</p>
+
+							<p>El objetivo del comparador es promover y estimular la toma de decisiones ambientales en el sector de la edificación, ayudando a elegir el mejor producto para cada proyecto.</p>
+
+							<p><a id="hide">Ocultar texto</a></p>
+						<% else %>
+							<p>The comparator is a free tool that helps visualize, analyze and make decisions about the comparison of the parameters of two Environmental Product Declarations -EPD-.</p>
+
+							<p>The tool allows you to automatically compare the declarations registered in the DAPconstrucción® Program and also allows you to compare a DAPcons® with another DAP registered in another operator program. In this second case it is necessary to register as a user, which allows the data to be saved in order to be used in subsequent occasions.</p>
+
+							<p>The comparison is made for each stage, by means of a table and a percentage bar diagram of each environmental parameter contained in the EPD. Passing over each parameter opens a window with an explanatory text. The lower indicator is indicated in green in the table. The graph is percentage.</p>
+
+							<p>The objective of the comparator is to promote and stimulate environmental decision-making in the building sector, helping to choose the best product for each project.</p>
+
+							<p><a id="hide">Hide text</a></p>
+						<% end %>
+      		</div>
       	</div>
       	
 	      	<div class="llistat-productes">
@@ -155,5 +189,15 @@ $( ".comparador-dapcons-item" ).on( "click", function( event ) {
 		}
 		
 	}
+});
+
+$("#explicacio").hide();
+
+$("#hide").click(function(){
+    $("#explicacio").hide(1000);
+});
+
+$("#show").click(function(){
+    $("#explicacio").show(1000);
 });
 </script>
