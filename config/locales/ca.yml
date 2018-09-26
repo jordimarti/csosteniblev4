@@ -427,8 +427,12 @@ ca:
       descripcio: "Descripció del producte"
       documents: "Documents"
     productes_registrats:
+      productes_registrats: "Productes registrats"
       dapcons_vigent: "DAPcons vigent"
       actualitzar_llistat: "Actualitzar llistat"
+      ordenar_data: "Ordenar per data de realització de DAPcons"
+      ordenar_empresa: "Ordendar per nom d'empresa"
+      agrupar_categories: "Agrupar per categories"
       revestiments_ceramics: "REVESTIMENTS CERÀMICS"
       aillants_termics: "AÏLLANTS TÈRMICS"
       pedra_natural: "PEDRA NATURAL"

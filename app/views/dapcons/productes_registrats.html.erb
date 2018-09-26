@@ -12,9 +12,9 @@
 	      		<div class="medium-6 cell">
 	      			<div class="filtre-dapcons-container">
 				      	<select name="filtre-dapcons" id="filtre-dapcons">
-						      <option value="data" <% if params[:filtre] == 'data' %> selected="selected" <% end %>>Ordenar per data de realització de DAPcons</option>
-						      <option value="nom" <% if params[:filtre] == 'nom' %> selected="selected" <% end %>>Ordendar per nom d'empresa</option>
-						      <option value="categoria" <% if params[:filtre] == 'categoria' %> selected="selected" <% end %>>Agrupar per categories</option>
+						      <option value="data" <% if params[:filtre] == 'data' %> selected="selected" <% end %>><%= t('.ordenar_data') %></option>
+						      <option value="nom" <% if params[:filtre] == 'nom' %> selected="selected" <% end %>><%= t('.ordenar_data') %></option>
+						      <option value="categoria" <% if params[:filtre] == 'categoria' %> selected="selected" <% end %>><%= t('.agrupar_categories') %></option>
 						    </select>
 						  </div>
 					  </div>
