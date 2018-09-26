@@ -363,6 +363,8 @@ en:
       descripcio: "Description of the product"
       documents: "Documents"
     productes_registrats:
+      dapcons_vigent: "Current DAPcons"
+      actualitzar_llistat: "Update list"
       revestiments_ceramics: "CERAMIC COATINGS"
       aillants_termics: "THERMAL INSULATION"
       pedra_natural: "NATURAL STONE"

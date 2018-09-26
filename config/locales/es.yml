@@ -419,6 +419,8 @@ es:
       descripcio: "Descripción del producto"
       documents: "Documentos"
     productes_registrats:
+      dapcons_vigent: "DAPcons vigente"
+      actualitzar_llistat: "Actualizar listado"
       revestiments_ceramics: "REVESTIMIENTOS CERÁMICOS"
       aillants_termics: "AISLANTES TÉRMICOS"
       pedra_natural: "PIEDRA NATURAL"

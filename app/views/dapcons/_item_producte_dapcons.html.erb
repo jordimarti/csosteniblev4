@@ -58,7 +58,13 @@
 		      						<div class="medium-6 cell">
 		      							<span class="titol-dada-producte-dapcons"><%= t('.documents') %>:</span><br/>
 		      							<% producte.document_dapcons.each do |document| %>
-		      								<%= link_to document.nom_ca, document.link %><br/>
+		      								<% if params[:locale] == 'ca' %>
+		      									<%= link_to document.nom_ca, document.link %><br/>
+		      								<% elsif params[:locale] == 'es' %>
+		      									<%= link_to document.nom_es, document.link %><br/>
+		      								<% else %>
+		      									<%= link_to document.nom_en, document.link %><br/>
+		      								<% end %>
 		      							<% end %>
 		      						</div>
 		      					</div>

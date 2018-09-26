@@ -21,12 +21,12 @@
 					  <div class="medium-3 cell">
 					  	<div class="checkbox-vigent-container">
 	    					<input type="checkbox" name="checkbox-vigent" id="checkbox-vigent" <% if params[:validesa] == 'true' %> checked <% end %>>
-	    					<label for="checkbox-vigent">DAPcons vigent</label>
+	    					<label for="checkbox-vigent"><%= t('.dapcons_vigent') %></label>
 	    				</div>
 					  </div>
 					  <div class="medium-3 cell">
 					  	<div class="button-actualitzar-container">
-					  		<button class="ui-button ui-widget ui-corner-all" id="actualitzar">Actualitzar llistat</button>
+					  		<button class="ui-button ui-widget ui-corner-all" id="actualitzar"><%= t('.actualitzar_llistat') %></button>
 					  	</div>
 					  </div>
 					</div>
