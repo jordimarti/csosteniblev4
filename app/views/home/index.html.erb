@@ -63,7 +63,7 @@
 			          <p>Presentamos una nueva herramienta, el comparador de productos DAPcons<sup>®</sup>. Las Declaraciones Ambientales de Producto nos proporcionan diferentes indicadores ambientales de los productos, como el potencial de calentamiento global o de formación de ozono fotoquímico.</p>
 								<p>Gracias al comparador podéis valorar mejor las diferencias entre los diferentes productos DAPcons<sup>®</sup> y la herramienta también os permite introducir información de nuevos productos para hacer comparaciones.</p>
 			          <div class="card-action">
-		              <a href="#">Ir al comparador</a>
+		              <%= link_to "Ir al comparador", dapcons_comparador_path %>
 		            </div>
 			        </div>
 			      <% elsif params[:locale] == 'en' %>
@@ -74,7 +74,7 @@
 			          <p>We present a new tool, the DAPcons<sup>®</sup> product comparator. Environmental Product Declarations provide us different environmental indicators of products, such as the potential for global warming or photochemical ozone formation.</p>
 								<p>Thanks to the comparator you can better assess the differences between the different DAPcons<sup>®</sup> products. The tool also allows you to enter information about new products to make comparisons.</p>
 			          <div class="card-action">
-		              <a href="#">Go to de comparator</a>
+		              <%= link_to "Go to comparator", dapcons_comparador_path %>
 		            </div>
 			        </div>
 			      <% else %>
@@ -85,7 +85,7 @@
 			          <p>Presentem una nova eina, el comparador de productes DAPcons<sup>®</sup>. Les Declaracions Ambientals de Producte ens proporcionen diferents indicadors ambientals dels productes, com el potencial d'escalfament global o de formació d'ozó fotoquímic.</p>
 			          <p>Gràcies al comparador podeu valorar millor les diferències entre els diferents productes DAPcons<sup>®</sup> i l'eina també us permet introduir informació de nous productes per a fer comparacions.</p>
 			          <div class="card-action">
-		              <a href="#">Anar al comparador</a>
+		              <%= link_to "Anar al comparador", dapcons_comparador_path %>
 		            </div>
 			        </div>
 			      <% end %>
@@ -101,7 +101,7 @@
 			          <p>Ahora puedes publicar tus propios casos prácticos en la web para dar a conocer los proyectos más destacados desde el punto de vista ambiental. Si el edificio destaca por estar construido con materiales de bajo impacto ambiental, o tiene un consumo de energía muy bajo, o utiliza soluciones innovadoras en general, seguro que a la comunidad le interesa conocerlo.</p>
 								<p>Una vez hayas introducido la información del proyecto nosotros lo valoraremos y lo publicaremos en la web para que pueda acceder todo el mundo.</p>
 			          <div class="card-action">
-		              <a href="#">Publica tu primer proyecto</a>
+		              <%= link_to "Publica tu primer proyecto", producte_dapcons_usuaris_path %>
 		            </div>
 			        </div>
 			      <% elsif params[:locale] == 'en' %>
@@ -112,7 +112,7 @@
 			          <p>Now you can publish your own case studies on the web in order to publicize the most outstanding projects from an environmental point of view. If the building stands out because it is built with materials with low environmental impact, or has a very low power consumption, or uses innovative solutions in general, surely the community is interested in knowing it.</p>
 								<p>Once you have entered the information on the project, we will evaluate it and publish it on the web so that it can be accessed by everyone.</p>
 			          <div class="card-action">
-		              <a href="#">Publish your first project</a>
+		              <%= link_to "Publish your first project", producte_dapcons_usuaris_path %>
 		            </div>
 			        </div>
 			      <% else %>
@@ -123,7 +123,7 @@
 			          <p>Ara pots publicar els teus propis casos pràctics al web per tal de donar a conèixer els projectes més destacats des del punt de vista ambiental. Si l'edifici destaca per estar construit amb materials de baix impacte ambiental, o té un consum d'energia molt baix, o utilitza solucions innovadores en general, segur que a la comunitat li interessa conèixer-lo. </p>
 			          <p>Una vegada hagis introduït la informació del projecte nosaltres el valorarem i el publicarem al web per a que hi pugui accedir tothom.</p>
 			          <div class="card-action">
-		              <a href="#">Publica el teu primer projecte</a>
+		              <%= link_to "Publica el teu primer projecte", producte_dapcons_usuaris_path %>
 		            </div>
 			        </div>
 			      <% end %>

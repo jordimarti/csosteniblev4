@@ -1,5 +1,6 @@
 class ProducteDapconsUsuarisController < ApplicationController
   before_action :set_producte_dapcons_usuari, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /producte_dapcons_usuaris
   # GET /producte_dapcons_usuaris.json

@@ -239,6 +239,7 @@ es:
   cas_practics:
     index:
       casos_practics: "Casos prácticos"
+      en_construccio: "Este apartado está en construcción. Próximamente publicaremos casos prácticos."
     llistat:
       panell: "<- Volver al panel de control"
       cas_practics: "Casos prácticos"

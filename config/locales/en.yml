@@ -186,6 +186,7 @@ en:
   cas_practics:
     index:
       casos_practics: "Case studies"
+      en_construccio: "This section is under construction. Soon we will publish practical cases."
     llistat:
       panell: "<- Return to dashboard"
       cas_practics: "Case studies"

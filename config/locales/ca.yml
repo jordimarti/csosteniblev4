@@ -244,6 +244,7 @@ ca:
   cas_practics:
     index:
       casos_practics: "Casos pràctics"
+      en_construccio: "Aquest apartat està en construcció. Properament publicarem casos pràctics."
     llistat:
       panell: "<- Tornar al panell de control"
       cas_practics: "Casos pràctics"
