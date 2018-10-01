@@ -172,6 +172,11 @@ es:
       productes: "Productos"
       marketcons: "MarketCons"
       dapcons: "DAPcons"
+    footer:
+      quisom: "Quiénes somos"
+      contacta: "Contacta"
+      avis_legal: "Aviso legal"
+      cookies: "Política de cookies"
     dapcons_navigation:
       titol_programa_dapconstruccion: "Programa DAPconstrucción"
       subtitol_programa_dapconstruccion: "Declaración Ambiental de Productos de Construcción"
