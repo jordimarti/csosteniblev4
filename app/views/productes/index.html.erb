@@ -123,21 +123,39 @@
           <div class="medium-4 cell">
             <%= link_to productes_path(categoria: 21) do %>
               <div class="container-categoria-inici">
-                <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/bbdd_dapcons.png', :class => 'imatge-bbdd-inici') %>
+                <% if params[:locale] == 'ca' %>
+                  <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/bbdd_dapcons.png', :class => 'imatge-bbdd-inici') %>
+                <% elsif params[:locale] == 'es' %>
+                  <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/bbdd_dapcons.png', :class => 'imatge-bbdd-inici') %>
+                <% else %>
+                  <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/bbdd_dapcons.png', :class => 'imatge-bbdd-inici') %>
+                <% end %>
               </div>
             <% end %>
           </div>
           <div class="medium-4 cell">
             <%= link_to productes_path(categoria: 12) do %>
               <div class="container-categoria-inici">
-                <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/bbdd_arids.png', :class => 'imatge-bbdd-inici') %>
+                <% if params[:locale] == 'ca' %>
+                  <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/bbdd_arids.png', :class => 'imatge-bbdd-inici') %>
+                <% elsif params[:locale] == 'es' %>
+                  <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/bbdd_arids_es.png', :class => 'imatge-bbdd-inici') %>
+                <% else %>
+                  <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/bbdd_arids_en.png', :class => 'imatge-bbdd-inici') %>
+                <% end %>
               </div>
             <% end %>
           </div>
           <div class="medium-4 cell">
             <%= link_to productes_path(categoria: 13) do %>
               <div class="container-categoria-inici">
-                <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/bbdd_fusta.png', :class => 'imatge-bbdd-inici') %>
+                <% if params[:locale] == 'ca' %>
+                  <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/bbdd_fusta.png', :class => 'imatge-bbdd-inici') %>
+                <% elsif params[:locale] == 'es' %>
+                  <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/bbdd_fusta_es.png', :class => 'imatge-bbdd-inici') %>
+                <% else %>
+                  <%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/bbdd_fusta_en.png', :class => 'imatge-bbdd-inici') %>
+                <% end %>
               </div>
             <% end %>
           </div>
@@ -147,7 +165,13 @@
       <% @seleccio_productes.each do |producte| %>
         <div class="producte-container">
           <div class="producte-nom">
-            <span class="titol-producte-item"><%= producte.nom_ca %></span>
+            <% if params[:locale] == 'ca' %>
+              <span class="titol-producte-item"><%= producte.nom_ca %></span>
+            <% elsif params[:locale] == 'es' %>
+              <span class="titol-producte-item"><%= producte.nom_es %></span>
+            <% else %>
+              <span class="titol-producte-item"><%= producte.nom_en %></span>
+            <% end %>
           </div>
           <div class="imatge-producte">
             <% if producte.imatge_producte.attached? %>
@@ -159,7 +183,13 @@
           <div class="text-producte">
             <div class="tipus-producte-container">
               <span class="text-tip"><%= t('.tipus_producte') %>:</span><br/>
-              <span class="tipus-producte"><%= producte.descripcio_ca %></span>
+              <% if params[:locale] == 'ca' %>
+                <span class="tipus-producte"><%= producte.descripcio_ca %></span>
+              <% elsif params[:locale] == 'es' %>
+                <span class="tipus-producte"><%= producte.descripcio_es %></span>
+              <% else %>
+                <span class="tipus-producte"><%= producte.descripcio_en %></span>
+              <% end %>
             </div>
             <div class="empresa-producte-container">
               <span class="text-tip"><%= t('.empresa') %>:</span><br/>
@@ -167,7 +197,13 @@
             </div>
             <div class="destacats-container">
               <span class="text-tip"><%= t('.destaquem') %>:</span>
-              <p><%= producte.destacats_ca %></p>
+              <% if params[:locale] == 'ca' %>
+                <p><%= producte.destacats_ca %></p>
+              <% elsif params[:locale] == 'es' %>
+                <p><%= producte.destacats_es %></p>
+              <% else %>
+                <p><%= producte.destacats_en %></p>
+              <% end %>
             </div>
             <% if can? :update, producte %>
               <div class="edicio-producte-container">
