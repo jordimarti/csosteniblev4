@@ -5,17 +5,17 @@
 
   <div class="form-inputs">
     <%= f.input :titol_ca %>
-    <%= f.input :resum_ca %>
+    <%= f.input :resum_ca, input_html: {rows: 5} %>
     <%= f.input :permalink_ca %>
-    <%= f.input :contingut_ca %>
+    <%= f.input :contingut_ca, input_html: {rows: 10} %>
     <%= f.input :titol_es %>
-    <%= f.input :resum_es %>
+    <%= f.input :resum_es, input_html: {rows: 5} %>
     <%= f.input :permalink_es %>
-    <%= f.input :contingut_es %>
+    <%= f.input :contingut_es, input_html: {rows: 10} %>
     <%= f.input :titol_en %>
-    <%= f.input :resum_en %>
+    <%= f.input :resum_en, input_html: {rows: 5} %>
     <%= f.input :permalink_en %>
-    <%= f.input :contingut_en %>
+    <%= f.input :contingut_en, input_html: {rows: 10} %>
     <%= f.input :categoria %>
     <%= f.input :imatge_video, as: :file %>
   </div>
