@@ -348,10 +348,12 @@ ca:
       tornar_llistat_casos: "<- Tornar al llistat de casos pràctics"
   productes:
     index:
+      productes: "Productes"
       mitjans_equips_auxiliars: "Mitjans i equips auxiliars"
       enderrocs_gestio_residus: "Enderrocs i gestió de residus"
       terreny_fonaments: "Terreny, contenció i fonamentació"
       estructures: "Estructures"
+      cobertes: "Cobertes"
       tancaments_divisories: "Tancaments i divisòries"
       aillaments: "Aïllaments"
       impermeabilitzacions: "Impermeabilitzacions i tractaments d'humitats"
@@ -367,6 +369,9 @@ ca:
       empresa: "Empresa"
       tipus_producte: "Tipus de producte"
       destaquem: "Destaquem"
+      caracteristiques: "Característiques"
+      aplicacio: "Aplicació"
+      disponibilitat: "Disponibilitat"
   dapcons:
     que_son:
       que_son: "Què són les DAPcons<sup>®</sup>?"

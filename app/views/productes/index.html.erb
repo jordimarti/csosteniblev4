@@ -205,6 +205,41 @@
                 <p><%= producte.destacats_en %></p>
               <% end %>
             </div>
+            <div class="informacio-extra prod-<%= producte.id %>">
+              <div class="destacats-container">
+                <span class="text-tip"><%= t('.caracteristiques') %>:</span>
+                <% if params[:locale] == 'ca' %>
+                  <p><%= producte.caracteristiques_ca %></p>
+                <% elsif params[:locale] == 'es' %>
+                  <p><%= producte.caracteristiques_es %></p>
+                <% else %>
+                  <p><%= producte.caracteristiques_en %></p>
+                <% end %>
+              </div>
+              <div class="destacats-container">
+                <span class="text-tip"><%= t('.aplicacio') %>:</span>
+                <% if params[:locale] == 'ca' %>
+                  <p><%= producte.aplicacio_ca %></p>
+                <% elsif params[:locale] == 'es' %>
+                  <p><%= producte.aplicacio_es %></p>
+                <% else %>
+                  <p><%= producte.aplicacio_en %></p>
+                <% end %>
+              </div>
+              <div class="destacats-container">
+                <span class="text-tip"><%= t('.disponibilitat') %>:</span>
+                <% if params[:locale] == 'ca' %>
+                  <p><%= producte.disponibilitat_ca %></p>
+                <% elsif params[:locale] == 'es' %>
+                  <p><%= producte.disponibilitat_es %></p>
+                <% else %>
+                  <p><%= producte.disponibilitat_en %></p>
+                <% end %>
+              </div>
+            </div>
+            <div class="edicio-producte-container">
+              <button class="mes-info-<%= producte.id %>">+ info</button>
+            </div>
             <% if can? :update, producte %>
               <div class="edicio-producte-container">
                 <%= link_to 'Editar', edit_producte_path(producte) %> | <%= link_to 'Eliminar', producte, method: :delete, data: { confirm: 'Segur que vols eliminar?' } %>
@@ -218,3 +253,12 @@
   </div>
 </div>
 
+<script>
+  $(".informacio-extra").hide();
+  <% @seleccio_productes.each do |producte| %>
+  $(".mes-info-<%= producte.id %>").on( "click", function(event) {
+    $(".prod-<%= producte.id %>").show(1000);
+    $(".mes-info-<%= producte.id %>").hide();
+  });
+  <% end %>
+</script>

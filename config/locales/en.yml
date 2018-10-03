@@ -289,10 +289,12 @@ en:
       tornar_llistat_casos: "<- Return to the case studies list"
   productes:
     index:
+      productes: "Products"
       mitjans_equips_auxiliars: "Media and auxiliary equipment"
       enderrocs_gestio_residus: "Demolition and waste management"
       terreny_fonaments: "Land, containment and foundation"
       estructures: "Structures"
+      cobertes: "Roofs"
       tancaments_divisories: "Enclosures and partitions"
       aillaments: "Insulation"
       impermeabilitzacions: "Waterproofing and humidity treatments"
@@ -308,6 +310,9 @@ en:
       empresa: "Company"
       tipus_producte: "Type of product"
       destaquem: "Stand out"
+      caracteristiques: "Characteristics"
+      aplicacio: "Application"
+      disponibilitat: "Availability"
   dapcons:
     que_son:
       que_son: "What are DAPcons<sup>®</sup>?"
