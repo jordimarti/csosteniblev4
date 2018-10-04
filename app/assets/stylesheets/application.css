@@ -51,6 +51,15 @@
 	padding: 5px 15px;
 }
 
+@media screen and (max-width: 40em) {
+	.menu-top > li > a {
+		font-size: 0.6em;
+	}
+	.dropdown.menu a {
+		padding: 5px 2px;
+	}
+}
+
 .vertical-divider {
 	background-color: red;
 	width: 200px;
