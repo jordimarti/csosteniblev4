@@ -1,8 +1,14 @@
         <div class="nested-fields">
 			<div class="grid-x grid-margin-x">
         <div class="medium-6 cell">
-        	<label class="select optional" for="tipus_indicador_id">Tipus indicador</label>
-    			<%= f.collection_select :tipus_indicador_id, TipusIndicador.all, :id, :nom_ca %>
+        	<label class="select optional" for="tipus_indicador_id"><%= t('.parametre') %></label>
+    			<% if params[:locale] == 'ca' %>
+            <%= f.collection_select :tipus_indicador_id, TipusIndicador.all, :id, :nom_ca %>
+          <% elsif params[:locale] == 'es' %>
+            <%= f.collection_select :tipus_indicador_id, TipusIndicador.all, :id, :nom_es %>
+          <% else %>
+            <%= f.collection_select :tipus_indicador_id, TipusIndicador.all, :id, :nom_en %>
+          <% end %>
     		</div>
     		<div class="medium-3 cell">
     			<%= f.input :etapa, collection: [[t('.a1-a3'), "A1-A3"], [t('.a4'), "A4"], [t('.a5'), "A5"], [t('.b1'), "B1"], [t('.b2'), "B2"], [t('.b3'), "B3"], [t('.b4-b7'), "B4-B7"], [t('.c1'), "C1"], [t('.c2'), "C2"], [t('.c3'), "C3"], [t('.c4'), "C4"]] %>

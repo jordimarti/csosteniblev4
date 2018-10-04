@@ -25,7 +25,7 @@
     <div class="grid-x grid-margin-x">
       <div class="medium-12 cell">
         <div id="indicadors">
-          <h3>Assignar indicadors</h3>
+          <h3><%= t('.assignar_indicadors') %></h3>
           <%= f.simple_fields_for :indicador_usuaris do |indicador| %>
             <%= render 'indicador_usuari_fields', f: indicador %>
           <% end %>

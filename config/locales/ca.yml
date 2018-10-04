@@ -487,7 +487,9 @@ ca:
       llistat_productes: "Llistat de productes"
     form:
       guardar: "Guardar"
+      assignar_indicadors: "Assignar indicadors"
     indicador_usuari_fields:
+      parametre: "Paràmetre"
       a1-a3: "A1-A3: Extracció, transport i fabricació"
       a4: "A4: Transport del producte a obra"
       a5: "A5: Instal·lació del producte i construcció"
