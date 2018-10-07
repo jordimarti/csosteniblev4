@@ -15,7 +15,40 @@
 			      					</div>
 			      				</div>
 		      				</div>
+		      				
 		      				<div class="apartat-item-categoria-productes-dapcons">
+		      					<div class="grid-x grid-margin-x">
+	      							<div class="medium-3 cell">
+	      								<% if producte.imatge_producte_dapcons.attached? %>
+	      									<%= image_tag producte.imatge_producte_dapcons %>
+	      								<% end %>
+		      						</div>
+		      						<div class="medium-9 cell">
+		      							<span class="titol-dada-producte-dapcons"><%= t('.descripcio') %>:</span><br/>
+		      							<% if params[:locale] == 'ca' %>
+		      								<%= producte.descripcio_ca %><br/>
+		      							<% elsif params[:locale] == 'es' %>
+		      								<%= producte.descripcio_es %><br/>
+		      							<% else %>
+		      								<%= producte.descripcio_en %><br/>
+		      							<% end %>
+		      							<br/>
+
+		      							<span class="titol-dada-producte-dapcons"><%= t('.documents') %>:</span><br/>
+		      							<% producte.document_dapcons.each do |document| %>
+		      								<% if params[:locale] == 'ca' %>
+		      									<%= link_to document.nom_ca, document.link %><br/>
+		      								<% elsif params[:locale] == 'es' %>
+		      									<%= link_to document.nom_es, document.link %><br/>
+		      								<% else %>
+		      									<%= link_to document.nom_en, document.link %><br/>
+		      								<% end %>
+		      							<% end %>
+		      						</div>
+		      					</div>
+	      					</div>
+
+	      					<div class="apartat-item-categoria-productes-dapcons">
 		      					<div class="grid-x grid-margin-x">
 			      					<div class="medium-4 cell">
 			      						<span class="titol-dada-producte-dapcons"><%= t('.validesa') %>:</span> 
@@ -43,31 +76,6 @@
 			      					</div>
 			      				</div>
 		      				</div>
-		      				<div class="apartat-item-categoria-productes-dapcons">
-		      					<div class="grid-x grid-margin-x">
-	      							<div class="medium-6 cell">
-		      							<span class="titol-dada-producte-dapcons"><%= t('.descripcio') %>:</span><br/>
-		      							<% if params[:locale] == 'ca' %>
-		      								<%= producte.descripcio_ca %><br/>
-		      							<% elsif params[:locale] == 'es' %>
-		      								<%= producte.descripcio_es %><br/>
-		      							<% else %>
-		      								<%= producte.descripcio_en %><br/>
-		      							<% end %>
-		      						</div>
-		      						<div class="medium-6 cell">
-		      							<span class="titol-dada-producte-dapcons"><%= t('.documents') %>:</span><br/>
-		      							<% producte.document_dapcons.each do |document| %>
-		      								<% if params[:locale] == 'ca' %>
-		      									<%= link_to document.nom_ca, document.link %><br/>
-		      								<% elsif params[:locale] == 'es' %>
-		      									<%= link_to document.nom_es, document.link %><br/>
-		      								<% else %>
-		      									<%= link_to document.nom_en, document.link %><br/>
-		      								<% end %>
-		      							<% end %>
-		      						</div>
-		      					</div>
-	      					</div>
+
 		      			</div>
 		      		
