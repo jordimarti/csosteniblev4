@@ -63,8 +63,11 @@ Rails.application.routes.draw do
   get 'home/cookies'
   get 'home/contacta'
 
-  get 'index.php/ca/*other', to: redirect('dapcons/index?locale=ca')
-  get 'index.php/es/*other', to: redirect('dapcons/index?locale=es')
+  get 'index.php/ca/sistema_dapc/*other', to: redirect('dapcons/index?locale=ca')
+  get 'index.php/es/sistema_dapc/*other', to: redirect('dapcons/index?locale=es')
+  get 'index.php/ca/*other', to: redirect('home/index?locale=ca')
+  get 'index.php/es/*other', to: redirect('home/index?locale=es')
+  
   root :to => "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
