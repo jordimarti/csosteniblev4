@@ -62,6 +62,9 @@ Rails.application.routes.draw do
   get 'home/avislegal'
   get 'home/cookies'
   get 'home/contacta'
+
+  get 'index.php/ca/*other', to: redirect('dapcons/index?locale=ca')
+  get 'index.php/es/*other', to: redirect('dapcons/index?locale=es')
   root :to => "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
