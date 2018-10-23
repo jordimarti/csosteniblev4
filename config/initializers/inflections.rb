@@ -26,4 +26,5 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'noticia', 'noticies'
   inflect.irregular 'organitzacio', 'organitzacions'
   inflect.irregular 'afiliada', 'afiliades'
+  inflect.irregular 'interaccio', 'interaccions'
 end
