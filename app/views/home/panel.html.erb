@@ -77,6 +77,7 @@
   </div>
 
   <% if current_user.role == 'editor' %>
+    <%= link_to "Descàrregues de documents DAPcons", interaccions_descarregues_dapcons_path %>
     <% if @casos_practics.count > 0 %>
       <div class="grid-x grid-margin-x">
         <div class="medium-12 cell">
