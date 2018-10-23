@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_20_104021) do
+ActiveRecord::Schema.define(version: 2018_10_23_162524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -177,6 +177,14 @@ ActiveRecord::Schema.define(version: 2018_09_20_104021) do
     t.integer "producte_dapcons_id"
     t.string "etapa"
     t.float "valor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "interaccions", force: :cascade do |t|
+    t.string "nom"
+    t.string "categoria"
+    t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

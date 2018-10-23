@@ -67,6 +67,9 @@ Rails.application.routes.draw do
   get 'index.php/es/sistema_dapc/*other', to: redirect('dapcons/index?locale=es')
   get 'index.php/ca/*other', to: redirect('home/index?locale=ca')
   get 'index.php/es/*other', to: redirect('home/index?locale=es')
+
+  get 'interaccions', to: 'interaccions#create', as: :interaccions
+  get 'interaccions/descarregues_dapcons', to: 'interaccions#descarregues_dapcons'
   
   root :to => "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

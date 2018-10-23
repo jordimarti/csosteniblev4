@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="grid-x grid-margin-x">
+    <div class="medium-12 cell">
+    	<span class="main-title">Descàrregues de documents DAPcons</span>
+    	<br/>
+    	<br/>
+    	<table>
+    		<thead>
+    			<tr>
+    				<th>Nom document</th>
+    				<th>Data</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+		    	<% @interaccions.each do |interaccio| %>
+		    		<tr>
+		    			<td><%= interaccio.nom %></td>
+		    			<td><%= interaccio.created_at %></td>
+		    		</tr>
+		    	<% end %>
+		    </tbody>
+		   </table>
+		  </div>
+    </div>
+  </div>
+</div>
