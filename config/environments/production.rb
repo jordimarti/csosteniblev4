@@ -93,4 +93,14 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.active_storage.service = :amazon
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.sendgrid.net",
+   :port                 => 587,
+   :user_name            => Rails.application.credentials.dig(:sendgrid, :sendgrid_username),
+   :password             => Rails.application.credentials.dig(:sendgrid, :sendgrid_password),
+   :authentication       => "plain",
+   :enable_starttls_auto => true
+  }
 end

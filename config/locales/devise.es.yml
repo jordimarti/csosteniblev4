@@ -42,7 +42,7 @@ es:
         change_password: "Cambiar la contraseña"
     mailer:
       reset_password_instructions:
-        titol: "Programa de rehabilitación"
+        titol: "Agenda de la Construcción Sostenible"
         salutacio: "Hola, aquí puedes restablecer tu contraseña."
         text1: "Hemos recibido una petición de restablecer la contraseña de la aplicación."
         text2: "Si no has realizado esta petición puedes ignorar este correo."

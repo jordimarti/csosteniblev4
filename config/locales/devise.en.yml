@@ -21,6 +21,16 @@ en:
         subject: "Confirmation instructions"
       reset_password_instructions:
         subject: "Reset password instructions"
+        titol: "Agenda de la Construcció Sostenible"
+        salutacio: "Hello, here you can reset your password."
+        text1: "We have received a petition to restore your password."
+        text2: "If you haven't made this petition you can ignore this mail."
+        text3: "To restore your password click the link below:"
+        canviar_contrasenya: "Change password"
+        problemes: "Do you have problems?"
+        text_problemes: "If the previous link doesn't work try to copy and paste the next link to your browser:"
+        preguntes: "Questions?"
+        text_preguntes: "If you need help you can answer this mail or send an email to:"
       unlock_instructions:
         subject: "Unlock instructions"
       email_changed:
