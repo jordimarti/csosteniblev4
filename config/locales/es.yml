@@ -219,6 +219,8 @@ es:
       declaracions: "Declaraciones Ambientales de Producto"
       text_declaracions_editor: "Administra los productos del sistema DAPcons"
       text_declaracions_usuari: "Crea un producto para las comparacions de les Declaracions Ambientales de Producto"
+      descarregues: "Descargas de documentos DAPcons"
+      text_descarregues: "Consulta el listado de descargas de documentos DAPcons que se han realizado"
       continguts_pendents_moderacio: "Hay contenidos pendientes de moderación"
       casos_practics: "Casos prácticos"
       un_cas_pendent: "Hay un caso práctico pendiente de moderación"

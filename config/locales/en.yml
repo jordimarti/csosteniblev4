@@ -166,6 +166,8 @@ en:
       declaracions: "Environmental Product Declarations"
       text_declaracions_editor: "Administer productos of the DAPcons system"
       text_declaracions_usuari: "Create a product for the Environmental Product Declarations comparisons"
+      descarregues: "DAPcons documents downloads"
+      text_descarregues: "Check the download list of DAPcons documents"
       continguts_pendents_moderacio: "There is content pending moderation"
       casos_practics: "Study cases"
       un_cas_pendent: "There is a study case pending moderation"
