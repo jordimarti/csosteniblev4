@@ -161,7 +161,7 @@
               valors_transformats_indicador1 = Array.new
               valors_transformats_indicador2 = Array.new
               
-              for i in 0..6
+              for i in 0..23
                 # Primer comprovem quin és més gran
                 if valors_indicador1[i].present? && valors_indicador2[i].present?
                   if valors_indicador1[i] > valors_indicador2[i]
@@ -186,7 +186,7 @@
               
               %>
               <div class="titol-grafic-comparador"><%= t('.titol_grafic') %></div>
-              <canvas id="<%= etapa[0] %>" width="400" height="150"></canvas>
+              <canvas id="<%= etapa[0] %>" width="400" height="300"></canvas>
               <script charset="utf-8">
               var rails_locale = "<%= params[:locale] %>"
               switch(rails_locale) {
@@ -198,6 +198,23 @@
                   var escalfament_global = "Escalfament global";
                   var eutrofitzacio = "Eutrofització";
                   var ozo_troposferic = "Formació d'ozó troposfèric, POCP";
+                  var energia_primaria_renovable_no_materia_prima = "Ús d'energia primària renovable excloent els recursos d'energia primària renovable utilitzada com a matèria prima";
+                  var energia_primaria_renovable_materia_prima = "Ús d'energia primària renovable utilitzada com a matèria primera";
+                  var total_energia_primaria_renovable = "Ús total d'energia primària renovable (energia primària i recursos d'energia primària renovable utilitzada com a matèria prima";
+                  var energia_primaria_no_renovable = "Ús d'energia primària no renovable, excloent els recursos d'energia primària no renovable utilitzada com a matèria prima";
+                  var energia_primaria_no_renovable_materia_prima = "Ús de l'energia primària no renovable utilitzada com a matèria prima";
+                  var total_energia_primaria_no_renovable = "Ús total de l'energia primària no renovable (energia primària i recursos d'energia primària renovable utilitzada com a matèria prima)";
+                  var materials_secundaris = "Ús de materials secundaris";
+                  var combustibles_secundaris_renovables = "Ús de combustibles secundaris renovables";
+                  var combustibles_secundaris_no_renovables = "Ús de combustibles secundaris no renovables";
+                  var aigua_dolca = "Ús net de recursos d'aigua dolça";
+                  var residus_perillosos = "Residus perillosos eliminats";
+                  var residus_no_perillosos = "Residus no perillosos eliminats";
+                  var residus_radioactius = "Residus radioactius eliminats";
+                  var components_reutilitzacio = "Components per a la seva reutilització";
+                  var materials_reciclatge = "Materials per al reciclatge";
+                  var materials_valoritzacio_energetica = "Materials per a valorització energètica";
+                  var energia_exportada = "Energia exportada";
                   break;
                 case 'es':
                   var esgotament_recursos_no_fossils = "Agotamiento de recursos abióticos para recursos no fósiles";
@@ -207,6 +224,23 @@
                   var escalfament_global = "Calentamiento global";
                   var eutrofitzacio = "Eutrofización";
                   var ozo_troposferic = "Formación de ozono troposférico, POCP";
+                  var energia_primaria_renovable_no_materia_prima = "Uso de energía primaria renovable excluyendo los recursos de energía primaria renovable utilizada como materia prima";
+                  var energia_primaria_renovable_materia_prima = "Uso de energía primaria renovable utilizada como materia prima";
+                  var total_energia_primaria_renovable = "Uso total de energía primaria renovable (energía primaria y recursos de energía primaria renovable utilizada como materia prima";
+                  var energia_primaria_no_renovable = "Uso de energía primaria no renovable, excluyendo los recursos de energía primaria no renovable utilizada como materia prima";
+                  var energia_primaria_no_renovable_materia_prima = "Uso de la energía primaria no renovable utilizada como materia prima";
+                  var total_energia_primaria_no_renovable = "Uso total de la energía primaria no renovable (energía primaria y recursos de energía primaria renovable utilizada como materia prima";
+                  var materials_secundaris = "Uso de materiales secundarios";
+                  var combustibles_secundaris_renovables = "Uso de combustibles secundarios renovables";
+                  var combustibles_secundaris_no_renovables = "Uso de combustibles secundarios no renovables";
+                  var aigua_dolca = "Uso neto de recursos de agua dulce";
+                  var residus_perillosos = "Residuos peligrosos eliminados";
+                  var residus_no_perillosos = "Residuos no peligrosos eliminados";
+                  var residus_radioactius = "Residuos radiactivos eliminados";
+                  var components_reutilitzacio = "Componentes para su reutilización";
+                  var materials_reciclatge = "Materiales para el reciclaje";
+                  var materials_valoritzacio_energetica = "Materiales para valorización energética";
+                  var energia_exportada = "Energía exportada";
                   break;
                 default:
                   var esgotament_recursos_no_fossils = "Depletion of abiotic resources for non-fossil resources";
@@ -216,14 +250,30 @@
                   var escalfament_global = "Global warming";
                   var eutrofitzacio = "Eutrophication";
                   var ozo_troposferic = "Tropospheric ozone formation, POCP";
-
+                  var energia_primaria_renovable_no_materia_prima = "Use of renewable primary energy excluding renewable primary energy resources used as raw material";
+                  var energia_primaria_renovable_materia_prima = "Use of renewable primary energy used as raw material";
+                  var total_energia_primaria_renovable = "Total use of renewable primary energy (primary energy and renewable primary energy resources used as raw material";
+                  var energia_primaria_no_renovable = "Use of non-renewable primary energy, excluding non-renewable primary energy resources used as raw material";
+                  var energia_primaria_no_renovable_materia_prima = "Use of non-renewable primary energy used as raw material";
+                  var total_energia_primaria_no_renovable = "Total use of non-renewable primary energy (primary energy and renewable primary energy resources used as raw material";
+                  var materials_secundaris = "Use of secondary materials";
+                  var combustibles_secundaris_renovables = "Use of renewable secondary fuels";
+                  var combustibles_secundaris_no_renovables = "Use of non-renewable secondary fuels";
+                  var aigua_dolca = "Net use of freshwater resources";
+                  var residus_perillosos = "Hazardous waste disposed";
+                  var residus_no_perillosos = "Non-hazardous waste disposed";
+                  var residus_radioactius = "Radioactive waste removed";
+                  var components_reutilitzacio = "Components for reuse";
+                  var materials_reciclatge = "Materials for recycling";
+                  var materials_valoritzacio_energetica = "Materials for energy recovery";
+                  var energia_exportada = "Exported energy";
               }
 
               var ctx = document.getElementById("<%= etapa[0] %>").getContext('2d');
               var myChart = new Chart(ctx, {
                   type: 'horizontalBar',
                   data: {
-                      labels: [escalfament_global, esgotament_ozo, acidificacio, esgotament_recursos_fossils, esgotament_recursos_no_fossils, eutrofitzacio, ozo_troposferic],
+                      labels: [escalfament_global, esgotament_ozo, acidificacio, esgotament_recursos_fossils, esgotament_recursos_no_fossils, eutrofitzacio, ozo_troposferic, energia_primaria_renovable_no_materia_prima, energia_primaria_renovable_materia_prima, total_energia_primaria_renovable, energia_primaria_no_renovable, energia_primaria_no_renovable_materia_prima, total_energia_primaria_no_renovable, materials_secundaris, combustibles_secundaris_renovables, combustibles_secundaris_no_renovables, aigua_dolca, residus_perillosos, residus_no_perillosos, residus_radioactius, components_reutilitzacio, materials_reciclatge, materials_valoritzacio_energetica, energia_exportada],
                       datasets: [{
                           label: "<%= @nom_producte1 %> - <%= @producte1.empresa %>",
                           data: <%= valors_transformats_indicador1 %>,
