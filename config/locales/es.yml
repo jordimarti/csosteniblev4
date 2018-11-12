@@ -430,6 +430,7 @@ es:
       rcp_referencia: "RCP de referencia"
       descripcio: "Descripción del producto"
       documents: "Documentos"
+      solicitar_documents: "Solicitar documento al fabricante"
     productes_registrats:
       productes_registrats: "Productos registrados"
       dapcons_vigent: "DAPcons vigente"

@@ -374,6 +374,7 @@ en:
       rcp_referencia: "Reference PCR"
       descripcio: "Description of the product"
       documents: "Documents"
+      solicitar_documents: "Request document from the manufacturer"
     productes_registrats:
       productes_registrats: "Registered products"
       dapcons_vigent: "Current DAPcons"

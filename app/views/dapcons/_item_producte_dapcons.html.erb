@@ -35,6 +35,9 @@
 		      							<br/>
 
 		      							<span class="titol-dada-producte-dapcons"><%= t('.documents') %>:</span><br/>
+		      							<% if producte.document_dapcons.count == 0 && producte.validesa_fi < Date.today %>
+		      								<%= t('.solicitar_document') %>
+		      							<% end %>
 		      							<% producte.document_dapcons.each do |document| %>
 		      								<% if params[:locale] == 'ca' %>
 		      									<%= link_to document.nom_ca, interaccions_path(nom: document.nom_ca, categoria: "Download DAPcons", link: document.link) %><br/>
