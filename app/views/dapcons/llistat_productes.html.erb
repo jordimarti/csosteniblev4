@@ -46,14 +46,15 @@
 						<% end %>
       		</div>
       	</div>
-      	
+      		
 	      	<div class="llistat-productes">
+	      		
 	      		<div class="titol-categoria">
-	      			<h4><%= t('.aillants_termics') %></h4>
+	      			<h4><%= t('.construccio_general') %></h4>
 	      		</div>
 	      		<div class="productes-categoria">
 	      			<div class="grid-x grid-margin-x">
-	      				<% @aillants_termics.each do |producte| %>
+	      				<% @productes_general.each do |producte| %>
 		      				<div class="medium-6 cell">
 				      			<div class="comparador-dapcons-item" tipus="sistema" valor="<%= producte.id %>">
 				      				<div class="comparador-dapcons-item-nom">
@@ -98,12 +99,12 @@
 				      </div>
 				    </div>
 
-				    <div class="titol-categoria">
-	      			<h4><%= t('.pedra_natural') %></h4>
+	      		<div class="titol-categoria">
+	      			<h4><%= t('.aillants_termics') %></h4>
 	      		</div>
 	      		<div class="productes-categoria">
 	      			<div class="grid-x grid-margin-x">
-	      				<% @pedra_natural.each do |producte| %>
+	      				<% @aillants_termics.each do |producte| %>
 		      				<div class="medium-6 cell">
 				      			<div class="comparador-dapcons-item" tipus="sistema" valor="<%= producte.id %>">
 				      				<div class="comparador-dapcons-item-nom">
@@ -124,11 +125,11 @@
 				    </div>
 
 				    <div class="titol-categoria">
-	      			<h4><%= t('.construccio_general') %></h4>
+	      			<h4><%= t('.pedra_natural') %></h4>
 	      		</div>
 	      		<div class="productes-categoria">
 	      			<div class="grid-x grid-margin-x">
-	      				<% @productes_general.each do |producte| %>
+	      				<% @pedra_natural.each do |producte| %>
 		      				<div class="medium-6 cell">
 				      			<div class="comparador-dapcons-item" tipus="sistema" valor="<%= producte.id %>">
 				      				<div class="comparador-dapcons-item-nom">
