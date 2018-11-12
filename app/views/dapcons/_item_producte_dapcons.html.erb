@@ -35,8 +35,8 @@
 		      							<br/>
 
 		      							<span class="titol-dada-producte-dapcons"><%= t('.documents') %>:</span><br/>
-		      							<% if producte.document_dapcons.count == 0 && producte.validesa_fi < Date.today %>
-		      								<%= t('.solicitar_document') %>
+		      							<% if producte.document_dapcons.count == 0 && producte.validesa_fi > Date.today %>
+		      								<%= t('.solicitar_documents') %>
 		      							<% end %>
 		      							<% producte.document_dapcons.each do |document| %>
 		      								<% if params[:locale] == 'ca' %>
