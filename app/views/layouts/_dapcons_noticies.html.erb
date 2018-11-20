@@ -3,7 +3,13 @@
 		<div class="medium-12 cell">
 			<div class="contenidor-noticies-dapcons">
 				<div class="titol-seccio">
-					NOTÍCIES DAPcons<sup>®</sup>
+					<% if params[:locale] == 'ca' %>
+						NOTÍCIES DAPcons<sup>®</sup>
+					<% elsif params[:locale] == 'es' %>
+						NOTICIAS DAPcons<sup>®</sup>
+					<% else %>
+						DAPcons<sup>®</sup> NEWS
+					<% end %>
 				</div>
 				<div class="grid-x grid-margin-x">
 					
@@ -17,7 +23,13 @@
 		            <% end %> 
 		            <div class="titol-noticia-dapcons">
 		              <%= link_to noticia do %>
-		                <h4><%= noticia.titol_ca %></h4>
+			              <% if params[:locale] == 'ca' %>
+											<h4><%= noticia.titol_ca %></h4>
+										<% elsif params[:locale] == 'es' %>
+											<h4><%= noticia.titol_es %></h4>
+										<% else %>
+											<h4><%= noticia.titol_en %></h4>
+										<% end %>
 		              <% end %>
 		            </div>
 							</div>

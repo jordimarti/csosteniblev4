@@ -21,7 +21,7 @@
       <% if params[:locale] == 'ca' %>
         <%= @noticia.contingut_ca.html_safe %>
       <% elsif params[:locale] == 'es' %>
-        ><%= @noticia.contingut_es.html_safe %>
+        <%= @noticia.contingut_es.html_safe %>
       <% else %>
         <%= @noticia.contingut_en.html_safe %>
       <% end %>
