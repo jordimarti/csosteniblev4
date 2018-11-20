@@ -158,12 +158,12 @@
 	              <%= image_tag noticia.imatge_noticia %>
 	            <% end %>
 	            <h3 class="noticia-lateral-titol">
-	              <% if params[:locale] == 'ca' %>
-	                <%= noticia.titol_ca %>
+	              <% if params[:locale] == 'en' %>
+	                <%= noticia.titol_en %>
 	              <% elsif params[:locale] == 'es' %>
 	                <%= noticia.titol_es %>
 	              <% else %>
-	                <%= noticia.titol_en %>
+	                <%= noticia.titol_ca %>
 	              <% end %>
 	            </h3>
 	          </div>
