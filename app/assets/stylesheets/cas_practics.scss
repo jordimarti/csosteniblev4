@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*** Editor ***/
+
 .container-formulari-cas-practic {
 	background-color: #eaeaea;
 	padding: 20px;
@@ -25,4 +27,52 @@
 h4.titol-text-camp-cas-practic {
 	font-size: 1.2em;
 	font-weight: bold;
+}
+
+
+/*** Index ***/
+
+.img-index-cas {
+	height: 300px;
+	width: 100%;
+}
+
+.titol-index-cas > a > h4 {
+	color: #333;
+	font-size: 1.4em;
+	margin-top: 10px;
+	margin-bottom: 25px;
+}
+
+
+/*** Show ***/
+
+h1.cas-practic {
+	font-size: 2em;
+	font-weight: bold;
+	margin: 20px 0px 40px 0px;
+}
+
+h3.cas-practic {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.text-destacat-cas-practic {
+	font-size: 1.3em;
+	margin-bottom: 30px;
+}
+
+.container-text-imatge-cas-practic {
+	background-color: #333;
+	padding: 5px 10px;
+	margin-bottom: 20px;
+}
+
+.text-imatge-cas-practic {
+	color: white;
+}
+
+.apartat-cas-practic {
+	margin-bottom: 40px;
 }

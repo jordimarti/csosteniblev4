@@ -1,3 +1,148 @@
+<div class="container">
+  <div class="grid-x grid-margin-x">
+    <div class="cell medium-12">
+      <% if params[:locale] == 'ca' %>
+        <h1 class="cas-practic"><%= @cas_practic.titol_ca %></h1>
+      <% elsif params[:locale] == 'es' %>
+        <h1 class="cas-practic"><%= @cas_practic.titol_es %></h1>
+      <% else %>
+        <h1 class="cas-practic"><%= @cas_practic.titol_en %></h1>
+      <% end %>
+
+    </div>
+  </div>
+
+  <div class="grid-x grid-margin-x">
+    <div class="medium-5 cell">
+      <% if @cas_practic.imatge_cas_principal.attached? %>
+        <%= image_tag @cas_practic.imatge_cas_principal, class: 'img-cas' %>
+        <div class="container-text-imatge-cas-practic">
+          <span class="text-imatge-cas-practic"><%= @cas_practic.text_imatge_cas_principal_ca %></span>
+        </div>
+      <% end %>
+      <% if @cas_practic.imatge_cas_1.attached? %>
+        <%= image_tag @cas_practic.imatge_cas_1, class: 'img-cas' %>
+        <div class="container-text-imatge-cas-practic">
+          <span class="text-imatge-cas-practic"><%= @cas_practic.text_imatge_cas_1_ca %></span>
+        </div>
+      <% end %>
+      <% if @cas_practic.imatge_cas_2.attached? %>
+        <%= image_tag @cas_practic.imatge_cas_2, class: 'img-cas' %>
+        <div class="container-text-imatge-cas-practic">
+          <span class="text-imatge-cas-practic"><%= @cas_practic.text_imatge_cas_2_ca %></span>
+        </div>
+      <% end %>
+    </div>
+    <div class="medium-7 cell">
+      <% if params[:locale] == 'ca' %>
+        <div class="text-destacat-cas-practic"><%= @cas_practic.descripcio_ca.html_safe %></div>
+        <% if @cas_practic.arquitectura_ca.present? %>
+          <div class="apartat-cas-practic">
+            <h3 class="cas-practic">Arquitectura</h3>
+            <%= @cas_practic.arquitectura_ca.html_safe %>
+          </div>
+        <% end %>
+        <% if @cas_practic.materials_ca.present? %>
+          <div class="apartat-cas-practic">
+            <h3 class="cas-practic">Materials</h3>
+            <%= @cas_practic.materials_ca.html_safe %>
+          </div>
+        <% end %>
+        <% if @cas_practic.energia_ca.present? %>
+          <div class="apartat-cas-practic">
+            <h3 class="cas-practic">Energia</h3>
+            <%= @cas_practic.energia_ca.html_safe %>
+          </div>
+        <% end %>
+        <% if @cas_practic.aigua_ca.present? %>
+          <div class="apartat-cas-practic">
+            <h3 class="cas-practic">Aigua</h3>
+            <%= @cas_practic.aigua_ca.html_safe %>
+          </div>
+        <% end %>
+        <% if @cas_practic.certificacions_ca.present? %>
+          <div class="apartat-cas-practic">
+            <h3 class="cas-practic">Certificacions</h3>
+            <%= @cas_practic.certificacions_ca.html_safe %>
+          </div>
+        <% end %>
+
+      <% elsif params[:locale] == 'es' %>
+
+        <div class="text-destacat-cas-practic"><%= @cas_practic.descripcio_es.html_safe %></div>
+        <% if @cas_practic.arquitectura_es.present? %>
+          <div class="apartat-cas-practic">
+            <h3 class="cas-practic">Arquitectura</h3>
+            <%= @cas_practic.arquitectura_es.html_safe %>
+          </div>
+        <% end %>
+        <% if @cas_practic.materials_es.present? %>
+          <div class="apartat-cas-practic">
+            <h3 class="cas-practic">Materiales</h3>
+            <%= @cas_practic.materials_es.html_safe %>
+          </div>
+        <% end %>
+        <% if @cas_practic.energia_es.present? %>
+          <div class="apartat-cas-practic">
+            <h3 class="cas-practic">Energía</h3>
+            <%= @cas_practic.energia_es.html_safe %>
+          </div>
+        <% end %>
+        <% if @cas_practic.aigua_es.present? %>
+          <div class="apartat-cas-practic">
+            <h3 class="cas-practic">Agua</h3>
+            <%= @cas_practic.aigua_es.html_safe %>
+          </div>
+        <% end %>
+        <% if @cas_practic.certificacions_es.present? %>
+          <div class="apartat-cas-practic">
+            <h3 class="cas-practic">Certificaciones</h3>
+            <%= @cas_practic.certificacions_es.html_safe %>
+          </div>
+        <% end %>
+
+      <% else %>
+        
+        <div class="text-destacat-cas-practic"><%= @cas_practic.descripcio_en.html_safe %></div>
+        <% if @cas_practic.arquitectura_en.present? %>
+          <div class="apartat-cas-practic">
+            <h3 class="cas-practic">Architecture</h3>
+            <%= @cas_practic.arquitectura_en.html_safe %>
+          </div>
+        <% end %>
+        <% if @cas_practic.materials_en.present? %>
+          <div class="apartat-cas-practic">
+            <h3 class="cas-practic">Materials</h3>
+            <%= @cas_practic.materials_en.html_safe %>
+          </div>
+        <% end %>
+        <% if @cas_practic.energia_en.present? %>
+          <div class="apartat-cas-practic">
+            <h3 class="cas-practic">Energy</h3>
+            <%= @cas_practic.energia_en.html_safe %>
+          </div>
+        <% end %>
+        <% if @cas_practic.aigua_en.present? %>
+          <div class="apartat-cas-practic">
+            <h3 class="cas-practic">Water</h3>
+            <%= @cas_practic.aigua_en.html_safe %>
+          </div>
+        <% end %>
+        <% if @cas_practic.certificacions_en.present? %>
+          <div class="apartat-cas-practic">
+            <h3 class="cas-practic">Certifications</h3>
+            <%= @cas_practic.certificacions_en.html_safe %>
+          </div>
+        <% end %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
 <p id="notice"><%= notice %></p>
 
 <p>

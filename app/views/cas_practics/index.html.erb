@@ -8,13 +8,38 @@
   </div>
 
   
-  <div class="video-array-container">
+  <% counter = 0 %>
+  <div class="casos-array-container">
     <div class="grid-x grid-margin-x">
-      
-        <div class="medium-6 cell">
-          <%= t('.en_construccio') %>
+      <% @cas_practics.each do |cas| %>
+        <% if counter != 0 && counter % 3 == 0 %>
+          </div>
+          <div class="grid-x grid-margin-x">
+        <% end %>
+
+        <div class="medium-4 cell">
+          <div class="index-cas-container">
+              <% if cas.imatge_cas_principal.attached? %>
+                <%= link_to cas do %>
+                  <%= image_tag cas.imatge_cas_principal.variant(resize: "500x500"), class: 'img-index-cas' %>
+                <% end %>
+              <% end %> 
+            <div class="titol-index-cas">
+              <%= link_to cas do %>
+                <% if params[:locale] == 'ca' %>
+                  <h4><%= cas.titol_ca %></h4>
+                <% elsif params[:locale] == 'es' %>
+                  <h4><%= cas.titol_es %></h4>
+                <% else %>
+                  <h4><%= cas.titol_en %></h4>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          
         </div>
-      
+        <% counter += 1 %>
+      <% end %>
     </div>
   </div>
 
