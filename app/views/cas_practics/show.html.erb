@@ -32,6 +32,26 @@
           <span class="text-imatge-cas-practic"><%= @cas_practic.text_imatge_cas_2_ca %></span>
         </div>
       <% end %>
+
+      <% if params[:locale] == 'ca' %>
+        <div class="equip-cas-practic">
+          <% if @cas_practic.arquitectes_ca.present? %>
+            <%= @cas_practic.arquitectes_ca.html_safe %>
+          <% end %>
+        </div>
+      <% elsif params[:locale] == 'es' %>
+        <div class="equip-cas-practic">
+          <% if @cas_practic.arquitectes_es.present? %>
+            <%= @cas_practic.arquitectes_es.html_safe %>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="equip-cas-practic">
+          <% if @cas_practic.arquitectes_en.present? %>
+            <%= @cas_practic.arquitectes_en.html_safe %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
     <div class="medium-7 cell">
       <% if params[:locale] == 'ca' %>
