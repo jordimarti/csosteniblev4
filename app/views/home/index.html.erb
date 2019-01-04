@@ -4,7 +4,24 @@
 			<div class="medium-6 cell">
 				<div class="home-top-image-container">
           <% if params[:locale] == 'es' %>
-          	<%= link_to video_path(60) do %>
+          	<%= link_to video_path(61) do %>
+          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/poster_bons_materials_ES.jpg', :class => 'responsive-img') %>
+          	<% end %>
+          <% elsif params[:locale] == 'en' %>
+          	<%= link_to video_path(61) do %>
+          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/poster_bons_materials_EN.jpg', :class => 'responsive-img') %>
+          	<% end %>
+          <% else %>
+          	<%= link_to video_path(61) do %>
+          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/poster_bons_materials.jpg', :class => 'responsive-img') %>
+          	<% end %>
+          <% end %>
+	      </div>
+			</div>
+			<div class="medium-6 cell">
+				<div class="home-top-image-container">
+					<% if params[:locale] == 'es' %>
+						<%= link_to video_path(60) do %>
           		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/poster_fusta2_ES.jpg', :class => 'responsive-img') %>
           	<% end %>
           <% elsif params[:locale] == 'en' %>
@@ -14,23 +31,6 @@
           <% else %>
           	<%= link_to video_path(60) do %>
           		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/poster_fusta2_CA.jpg', :class => 'responsive-img') %>
-          	<% end %>
-          <% end %>
-	      </div>
-			</div>
-			<div class="medium-6 cell">
-				<div class="home-top-image-container">
-					<% if params[:locale] == 'es' %>
-						<%= link_to video_path(59) do %>
-          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/poster_fusta_ES.jpg', :class => 'responsive-img') %>
-          	<% end %>
-          <% elsif params[:locale] == 'en' %>
-          	<%= link_to video_path(60) do %>
-          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/poster_fusta_EN.jpg', :class => 'responsive-img') %>
-          	<% end %>
-          <% else %>
-          	<%= link_to video_path(59) do %>
-          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/poster_fusta_CA.jpg', :class => 'responsive-img') %>
           	<% end %>
           <% end %>
 		    </div>
