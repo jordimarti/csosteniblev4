@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @mk_categoria.user_id %>
+</p>
+
+<p>
+  <strong>Valida:</strong>
+  <%= @mk_categoria.valida %>
+</p>
+
+<p>
+  <strong>Nom ca:</strong>
+  <%= @mk_categoria.nom_ca %>
+</p>
+
+<p>
+  <strong>Nom es:</strong>
+  <%= @mk_categoria.nom_es %>
+</p>
+
+<p>
+  <strong>Nom en:</strong>
+  <%= @mk_categoria.nom_en %>
+</p>
+
+<p>
+  <strong>Pare:</strong>
+  <%= @mk_categoria.pare %>
+</p>
+
+<%= link_to 'Edit', edit_mk_categoria_path(@mk_categoria) %> |
+<%= link_to 'Back', mk_categories_path %>

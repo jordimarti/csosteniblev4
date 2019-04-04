@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mk Missatges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Destinatari</th>
+      <th>Missatge</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mk_missatges.each do |mk_missatge| %>
+      <tr>
+        <td><%= mk_missatge.user_id %></td>
+        <td><%= mk_missatge.destinatari %></td>
+        <td><%= mk_missatge.missatge %></td>
+        <td><%= link_to 'Show', mk_missatge %></td>
+        <td><%= link_to 'Edit', edit_mk_missatge_path(mk_missatge) %></td>
+        <td><%= link_to 'Destroy', mk_missatge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mk Missatge', new_mk_missatge_path %>

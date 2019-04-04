@@ -1,0 +1,2 @@
+module MarketconsHelper
+end

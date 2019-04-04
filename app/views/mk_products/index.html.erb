@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mk Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Nom</th>
+      <th>Descripcio</th>
+      <th>Categoria</th>
+      <th>Adreca</th>
+      <th>Codi postal</th>
+      <th>Municipi</th>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Preu</th>
+      <th>Visible</th>
+      <th>Venut</th>
+      <th>Aprovat</th>
+      <th>Pes</th>
+      <th>Unitats</th>
+      <th>Enviament</th>
+      <th>Adreca oculta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mk_products.each do |mk_product| %>
+      <tr>
+        <td><%= mk_product.user_id %></td>
+        <td><%= mk_product.nom %></td>
+        <td><%= mk_product.descripcio %></td>
+        <td><%= mk_product.categoria %></td>
+        <td><%= mk_product.adreca %></td>
+        <td><%= mk_product.codi_postal %></td>
+        <td><%= mk_product.municipi %></td>
+        <td><%= mk_product.latitud %></td>
+        <td><%= mk_product.longitud %></td>
+        <td><%= mk_product.preu %></td>
+        <td><%= mk_product.visible %></td>
+        <td><%= mk_product.venut %></td>
+        <td><%= mk_product.aprovat %></td>
+        <td><%= mk_product.pes %></td>
+        <td><%= mk_product.unitats %></td>
+        <td><%= mk_product.enviament %></td>
+        <td><%= mk_product.adreca_oculta %></td>
+        <td><%= link_to 'Show', mk_product %></td>
+        <td><%= link_to 'Edit', edit_mk_product_path(mk_product) %></td>
+        <td><%= link_to 'Destroy', mk_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mk Product', new_mk_product_path %>

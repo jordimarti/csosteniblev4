@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mk Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Valida</th>
+      <th>Nom ca</th>
+      <th>Nom es</th>
+      <th>Nom en</th>
+      <th>Pare</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mk_categories.each do |mk_categoria| %>
+      <tr>
+        <td><%= mk_categoria.user_id %></td>
+        <td><%= mk_categoria.valida %></td>
+        <td><%= mk_categoria.nom_ca %></td>
+        <td><%= mk_categoria.nom_es %></td>
+        <td><%= mk_categoria.nom_en %></td>
+        <td><%= mk_categoria.pare %></td>
+        <td><%= link_to 'Show', mk_categoria %></td>
+        <td><%= link_to 'Edit', edit_mk_categoria_path(mk_categoria) %></td>
+        <td><%= link_to 'Destroy', mk_categoria, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mk Categoria', new_mk_categoria_path %>

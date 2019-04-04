@@ -1,0 +1,2 @@
+class MkCategoria < ApplicationRecord
+end

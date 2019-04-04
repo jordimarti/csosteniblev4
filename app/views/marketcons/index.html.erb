@@ -1,0 +1,39 @@
+<div class="container">
+  <%= render "layouts/marketcons_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="mk-products-container">
+  			<div class="grid-x grid-margin-x">
+				<% @productes.each do |producte| %>
+					<div class="large-3 medium-6 cell">
+						<%= link_to producte, class:"mk-producte-link" do %>
+						<div class="mk-item">
+							<div class="crop">
+							  <%= image_tag('https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Category_Pages/Doors_and_Windows/Doors/Exterior_Doors/ExtDrs18-VisNav-Material-fiberglass-life.jpg', :class => 'mk-image') %>
+						  </div>
+						  <div class="mk-item-text">
+						    <h4 class="mk-item-preu"><%= producte.preu %> €</h4>
+						    <p class="mk-item-nom"><%= truncate(producte.nom, length: 45) %></p>
+						  </div>
+							
+						</div>
+						<% end %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+
+function goToURL(preu, distancia, categoria) {
+	location.href = 'index?preu=' + preu + '&distancia=' + distancia +'&categoria=' + categoria + '&locale=<%= params[:locale] %>';
+}
+
+$('#selector-preu').change(function() {
+	var preu = $( "select#selector-preu option:checked" ).val();
+	goToURL(preu, 'tots', 1);
+});
+
+</script>

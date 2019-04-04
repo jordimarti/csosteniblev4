@@ -1,0 +1,91 @@
+// Place all the styles related to the Marketcons controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.logo-marketcons {
+	max-width: 200px;
+}
+
+/* Menú Marketcons */
+
+.menu-marketcons-lateral-container {
+	padding: 0px;
+	background-color: #eaeaea;
+	border-radius: 5px;
+}
+
+.mk-filtres-container {
+	padding: 10px 15px;
+}
+
+.nom-filtre-marketcons {
+	font-weight: bold;
+}
+
+.menu-marketcons-link {
+	padding: 0px;
+	color: black;
+}
+
+.menu-marketcons-item {
+	padding: 5px 15px;
+	border-bottom: 1px solid #cccccc;
+	font-weight: bold;
+}
+
+.menu-marketcons-item:last-child {
+	border-bottom: none;
+}
+
+.menu-marketcons-actiu {
+	background-color: #cccccc;
+	border-top: 1px solid #bbbbbb;
+}
+
+.menu-marketcons-actiu > a {
+	font-weight: bold;
+}
+
+.titol-menu-marketcons {
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+.mk-producte-link {
+	color: black;
+}
+
+.mk-producte-link:hover {
+	color: black;
+}
+
+.mk-item {
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px grey;
+	margin-bottom: 20px;
+}
+
+.mk-item:hover {
+	box-shadow: 5px 5px 7px grey;
+}
+
+.mk-item-text {
+	padding: 4px 8px;
+	height: 90px;
+}
+
+.mk-item-preu {
+	margin: 0px;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+.mi-item-nom {
+	margin: 0px;
+}
+
+.mk-image {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}

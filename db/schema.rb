@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_23_162524) do
+ActiveRecord::Schema.define(version: 2019_04_04_075132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -185,6 +185,47 @@ ActiveRecord::Schema.define(version: 2018_10_23_162524) do
     t.string "nom"
     t.string "categoria"
     t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mk_categories", force: :cascade do |t|
+    t.integer "user_id"
+    t.boolean "valida"
+    t.string "nom_ca"
+    t.string "nom_es"
+    t.string "nom_en"
+    t.integer "pare"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mk_missatges", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "destinatari"
+    t.text "missatge"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mk_products", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "nom"
+    t.text "descripcio"
+    t.string "categoria"
+    t.string "adreca"
+    t.string "codi_postal"
+    t.string "municipi"
+    t.decimal "latitud"
+    t.decimal "longitud"
+    t.integer "preu"
+    t.boolean "visible"
+    t.boolean "venut"
+    t.boolean "aprovat"
+    t.decimal "pes"
+    t.integer "unitats"
+    t.string "enviament"
+    t.boolean "adreca_oculta"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'marketcons/index'
+  get 'marketcons/about'
+  resources :mk_categories
+  resources :mk_missatges
+  resources :mk_products
   resources :document_dapcons
   resources :organitzacio_afiliades
   get 'cas_practics/llistat'

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @mk_missatge.user_id %>
+</p>
+
+<p>
+  <strong>Destinatari:</strong>
+  <%= @mk_missatge.destinatari %>
+</p>
+
+<p>
+  <strong>Missatge:</strong>
+  <%= @mk_missatge.missatge %>
+</p>
+
+<%= link_to 'Edit', edit_mk_missatge_path(@mk_missatge) %> |
+<%= link_to 'Back', mk_missatges_path %>

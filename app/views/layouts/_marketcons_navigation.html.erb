@@ -1,0 +1,68 @@
+  <div class="grid-x">
+    <div class="medium-12 cell">
+    	<div class="logo-marketcons-container">
+    		<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/logo_marketcons.png", class: "logo-marketcons" %>
+    	</div>
+    </div>
+  </div>
+
+  <br/>
+
+  <div class="grid-x grid-margin-x">
+	
+		<div class="medium-3 cell">
+			<div class="menu-marketcons-lateral-container">
+        <ul class="vertical menu accordion-menu">
+          <li class="menu-marketcons-item">El més destacat</li>
+          <li class="menu-marketcons-item menu-marketcons-actiu">Publicar un anunci</li>
+          <li class="menu-marketcons-item">Els meus anuncis</li>
+          <li class="menu-marketcons-item">Sobre MARKETcons</li>
+        </ul>
+      </div>
+
+      <% if @filtres == true %>
+      <br/>
+      <span class="titol-menu-marketcons">FILTRES</span>
+      <div class="menu-marketcons-lateral-container">
+        <div class="mk-filtres-container">
+          <span class="nom-filtre-marketcons">Preu</span>
+          <select id="selector-preu" class="filtre-marketcons">
+            <option value="tots" 
+            <% if params[:preu] == 'tots' %>
+              selected
+            <% end %>>Qualsevol preu</option>
+            <option value="50"
+            <% if params[:preu] == '50' %>
+              selected
+            <% end %>>Menys de 50 €</option>
+            <option value="100"
+            <% if params[:preu] == '100' %>
+              selected
+            <% end %>>Menys de 100 €</option>
+            <option value="500"
+            <% if params[:preu] == '500' %>
+              selected
+            <% end %>>Menys de 500 €</option>
+          </select>
+          <span class="nom-filtre-marketcons">Distància</span>
+          <select id="selector-distancia" class="filtre-marketcons">
+            <option value="tots">Qualsevol distància</option>
+            <option value="10">Menys de 10 km</option>
+            <option value="50">Menys de 50 km</option>
+            <option value="100">Menys de 100 €</option>
+          </select>
+        </div>
+      </div>
+
+      <% end %>
+
+      <br/>
+      <span class="titol-menu-marketcons">CERCA PRODUCTES PER CATEGORIA</span>
+      <div class="menu-marketcons-lateral-container">
+        <ul class="vertical menu accordion-menu">
+          <li class="menu-marketcons-item">Portes</li>
+          <li class="menu-marketcons-item">Finestres</li>
+          <li class="menu-marketcons-item">Fustes per a revestiment</li>
+        </ul>
+      </div>
+    </div>
