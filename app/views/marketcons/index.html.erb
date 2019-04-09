@@ -6,7 +6,7 @@
   			<div class="grid-x grid-margin-x">
 				<% @productes.each do |producte| %>
 					<div class="large-3 medium-6 cell">
-						<%= link_to producte, class:"mk-producte-link" do %>
+						<%= link_to marketcons_producte_path(mk_product_id: producte.id), class:"mk-producte-link" do %>
 						<div class="mk-item">
 							<div class="crop">
 							  <%= image_tag('https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Category_Pages/Doors_and_Windows/Doors/Exterior_Doors/ExtDrs18-VisNav-Material-fiberglass-life.jpg', :class => 'mk-image') %>

@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mk Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Nom</th>
+      <th>Cognoms</th>
+      <th>Adreca</th>
+      <th>Codi postal</th>
+      <th>Municipi</th>
+      <th>Email</th>
+      <th>Telefon</th>
+      <th>Web</th>
+      <th>Mostrar adreca</th>
+      <th>Mostrar email</th>
+      <th>Mostrar telefon</th>
+      <th>Mostrar web</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mk_users.each do |mk_user| %>
+      <tr>
+        <td><%= mk_user.user_id %></td>
+        <td><%= mk_user.nom %></td>
+        <td><%= mk_user.cognoms %></td>
+        <td><%= mk_user.adreca %></td>
+        <td><%= mk_user.codi_postal %></td>
+        <td><%= mk_user.municipi %></td>
+        <td><%= mk_user.email %></td>
+        <td><%= mk_user.telefon %></td>
+        <td><%= mk_user.web %></td>
+        <td><%= mk_user.mostrar_adreca %></td>
+        <td><%= mk_user.mostrar_email %></td>
+        <td><%= mk_user.mostrar_telefon %></td>
+        <td><%= mk_user.mostrar_web %></td>
+        <td><%= link_to 'Show', mk_user %></td>
+        <td><%= link_to 'Edit', edit_mk_user_path(mk_user) %></td>
+        <td><%= link_to 'Destroy', mk_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mk User', new_mk_user_path %>

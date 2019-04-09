@@ -159,6 +159,20 @@ ca:
         text_imatge_cas_2_en: "Descripció imatge 2"
         text_imatge_cas_3_en: "Descripció imatge 3"
         text_imatge_cas_4_en: "Descripció imatge 4"
+      mk_user:
+        mk_image_user: "Imatge de perfil"
+        nom: "Nom"
+        cognoms: "Cognoms"
+        adreca: "Adreça"
+        codi_postal: "Codi postal"
+        municipi: "Municipi"
+        email: "Correu electrònic"
+        telefon: "Telèfon"
+        web: "Pàgina web"
+        mostrar_adreca: "Mostrar adreça"
+        mostrar_email: "Mostrar correu electrònic"
+        mostrar_telefon: "Mostrar telèfon"
+        mostrar_web: "Mostrar pàgina web"
   layouts:
     top:
       register: "Registrar-se"
@@ -521,3 +535,10 @@ ca:
     defaults:
       add: "+ Afegir element"
       remove: "Eliminar"
+  marketcons:
+    perfil:
+      guardar: "Guardar"
+      configuracio_perfil: "Configuració del perfil públic"
+    venedor:
+      anuncis_publicats: "anuncis publicats"
+      membre_des_de: "Membre des de"

@@ -10,5 +10,8 @@ class User < ApplicationRecord
 
   has_many :cas_practics
   has_many :producte_dapcons_usuari
+  has_many :mk_products
+  has_many :mk_missatges
+  has_one :mk_user
   
 end

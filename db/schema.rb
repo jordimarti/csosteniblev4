@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_04_075132) do
+ActiveRecord::Schema.define(version: 2019_04_07_184825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -226,6 +226,24 @@ ActiveRecord::Schema.define(version: 2019_04_04_075132) do
     t.integer "unitats"
     t.string "enviament"
     t.boolean "adreca_oculta"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mk_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "nom"
+    t.string "cognoms"
+    t.string "adreca"
+    t.string "codi_postal"
+    t.string "municipi"
+    t.string "email"
+    t.string "telefon"
+    t.string "web"
+    t.boolean "mostrar_adreca"
+    t.boolean "mostrar_email"
+    t.boolean "mostrar_telefon"
+    t.boolean "mostrar_web"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

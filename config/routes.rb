@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  resources :mk_users
   get 'marketcons/index'
   get 'marketcons/about'
+  get 'marketcons/producte'
+  get 'marketcons/perfil'
+  get 'marketcons/venedor'
   resources :mk_categories
   resources :mk_missatges
   resources :mk_products
