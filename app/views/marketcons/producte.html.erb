@@ -26,21 +26,47 @@
   					</div>
   					<div class="medium-8 cell">
   						<span class="titol-camp-producte">Categoria</span><br/>
-  						<span class="text-camp-producte">Portes</span>
+  						<span class="text-camp-producte">
+  							<% if params[:locale] == 'es' %>
+  								<%= @categoria.nom_es %>
+  							<% elsif params[:locale] == 'en' %>
+  								<%= @categoria.nom_en %>
+  							<% else %>
+  								<%= @categoria.nom_ca %>
+  							<% end %>
+  						</span>
   					</div>
   				</div>
+  				
   				<hr/>
   				<div class="grid-x grid-margin-x">
   					<div class="medium-12 cell">
   						<span class="titol-camp-producte">Descripció</span><br/>
   						<p class="text-camp-producte"><%= @producte.descripcio %></p>
+  						<span class="titol-camp-producte">Condicions d'enviament o recollida</span><br/>
+  						<span class="text-camp-producte">
+  							<% if @producte.enviament == 'comprador_buscar' %>
+  								<%= t('.comprador_buscar') %>
+  							<% elsif @producte.enviament == 'venedor_porta' %>
+  								<%= t('.venedor_porta') %>
+  							<% elsif @producte.enviament == 'negociar' %>
+  								<%= t('.negociar') %>
+  							<% else %>
+  								<%= t('.no_definit') %>
+  							<% end %>
+  						</span>
   					</div>
   				</div>
   				<hr/>
+  			
   				<div class="grid-x grid-margin-x">
   					<div class="medium-8 cell">
   						<span class="titol-camp-producte">Localització</span><br/>
-  						<span class="text-camp-producte"><%= @producte.adreca %>, <%= @producte.municipi %></span>
+  						<span class="text-camp-producte">
+  							<% if @producte.adreca_oculta != true %>
+  								<%= @producte.adreca %>,
+  							<% end %>
+  							<%= @producte.municipi %></span>
   					</div>
   					<div class="medium-4 cell">
 
@@ -56,14 +82,25 @@
   						</div>
   					</div>
   					<div class="small-8 cell">
-  						<div class="boto-enviar-missatge">
-  							<div class="icona-dialeg">
-  								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "img-icona-dialeg" %>
-  							</div>
-  							<div class="text-enviar-missatge">
-  								Enviar missatge
-  							</div>
-  						</div>
+  						<% if user_signed_in? && @producte.user_id == current_user.id %>
+  							<div class="container-boto-eliminar-producte">
+  								<%= link_to t('.eliminar_producte'), @producte, method: :delete, data: { confirm: t('.confirma_eliminar') }, class:'boto-eliminar-producte' %>
+		  						
+		  					</div>
+  							<div class="container-boto-editar-producte">
+		  						<%= link_to t('.editar_producte'), marketcons_editar_anunci_path(mk_product_id: @producte.id), class:'boto-editar-producte' %>
+		  					</div>
+		  					
+  						<% else %>
+	  						<div class="boto-enviar-missatge">
+	  							<div class="icona-dialeg">
+	  								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "img-icona-dialeg" %>
+	  							</div>
+	  							<div class="text-enviar-missatge">
+	  								Enviar missatge
+	  							</div>
+	  						</div>
+  						<% end %>
   					</div>
   				</div>
   				<hr class="hr-no-margin"/>

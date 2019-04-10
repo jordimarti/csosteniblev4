@@ -1,29 +1,73 @@
 
-<%= simple_form_for(@mk_product) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <%= simple_form_for(@mk_product) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :user_id %>
-    <%= f.input :nom %>
-    <%= f.input :descripcio %>
-    <%= f.input :categoria %>
-    <%= f.input :adreca %>
-    <%= f.input :codi_postal %>
-    <%= f.input :municipi %>
-    <%= f.input :latitud %>
-    <%= f.input :longitud %>
-    <%= f.input :preu %>
-    <%= f.input :visible %>
-    <%= f.input :venut %>
-    <%= f.input :aprovat %>
-    <%= f.input :pes %>
-    <%= f.input :unitats %>
-    <%= f.input :enviament %>
-    <%= f.input :adreca_oculta %>
-  </div>
+        <div class="form-inputs">
+          <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+          <div class="grid-x grid-margin-x">
+            <div class="medium-12 cell">
+              Selector d'imatges
+            </div>
+          </div>
+          <div class="grid-x grid-margin-x">
+            <div class="medium-6 cell">
+              <%= f.input :nom %>
+              <%= f.input :categoria, collection: @categories, label_method: :nom_ca, value_method: :id, unitats_method: :unitats, include_blank: false, selected: @mk_product.categoria %>
+            </div>
+            <div class="medium-6 cell">
+              <%= f.input :descripcio, input_html: {rows: 4} %>
+            </div>
+          </div>
+          <div class="grid-x grid-margin-x">
+            <div class="medium-2 small-4 cell">
+              <%= f.input :preu %>
+            </div>
+            <div class="medium-1 small-2 cell">
+              <div class="mk-text-ressaltat">€</div>
+            </div>
+            <div class="medium-2 small-4 cell">
+              <div id="container-pes">
+                <%= f.input :pes %>
+              </div>
+              <div id="container-unitats">
+                <%= f.input :unitats %>
+              </div>
+            </div>
+            <div class="medium-1 small-2 cell">
+              <div class="mk-text-ressaltat" id="text-kg">kg</div>
+            </div>
+            <div class="medium-6 cell">
+              <%= f.input :enviament, collection: [[t('.comprador_buscar'), 'comprador_buscar'], [t('.venedor_porta'), 'venedor_porta'], [t('.a_negociar'), 'negociar']] %>
+            </div>
+          </div>
+          <div class="grid-x grid-margin-x">
+            <div class="medium-6 cell">
+              <%= f.input :adreca %>
+            </div>
+            <div class="medium-2 cell">
+              <%= f.input :codi_postal %>
+            </div>
+            <div class="medium-4 cell">
+              <%= f.input :municipi %>
+            </div>
+          </div>
+          <div class="grid-x grid-margin-x">
+            <div class="medium-12 cell">
+              <%= f.input :adreca_oculta %>
+              <br/>
+            </div>
+          </div>
+        </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+        <div class="form-actions">
+          <div class="grid-x grid-margin-x">
+            <div class="medium-2 cell">
+              <%= f.button :submit, t('.guardar') %>
+            </div>
+            <div class="medium-6 cell">
+              <span class="mk-text-discret"><%= t('.anuncis_revisio') %></span>
+            </div>
+          </div>
+        </div>
+      <% end %>

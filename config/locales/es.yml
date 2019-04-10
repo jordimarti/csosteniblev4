@@ -199,6 +199,23 @@ es:
       afiliacio: "Afiliación al Programa"
       registrar_producte: "Registrar un producto"
       contacte: "Contactar"
+    marketcons_navigation:
+      mes_destacat: "Lo más destacado"
+      publicar_anunci: "Publicar un anuncio"
+      meus_anuncis: "Mis anuncios"
+      sobre_marketcons: "Sobre MARKETcons"
+      filtres: "FILTROS"
+      preu: "Precio"
+      qualsevol_preu: "Cualquier precio"
+      50euros: "Menos de 50 €"
+      100euros: "Menos de 100 €"
+      500euros: "Menos de 500 €"
+      distancia: "Distancia"
+      qualsevol_distancia: "Cualquier distancia"
+      10km: "Menos de 10 km"
+      50km: "Menos de 50 km"
+      100km: "Menos de 100 km"
+      categories: "BUSCA PRODUCTOS POR CATEGORÍA"
   home:
     index:
       novetats_web: "NOVEDADES EN LA WEB"
@@ -518,3 +535,15 @@ es:
     defaults:
       add: "+ Añadir elemento"
       remove: "Eliminar"
+  marketcons:
+    perfil:
+      guardar: "Guardar"
+      configuracio_perfil: "Configuración del perfil público"
+    venedor:
+      anuncis_publicats: "anuncios publicados"
+      membre_des_de: "Miembro desde"
+    nou_anunci:
+      nou_anunci: "Crear un nuevo anuncio"
+  mk_products:
+    form:
+      guardar: "Guardar"

@@ -173,6 +173,17 @@ ca:
         mostrar_email: "Mostrar correu electrònic"
         mostrar_telefon: "Mostrar telèfon"
         mostrar_web: "Mostrar pàgina web"
+      mk_product:
+        nom: "Títol"
+        descripcio: "Descripció"
+        categoria: "Categoria"
+        preu: "Preu"
+        pes: "Pes aproximat"
+        enviament: "Enviament o recollida"
+        adreca: "Adreça"
+        codi_postal: "Codi postal"
+        municipi: "Municipi"
+        adreca_oculta: "Ocultar adreça al públic (només es mostrarà el municipi)"
   layouts:
     top:
       register: "Registrar-se"
@@ -213,6 +224,23 @@ ca:
       afiliacio: "Afiliació al Programa"
       registrar_producte: "Registrar un producte"
       contacte: "Contactar-nos"
+    marketcons_navigation:
+      mes_destacat: "El més destacat"
+      publicar_anunci: "Publicar un anunci"
+      meus_anuncis: "Els meus anuncis"
+      sobre_marketcons: "Sobre MARKETcons"
+      filtres: "FILTRES"
+      preu: "Preu"
+      qualsevol_preu: "Qualsevol preu"
+      50euros: "Menys de 50 €"
+      100euros: "Menys de 100 €"
+      500euros: "Menys de 500 €"
+      distancia: "Distància"
+      qualsevol_distancia: "Qualsevol distància"
+      10km: "Menys de 10 km"
+      50km: "Menys de 50 km"
+      100km: "Menys de 100 km"
+      categories: "CERCA PRODUCTES PER CATEGORIA"
   home:
     index:
       novetats_web: "NOVETATS AL WEB"
@@ -542,3 +570,22 @@ ca:
     venedor:
       anuncis_publicats: "anuncis publicats"
       membre_des_de: "Membre des de"
+    nou_anunci:
+      nou_anunci: "Crear un nou anunci"
+    editar_anunci:
+      editar_anunci: "Editar anunci"
+    producte:
+      comprador_buscar: "El comprador el va a buscar"
+      venedor_porta: "El venedor el porta"
+      negociar: "A negociar"
+      no_definit: "No definit"
+      editar_producte: "Editar anunci"
+      eliminar_producte: "Eliminar anunci"
+      confirma_eliminar: "Segur que vols eliminar aquest anunci?"
+  mk_products:
+    form:
+      comprador_buscar: "El comprador el va a buscar"
+      venedor_porta: "El venedor el porta"
+      negociar: "A negociar"
+      guardar: "Guardar"
+      anuncis_revisio: "Els anuncis passen un procés de revisió. Això vol dir que no veuràs el teu anunci publicat immediatament."

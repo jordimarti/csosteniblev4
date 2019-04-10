@@ -8,6 +8,19 @@
 
 /* Menú Marketcons */
 
+.menu > a.link-menu-marketcons {
+	padding: 5px 0px 2px 0px;
+}
+
+.accordion-menu > a.link-menu-marketcons {
+	padding: 5px 0px 2px 0px;
+}
+
+.link-marketcons-actiu {
+	background-color: #0D5D72;
+}
+
+
 .menu-marketcons-lateral-container {
 	padding: 0px;
 	background-color: #D6EFF4;
@@ -56,6 +69,7 @@
 	width: 20px;
 	margin: -4px 7px 0px -4px;
 }
+
 
 
 /* Llistat productes */
@@ -120,6 +134,7 @@
 }
 
 
+
 /* Detall producte */
 
 .mk-product-nom {
@@ -143,8 +158,9 @@
 }
 
 .boto-enviar-missatge {
-	background-color: #7DD2E2;
-	color: white;
+	/*background-color: #7DD2E2;*/
+	background-color: #D6EFF4;
+	color: #0D5D72;
 	font-weight: bold;
 	float: right;
 	width: 200px;
@@ -185,6 +201,44 @@
 	width: 90px;
 	border-radius: 50%;
 }
+
+.boto-editar-producte {
+	background-color: #D6EFF4;
+	border-radius: 5px;
+	padding: 10px 15px;
+	color: #0D5D72;
+	font-weight: bold;
+	float: right;
+	margin: 10px 0px 10px 10px;
+}
+
+.boto-eliminar-producte {
+	background-color: #D12020;
+	border-radius: 5px;
+	padding: 10px 15px;
+	color: #fff;
+	font-weight: bold;
+	float: right;
+	margin: 10px 0px 10px 10px;
+}
+
+.boto-eliminar-producte:hover {
+	color: #fff;
+}
+
+/* Edició producte */
+
+.mk-text-discret {
+	color: #666;
+	font-size: 0.8em;
+}
+
+.mk-text-ressaltat {
+	font-size: 1.3em;
+	font-weight: bold;
+	margin: 30px 0px 0px -10px;
+}
+
 
 /* Perfil */
 

@@ -28,7 +28,7 @@ class MkProductsController < ApplicationController
 
     respond_to do |format|
       if @mk_product.save
-        format.html { redirect_to @mk_product, notice: 'Mk product was successfully created.' }
+        format.html { redirect_to marketcons_producte_path(mk_product_id: @mk_product.id), notice: 'Mk product was successfully created.' }
         format.json { render :show, status: :created, location: @mk_product }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class MkProductsController < ApplicationController
   def update
     respond_to do |format|
       if @mk_product.update(mk_product_params)
-        format.html { redirect_to @mk_product, notice: 'Mk product was successfully updated.' }
+        format.html { redirect_to marketcons_producte_path(mk_product_id: @mk_product.id), notice: 'Mk product was successfully updated.' }
         format.json { render :show, status: :ok, location: @mk_product }
       else
         format.html { render :edit }

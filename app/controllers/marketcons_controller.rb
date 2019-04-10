@@ -1,4 +1,8 @@
 class MarketconsController < ApplicationController
+  before_action :authenticate_user!, only: [:nou_anunci, :editar_anunci]
+  before_action :categories
+  layout "resposta_unitats", only: [:comprova_unitats_categoria]
+
   def index
   	@filtres = true
   	if params[:preu] == "tots" && params[:distancia] == "tots"
@@ -12,7 +16,16 @@ class MarketconsController < ApplicationController
   def producte
     @filtres = false
     @producte = MkProduct.find(params[:mk_product_id])
+    @categoria = MkCategoria.where(id: @producte.categoria.to_i).last
     @mk_user = MkUser.where(user_id: @producte.user_id).last
+  end
+
+  def nou_anunci
+    @mk_product = MkProduct.new
+  end
+
+  def editar_anunci
+    @mk_product = MkProduct.find(params[:mk_product_id])
   end
 
   def venedor
@@ -28,4 +41,14 @@ class MarketconsController < ApplicationController
 
   def about
   end
+
+  def comprova_unitats_categoria
+    categoria = MkCategoria.find(params[:categoria_id])
+    @unitats = categoria.unitats
+  end
+
+  private
+    def categories
+      @categories = MkCategoria.all
+    end
 end

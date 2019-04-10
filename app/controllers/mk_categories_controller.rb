@@ -69,6 +69,6 @@ class MkCategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mk_categoria_params
-      params.require(:mk_categoria).permit(:user_id, :valida, :nom_ca, :nom_es, :nom_en, :pare)
+      params.require(:mk_categoria).permit(:user_id, :valida, :nom_ca, :nom_es, :nom_en, :pare, :unitats, :ordre)
     end
 end

@@ -13,43 +13,57 @@
 		<div class="medium-3 cell">
 			<div class="menu-marketcons-lateral-container">
         <ul class="vertical menu accordion-menu">
-          <li class="menu-marketcons-item"><%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_estrella_dark.png", class: 'mk-icons-navigation' %> El més destacat</li>
-          <li class="menu-marketcons-item menu-marketcons-actiu"><%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_editar_light.png", class: 'mk-icons-navigation' %> Publicar un anunci</li>
-          <li class="menu-marketcons-item"><%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_dark.png", class: 'mk-icons-navigation' %> Els meus anuncis</li>
-          <li class="menu-marketcons-item"><%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_marketcons_dark.png", class: 'mk-icons-navigation' %> Sobre MARKETcons</li>
+          <%= link_to marketcons_index_path(preu: 'tots', distancia: 'tots', categoria: '1'), class: 'link-menu-marketcons' do %>
+          <li class="menu-marketcons-item"><%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_estrella_dark.png", class: 'mk-icons-navigation' %> <%= t('.mes_destacat') %></li>
+          <% end %>
+          <%= link_to marketcons_nou_anunci_path, class: 'link-menu-marketcons link-marketcons-actiu' do %>
+          <li class="menu-marketcons-item menu-marketcons-actiu"><%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_editar_light.png", class: 'mk-icons-navigation' %> <%= t('.publicar_anunci') %></li>
+          <% end %>
+          <% if user_signed_in? %>
+            <%= link_to marketcons_venedor_path(user_id: current_user.id), class: 'link-menu-marketcons' do %>
+            <li class="menu-marketcons-item"><%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_dark.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %></li>
+            <% end %>
+          <% else %> 
+          <%= link_to new_user_session_path, class: 'link-menu-marketcons' do %>
+            <li class="menu-marketcons-item"><%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_dark.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %></li>
+            <% end %>
+          <% end %>
+          <%= link_to marketcons_about_path, class: 'link-menu-marketcons' do %>
+          <li class="menu-marketcons-item"><%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_marketcons_dark.png", class: 'mk-icons-navigation' %> <%= t('.sobre_marketcons') %></li>
+          <% end %>
         </ul>
       </div>
 
       <% if @filtres == true %>
       <br/>
-      <span class="titol-menu-marketcons">FILTRES</span>
+      <span class="titol-menu-marketcons"><%= t('.filtres') %></span>
       <div class="menu-marketcons-lateral-container">
         <div class="mk-filtres-container">
-          <span class="nom-filtre-marketcons">Preu</span>
+          <span class="nom-filtre-marketcons"><%= t('.preu') %></span>
           <select id="selector-preu" class="filtre-marketcons">
             <option value="tots" 
             <% if params[:preu] == 'tots' %>
               selected
-            <% end %>>Qualsevol preu</option>
+            <% end %>><%= t('.qualsevol_preu') %></option>
             <option value="50"
             <% if params[:preu] == '50' %>
               selected
-            <% end %>>Menys de 50 €</option>
+            <% end %>><%= t('.50euros') %></option>
             <option value="100"
             <% if params[:preu] == '100' %>
               selected
-            <% end %>>Menys de 100 €</option>
+            <% end %>><%= t('.100euros') %></option>
             <option value="500"
             <% if params[:preu] == '500' %>
               selected
-            <% end %>>Menys de 500 €</option>
+            <% end %>><%= t('.500euros') %></option>
           </select>
-          <span class="nom-filtre-marketcons">Distància</span>
+          <span class="nom-filtre-marketcons"><%= t('.distancia') %></span>
           <select id="selector-distancia" class="filtre-marketcons">
-            <option value="tots">Qualsevol distància</option>
-            <option value="10">Menys de 10 km</option>
-            <option value="50">Menys de 50 km</option>
-            <option value="100">Menys de 100 €</option>
+            <option value="tots"><%= t('.qualsevol_distancia') %></option>
+            <option value="10"><%= t('.10km') %></option>
+            <option value="50"><%= t('.50km') %></option>
+            <option value="100"><%= t('.100km') %></option>
           </select>
         </div>
       </div>
@@ -57,20 +71,18 @@
       <% end %>
 
       <br/>
-      <span class="titol-menu-marketcons">CERCA PRODUCTES PER CATEGORIA</span>
+      <span class="titol-menu-marketcons"><%= t('.categories') %></span>
       <div class="menu-marketcons-lateral-container">
         <ul class="vertical menu accordion-menu">
-          <li class="menu-marketcons-item">Portes</li>
-          <li class="menu-marketcons-item">Finestres</li>
-          <li class="menu-marketcons-item">Reixes i baranes</li>
-          <li class="menu-marketcons-item">Mosaics</li>
-          <li class="menu-marketcons-item">Teules</li>
-          <li class="menu-marketcons-item">Canalons</li>
-          <li class="menu-marketcons-item">Radiadors</li>
-          <li class="menu-marketcons-item">Sanitaris</li>
-          <li class="menu-marketcons-item">Aixetes</li>
-          <li class="menu-marketcons-item">Piques</li>
-          <li class="menu-marketcons-item">Accessoris del bany</li>
+          <% @categories.each do |categoria| %>
+            <% if params[:locale] == 'es' %>
+              <li class="menu-marketcons-item"><%= categoria.nom_es %></li>
+            <% elsif params[:locale] == 'en' %>
+              <li class="menu-marketcons-item"><%= categoria.nom_en %></li>
+            <% else %>
+              <li class="menu-marketcons-item"><%= categoria.nom_ca %></li>
+            <% end %>
+          <% end %>
         </ul>
       </div>
     </div>
