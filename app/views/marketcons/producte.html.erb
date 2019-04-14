@@ -92,31 +92,52 @@
 		  					</div>
 		  					
   						<% else %>
-	  						<div class="boto-enviar-missatge">
-	  							<div class="icona-dialeg">
-	  								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "img-icona-dialeg" %>
-	  							</div>
-	  							<div class="text-enviar-missatge">
-	  								Enviar missatge
-	  							</div>
-	  						</div>
+                <%= link_to marketcons_missatges_path(mk_product_id: @producte.id, user_id: current_user.id) do %>
+  	  						<div class="boto-enviar-missatge">
+                    <div class="icona-dialeg">
+  	  								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "img-icona-dialeg" %>
+  	  							</div>
+  	  							<div class="text-enviar-missatge">
+  	  								Enviar missatge
+  	  							</div>
+  	  						</div>
+                <% end %>
   						<% end %>
   					</div>
   				</div>
   				<hr class="hr-no-margin"/>
   				<div class="grid-x grid-margin-x">
   					<div class="medium-12 cell">
-  						<%= link_to marketcons_venedor_path(user_id: @producte.user_id), class:"mk-venedor-link" do %>
-	  						<div class="mk-product-imatge-perfil-container">
-		  						<% if @mk_user.mk_image_user.attached? %>
-				  					<%= image_tag @mk_user.mk_image_user, class: "mk-imatge-perfil-producte" %>
-				  				<% end %>
-				  			</div>
-				  			<div class="mk-product-text-perfil-container">
-				  				<span class="titol-camp-producte">Publicat per</span><br/>
-	  							<span class="text-camp-producte"><%= @producte.user.first_name %> <%= @producte.user.last_name %></span>
-				  			</div>
-				  		<% end %>
+  						<% if current_user.id == @producte.user_id %>
+                <p>Missatges</p>
+
+                <% @compradors.each do |comprador| %>
+                  <div class="mk-product-missatge-comprador-item">
+                    <%= link_to marketcons_missatges_path(mk_product_id: @producte.id, user_id: comprador.id), class:"mk-venedor-link" do %>
+                      <div class="mk-product-imatge-perfil-container">
+                        <% if comprador.mk_image_user.attached? %>
+                          <%= image_tag comprador.mk_image_user, class: "mk-imatge-perfil-producte" %>
+                        <% end %>
+                      </div>
+                      <div class="mk-product-text-perfil-container">
+                        <span class="text-camp-producte"><%= comprador.user.first_name %> <%= comprador.user.last_name %></span>
+                      </div>
+                    <% end %>
+                  </div>
+                <% end %>
+              <% else %>
+                <%= link_to marketcons_venedor_path(mk_product_id: @producte.id, user_id: current_user.id), class:"mk-venedor-link" do %>
+  	  						<div class="mk-product-imatge-perfil-container">
+  		  						<% if @mk_user.mk_image_user.attached? %>
+  				  					<%= image_tag @mk_user.mk_image_user, class: "mk-imatge-perfil-producte" %>
+  				  				<% end %>
+  				  			</div>
+  				  			<div class="mk-product-text-perfil-container">
+  				  				<span class="titol-camp-producte">Publicat per</span><br/>
+  	  							<span class="text-camp-producte"><%= @producte.user.first_name %> <%= @producte.user.last_name %></span>
+  				  			</div>
+  				  		<% end %>
+              <% end %>
   					</div>
   				</div>
   			</div>

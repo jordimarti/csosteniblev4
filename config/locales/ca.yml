@@ -589,3 +589,6 @@ ca:
       negociar: "A negociar"
       guardar: "Guardar"
       anuncis_revisio: "Els anuncis passen un procés de revisió. Això vol dir que no veuràs el teu anunci publicat immediatament."
+  mk_missatges:
+    form:
+      enviar: "Enviar"

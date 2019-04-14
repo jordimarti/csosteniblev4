@@ -1,0 +1,32 @@
+<div class="container">
+  <%= render "layouts/marketcons_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="grid-x grid-margin-x">
+  			<div class="medium-12 cell">
+  				<div class="container-llistat-mkproducts">
+  					<h3><%= @categoria.nom_ca %></h3>
+  					<div class="grid-x grid-margin-x">
+	  					<% @productes.each do |producte| %>
+								<div class="large-3 medium-6 cell">
+									<%= link_to marketcons_producte_path(mk_product_id: producte.id), class:"mk-producte-link" do %>
+									<div class="mk-item">
+										<div class="crop">
+										  <%= image_tag('https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Category_Pages/Doors_and_Windows/Doors/Exterior_Doors/ExtDrs18-VisNav-Material-fiberglass-life.jpg', :class => 'mk-image') %>
+									  </div>
+									  <div class="mk-item-text">
+									    <h4 class="mk-item-preu"><%= producte.preu %> €</h4>
+									    <p class="mk-item-nom"><%= truncate(producte.nom, length: 45) %></p>
+									  </div>
+										
+									</div>
+									<% end %>
+								</div>
+							<% end %>
+						</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+</div>

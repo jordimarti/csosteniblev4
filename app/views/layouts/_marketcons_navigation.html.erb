@@ -13,23 +13,96 @@
 		<div class="medium-3 cell">
 			<div class="menu-marketcons-lateral-container">
         <ul class="vertical menu accordion-menu">
-          <%= link_to marketcons_index_path(preu: 'tots', distancia: 'tots', categoria: '1'), class: 'link-menu-marketcons' do %>
-          <li class="menu-marketcons-item"><%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_estrella_dark.png", class: 'mk-icons-navigation' %> <%= t('.mes_destacat') %></li>
+          
+          <% if @menu_actiu == 'destacat' %>
+            <li class="menu-marketcons-item menu-marketcons-actiu">
+              <%= link_to marketcons_index_path(preu: 'tots', distancia: 'tots', categoria: '1'), class: 'link-menu-marketcons link-marketcons-actiu' do %>
+                <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_estrella_light.png", class: 'mk-icons-navigation' %> <%= t('.mes_destacat') %>
+              <% end %>
+            </li>
+            
+          <% else %>
+            
+            <li class="menu-marketcons-item">
+              <%= link_to marketcons_index_path(preu: 'tots', distancia: 'tots', categoria: '1'), class: 'link-menu-marketcons' do %>
+                <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_estrella_dark.png", class: 'mk-icons-navigation' %> <%= t('.mes_destacat') %>
+              <% end %>
+            </li>
+
           <% end %>
-          <%= link_to marketcons_nou_anunci_path, class: 'link-menu-marketcons link-marketcons-actiu' do %>
-          <li class="menu-marketcons-item menu-marketcons-actiu"><%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_editar_light.png", class: 'mk-icons-navigation' %> <%= t('.publicar_anunci') %></li>
+
+          <% if @menu_actiu == 'nou_anunci' %>
+            
+            <li class="menu-marketcons-item menu-marketcons-actiu">
+              <%= link_to marketcons_nou_anunci_path, class: 'link-menu-marketcons link-marketcons-actiu' do %>
+                <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_editar_light.png", class: 'mk-icons-navigation' %> <%= t('.publicar_anunci') %>
+              <% end %>  
+            </li>
+            
+          <% else %>
+            
+            <li class="menu-marketcons-item">
+              <%= link_to marketcons_nou_anunci_path, class: 'link-menu-marketcons' do %>
+                <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_editar_dark.png", class: 'mk-icons-navigation' %> <%= t('.publicar_anunci') %>
+              <% end %>
+            </li>
+            
           <% end %>
-          <% if user_signed_in? %>
-            <%= link_to marketcons_venedor_path(user_id: current_user.id), class: 'link-menu-marketcons' do %>
-            <li class="menu-marketcons-item"><%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_dark.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %></li>
+
+          <% if @menu_actiu == 'venedor' %>
+            <% if user_signed_in? %>
+              
+              <li class="menu-marketcons-item menu-marketcons-actiu">
+                <%= link_to marketcons_venedor_path(user_id: current_user.id), class: 'link-menu-marketcons link-marketcons-actiu' do %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_light.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %>
+                <% end %>
+              </li>
+              
+            <% else %> 
+            
+              <li class="menu-marketcons-item">
+                <%= link_to new_user_session_path, class: 'link-menu-marketcons' do %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_dark.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %>
+                <% end %>
+              </li>
+              
             <% end %>
-          <% else %> 
-          <%= link_to new_user_session_path, class: 'link-menu-marketcons' do %>
-            <li class="menu-marketcons-item"><%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_dark.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %></li>
+          <% else %>
+            <% if user_signed_in? %>
+              
+              <li class="menu-marketcons-item">
+                <%= link_to marketcons_venedor_path(user_id: current_user.id), class: 'link-menu-marketcons' do %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_dark.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %>
+                <% end %>
+              </li>
+              
+            <% else %> 
+            
+              <li class="menu-marketcons-item">
+                <%= link_to new_user_session_path, class: 'link-menu-marketcons' do %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_dark.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %>
+                <% end %>
+              </li>
+              
             <% end %>
           <% end %>
-          <%= link_to marketcons_about_path, class: 'link-menu-marketcons' do %>
-          <li class="menu-marketcons-item"><%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_marketcons_dark.png", class: 'mk-icons-navigation' %> <%= t('.sobre_marketcons') %></li>
+
+          <% if @menu_actiu == 'about' %>
+            
+              <li class="menu-marketcons-item menu-marketcons-actiu">
+                <%= link_to marketcons_about_path, class: 'link-menu-marketcons link-marketcons-actiu' do %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_marketcons_light.png", class: 'mk-icons-navigation' %> <%= t('.sobre_marketcons') %>
+                <% end %>
+              </li>
+            
+          <% else %>
+            
+              <li class="menu-marketcons-item">
+                <%= link_to marketcons_about_path, class: 'link-menu-marketcons' do %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_marketcons_dark.png", class: 'mk-icons-navigation' %> <%= t('.sobre_marketcons') %>
+                <% end %>
+              </li>
+            
           <% end %>
         </ul>
       </div>
@@ -75,12 +148,14 @@
       <div class="menu-marketcons-lateral-container">
         <ul class="vertical menu accordion-menu">
           <% @categories.each do |categoria| %>
-            <% if params[:locale] == 'es' %>
-              <li class="menu-marketcons-item"><%= categoria.nom_es %></li>
-            <% elsif params[:locale] == 'en' %>
-              <li class="menu-marketcons-item"><%= categoria.nom_en %></li>
-            <% else %>
-              <li class="menu-marketcons-item"><%= categoria.nom_ca %></li>
+            <%= link_to marketcons_categoria_path(categoria_id: categoria.id), class: 'link-menu-marketcons' do %>
+              <% if params[:locale] == 'es' %>
+                <li class="menu-marketcons-item-categoria <% if params[:categoria_id] == categoria.id.to_s %>menu-marketcons-actiu<% end %>"><%= categoria.nom_es %></li>
+              <% elsif params[:locale] == 'en' %>
+                <li class="menu-marketcons-item-categoria <% if params[:categoria_id] == categoria.id.to_s %>menu-marketcons-actiu<% end %>"><%= categoria.nom_en %></li>
+              <% else %>
+                <li class="menu-marketcons-item-categoria <% if params[:categoria_id] == categoria.id.to_s %>menu-marketcons-actiu<% end %>"><%= categoria.nom_ca %></li>
+              <% end %>
             <% end %>
           <% end %>
         </ul>

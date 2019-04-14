@@ -28,7 +28,13 @@ class MkMissatgesController < ApplicationController
 
     respond_to do |format|
       if @mk_missatge.save
-        format.html { redirect_to @mk_missatge, notice: 'Mk missatge was successfully created.' }
+        #Per fer la redirecció hem de saber si el missatge l'escriu el comprador o el venedor
+        producte = MkProduct.find(@mk_missatge.mk_product_id)
+        if current_user.id == producte.user_id
+          format.html { redirect_to marketcons_missatges_path(mk_product_id: @mk_missatge.mk_product_id, user_id: @mk_missatge.destinatari), notice: 'Mk missatge was successfully created.' }
+        else
+          format.html { redirect_to marketcons_missatges_path(mk_product_id: @mk_missatge.mk_product_id, user_id: @mk_missatge.user_id), notice: 'Mk missatge was successfully created.' }
+        end
         format.json { render :show, status: :created, location: @mk_missatge }
       else
         format.html { render :new }
@@ -42,7 +48,7 @@ class MkMissatgesController < ApplicationController
   def update
     respond_to do |format|
       if @mk_missatge.update(mk_missatge_params)
-        format.html { redirect_to @mk_missatge, notice: 'Mk missatge was successfully updated.' }
+        format.html { redirect_to marketcons_missatges_path(mk_product_id: @mk_missatge.mk_product_id), notice: 'Mk missatge was successfully updated.' }
         format.json { render :show, status: :ok, location: @mk_missatge }
       else
         format.html { render :edit }
@@ -69,6 +75,6 @@ class MkMissatgesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mk_missatge_params
-      params.require(:mk_missatge).permit(:user_id, :destinatari, :missatge)
+      params.require(:mk_missatge).permit(:user_id, :destinatari, :missatge, :mk_product_id)
     end
 end

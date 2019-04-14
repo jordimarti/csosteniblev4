@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'marketcons/nou_anunci'
   get 'marketcons/editar_anunci'
   get 'marketcons/comprova_unitats_categoria'
+  get 'marketcons/categoria'
+  get 'marketcons/missatges'
   resources :mk_categories
   resources :mk_missatges
   resources :mk_products

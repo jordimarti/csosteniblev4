@@ -1,0 +1,15 @@
+<% @missatges_ordenats.each do |missatge| %>
+	<% if missatge.user_id == current_user.id %>
+		<div class="mk_missatge_usuari">
+			<span class="nom-mk-missatge"><%= missatge.user.name %></span>
+			<p class="text-mk-missatge"><%= missatge.missatge %></p>
+			<div class="data-mk-missatge"><%= missatge.created_at.strftime("%H:%M h (%d-%m-%Y) ") %></div>
+		</div>
+	<% else %>
+		<div class="mk_missatge_venedor">
+			<span class="nom-mk-missatge"><%= missatge.user.name %></span>
+			<p class="text-mk-missatge"><%= missatge.missatge %></p>
+			<div class="data-mk-missatge"><%= missatge.created_at.strftime("%H:%M h (%d-%m-%Y) ") %></div>
+		</div>
+	<% end %>
+<% end %>

@@ -71,3 +71,33 @@
           </div>
         </div>
       <% end %>
+
+<script>
+$(function() {
+  $("#container-unitats").hide();
+});
+
+
+$("#mk_product_categoria").change(function() {
+  $.ajax({
+    type: 'GET',
+    url: '<%= marketcons_comprova_unitats_categoria_path %>',
+    data: {
+      categoria_id: $("#mk_product_categoria").val()
+    },
+    success: function(data) {
+      if(data == 'unitats'){
+        $("#container-pes").hide();
+        $("#text-kg").hide();
+        $("#container-unitats").show();
+
+      } 
+      if(data == 'kg') {
+        $("#container-pes").show();
+        $("#text-kg").show();
+        $("#container-unitats").hide();
+      }
+    }
+  });
+});
+</script>

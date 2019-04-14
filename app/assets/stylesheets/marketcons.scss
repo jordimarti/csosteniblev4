@@ -8,16 +8,22 @@
 
 /* Menú Marketcons */
 
-.menu > a.link-menu-marketcons {
-	padding: 5px 0px 2px 0px;
+.link-menu-marketcons {
+	padding: 0px;
+	color: #0D5D72;
 }
 
-.accordion-menu > a.link-menu-marketcons {
-	padding: 5px 0px 2px 0px;
+.link-menu-marketcons:hover {
+	color: #0D5D72;
 }
 
 .link-marketcons-actiu {
 	background-color: #0D5D72;
+	color: #fff;
+}
+
+.link-marketcons-actiu:hover {
+	color: #fff;
 }
 
 
@@ -41,14 +47,21 @@
 }
 
 .menu-marketcons-item {
-	padding: 5px 15px;
+	padding: 0px;
+	border-bottom: 1px solid #fff;
+	font-weight: bold;
+	color: #0D5D72;
+}
+
+.menu-marketcons-item-categoria {
+	padding-bottom: 10px;
 	border-bottom: 1px solid #fff;
 	font-weight: bold;
 	color: #0D5D72;
 }
 
 .menu-marketcons-item:last-child {
-	border-bottom: none;
+	/*border-bottom: none;*/
 }
 
 .menu-marketcons-actiu {
@@ -226,6 +239,13 @@
 	color: #fff;
 }
 
+.mk-product-missatge-comprador-item {
+	clear: both;
+	background-color: #eaeaea;
+	margin-bottom: 20px;
+	height: 120px;
+}
+
 /* Edició producte */
 
 .mk-text-discret {
@@ -273,3 +293,56 @@
 }
 
 
+/* Missatges */
+
+.missatges-imatge-principal-producte {
+	width: 100px;
+	float: left;
+}
+
+.missatges-dades-producte {
+	margin-left: 120px;
+}
+
+.mk-missatge-imatge-perfil-container {
+	float: right;
+}
+
+.mk-missatge-text-perfil-container {
+	margin-right: 120px;
+	text-align: right;
+	padding-top: 20px;
+}
+
+.mk-missatge-preu-producte {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.mk_missatge_usuari {
+	background-color: #EFFFF2;
+	padding: 15px;
+	border-radius: 5px;
+	margin-bottom: 15px;
+}
+
+.mk_missatge_venedor {
+	background-color: #EFF9FF;
+	padding: 15px;
+	border-radius: 5px;
+	margin-bottom: 15px;
+}
+
+.nom-mk-missatge {
+	font-weight: bold;
+}
+
+.text-mk-missatge {
+	margin: 0px;
+}
+
+.data-mk-missatge {
+	color: #999;
+	text-align: right;
+	font-size: 0.8em;
+}

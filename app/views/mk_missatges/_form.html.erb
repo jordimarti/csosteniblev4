@@ -4,12 +4,18 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :user_id %>
-    <%= f.input :destinatari %>
-    <%= f.input :missatge %>
+    <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+    <% if @venedor.id == current_user.id %>
+      <%= f.input :destinatari, as: :hidden, input_html: { value: params[:user_id] } %>
+    <% else %>
+      <%= f.input :destinatari, as: :hidden, input_html: { value: @venedor.id } %>
+    <% end %>
+    <%= f.input :mk_product_id, as: :hidden, input_html: { value: @producte.id } %>
+    <%= f.input :missatge, input_html: {rows: 4} %>
+    
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, t('.enviar') %>
   </div>
 <% end %>
