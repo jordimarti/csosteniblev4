@@ -244,6 +244,21 @@
 	background-color: #eaeaea;
 	margin-bottom: 20px;
 	height: 120px;
+	border-radius: 5px;
+	padding: 15px;
+}
+
+.mk-product-missatge-imatge-perfil-container {
+	float: left;
+}
+
+.mk-product-missatge-text-container {
+	margin-left: 120px;
+	color: #333;
+}
+
+.mk-product-missatge-usuari {
+	font-weight: bold;
 }
 
 /* Edició producte */
@@ -345,4 +360,12 @@
 	color: #999;
 	text-align: right;
 	font-size: 0.8em;
+}
+
+.mk-missatge-producte-link {
+	color: #333;
+}
+
+.mk-missatge-producte-link:hover {
+	color: #333;
 }

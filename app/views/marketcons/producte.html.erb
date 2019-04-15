@@ -82,25 +82,38 @@
   						</div>
   					</div>
   					<div class="small-8 cell">
-  						<% if user_signed_in? && @producte.user_id == current_user.id %>
-  							<div class="container-boto-eliminar-producte">
-  								<%= link_to t('.eliminar_producte'), @producte, method: :delete, data: { confirm: t('.confirma_eliminar') }, class:'boto-eliminar-producte' %>
-		  						
-		  					</div>
-  							<div class="container-boto-editar-producte">
-		  						<%= link_to t('.editar_producte'), marketcons_editar_anunci_path(mk_product_id: @producte.id), class:'boto-editar-producte' %>
-		  					</div>
-		  					
-  						<% else %>
-                <%= link_to marketcons_missatges_path(mk_product_id: @producte.id, user_id: current_user.id) do %>
-  	  						<div class="boto-enviar-missatge">
+  						<% if user_signed_in? %> 
+                <% if @producte.user_id == current_user.id %>
+    							<div class="container-boto-eliminar-producte">
+    								<%= link_to t('.eliminar_producte'), @producte, method: :delete, data: { confirm: t('.confirma_eliminar') }, class:'boto-eliminar-producte' %>
+  		  						
+  		  					</div>
+    							<div class="container-boto-editar-producte">
+  		  						<%= link_to t('.editar_producte'), marketcons_editar_anunci_path(mk_product_id: @producte.id), class:'boto-editar-producte' %>
+  		  					</div>
+  		  					
+    						<% else %>
+                  <%= link_to marketcons_missatges_path(mk_product_id: @producte.id, user_id: current_user.id) do %>
+    	  						<div class="boto-enviar-missatge">
+                      <div class="icona-dialeg">
+    	  								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "img-icona-dialeg" %>
+    	  							</div>
+    	  							<div class="text-enviar-missatge">
+    	  								<%= t('.enviar_missatge') %>
+    	  							</div>
+    	  						</div>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <%= link_to new_user_session_path do %>
+                  <div class="boto-enviar-missatge">
                     <div class="icona-dialeg">
-  	  								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "img-icona-dialeg" %>
-  	  							</div>
-  	  							<div class="text-enviar-missatge">
-  	  								Enviar missatge
-  	  							</div>
-  	  						</div>
+                      <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "img-icona-dialeg" %>
+                    </div>
+                    <div class="text-enviar-missatge">
+                      <%= t('.enviar_missatge') %>
+                    </div>
+                  </div>
                 <% end %>
   						<% end %>
   					</div>
@@ -108,32 +121,37 @@
   				<hr class="hr-no-margin"/>
   				<div class="grid-x grid-margin-x">
   					<div class="medium-12 cell">
-  						<% if current_user.id == @producte.user_id %>
+              <% if user_signed_in? && current_user.id == @producte.user_id %>
                 <p>Missatges</p>
 
                 <% @compradors.each do |comprador| %>
-                  <div class="mk-product-missatge-comprador-item">
-                    <%= link_to marketcons_missatges_path(mk_product_id: @producte.id, user_id: comprador.id), class:"mk-venedor-link" do %>
-                      <div class="mk-product-imatge-perfil-container">
-                        <% if comprador.mk_image_user.attached? %>
-                          <%= image_tag comprador.mk_image_user, class: "mk-imatge-perfil-producte" %>
-                        <% end %>
-                      </div>
-                      <div class="mk-product-text-perfil-container">
-                        <span class="text-camp-producte"><%= comprador.user.first_name %> <%= comprador.user.last_name %></span>
-                      </div>
-                    <% end %>
-                  </div>
+                  <% if comprador.user_id != current_user.id %>
+                    <div class="mk-product-missatge-comprador-item">
+                      <%= link_to marketcons_missatges_path(mk_product_id: @producte.id, user_id: comprador.user_id), class:"mk-venedor-link" do %>
+                        <div class="mk-product-missatge-imatge-perfil-container">
+                          <% if comprador.mk_image_user.attached? %>
+                            <%= image_tag comprador.mk_image_user, class: "mk-imatge-perfil-producte" %>
+                          <% end %>
+                        </div>
+                        <div class="mk-product-missatge-text-container">
+                          <% missatge = MkMissatge.where(mk_product_id: @producte.id, user_id: comprador.user_id).last %>
+                          <span class="mk-product-missatge-usuari"><%= comprador.user.first_name %> <%= comprador.user.last_name %></span>
+                          <p><%= truncate(missatge.missatge, length: 45) %></p>
+                          <span class="titol-camp-producte"><%= missatge.created_at.strftime("%H:%M h (%d-%m-%Y) ") %></span>
+                        </div>
+                      <% end %>
+                    </div>
+                  <% end %>
                 <% end %>
               <% else %>
-                <%= link_to marketcons_venedor_path(mk_product_id: @producte.id, user_id: current_user.id), class:"mk-venedor-link" do %>
+                <%= link_to marketcons_venedor_path(user_id: @producte.user_id), class:"mk-venedor-link" do %>
   	  						<div class="mk-product-imatge-perfil-container">
   		  						<% if @mk_user.mk_image_user.attached? %>
   				  					<%= image_tag @mk_user.mk_image_user, class: "mk-imatge-perfil-producte" %>
   				  				<% end %>
   				  			</div>
   				  			<div class="mk-product-text-perfil-container">
-  				  				<span class="titol-camp-producte">Publicat per</span><br/>
+  				  				<span class="titol-camp-producte"><%= t('.publicat_per') %></span><br/>
   	  							<span class="text-camp-producte"><%= @producte.user.first_name %> <%= @producte.user.last_name %></span>
   				  			</div>
   				  		<% end %>

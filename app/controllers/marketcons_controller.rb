@@ -42,9 +42,9 @@ class MarketconsController < ApplicationController
 
   def venedor
     @filtres = false
-    if current_user.id == params[:user_id]
+    if user_signed_in? && current_user.id == params[:user_id]
       @menu_actiu = "venedor"
-    end
+    end 
     @mk_user = MkUser.where(user_id: params[:user_id]).last
     @productes = MkProduct.where(user_id: params[:user_id])
   end

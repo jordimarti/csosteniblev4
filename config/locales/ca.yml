@@ -582,6 +582,8 @@ ca:
       editar_producte: "Editar anunci"
       eliminar_producte: "Eliminar anunci"
       confirma_eliminar: "Segur que vols eliminar aquest anunci?"
+      enviar_missatge: "Enviar missatge"
+      publicat_per: "Publicat per"
   mk_products:
     form:
       comprador_buscar: "El comprador el va a buscar"

@@ -4,13 +4,15 @@
   	<div class="medium-9 cell">
   		<div class="grid-x grid-margin-x">
   			<div class="medium-8 cell">
-  				<div class="missatges-imatge-principal-producte">
-  					<%= image_tag('https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Category_Pages/Doors_and_Windows/Doors/Exterior_Doors/ExtDrs18-VisNav-Material-fiberglass-life.jpg', :class => 'mk-image-principal') %>
-  				</div>
-  				<div class="missatges-dades-producte">
-  					<h3 class="mk-product-nom"><%= @producte.nom %></h3>
-  					<span class="mk-missatge-preu-producte"><%= @producte.preu %> €</span>
-  				</div>
+  				<%= link_to marketcons_producte_path(mk_product_id: params[:mk_product_id]), class:"mk-missatge-producte-link" do %>
+	  				<div class="missatges-imatge-principal-producte">
+	  					<%= image_tag('https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Category_Pages/Doors_and_Windows/Doors/Exterior_Doors/ExtDrs18-VisNav-Material-fiberglass-life.jpg', :class => 'mk-image-principal') %>
+	  				</div>
+	  				<div class="missatges-dades-producte">
+	  					<h3 class="mk-product-nom"><%= @producte.nom %></h3>
+	  					<span class="mk-missatge-preu-producte"><%= @producte.preu %> €</span>
+	  				</div>
+	  			<% end %>
   			</div>
   			<div class="medium-4 cell">
   				<%= link_to marketcons_venedor_path(user_id: @producte.user_id), class:"mk-venedor-link" do %>
