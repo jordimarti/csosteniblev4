@@ -3,9 +3,16 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  after_create :create_mkuser
 
   def name
     [first_name, last_name].compact.join(' ')
+  end
+
+  def create_mkuser
+    mkuser = MkUser.new
+    mkuser.user_id = self.id
+    mkuser.save
   end
 
   has_many :cas_practics

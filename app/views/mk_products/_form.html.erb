@@ -4,12 +4,9 @@
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
         <div class="form-inputs">
+          <br/>
           <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
-          <div class="grid-x grid-margin-x">
-            <div class="medium-12 cell">
-              Selector d'imatges
-            </div>
-          </div>
+
           <div class="grid-x grid-margin-x">
             <div class="medium-6 cell">
               <%= f.input :nom %>
@@ -58,6 +55,20 @@
               <br/>
             </div>
           </div>
+          
+          <div class="grid-x grid-margin-x">
+            <div class="medium-3 cell">
+              <% if @mk_product.mk_image_product.attached? %>
+                <%= image_tag @mk_product.mk_image_product, class: "mk-imatge-producte" %>
+              <% else %>
+                <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
+              <% end %>
+            </div>
+            <div class="medium-9 cell">
+              <%= f.input :mk_image_product, as: :file %>
+            </div>
+          </div>
+          <br/>
         </div>
 
         <div class="form-actions">

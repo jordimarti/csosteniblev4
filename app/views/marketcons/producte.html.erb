@@ -131,6 +131,8 @@
                         <div class="mk-product-missatge-imatge-perfil-container">
                           <% if comprador.mk_image_user.attached? %>
                             <%= image_tag comprador.mk_image_user, class: "mk-imatge-perfil-producte" %>
+                          <% else %>
+                            <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_user.png", class: 'mk-imatge-perfil-producte' %>
                           <% end %>
                         </div>
                         <div class="mk-product-missatge-text-container">
@@ -148,6 +150,8 @@
   	  						<div class="mk-product-imatge-perfil-container">
   		  						<% if @mk_user.mk_image_user.attached? %>
   				  					<%= image_tag @mk_user.mk_image_user, class: "mk-imatge-perfil-producte" %>
+                    <% else %>
+                      <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_user.png", class: 'mk-imatge-perfil-producte' %>
   				  				<% end %>
   				  			</div>
   				  			<div class="mk-product-text-perfil-container">

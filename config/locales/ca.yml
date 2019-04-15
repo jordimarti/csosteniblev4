@@ -184,6 +184,7 @@ ca:
         codi_postal: "Codi postal"
         municipi: "Municipi"
         adreca_oculta: "Ocultar adreça al públic (només es mostrarà el municipi)"
+        mk_image_product: "Imatge del producte"
   layouts:
     top:
       register: "Registrar-se"
@@ -570,6 +571,8 @@ ca:
     venedor:
       anuncis_publicats: "anuncis publicats"
       membre_des_de: "Membre des de"
+      publicar_anunci: "Publicar un anunci"
+      editar_perfil: "Editar perfil"
     nou_anunci:
       nou_anunci: "Crear un nou anunci"
     editar_anunci:
