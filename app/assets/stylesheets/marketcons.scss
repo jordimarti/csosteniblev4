@@ -54,10 +54,17 @@
 }
 
 .menu-marketcons-item-categoria {
-	padding-bottom: 10px;
 	border-bottom: 1px solid #fff;
 	font-weight: bold;
 	color: #0D5D72;
+}
+
+.link-marketcons-categoria {
+	color: #0D5D72; 
+}
+
+.link-marketcons-categoria:hover {
+	color: #0D5D72; 
 }
 
 .menu-marketcons-item:last-child {
@@ -71,6 +78,12 @@
 
 .menu-marketcons-actiu > a {
 	font-weight: bold;
+	color: #fff;
+}
+
+.menu-marketcons-actiu > a:hover {
+	font-weight: bold;
+	color: #fff;
 }
 
 .titol-menu-marketcons {
@@ -231,6 +244,7 @@
 .mk-imatge-perfil-producte {
 	width: 90px;
 	border-radius: 50%;
+	border: 1px solid #999;
 }
 
 .boto-editar-producte {
@@ -386,4 +400,48 @@
 
 .mk-missatge-producte-link:hover {
 	color: #333;
+}
+
+
+/* Administració */
+
+.mk-item-admin {
+	height: 70px;
+	margin-bottom: 20px;
+
+}
+
+.boto-admin-aprovar-producte {
+	background-color: #D6EFF4;
+	border-radius: 5px;
+	padding: 5px 15px;
+	color: #0D5D72;
+	margin: 10px 5px 0px 0px;
+	float: left;
+}
+
+.boto-admin-eliminar-producte {
+	background-color: #D12020;
+	border-radius: 5px;
+	padding: 5px 15px;
+	color: #fff;
+	margin: 10px 5px 0px 0px;
+	float: left;
+}
+
+.boto-admin-eliminar-producte:hover {
+	color: #fff;
+}
+
+.container-admin-bloquejar-usuari {
+	padding-top: 30px;
+}
+
+.boto-admin-bloquejar-usuari {
+	background-color: #D6EFF4;
+	border-radius: 5px;
+	padding: 5px 15px;
+	color: #0D5D72;
+	margin: 10px 5px 0px 0px;
+	float: right;
 }

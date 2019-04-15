@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   get 'marketcons/comprova_unitats_categoria'
   get 'marketcons/categoria'
   get 'marketcons/missatges'
+  get 'marketcons/aprovacions'
+  get 'marketcons/publicats'
+  get 'marketcons/usuaris'
+  get 'mk_products/aprovar'
+  get 'mk_products/desaprovar'
   resources :mk_categories
   resources :mk_missatges
   resources :mk_products

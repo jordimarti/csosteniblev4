@@ -269,6 +269,8 @@ ca:
       un_cas_pendent: "Hi ha un cas pràctic pendent de moderació"
       hi_ha: "Hi ha"
       casos_pendents: "casos pendents de moderació"
+      marketcons: "MARKETcons"
+      text_marketcons: "Administra els productes i usuaris de MARKETcons"
   noticies:
     index:
       actualitat: "Actualitat"
@@ -587,6 +589,11 @@ ca:
       confirma_eliminar: "Segur que vols eliminar aquest anunci?"
       enviar_missatge: "Enviar missatge"
       publicat_per: "Publicat per"
+    categoria:
+      no_productes: "No hi ha cap producte d'aquesta categoria"
+    aprovacions:
+      aprovar: "Aprovar"
+      eliminar: "Eliminar"
   mk_products:
     form:
       comprador_buscar: "El comprador el va a buscar"

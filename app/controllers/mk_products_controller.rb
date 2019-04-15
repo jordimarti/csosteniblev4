@@ -56,9 +56,27 @@ class MkProductsController < ApplicationController
   def destroy
     @mk_product.destroy
     respond_to do |format|
-      format.html { redirect_to mk_products_url, notice: 'Mk product was successfully destroyed.' }
+      if current_user.role == 'editor'
+        format.html { redirect_to marketcons_aprovacions_path, notice: 'Mk product was successfully destroyed.' }
+      else
+        format.html { redirect_to marketcons_venedor_path(user_id: current_user.id), notice: 'Mk product was successfully destroyed.' }
+      end
       format.json { head :no_content }
     end
+  end
+
+  def aprovar
+    producte = MkProduct.find(params[:mk_product_id])
+    producte.aprovat = true
+    producte.save
+    redirect_to marketcons_aprovacions_path
+  end
+
+  def desaprovar
+    producte = MkProduct.find(params[:mk_product_id])
+    producte.aprovat = false
+    producte.save
+    redirect_to marketcons_publicats_path
   end
 
   private

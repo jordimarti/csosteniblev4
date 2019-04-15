@@ -6,6 +6,7 @@
         <div class="form-inputs">
           <br/>
           <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+          <%= f.input :aprovat, as: :hidden, input_html: { value: false } %>
 
           <div class="grid-x grid-margin-x">
             <div class="medium-6 cell">
@@ -55,7 +56,7 @@
               <br/>
             </div>
           </div>
-          
+
           <div class="grid-x grid-margin-x">
             <div class="medium-3 cell">
               <% if @mk_product.mk_image_product.attached? %>

@@ -1,0 +1,30 @@
+  <div class="grid-x">
+    <div class="medium-12 cell">
+    	<div class="logo-marketcons-container">
+    		<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/logo_marketcons.png", class: "logo-marketcons" %>
+    	</div>
+    </div>
+  </div>
+
+  <br/>
+
+  <div class="grid-x grid-margin-x">
+	
+		<div class="medium-3 cell">
+			<div class="menu-marketcons-lateral-container">
+        <ul class="vertical menu accordion-menu">
+          <li class="menu-marketcons-item">
+            <%= link_to t('.anuncis_nous'), marketcons_aprovacions_path, class: 'link-menu-marketcons' %> 
+          </li>
+          <li class="menu-marketcons-item">
+            <%= link_to t('.anuncis_publicats'), marketcons_publicats_path, class: 'link-menu-marketcons' %> 
+          </li>
+          <li class="menu-marketcons-item">
+            <%= link_to t('.usuaris'), marketcons_usuaris_path, class: 'link-menu-marketcons' %> 
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+
+            

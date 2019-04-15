@@ -4,18 +4,11 @@
   	<div class="medium-9 cell">
   		<div class="grid-x grid-margin-x">
   			<div class="medium-4 cell">
-  				<%= image_tag('https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Category_Pages/Doors_and_Windows/Doors/Exterior_Doors/ExtDrs18-VisNav-Material-fiberglass-life.jpg', :class => 'mk-image-principal') %>
-  				<div class="grid-x grid-margin-x">
-  					<div class="medium-4 cell">
-  						<%= image_tag('https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Category_Pages/Doors_and_Windows/Doors/Exterior_Doors/ExtDrs18-VisNav-Material-fiberglass-life.jpg', :class => 'mk-image-secundaria') %>
-  					</div>
-  					<div class="medium-4 cell">
-  						<%= image_tag('https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Category_Pages/Doors_and_Windows/Doors/Exterior_Doors/ExtDrs18-VisNav-Material-fiberglass-life.jpg', :class => 'mk-image-secundaria') %>
-  					</div>
-  					<div class="medium-4 cell">
-  						<%= image_tag('https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Category_Pages/Doors_and_Windows/Doors/Exterior_Doors/ExtDrs18-VisNav-Material-fiberglass-life.jpg', :class => 'mk-image-secundaria') %>
-  					</div>
-  				</div>
+          <% if @producte.mk_image_product.attached? %>
+                <%= image_tag @producte.mk_image_product, class: "mk-image-principal" %>
+          <% else %>
+            <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
+          <% end %>
   			</div>
   			<div class="medium-8 cell">
   				<h3 class="mk-product-nom"><%= @producte.nom %></h3>
@@ -122,8 +115,9 @@
   				<div class="grid-x grid-margin-x">
   					<div class="medium-12 cell">
               <% if user_signed_in? && current_user.id == @producte.user_id %>
-                <p>Missatges</p>
-
+                <% if @compradors.count != 0 %>
+                  <p>Missatges</p>
+                <% end %>
                 <% @compradors.each do |comprador| %>
                   <% if comprador.user_id != current_user.id %>
                     <div class="mk-product-missatge-comprador-item">

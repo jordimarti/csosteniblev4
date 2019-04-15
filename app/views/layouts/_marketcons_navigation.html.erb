@@ -148,15 +148,15 @@
       <div class="menu-marketcons-lateral-container">
         <ul class="vertical menu accordion-menu">
           <% @categories.each do |categoria| %>
-            <%= link_to marketcons_categoria_path(categoria_id: categoria.id), class: 'link-menu-marketcons' do %>
+            
               <% if params[:locale] == 'es' %>
-                <li class="menu-marketcons-item-categoria <% if params[:categoria_id] == categoria.id.to_s %>menu-marketcons-actiu<% end %>"><%= categoria.nom_es %></li>
+                <li class="menu-marketcons-item-categoria <% if params[:categoria_id] == categoria.id.to_s %>menu-marketcons-actiu<% end %>"><%= link_to categoria.nom_es, marketcons_categoria_path(categoria_id: categoria.id), class: 'link-marketcons-categoria' %></li>
               <% elsif params[:locale] == 'en' %>
-                <li class="menu-marketcons-item-categoria <% if params[:categoria_id] == categoria.id.to_s %>menu-marketcons-actiu<% end %>"><%= categoria.nom_en %></li>
+                <li class="menu-marketcons-item-categoria <% if params[:categoria_id] == categoria.id.to_s %>menu-marketcons-actiu<% end %>"><%= link_to categoria.nom_en, marketcons_categoria_path(categoria_id: categoria.id), class: 'link-marketcons-categoria' %></li>
               <% else %>
-                <li class="menu-marketcons-item-categoria <% if params[:categoria_id] == categoria.id.to_s %>menu-marketcons-actiu<% end %>"><%= categoria.nom_ca %></li>
+                <li class="menu-marketcons-item-categoria <% if params[:categoria_id] == categoria.id.to_s %>menu-marketcons-actiu<% end %>"><%= link_to categoria.nom_ca, marketcons_categoria_path(categoria_id: categoria.id), class: 'link-marketcons-categoria' %></li>
               <% end %>
-            <% end %>
+            
           <% end %>
         </ul>
       </div>

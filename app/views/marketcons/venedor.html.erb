@@ -16,7 +16,11 @@
 	  				<br/>
 	  				<span class="municipi-imatge-perfil"><%= @mk_user.municipi %></span>
 	  				<br/>
-	  				<p><%= link_to t('.editar_perfil'), marketcons_perfil_path(mk_user_id: @mk_user.id) %></p>
+	  				<% if user_signed_in? %>
+		  				<% if current_user.id == @mk_user.user_id %>
+		  					<p><%= link_to t('.editar_perfil'), marketcons_perfil_path(mk_user_id: @mk_user.id) %></p>
+		  				<% end %>
+		  			<% end %>
 	  			</div>
   			</div>
   		</div>
@@ -33,24 +37,34 @@
 	  						</div>
 	  					</div>
   					</div>
-  					<% if @productes.count == 0 %>
-  						<div class="grid-x grid-margin-x">
-  							<div class="medium-3 cell">
-  								<div class="container-boto-publicar-anunci">
-  		  						<%= link_to marketcons_nou_anunci_path, class: 'boto-publicar-anunci' do %>
-                			<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_editar_light.png", class: 'mk-icons-navigation' %> <%= t('.publicar_anunci') %>
-                		<% end %>
-                	</div>
-  		  				</div>
-  		  			</div>
-  					<% end %>
+
+  					<% if user_signed_in? %>
+		  				<% if current_user.id == @mk_user.user_id %>
+		  					<% if @productes.count == 0 %>
+		  						<div class="grid-x grid-margin-x">
+		  							<div class="medium-3 cell">
+		  								<div class="container-boto-publicar-anunci">
+		  		  						<%= link_to marketcons_nou_anunci_path, class: 'boto-publicar-anunci' do %>
+		                			<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_editar_light.png", class: 'mk-icons-navigation' %> <%= t('.publicar_anunci') %>
+		                		<% end %>
+		                	</div>
+		  		  				</div>
+		  		  			</div>
+		  					<% end %>
+		  				<% end %>
+		  			<% end %>
+  					
   					<div class="grid-x grid-margin-x">
 	  					<% @productes.each do |producte| %>
 								<div class="large-3 medium-6 cell">
 									<%= link_to marketcons_producte_path(mk_product_id: producte.id), class:"mk-producte-link" do %>
 									<div class="mk-item">
 										<div class="crop">
-										  <%= image_tag('https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Category_Pages/Doors_and_Windows/Doors/Exterior_Doors/ExtDrs18-VisNav-Material-fiberglass-life.jpg', :class => 'mk-image') %>
+										  <% if producte.mk_image_product.attached? %>
+						                <%= image_tag producte.mk_image_product, class: "mk-image-principal" %>
+						          <% else %>
+						            <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
+						          <% end %>
 									  </div>
 									  <div class="mk-item-text">
 									    <h4 class="mk-item-preu"><%= producte.preu %> €</h4>

@@ -7,7 +7,7 @@ class MarketconsController < ApplicationController
   	@filtres = true
     @menu_actiu = "destacat"
   	if params[:preu] == "tots" && params[:distancia] == "tots"
-  		@productes = MkProduct.all
+  		@productes = MkProduct.where(aprovat: true)
   	else
   		@productes = MkProduct.where("preu < :limit_preu", {limit_preu: params[:preu]})
   	end
@@ -74,22 +74,25 @@ class MarketconsController < ApplicationController
     @mk_user = MkUser.where(user_id: @venedor.id).last
     @missatges_comprador = MkMissatge.where(user_id: params[:user_id], destinatari: @venedor.id, mk_product_id: params[:mk_product_id])
     @missatges_venedor = MkMissatge.where(user_id: @venedor.id, destinatari: params[:user_id], mk_product_id: params[:mk_product_id])
-    
-    #Creem un Array amb tots els missatges per tal d'ordenar-los cronològicament
-    #@missatges = Array.new
-    #@missatges_comprador.each do |m|
-    #  @missatges.push(m)
-    #end
-    #@missatges_venedor.each do |m|
-    #  @missatges.push(m)
-    #end
-    #@missatges.sort_by(&:created_at)
-
     @missatges = @missatges_comprador + @missatges_venedor
     @missatges_ordenats = @missatges.sort_by { |obj| obj.created_at }
 
     @mk_missatge = MkMissatge.new
   end
+
+  def aprovacions
+    @productes = MkProduct.where(aprovat: false)
+  end
+
+  def publicats
+    @productes = MkProduct.where(aprovat: true)
+  end
+
+  def usuaris
+    @usuaris = MkUser.all
+  end
+
+
 
   private
     def categories
