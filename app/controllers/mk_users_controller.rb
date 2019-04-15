@@ -42,7 +42,7 @@ class MkUsersController < ApplicationController
   def update
     respond_to do |format|
       if @mk_user.update(mk_user_params)
-        format.html { redirect_to @mk_user, notice: 'Mk user was successfully updated.' }
+        format.html { redirect_to marketcons_venedor_path(user_id: @mk_user.user_id), notice: 'Mk user was successfully updated.' }
         format.json { render :show, status: :ok, location: @mk_user }
       else
         format.html { render :edit }

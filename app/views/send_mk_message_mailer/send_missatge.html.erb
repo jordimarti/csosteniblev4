@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hola <%= @destinatari.nom %>!</h1>
+    <p>Tens un nou missatge de <%= @emissor.nom %> <%= @emissor.cognoms %> en referència al següent anunci:</p>
+    <p><%= @producte.nom %></p>
+    <div style="background-color:#eaeaea; font-size:14px; padding: 15px;">
+    	<p><%= @missatge %></p>
+    </div>
+    <p><%= link_to "Anar a la conversa", "http://localhost:3000/marketcons/missatges?locale=ca&mk_product_id=#{@producte.id}&user_id=#{@emissor.user_id}" %></p>
+  </body>
+</html>

@@ -28,6 +28,14 @@ class MkMissatgesController < ApplicationController
 
     respond_to do |format|
       if @mk_missatge.save
+        #Dades per enviar el correu
+        @mkuser = MkUser.where(user_id: @mk_missatge.user_id).last
+        @destinatari = MkUser.where(user_id: @mk_missatge.destinatari).last
+        @producte = MkProduct.find(@mk_missatge.mk_product_id)
+        @missatge = @mk_missatge.missatge
+
+        SendMkMessageMailer.send_missatge(@mkuser, @destinatari, @producte, @missatge).deliver
+      
         #Per fer la redirecció hem de saber si el missatge l'escriu el comprador o el venedor
         producte = MkProduct.find(@mk_missatge.mk_product_id)
         if current_user.id == producte.user_id

@@ -6,7 +6,11 @@
   			<div class="medium-8 cell">
   				<%= link_to marketcons_producte_path(mk_product_id: params[:mk_product_id]), class:"mk-missatge-producte-link" do %>
 	  				<div class="missatges-imatge-principal-producte">
-	  					<%= image_tag('https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Category_Pages/Doors_and_Windows/Doors/Exterior_Doors/ExtDrs18-VisNav-Material-fiberglass-life.jpg', :class => 'mk-image-principal') %>
+	  					<% if @producte.mk_image_product.attached? %>
+                <%= image_tag @producte.mk_image_product, class: "mk-image-principal" %>
+              <% else %>
+                <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
+              <% end %>
 	  				</div>
 	  				<div class="missatges-dades-producte">
 	  					<h3 class="mk-product-nom"><%= @producte.nom %></h3>
