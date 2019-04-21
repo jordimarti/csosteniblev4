@@ -25,6 +25,12 @@
 					</div>
 				<% end %>
 			</div>
+
+			<div id="geolocalitzacio">
+				<button class="button" onclick="getLocation()">Geolocalitza</button>
+				<div id="mapholder"></div>
+				
+			</div>
 		</div>
 	</div>
 </div>
@@ -39,5 +45,25 @@ $('#selector-preu').change(function() {
 	var preu = $( "select#selector-preu option:checked" ).val();
 	goToURL(preu, 'tots', 1);
 });
+
+/* Geolocalització */
+
+var x = document.getElementById("geolocalitzacio");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Aquest navegador no suporta la geolocalització";
+  }
+}
+
+function showPosition(position) {
+  var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+  /*41.4095028,2.1750933999999997*/
+
+  document.getElementById("mapholder").innerHTML = '<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?key=AIzaSyB5DMFiRy_EqQO8FMVbIQP3XQJfSekqvOY&center='+latlon+'&zoom=14" allowfullscreen></iframe>';
+}
 
 </script>
