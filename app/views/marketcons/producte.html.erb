@@ -12,6 +12,13 @@
   			</div>
   			<div class="medium-8 cell">
   				<h3 class="mk-product-nom"><%= @producte.nom %></h3>
+          <% if @producte.reservat == true %>
+            <div class="grid-x grid-margin-x">
+              <div class="medium-12 cell">
+                <div class="badge-producte-reservat"><%= t('.reservat') %></div>
+              </div>
+            </div>
+          <% end %>
   				<div class="grid-x grid-margin-x">
   					<div class="medium-4 cell">
   						<span class="titol-camp-producte">Data de publicació</span><br/>
@@ -77,13 +84,20 @@
   					<div class="small-8 cell">
   						<% if user_signed_in? %> 
                 <% if @producte.user_id == current_user.id %>
-    							<div class="container-boto-eliminar-producte">
-    								<%= link_to t('.eliminar_producte'), @producte, method: :delete, data: { confirm: t('.confirma_eliminar') }, class:'boto-eliminar-producte' %>
-  		  						
+    							<div class="container-boto-eliminar-producte" id="eliminar-producte">
+                    <div id="eliminar-producte"><a class="boto-eliminar-producte"><%= t('.eliminar_producte') %></a></div>
   		  					</div>
     							<div class="container-boto-editar-producte">
   		  						<%= link_to t('.editar_producte'), marketcons_editar_anunci_path(mk_product_id: @producte.id), class:'boto-editar-producte' %>
   		  					</div>
+                  <div id="opcions-eliminar-producte">
+                    <div class="producte-venut">
+                      <%= link_to t('.producte_venut'), marketcons_producte_venut_path(mk_product_id: @producte.id), class:'boto-producte-venut' %>
+                    </div>
+                    <div class="producte-amagar">
+                      <%= link_to t('.producte_amagar'), marketcons_producte_amagar_path(mk_product_id: @producte.id), class:'boto-producte-amagar' %>
+                    </div>
+                  </div>
   		  					
     						<% else %>
                   <%= link_to marketcons_missatges_path(mk_product_id: @producte.id, user_id: current_user.id) do %>
@@ -131,9 +145,12 @@
                         </div>
                         <div class="mk-product-missatge-text-container">
                           <% missatge = MkMissatge.where(mk_product_id: @producte.id, user_id: comprador.user_id).last %>
-                          <span class="mk-product-missatge-usuari"><%= comprador.user.first_name %> <%= comprador.user.last_name %></span>
+                          <span class="mk-product-missatge-usuari"><%= comprador.nom %> <%= comprador.cognoms %></span>
                           <p><%= truncate(missatge.missatge, length: 45) %></p>
                           <span class="titol-camp-producte"><%= missatge.created_at.strftime("%H:%M h (%d-%m-%Y) ") %></span>
+                          <% if @producte.reservat == true %>
+                            <div class="mk-product-marca-reservat"><%= t('.producte_reservat') %></div>
+                          <% end %>
                         </div>
                       <% end %>
                     </div>
@@ -150,7 +167,7 @@
   				  			</div>
   				  			<div class="mk-product-text-perfil-container">
   				  				<span class="titol-camp-producte"><%= t('.publicat_per') %></span><br/>
-  	  							<span class="text-camp-producte"><%= @producte.user.first_name %> <%= @producte.user.last_name %></span>
+  	  							<span class="text-camp-producte"><%= @mk_user.nom %> <%= @mk_user.cognoms %></span>
   				  			</div>
   				  		<% end %>
               <% end %>
@@ -161,3 +178,13 @@
   	</div>
 	</div>
 </div>
+
+<script>
+$(function() {
+  $("#opcions-eliminar-producte").hide();
+});
+
+$("#eliminar-producte").click(function() {
+  $("#opcions-eliminar-producte").show();
+});
+</script>

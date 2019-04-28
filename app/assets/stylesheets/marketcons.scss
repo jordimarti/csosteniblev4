@@ -140,6 +140,29 @@
   border-top-right-radius: 5px;
 }
 
+.badge-preu {
+	float: left;
+}
+
+.container-badge-producte-reservat {
+	float: right;
+	margin-top: 5px;
+}
+
+.badge-producte-reservat {
+	background-color: #0D5D72;
+	color: #fff;
+	font-weight: bold;
+	font-size: 0.7em;
+	border-radius: 5px;
+	padding: 3px 6px;
+}
+
+.badge-nom {
+	clear: both;
+}
+
+
 
 /* Venedor */
 
@@ -275,7 +298,7 @@
 	clear: both;
 	background-color: #eaeaea;
 	margin-bottom: 20px;
-	height: 120px;
+	min-height: 120px;
 	border-radius: 5px;
 	padding: 15px;
 }
@@ -290,6 +313,37 @@
 }
 
 .mk-product-missatge-usuari {
+	font-weight: bold;
+}
+
+.mk-product-marca-reservat {
+	border-radius: 5px;
+	background-color: #39A72B;
+	color: white;
+	padding: 5px 10px;
+	margin-top: 20px;
+}
+
+#opcions-eliminar-producte {
+	clear: both;
+	background-color: #eaeaea;
+	padding: 15px;
+}
+
+.producte-venut {
+	border-radius: 5px;
+	background-color: #fff;
+	padding: 10px 15px;
+	color: #fff;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.producte-amagar {
+	border-radius: 5px;
+	background-color: #fff;
+	padding: 10px 15px;
+	color: #fff;
 	font-weight: bold;
 }
 
@@ -400,6 +454,22 @@
 
 .mk-missatge-producte-link:hover {
 	color: #333;
+}
+
+.container-reserva-mkproduct {
+	padding: 10px 20px;
+	margin-top: 25px;
+	background-color: #eaeaea;
+	border-radius: 5px;
+}
+
+.titol-text-reserva-mkproduct {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.container-resposta-reserva {
+	margin-top: 20px;
 }
 
 

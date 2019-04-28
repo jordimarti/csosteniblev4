@@ -16,8 +16,17 @@
 			          <% end %>
 						  </div>
 						  <div class="mk-item-text">
-						    <h4 class="mk-item-preu"><%= producte.preu %> €</h4>
-						    <p class="mk-item-nom"><%= truncate(producte.nom, length: 45) %></p>
+						    <div class="badge-preu">
+						    	<h4 class="mk-item-preu"><%= producte.preu %> €</h4>
+						    </div>
+						    <% if producte.reservat == true %>
+						    	<div class="container-badge-producte-reservat">
+						    		<div class="badge-producte-reservat"><%= t('.reservat') %></div>
+						    	</div>
+						    <% end %>
+						    <div class="badge-nom">
+						    	<p class="mk-item-nom"><%= truncate(producte.nom, length: 45) %></p>
+						    </div>
 						  </div>
 							
 						</div>

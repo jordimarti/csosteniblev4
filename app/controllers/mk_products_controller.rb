@@ -87,6 +87,6 @@ class MkProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mk_product_params
-      params.require(:mk_product).permit(:user_id, :nom, :descripcio, :categoria, :adreca, :codi_postal, :municipi, :latitud, :longitud, :preu, :visible, :venut, :aprovat, :pes, :unitats, :enviament, :adreca_oculta, :mk_image_product)
+      params.require(:mk_product).permit(:user_id, :nom, :descripcio, :categoria, :adreca, :codi_postal, :municipi, :latitud, :longitud, :preu, :visible, :venut, :aprovat, :pes, :unitats, :enviament, :adreca_oculta, :mk_image_product, :reservat, :reservat_usuari)
     end
 end

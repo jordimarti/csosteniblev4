@@ -1,15 +1,16 @@
 class MarketconsController < ApplicationController
   before_action :authenticate_user!, only: [:nou_anunci, :editar_anunci]
   before_action :categories
-  layout "resposta_unitats", only: [:comprova_unitats_categoria]
+  layout "buit", only: [:comprova_unitats_categoria, :reserva_producte, :anula_reserva_producte]
 
   def index
   	@filtres = true
     @menu_actiu = "destacat"
   	if params[:preu] == "tots" && params[:distancia] == "tots"
-  		@productes = MkProduct.where(aprovat: true)
+  		@productes = MkProduct.where(aprovat: true, visible: true)
   	else
-  		@productes = MkProduct.where("preu < :limit_preu", {limit_preu: params[:preu]})
+  		productes_preu = MkProduct.where("preu < :limit_preu", {limit_preu: params[:preu] })
+      @productes = productes_preu.where(visible: true)
   	end
 
   end
@@ -29,6 +30,21 @@ class MarketconsController < ApplicationController
     @compradors = MkUser.where(user_id: compradors)
   end
 
+  def producte_venut
+    producte = MkProduct.find(params[:mk_product_id])
+    producte.venut = true
+    producte.visible = false
+    producte.save
+    redirect_to marketcons_venedor_path(user_id: producte.user_id)
+  end
+
+  def producte_amagar
+    producte = MkProduct.find(params[:mk_product_id])
+    producte.visible = false
+    producte.save
+    redirect_to marketcons_venedor_path(user_id: producte.user_id)
+  end
+
   def nou_anunci
     @filtres = false
     @menu_actiu = "nou_anunci"
@@ -46,7 +62,7 @@ class MarketconsController < ApplicationController
       @menu_actiu = "venedor"
     end 
     @mk_user = MkUser.where(user_id: params[:user_id]).last
-    @productes = MkProduct.where(user_id: params[:user_id])
+    @productes = MkProduct.where(user_id: params[:user_id], visible: true)
   end
 
   def perfil
@@ -70,12 +86,17 @@ class MarketconsController < ApplicationController
 
   def missatges
     @producte = MkProduct.find(params[:mk_product_id])
+    @comprador = MkUser.where(user_id: params[:user_id]).last
     @venedor = User.find(@producte.user_id)
     @mk_user = MkUser.where(user_id: @venedor.id).last
     @missatges_comprador = MkMissatge.where(user_id: params[:user_id], destinatari: @venedor.id, mk_product_id: params[:mk_product_id])
     @missatges_venedor = MkMissatge.where(user_id: @venedor.id, destinatari: params[:user_id], mk_product_id: params[:mk_product_id])
     @missatges = @missatges_comprador + @missatges_venedor
     @missatges_ordenats = @missatges.sort_by { |obj| obj.created_at }
+
+    if @producte.reservat == true
+      @mk_user_reserva = MkUser.where(user_id: @producte.reservat_usuari).last
+    end
 
     @mk_missatge = MkMissatge.new
   end
@@ -90,6 +111,28 @@ class MarketconsController < ApplicationController
 
   def usuaris
     @usuaris = MkUser.all
+  end
+
+  def reserva_producte
+    mk_product = MkProduct.find(params[:mk_product_id])
+    mk_product.reservat = true
+    mk_product.reservat_usuari = params[:user_id]
+    if mk_product.save
+      @resposta = "Reservat"
+    else
+      @resposta = "Error"
+    end
+  end
+
+  def anula_reserva_producte
+    mk_product = MkProduct.find(params[:mk_product_id])
+    mk_product.reservat = false
+    mk_product.reservat_usuari = nil
+    if mk_product.save
+      @resposta = "Anulat"
+    else
+      @resposta = "Error"
+    end
   end
 
 

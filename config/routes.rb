@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :mk_users
   get 'marketcons/index'
+  get 'marketcons', to: redirect('marketcons/index?distancia=tots&preu=tots&locale=ca'), as: :marketcons
   get 'marketcons/about'
   get 'marketcons/producte'
   get 'marketcons/perfil'
@@ -13,6 +14,10 @@ Rails.application.routes.draw do
   get 'marketcons/aprovacions'
   get 'marketcons/publicats'
   get 'marketcons/usuaris'
+  get 'marketcons/reserva_producte'
+  get 'marketcons/anula_reserva_producte'
+  get 'marketcons/producte_venut'
+  get 'marketcons/producte_amagar'
   get 'mk_products/aprovar'
   get 'mk_products/desaprovar'
   resources :mk_categories

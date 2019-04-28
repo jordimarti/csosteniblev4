@@ -27,7 +27,7 @@
 		  			</div>
 		  			<div class="mk-missatge-text-perfil-container">
 		  				<span class="titol-camp-producte">Publicat per</span><br/>
-							<span class="text-camp-producte"><%= @producte.user.first_name %> <%= @producte.user.last_name %></span>
+							<span class="text-camp-producte"><%= @mk_user.nom %> <%= @mk_user.cognoms %></span>
 		  			</div>
 		  			
 		  		<% end %>
@@ -46,11 +46,73 @@
   		<br/>
 
   		<div class="grid-x grid-margin-x">
-  			<div class="medium-12 cell">
-  				<%= render 'mk_missatges/form', mk_missatge: @mk_missatge %>
-  			</div>
+        <% if @producte.user_id == current_user.id %>
+          <div class="medium-6 cell">
+            <%= render 'mk_missatges/form', mk_missatge: @mk_missatge %>
+          </div>
+          <div class="medium-6 cell">
+            <div class="container-reserva-mkproduct">
+              <h4 class="titol-text-reserva-mkproduct"><%= t('.titol_reservar') %></h4>
+              <% if @producte.reservat == true %>
+                <%= t(".reservat_a") %> <%= @mk_user_reserva.nom %> <%= @mk_user_reserva.cognoms %>
+                <div id="resposta-reserva" class="container-resposta-reserva">
+                  <button class="button" id="boto-anula-reserva"><%= t('.anula_reserva') %></button>
+                </div>
+              <% else %>
+                <span class="text-reserva-mkproduct"><%= t('.text_reservar') %> <br/><%= @comprador.nom %> <%= @comprador.cognoms %>?</span>
+                <div id="resposta-reserva" class="container-resposta-reserva">
+                  <button class="button" id="boto-reserva"><%= t('.reserva') %></button>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% else %>
+    			<div class="medium-12 cell">
+    				<%= render 'mk_missatges/form', mk_missatge: @mk_missatge %>
+    			</div>
+        <% end %>
   		</div>
 
   	</div>
   </div>
 </div>
+
+<script>
+$("#boto-reserva").click(function() {
+  var request = $.ajax({
+    type: 'GET',
+    url: '<%= marketcons_reserva_producte_path %>',
+    data: {
+      mk_product_id: <%= @producte.id %>,
+      user_id: <%= params[:user_id] %>
+    }
+  });
+
+  request.done(function(data) {
+    $("#resposta-reserva").html(data);
+  });
+ 
+  request.fail(function( jqXHR, textStatus ) {
+    $("#resposta-reserva").html( "Error: " + textStatus );
+  });
+});
+
+$("#boto-anula-reserva").click(function() {
+  var request = $.ajax({
+    type: 'GET',
+    url: '<%= marketcons_anula_reserva_producte_path %>',
+    data: {
+      mk_product_id: <%= @producte.id %>,
+      user_id: <%= params[:user_id] %>
+    }
+  });
+
+  request.done(function(data) {
+    $("#resposta-reserva").html(data);
+  });
+ 
+  request.fail(function( jqXHR, textStatus ) {
+    $("#resposta-reserva").html( "Error: " + textStatus );
+  });
+});
+</script>

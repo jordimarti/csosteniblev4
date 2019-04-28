@@ -567,6 +567,8 @@ ca:
       add: "+ Afegir element"
       remove: "Eliminar"
   marketcons:
+    index:
+      reservat: "RESERVAT"
     perfil:
       guardar: "Guardar"
       configuracio_perfil: "Configuració del perfil públic"
@@ -589,18 +591,36 @@ ca:
       confirma_eliminar: "Segur que vols eliminar aquest anunci?"
       enviar_missatge: "Enviar missatge"
       publicat_per: "Publicat per"
+      producte_reservat: "Producte reservat"
+      producte_venut: "He venut el producte"
+      producte_amagar: "No vull mostrar aquest anunci"
+      reservat: "Aquest producte ja està reservat"
     categoria:
       no_productes: "No hi ha cap producte d'aquesta categoria"
     aprovacions:
       aprovar: "Aprovar"
       eliminar: "Eliminar"
+    missatges:
+      titol_reservar: "Reserva el producte"
+      text_reservar: "Vols reservar aquest producte a:"
+      reserva: "Reserva"
+      reservat_a: "Aquest producte està reservat a: "
+      anula_reserva: "Anul·lar reserva"
+    reserva_producte:
+      ok_reservat: "Reservat!"
+      error_reservat: "S'ha produït un error i el producte no està reservat"
+      anula_reserva: "Anul·lar la reserva"
+    anula_reserva_producte:
+      ok_anulat: "S'ha anul·lat la reserva"
+      error_anulat: "S'ha produït un error i no s'ha pogut anul·lar la reserva"
+      reserva: "Reserva"
   mk_products:
     form:
       comprador_buscar: "El comprador el va a buscar"
       venedor_porta: "El venedor el porta"
       negociar: "A negociar"
       guardar: "Guardar"
-      anuncis_revisio: "Els anuncis passen un procés de revisió. Això vol dir que no veuràs el teu anunci publicat immediatament."
+      anuncis_revisio: "Els anuncis passen un procés de revisió."
   mk_missatges:
     form:
       enviar: "Enviar"
