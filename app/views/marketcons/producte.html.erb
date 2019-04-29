@@ -21,8 +21,8 @@
           <% end %>
   				<div class="grid-x grid-margin-x">
   					<div class="medium-4 cell">
-  						<span class="titol-camp-producte">Data de publicació</span><br/>
-  						<span class="text-camp-producte">Febrer 2019</span>
+  						<span class="titol-camp-producte"><%= t('.data_publicacio') %></span><br/>
+  						<span class="text-camp-producte"><%= @producte.created_at.strftime("%d-%m-%Y") %></span>
   					</div>
   					<div class="medium-8 cell">
   						<span class="titol-camp-producte">Categoria</span><br/>

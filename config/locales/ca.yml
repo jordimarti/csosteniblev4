@@ -595,6 +595,7 @@ ca:
       producte_venut: "He venut el producte"
       producte_amagar: "No vull mostrar aquest anunci"
       reservat: "Aquest producte ja està reservat"
+      data_publicacio: "Data de publicació"
     categoria:
       no_productes: "No hi ha cap producte d'aquesta categoria"
     aprovacions:

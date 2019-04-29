@@ -6,7 +6,7 @@
   			<div class="medium-12 cell">
   				<div class="mk-imatge-perfil-container">
 	  				<% if @mk_user.mk_image_user.attached? %>
-	  					<%= image_tag @mk_user.mk_image_user, class: "mk-imatge-perfil" %>
+	  					<%= image_tag @mk_user.mk_image_user.variant(combine_options: { resize: '300x300' }), class: "mk-imatge-perfil" %>
 	  				<% else %>
 	  					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_user.png", class: 'mk-imatge-perfil' %>
 	  				<% end %>

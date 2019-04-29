@@ -266,8 +266,10 @@
 
 .mk-imatge-perfil-producte {
 	width: 90px;
+	height: 90px;
 	border-radius: 50%;
 	border: 1px solid #999;
+	object-fit: cover;
 }
 
 .boto-editar-producte {
@@ -386,7 +388,9 @@
 
 .mk-imatge-perfil {
 	width: 150px;
+	height: 150px;
 	border-radius: 50%;
+	object-fit: cover;
 }
 
 .nom-imatge-perfil {
