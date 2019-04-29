@@ -5,74 +5,84 @@
   		<div class="mk-products-container">
   			<div class="grid-x grid-margin-x">
 				<% @productes.each do |producte| %>
-					<div class="large-3 medium-6 cell">
-						<%= link_to marketcons_producte_path(mk_product_id: producte.id), class:"mk-producte-link" do %>
-						<div class="mk-item">
-							<div class="crop">
-							  <% if producte.mk_image_product.attached? %>
-			                <%= image_tag producte.mk_image_product.variant(auto_orient: true), class: "mk-image-principal" %>
-			          <% else %>
-			            <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
-			          <% end %>
-						  </div>
-						  <div class="mk-item-text">
-						    <div class="badge-preu">
-						    	<h4 class="mk-item-preu"><%= producte.preu %> €</h4>
-						    </div>
-						    <% if producte.reservat == true %>
-						    	<div class="container-badge-producte-reservat">
-						    		<div class="badge-producte-reservat"><%= t('.reservat') %></div>
-						    	</div>
-						    <% end %>
-						    <div class="badge-nom">
-						    	<p class="mk-item-nom"><%= truncate(producte.nom, length: 45) %></p>
-						    </div>
-						  </div>
-							
+					<% 
+					if params[:latitud].present? 
+		    		distancia = distance([params[:latitud].to_d, params[:longitud].to_d], [producte.latitud, producte.longitud])
+		    		distancia_km = distancia/1000
+		    		distancia_limit = params[:distancia].to_i * 1000 
+		    	else
+		    		#imposem una condició que compleixi sempre
+		    		distancia = 1
+		    		distancia_limit = 2
+		    	end
+	    		%>
+	    		<% if distancia < distancia_limit || params[:distancia] == 'tots' %>
+						<div class="large-3 medium-6 cell">
+							<%= link_to marketcons_producte_path(mk_product_id: producte.id), class:"mk-producte-link" do %>
+							<div class="mk-item">
+								<div class="crop">
+								  <% if producte.mk_image_product.attached? %>
+				                <%= image_tag producte.mk_image_product.variant(auto_orient: true), class: "mk-image-principal" %>
+				          <% else %>
+				            <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
+				          <% end %>
+							  </div>
+							  <div class="mk-item-text">
+							    <div class="badge-preu">
+							    	<h4 class="mk-item-preu"><%= producte.preu %> €</h4>
+							    </div>
+							    
+							    <% if producte.reservat == true %>
+							    	<div class="container-badge-producte-reservat">
+							    		<div class="badge-producte-reservat"><%= t('.reservat') %></div>
+							    	</div>
+							    <% end %>
+							    <div class="badge-nom">
+							    	<p class="mk-item-nom"><%= truncate(producte.nom, length: 45) %></p>
+							    </div>
+							    <div class="badge-distancia">
+							    	<span class="mk-item-distancia">
+							    		<% if distancia_km.present? %>
+							    			<%= distancia_km.round(1) %> km
+							    		<% end %>
+							    	</span>
+							    </div>
+							    
+							  </div>
+								
+							</div>
+							<% end %>
+
 						</div>
-						<% end %>
-					</div>
+					<% end %>
 				<% end %>
 			</div>
 
-			<div id="geolocalitzacio">
-				<button class="button" onclick="getLocation()">Geolocalitza</button>
-				<div id="mapholder"></div>
-				
-			</div>
 		</div>
 	</div>
 </div>
 
 <script>
 
-function goToURL(preu, distancia, categoria) {
-	location.href = 'index?preu=' + preu + '&distancia=' + distancia +'&categoria=' + categoria + '&locale=<%= params[:locale] %>';
+function goToURL(preu, distancia, latitud, longitud) {
+	location.href = 'index?preu=' + preu + '&distancia=' + distancia + '&locale=<%= params[:locale] %>&latitud=' + latitud + '&longitud=' + longitud ;
 }
 
 $('#selector-preu').change(function() {
-	var preu = $( "select#selector-preu option:checked" ).val();
-	goToURL(preu, 'tots', 1);
+	navigator.geolocation.getCurrentPosition(getPosition);
 });
 
-/* Geolocalització */
+$('#selector-distancia').change(function() {
+	navigator.geolocation.getCurrentPosition(getPosition);
+});
 
-var x = document.getElementById("geolocalitzacio");
-
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Aquest navegador no suporta la geolocalització";
-  }
+function getPosition(posicio) {
+	var latitud = posicio.coords.latitude;
+	var longitud = posicio.coords.longitude;
+	var preu = $( "select#selector-preu option:checked" ).val();
+	var distancia = $( "select#selector-distancia option:checked" ).val();
+	goToURL(preu, distancia, latitud, longitud);
 }
 
-function showPosition(position) {
-  var latlon = position.coords.latitude + "," + position.coords.longitude;
-
-  /*41.4095028,2.1750933999999997*/
-
-  document.getElementById("mapholder").innerHTML = '<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?key=AIzaSyB5DMFiRy_EqQO8FMVbIQP3XQJfSekqvOY&center='+latlon+'&zoom=14" allowfullscreen></iframe>';
-}
 
 </script>

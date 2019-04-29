@@ -8,6 +8,8 @@
           <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
           <%= f.input :aprovat, as: :hidden, input_html: { value: false } %>
           <%= f.input :visible, as: :hidden, input_html: { value: true } %>
+          <%= f.input :latitud, as: :hidden %>
+          <%= f.input :longitud, as: :hidden %>
 
           <div class="grid-x grid-margin-x">
             <div class="medium-6 cell">
@@ -88,6 +90,7 @@
 <script>
 $(function() {
   $("#container-unitats").hide();
+  getLocation();
 });
 
 
@@ -113,4 +116,18 @@ $("#mk_product_categoria").change(function() {
     }
   });
 });
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(recordPosition);
+  } else {
+    x.innerHTML = "Aquest navegador no suporta la geolocalització";
+  }
+}
+
+function recordPosition(position) {
+  $("#mk_product_latitud").val(position.coords.latitude);
+  $("#mk_product_longitud").val(position.coords.longitude);
+};
+
 </script>

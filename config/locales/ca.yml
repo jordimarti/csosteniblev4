@@ -238,6 +238,7 @@ ca:
       500euros: "Menys de 500 €"
       distancia: "Distància"
       qualsevol_distancia: "Qualsevol distància"
+      5km: "Menys de 5 km"
       10km: "Menys de 10 km"
       50km: "Menys de 50 km"
       100km: "Menys de 100 km"

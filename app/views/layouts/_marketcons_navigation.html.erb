@@ -16,7 +16,7 @@
           
           <% if @menu_actiu == 'destacat' %>
             <li class="menu-marketcons-item menu-marketcons-actiu">
-              <%= link_to marketcons_index_path(preu: 'tots', distancia: 'tots', categoria: '1'), class: 'link-menu-marketcons link-marketcons-actiu' do %>
+              <%= link_to marketcons_index_path(preu: 'tots', distancia: 'tots'), class: 'link-menu-marketcons link-marketcons-actiu' do %>
                 <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_estrella_light.png", class: 'mk-icons-navigation' %> <%= t('.mes_destacat') %>
               <% end %>
             </li>
@@ -24,7 +24,7 @@
           <% else %>
             
             <li class="menu-marketcons-item">
-              <%= link_to marketcons_index_path(preu: 'tots', distancia: 'tots', categoria: '1'), class: 'link-menu-marketcons' do %>
+              <%= link_to marketcons_index_path(preu: 'tots', distancia: 'tots'), class: 'link-menu-marketcons' do %>
                 <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_estrella_dark.png", class: 'mk-icons-navigation' %> <%= t('.mes_destacat') %>
               <% end %>
             </li>
@@ -133,10 +133,26 @@
           </select>
           <span class="nom-filtre-marketcons"><%= t('.distancia') %></span>
           <select id="selector-distancia" class="filtre-marketcons">
-            <option value="tots"><%= t('.qualsevol_distancia') %></option>
-            <option value="10"><%= t('.10km') %></option>
-            <option value="50"><%= t('.50km') %></option>
-            <option value="100"><%= t('.100km') %></option>
+            <option value="tots"
+            <% if params[:distancia] == 'tots' %>
+              selected
+            <% end %>><%= t('.qualsevol_distancia') %></option>
+            <option value="5"
+            <% if params[:distancia] == '5' %>
+              selected
+            <% end %>><%= t('.5km') %></option>
+            <option value="10"
+            <% if params[:distancia] == '10' %>
+              selected
+            <% end %>><%= t('.10km') %></option>
+            <option value="50"
+            <% if params[:distancia] == '50' %>
+              selected
+            <% end %>><%= t('.50km') %></option>
+            <option value="100"
+            <% if params[:distancia] == '100' %>
+              selected
+            <% end %>><%= t('.100km') %></option>
           </select>
         </div>
       </div>
