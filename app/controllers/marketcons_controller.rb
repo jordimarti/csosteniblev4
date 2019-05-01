@@ -61,7 +61,7 @@ class MarketconsController < ApplicationController
       @menu_actiu = "venedor"
     end 
     @mk_user = MkUser.where(user_id: params[:user_id]).last
-    @productes = MkProduct.where(user_id: params[:user_id], visible: true)
+    @productes = MkProduct.where(user_id: params[:user_id], aprovat:true, visible: true)
   end
 
   def perfil
