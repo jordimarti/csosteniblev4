@@ -1,0 +1,82 @@
+<div class="container">
+  <%= render "layouts/marketcons_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<%= simple_form_for(@mk_user) do |f| %>
+			  <%= f.error_notification %>
+			  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+			  <div class="form-inputs">
+			  	<div class="grid-x grid-margin-x">
+		  			<div class="medium-12 cell">
+		  				<div class="mk-imatge-perfil-container">
+			  				<% if @mk_user.mk_image_user.attached? %>
+			  					<%= image_tag @mk_user.mk_image_user, class: "mk-imatge-perfil" %>
+			  				<% else %>
+			  					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_user.png", class: 'mk-imatge-perfil-producte' %>
+			  				<% end %>
+			  			</div>
+			  			<div class="mk-text-perfil-container">
+			  				<span class="nom-imatge-perfil"><%= @mk_user.nom %> <%= @mk_user.cognoms %></span>
+			  				<br/>
+			  				<span class="municipi-imatge-perfil"><%= @mk_user.municipi %></span>
+			  			</div>
+		  				<%= f.input :mk_image_user, as: :file %>
+		  			</div>
+		  		</div>
+		  		<div class="grid-x grid-margin-x">
+		  			<div class="medium-6 cell">
+		  				<%= f.input :nom %>
+		  			</div>
+		  			<div class="medium-6 cell">
+		  				<%= f.input :cognoms %>
+		  			</div>
+		  		</div>
+		  		<div class="grid-x grid-margin-x">
+		  			<div class="medium-6 cell">
+		  				<%= f.input :adreca %>
+		  			</div>
+		  			<div class="medium-2 cell">
+		  				<%= f.input :codi_postal %>
+		  			</div>
+		  			<div class="medium-4 cell">
+		  				<%= f.input :municipi %>
+		  			</div>
+		  		</div>
+			    <div class="grid-x grid-margin-x">
+		  			<div class="medium-6 cell">
+		  				<%= f.input :email %>
+		  				<%= f.input :telefon %>
+			    		<%= f.input :web %>
+		  			</div>
+		  			<div class="medium-6 cell">
+		  				<div class="privacitat-perfil">
+		  					<h4 class="titol-privacitat-perfil"><%= t('.configuracio_perfil') %></h4>
+		  					<%= f.input :mostrar_adreca %>
+			    			<%= f.input :mostrar_email %>
+			    			<%= f.input :mostrar_telefon %>
+			    			<%= f.input :mostrar_web %>
+		  				</div>
+		  			</div>
+		  		</div>			    
+			  </div>
+
+			  <div class="form-actions">
+			    <%= f.button :submit, t('.guardar') %>
+			  </div>
+			<% end %>
+
+
+  		<div class="grid-x grid-margin-x">
+  			<div class="medium-12 cell">
+
+  			</div>
+  		</div>
+  		<div class="grid-x grid-margin-x">
+  			<div class="medium-6 cell">
+
+  			</div>
+  		</div>
+  	</div>
+  </div>
+</div>

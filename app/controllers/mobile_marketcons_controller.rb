@@ -1,7 +1,8 @@
-class MarketconsController < ApplicationController
-  before_action :authenticate_user!, only: [:nou_anunci, :editar_anunci, :missatges]
+class MobileMarketconsController < ApplicationController
+	before_action :authenticate_user!, only: [:nou_anunci, :editar_anunci, :missatges]
   before_action :categories
   layout "buit", only: [:comprova_unitats_categoria, :reserva_producte, :anula_reserva_producte]
+  layout "mobile"
 
   def index
   	@filtres = true
@@ -10,6 +11,8 @@ class MarketconsController < ApplicationController
     if params[:preu] != 'tots'
 		  @productes = @productes.where("preu < :limit_preu", {limit_preu: params[:preu] })
     end
+
+    
   end
 
   def producte
@@ -157,3 +160,4 @@ class MarketconsController < ApplicationController
       @categories = MkCategoria.all
     end
 end
+

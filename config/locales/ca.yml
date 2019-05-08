@@ -597,6 +597,12 @@ ca:
       producte_amagar: "No vull mostrar aquest anunci"
       reservat: "Aquest producte ja està reservat"
       data_publicacio: "Data de publicació"
+      data_publicacio: "Data de publicació"
+      categoria: "Categoria"
+      descripcio: "Descripció"
+      condicions: "Condicions d'enviament o recollida"
+      localitzacio: "Localització"
+      preu: "Preu"
     categoria:
       no_productes: "No hi ha cap producte d'aquesta categoria"
     aprovacions:
@@ -608,6 +614,61 @@ ca:
       reserva: "Reserva"
       reservat_a: "Aquest producte està reservat a: "
       anula_reserva: "Anul·lar reserva"
+    reserva_producte:
+      ok_reservat: "Reservat!"
+      error_reservat: "S'ha produït un error i el producte no està reservat"
+      anula_reserva: "Anul·lar la reserva"
+    anula_reserva_producte:
+      ok_anulat: "S'ha anul·lat la reserva"
+      error_anulat: "S'ha produït un error i no s'ha pogut anul·lar la reserva"
+      reserva: "Reserva"
+  mobile_marketcons:
+    index:
+      reservat: "RESERVAT"
+    perfil:
+      guardar: "Guardar"
+      configuracio_perfil: "Configuració del perfil públic"
+    venedor:
+      anuncis_publicats: "anuncis publicats"
+      membre_des_de: "Membre des de"
+      publicar_anunci: "Publicar un anunci"
+      editar_perfil: "Editar perfil"
+    nou_anunci:
+      nou_anunci: "Crear un nou anunci"
+    editar_anunci:
+      editar_anunci: "Editar anunci"
+    producte:
+      comprador_buscar: "El comprador el va a buscar"
+      venedor_porta: "El venedor el porta"
+      negociar: "A negociar"
+      no_definit: "No definit"
+      editar_producte: "Editar anunci"
+      eliminar_producte: "Eliminar anunci"
+      confirma_eliminar: "Segur que vols eliminar aquest anunci?"
+      enviar_missatge: "Enviar missatge"
+      publicat_per: "Publicat per"
+      producte_reservat: "Producte reservat"
+      producte_venut: "He venut el producte"
+      producte_amagar: "No vull mostrar aquest anunci"
+      reservat: "Aquest producte ja està reservat"
+      data_publicacio: "Data de publicació"
+      categoria: "Categoria"
+      descripcio: "Descripció"
+      condicions: "Condicions d'enviament o recollida"
+      localitzacio: "Localització"
+      preu: "Preu"
+    categoria:
+      no_productes: "No hi ha cap producte d'aquesta categoria"
+    aprovacions:
+      aprovar: "Aprovar"
+      eliminar: "Eliminar"
+    missatges:
+      titol_reservar: "Reserva el producte"
+      text_reservar: "Vols reservar aquest producte a:"
+      reserva: "Reserva"
+      reservat_a: "Aquest producte està reservat a: "
+      anula_reserva: "Anul·lar reserva"
+      enviar: "Enviar"
     reserva_producte:
       ok_reservat: "Reservat!"
       error_reservat: "S'ha produït un error i el producte no està reservat"

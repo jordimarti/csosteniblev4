@@ -1,0 +1,42 @@
+<div class="container">
+  <%= render "layouts/marketcons_admin_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="mk-products-container">
+  			<div class="grid-x grid-margin-x">
+  			<% if @productes.count == 0 %>
+  				<div class="medium-12 cell">
+  					No hi ha anuncis per moderar.
+  				</div>
+  			<% end %>
+				<% @productes.each do |producte| %>
+					<div class="large-3 medium-6 cell">
+						<%= link_to marketcons_producte_path(mk_product_id: producte.id), class:"mk-producte-link" do %>
+						<div class="mk-item">
+							<div class="crop">
+							  <% if producte.mk_image_product.attached? %>
+			                <%= image_tag producte.mk_image_product, class: "mk-image-principal" %>
+			          <% else %>
+			            <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
+			          <% end %>
+						  </div>
+						  <div class="mk-item-text">
+						    <h4 class="mk-item-preu"><%= producte.preu %> €</h4>
+						    <p class="mk-item-nom"><%= truncate(producte.nom, length: 45) %></p>
+						  </div>
+						</div>
+						<% end %>
+						<div class="mk-item-admin">
+					  	<div class="container-admin-aprovar-producte">
+					  		<%= link_to t('.aprovar'), mk_products_aprovar_path(mk_product_id: producte.id), class:'boto-admin-aprovar-producte' %>
+					  	</div>
+					  	<div class="container-admin-eliminar-producte">
+					  		<%= link_to t('.eliminar'), producte, method: :delete, data: { confirm: 'Segur que vols eliminar?' }, class:'boto-admin-eliminar-producte' %>
+					  	</div>
+					  </div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

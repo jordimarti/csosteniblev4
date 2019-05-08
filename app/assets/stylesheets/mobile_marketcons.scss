@@ -1,0 +1,99 @@
+// Place all the styles related to the MobileMarketcons controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.mk-body-mobile {
+	background-color: #eaeaea;
+}
+
+.mk-mobile-product-container {
+	background-color: white;
+	padding-bottom: 40px;
+}
+
+.mk-mobile-item {
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	margin: 10px 0px;
+	background-color: white;
+}
+
+.mk-mobile-image-container {
+	margin-bottom: 15px;
+}
+
+.mk-mobile-hr {
+	margin-bottom: 10px;
+}
+
+.mk-mobile-hr-missatges {
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+.mobile-text-camp-producte {
+	font-size: 1.2em;
+}
+
+.mk-mobile-missatges-imatge-principal-producte {
+	width: 100px;
+	float: left;
+}
+
+.mk-mobile-missatges-dades-producte {
+	margin-left: 120px;
+}
+
+.mk-mobile-product-nom {
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.mk-mobile-missatge-preu-producte {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.mk-mobile-missatge-imatge-perfil-container {
+	float: left;
+	margin-bottom: 5px;
+}
+
+.mk-mobile-imatge-perfil-producte {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid #999;
+	object-fit: cover;
+}
+
+.mk-mobile-missatge-text-perfil-container {
+	margin-left: 56px;
+	margin-top: 8px;
+}
+
+.mk-mobile-missatge-usuari {
+	background-color: #EFFFF2;
+	padding: 15px;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	margin-left: 20px;
+}
+
+.mk-mobile-missatge-venedor {
+	background-color: #EFF9FF;
+	padding: 15px;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	margin-right: 20px;
+}
+
+.mk-mobile-button {
+	border-radius: 8px;
+}
+
+.mk-mobile-button-right {
+	text-align: right;
+}
+

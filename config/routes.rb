@@ -18,6 +18,26 @@ Rails.application.routes.draw do
   get 'marketcons/anula_reserva_producte'
   get 'marketcons/producte_venut'
   get 'marketcons/producte_amagar'
+
+  get 'mobile_marketcons/index'
+  get 'mobile_marketcons', to: redirect('mobile_marketcons/index?distancia=tots&preu=tots&locale=ca'), as: :mobile_marketcons
+  get 'mobile_marketcons/about'
+  get 'mobile_marketcons/producte'
+  get 'mobile_marketcons/perfil'
+  get 'mobile_marketcons/venedor'
+  get 'mobile_marketcons/nou_anunci'
+  get 'mobile_marketcons/editar_anunci'
+  get 'mobile_marketcons/comprova_unitats_categoria'
+  get 'mobile_marketcons/categoria'
+  get 'mobile_marketcons/missatges'
+  get 'mobile_marketcons/aprovacions'
+  get 'mobile_marketcons/publicats'
+  get 'mobile_marketcons/usuaris'
+  get 'mobile_marketcons/reserva_producte'
+  get 'mobile_marketcons/anula_reserva_producte'
+  get 'mobile_marketcons/producte_venut'
+  get 'mobile_marketcons/producte_amagar'
+
   get 'mk_products/aprovar'
   get 'mk_products/desaprovar'
   resources :mk_categories

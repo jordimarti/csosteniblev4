@@ -1,0 +1,45 @@
+<div class="container">
+  <%= render "layouts/marketcons_admin_navigation" %>
+
+  	<div class="medium-9 cell">
+  		<div class="mk-products-container">
+  			<% if @usuaris.count == 0 %>
+	  			<div class="grid-x grid-margin-x">
+	  				<div class="medium-12 cell">
+	  					No hi ha usuaris.
+	  				</div>
+	  			</div>
+  			<% end %>
+				<% @usuaris.each do |usuari| %>
+					<div class="grid-x grid-margin-x">
+						<div class="medium-12 cell">
+							<div class="grid-x grid-margin-x">
+								<div class="medium-8 cell">
+									<%= link_to marketcons_venedor_path(user_id: usuari.user_id), class:"mk-venedor-link" do %>
+			  						<div class="mk-product-imatge-perfil-container">
+				  						<% if usuari.mk_image_user.attached? %>
+						  					<%= image_tag usuari.mk_image_user, class: "mk-imatge-perfil-producte" %>
+			                <% else %>
+			                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_user.png", class: 'mk-imatge-perfil-producte' %>
+						  				<% end %>
+						  			</div>
+						  			<div class="mk-product-text-perfil-container">
+			  							<span class="text-camp-producte"><%= usuari.nom %> <%= usuari.cognoms %></span><br/>
+			  							<span class="titol-camp-producte"><%= t('.membre_des_de') %> <%= usuari.created_at.strftime("%d-%m-%Y") %></span>
+						  			</div>
+			          	<% end %>
+								</div>
+								<div class="medium-4 cell">
+									<div class="container-admin-bloquejar-usuari">
+							  		<%= link_to t('.bloquejar'), marketcons_venedor_path(user_id: usuari.user_id), class:'boto-admin-bloquejar-usuari' %>
+							  	</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

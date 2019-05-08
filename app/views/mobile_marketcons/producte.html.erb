@@ -1,0 +1,190 @@
+<div class="mk-mobile-product-container">
+<div class="container">
+	<div class="grid-x grid-margin-x">
+		<div class="small-12 cell">
+      <div class="mk-mobile-image-container">
+        <% if @producte.mk_image_product.attached? %>
+              <%= image_tag @producte.mk_image_product.variant(auto_orient: true), class: "mk-image-principal" %>
+        <% else %>
+          <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
+        <% end %>
+      </div>
+		</div>
+		<div class="small-12 cell">
+			<h3 class="mk-product-nom"><%= @producte.nom %></h3>
+      <% if @producte.reservat == true %>
+        <div class="grid-x grid-margin-x">
+          <div class="medium-12 cell">
+            <div class="badge-producte-reservat"><%= t('.reservat') %></div>
+          </div>
+        </div>
+      <% end %>
+			<div class="grid-x grid-margin-x">
+				<div class="small-4 cell">
+					<span class="titol-camp-producte"><%= t('.data_publicacio') %></span><br/>
+					<span class="text-camp-producte"><%= @producte.created_at.strftime("%d-%m-%Y") %></span>
+				</div>
+				<div class="small-8 cell">
+					<span class="titol-camp-producte"><%= t('.categoria') %></span><br/>
+					<span class="text-camp-producte">
+						<% if params[:locale] == 'es' %>
+							<%= @categoria.nom_es %>
+						<% elsif params[:locale] == 'en' %>
+							<%= @categoria.nom_en %>
+						<% else %>
+							<%= @categoria.nom_ca %>
+						<% end %>
+					</span>
+				</div>
+			</div>
+			
+			<hr class="mk-mobile-hr"/>
+			<div class="grid-x grid-margin-x">
+				<div class="medium-12 cell">
+					<p class="mobile-text-camp-producte"><%= @producte.descripcio %></p>
+					<span class="titol-camp-producte"><%= t('.condicions') %></span><br/>
+					<span class="text-camp-producte">
+						<% if @producte.enviament == 'comprador_buscar' %>
+							<%= t('.comprador_buscar') %>
+						<% elsif @producte.enviament == 'venedor_porta' %>
+							<%= t('.venedor_porta') %>
+						<% elsif @producte.enviament == 'negociar' %>
+							<%= t('.negociar') %>
+						<% else %>
+							<%= t('.no_definit') %>
+						<% end %>
+					</span>
+				</div>
+			</div>
+
+			<hr class="mk-mobile-hr"/>
+		
+			<div class="grid-x grid-margin-x">
+				<div class="medium-8 cell">
+					<span class="titol-camp-producte"><%= t('.localitzacio') %></span><br/>
+					<span class="text-camp-producte">
+						<% if @producte.adreca_oculta != true %>
+							<%= @producte.adreca %>,
+						<% end %>
+						<%= @producte.municipi %></span>
+				</div>
+				<div class="medium-4 cell">
+
+				</div>
+			</div>
+			<br/>
+			<hr class="hr-no-margin"/>
+			<div class="grid-x grid-margin-x">
+				<div class="small-4 cell">
+					<div class="mk-preu-container">
+						<span class="titol-camp-producte"><%= t('.preu') %></span>
+						<span class="preu-producte"><%= @producte.preu %> €</span>
+					</div>
+				</div>
+				<div class="small-8 cell">
+					<% if user_signed_in? %> 
+            <% if @producte.user_id == current_user.id %>
+							<div class="container-boto-eliminar-producte" id="eliminar-producte">
+                <div id="eliminar-producte"><a class="boto-eliminar-producte"><%= t('.eliminar_producte') %></a></div>
+	  					</div>
+							<div class="container-boto-editar-producte">
+	  						<%= link_to t('.editar_producte'), mobile_marketcons_editar_anunci_path(mk_product_id: @producte.id), class:'boto-editar-producte' %>
+	  					</div>
+              <div id="opcions-eliminar-producte">
+                <div class="producte-venut">
+                  <%= link_to t('.producte_venut'), mobile_marketcons_producte_venut_path(mk_product_id: @producte.id), class:'boto-producte-venut' %>
+                </div>
+                <div class="producte-amagar">
+                  <%= link_to t('.producte_amagar'), mobile_marketcons_producte_amagar_path(mk_product_id: @producte.id), class:'boto-producte-amagar' %>
+                </div>
+              </div>
+	  					
+						<% else %>
+              <%= link_to mobile_marketcons_missatges_path(mk_product_id: @producte.id, user_id: current_user.id) do %>
+	  						<div class="boto-enviar-missatge">
+                  <div class="icona-dialeg">
+	  								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "img-icona-dialeg" %>
+	  							</div>
+	  							<div class="text-enviar-missatge">
+	  								<%= t('.enviar_missatge') %>
+	  							</div>
+	  						</div>
+              <% end %>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_session_path do %>
+              <div class="boto-enviar-missatge">
+                <div class="icona-dialeg">
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "img-icona-dialeg" %>
+                </div>
+                <div class="text-enviar-missatge">
+                  <%= t('.enviar_missatge') %>
+                </div>
+              </div>
+            <% end %>
+					<% end %>
+				</div>
+			</div>
+			<hr class="hr-no-margin"/>
+			<div class="grid-x grid-margin-x">
+				<div class="medium-12 cell">
+          <% if user_signed_in? && current_user.id == @producte.user_id %>
+            <% if @compradors.count != 0 %>
+              <p>Missatges</p>
+            <% end %>
+            <% @compradors.each do |comprador| %>
+              <% if comprador.user_id != current_user.id %>
+                <div class="mk-product-missatge-comprador-item">
+                  <%= link_to mobile_marketcons_missatges_path(mk_product_id: @producte.id, user_id: comprador.user_id), class:"mk-venedor-link" do %>
+                    <div class="mk-product-missatge-imatge-perfil-container">
+                      <% if comprador.mk_image_user.attached? %>
+                        <%= image_tag comprador.mk_image_user, class: "mk-imatge-perfil-producte" %>
+                      <% else %>
+                        <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_user.png", class: 'mk-imatge-perfil-producte' %>
+                      <% end %>
+                    </div>
+                    <div class="mk-product-missatge-text-container">
+                      <% missatge = MkMissatge.where(mk_product_id: @producte.id, user_id: comprador.user_id).last %>
+                      <span class="mk-product-missatge-usuari"><%= comprador.nom %> <%= comprador.cognoms %></span>
+                      <p><%= truncate(missatge.missatge, length: 45) %></p>
+                      <span class="titol-camp-producte"><%= missatge.created_at.strftime("%H:%M h (%d-%m-%Y) ") %></span>
+                      <% if @producte.reservat == true %>
+                        <div class="mk-product-marca-reservat"><%= t('.producte_reservat') %></div>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+            <% end %>
+          <% else %>
+            <%= link_to mobile_marketcons_venedor_path(user_id: @producte.user_id), class:"mk-venedor-link" do %>
+  						<div class="mk-product-imatge-perfil-container">
+	  						<% if @mk_user.mk_image_user.attached? %>
+			  					<%= image_tag @mk_user.mk_image_user, class: "mk-imatge-perfil-producte" %>
+                <% else %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_user.png", class: 'mk-imatge-perfil-producte' %>
+			  				<% end %>
+			  			</div>
+			  			<div class="mk-product-text-perfil-container">
+			  				<span class="titol-camp-producte"><%= t('.publicat_per') %></span><br/>
+  							<span class="text-camp-producte"><%= @mk_user.nom %> <%= @mk_user.cognoms %></span>
+			  			</div>
+			  		<% end %>
+          <% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+	
+
+<script>
+$(function() {
+  $("#opcions-eliminar-producte").hide();
+});
+
+$("#eliminar-producte").click(function() {
+  $("#opcions-eliminar-producte").show();
+});
+</script>

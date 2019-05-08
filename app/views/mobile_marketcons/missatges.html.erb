@@ -1,0 +1,141 @@
+<div class="container">
+	<div class="grid-x grid-margin-x">
+		<div class="small-12 cell">
+			<%= link_to mobile_marketcons_producte_path(mk_product_id: params[:mk_product_id]), class:"mk-missatge-producte-link" do %>
+				<div class="mk-mobile-missatges-imatge-principal-producte">
+					<% if @producte.mk_image_product.attached? %>
+            <%= image_tag @producte.mk_image_product, class: "mk-image-principal" %>
+          <% else %>
+            <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
+          <% end %>
+				</div>
+				<div class="mk-mobile-missatges-dades-producte">
+					<h3 class="mk-mobile-product-nom"><%= @producte.nom %></h3>
+					<span class="mk-mobile-missatge-preu-producte"><%= @producte.preu %> €</span>
+				</div>
+			<% end %>
+		</div>
+  </div>
+
+  <hr class="mk-mobile-hr-missatges"/>
+
+  <div class="grid-x grid-margin-x">
+		<div class="medium-12 cell">
+			<%= link_to marketcons_venedor_path(user_id: @producte.user_id), class:"mk-venedor-link" do %>
+				<div class="mk-mobile-missatge-imatge-perfil-container">
+					<% if @mk_user.mk_image_user.attached? %>
+  					<%= image_tag @mk_user.mk_image_user, class: "mk-mobile-imatge-perfil-producte" %>
+  				<% end %>
+  			</div>
+  			<div class="mk-mobile-missatge-text-perfil-container">
+					<span class="text-camp-producte"><%= @mk_user.nom %> <%= @mk_user.cognoms %></span>
+  			</div>
+  			
+  		<% end %>
+		</div>
+	</div>
+
+  <hr class="mk-mobile-hr-missatges"/>
+
+  <div class="grid-x grid-margin-x">
+    <div class="medium-12 cell">
+      <%= render 'llistat_missatges' %>
+    </div>
+  </div>
+
+  <br/>
+
+	<div class="grid-x grid-margin-x">
+    <% if @producte.user_id == current_user.id %>
+      <div class="medium-6 cell">
+        <%= render 'mk_missatges/form', mk_missatge: @mk_missatge %>
+      </div>
+      <div class="medium-6 cell">
+        <div class="container-reserva-mkproduct">
+          <h4 class="titol-text-reserva-mkproduct"><%= t('.titol_reservar') %></h4>
+          <% if @producte.reservat == true %>
+            <%= t(".reservat_a") %> <%= @mk_user_reserva.nom %> <%= @mk_user_reserva.cognoms %>
+            <div id="resposta-reserva" class="container-resposta-reserva">
+              <button class="button" id="boto-anula-reserva"><%= t('.anula_reserva') %></button>
+            </div>
+          <% else %>
+            <span class="text-reserva-mkproduct"><%= t('.text_reservar') %> <br/><%= @comprador.nom %> <%= @comprador.cognoms %>?</span>
+            <div id="resposta-reserva" class="container-resposta-reserva">
+              <button class="button" id="boto-reserva"><%= t('.reserva') %></button>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+			<div class="medium-12 cell">
+				<%= simple_form_for(@mk_missatge) do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+          <div class="form-inputs">
+            <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+            <% if @venedor.id == current_user.id %>
+              <%= f.input :destinatari, as: :hidden, input_html: { value: params[:user_id] } %>
+            <% else %>
+              <%= f.input :destinatari, as: :hidden, input_html: { value: @venedor.id } %>
+            <% end %>
+            <%= f.input :mk_product_id, as: :hidden, input_html: { value: @producte.id } %>
+            <%= f.input :mobile, as: :hidden, input_html: { value: true } %>
+            <%= f.input :missatge, input_html: {rows: 4} %>
+            
+          </div>
+
+          <div class="form-actions">
+            <div class="mk-mobile-button-right">
+              <%= f.button :submit, t('.enviar'), class:'mk-mobile-button' %>
+            </div>
+          </div>
+        <% end %>
+
+			</div>
+    <% end %>
+	</div>
+
+</div>
+  
+</div>
+
+<script>
+$("#boto-reserva").click(function() {
+  var request = $.ajax({
+    type: 'GET',
+    url: '<%= marketcons_reserva_producte_path %>',
+    data: {
+      mk_product_id: <%= @producte.id %>,
+      user_id: <%= params[:user_id] %>
+    }
+  });
+
+  request.done(function(data) {
+    $("#resposta-reserva").html(data);
+  });
+ 
+  request.fail(function( jqXHR, textStatus ) {
+    $("#resposta-reserva").html( "Error: " + textStatus );
+  });
+});
+
+$("#boto-anula-reserva").click(function() {
+  var request = $.ajax({
+    type: 'GET',
+    url: '<%= marketcons_anula_reserva_producte_path %>',
+    data: {
+      mk_product_id: <%= @producte.id %>,
+      user_id: <%= params[:user_id] %>
+    }
+  });
+
+  request.done(function(data) {
+    $("#resposta-reserva").html(data);
+  });
+ 
+  request.fail(function( jqXHR, textStatus ) {
+    $("#resposta-reserva").html( "Error: " + textStatus );
+  });
+});
+</script>

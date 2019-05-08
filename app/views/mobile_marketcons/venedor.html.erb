@@ -1,0 +1,79 @@
+<div class="container">
+	<div class="grid-x grid-margin-x">
+		<div class="small-12 cell">
+			<div class="mk-imatge-perfil-container">
+				<% if @mk_user.mk_image_user.attached? %>
+					<%= image_tag @mk_user.mk_image_user.variant(combine_options: { resize: '300x300' }), class: "mk-imatge-perfil" %>
+				<% else %>
+					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_user.png", class: 'mk-imatge-perfil' %>
+				<% end %>
+			</div>
+			<div class="mk-text-perfil-container">
+				<span class="nom-imatge-perfil"><%= @mk_user.nom %> <%= @mk_user.cognoms %></span>
+				<br/>
+				<span class="municipi-imatge-perfil"><%= @mk_user.municipi %></span>
+				<br/>
+				<% if user_signed_in? %>
+  				<% if current_user.id == @mk_user.user_id %>
+  					<p><%= link_to t('.editar_perfil'), mobile_marketcons_perfil_path(mk_user_id: @mk_user.id) %></p>
+  				<% end %>
+  			<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="grid-x grid-margin-x">
+		<div class="small-12 cell">
+			<div class="container-llistat-mkproducts">
+				<div class="grid-x grid-margin-x">
+					<div class="small-12 cell">
+						<div class="nombre-productes-venedor">
+							<%= @productes.count %> <%= t('.anuncis_publicats') %>
+						</div>
+						<div class="membre-des-de">
+							<%= t('.membre_des_de') %> <%= @mk_user.created_at.strftime("%d-%m-%Y") %>
+						</div>
+					</div>
+				</div>
+
+				<% if user_signed_in? %>
+  				<% if current_user.id == @mk_user.user_id %>
+  					<% if @productes.count == 0 %>
+  						<div class="grid-x grid-margin-x">
+  							<div class="medium-3 cell">
+  								<div class="container-boto-publicar-anunci">
+  		  						<%= link_to marketcons_nou_anunci_path, class: 'boto-publicar-anunci' do %>
+                			<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_editar_light.png", class: 'mk-icons-navigation' %> <%= t('.publicar_anunci') %>
+                		<% end %>
+                	</div>
+  		  				</div>
+  		  			</div>
+  					<% end %>
+  				<% end %>
+  			<% end %>
+				
+				<div class="grid-x grid-margin-x">
+					<% @productes.each do |producte| %>
+						<div class="large-3 medium-6 small-6 cell">
+							<%= link_to mobile_marketcons_producte_path(mk_product_id: producte.id), class:"mk-producte-link" do %>
+							<div class="mk-item">
+								<div class="crop">
+								  <% if producte.mk_image_product.attached? %>
+				                <%= image_tag producte.mk_image_product, class: "mk-image-principal" %>
+				          <% else %>
+				            <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
+				          <% end %>
+							  </div>
+							  <div class="mk-item-text">
+							    <h4 class="mk-item-preu"><%= producte.preu %> €</h4>
+							    <p class="mk-item-nom"><%= truncate(producte.nom, length: 45) %></p>
+							  </div>
+								
+							</div>
+							<% end %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
