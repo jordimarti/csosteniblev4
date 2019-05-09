@@ -635,8 +635,18 @@ ca:
       editar_perfil: "Editar perfil"
     nou_anunci:
       nou_anunci: "Crear un nou anunci"
+      guardar: "Guardar"
+      anuncis_revisio: "Els anuncis passen un procés de revisió."
+      comprador_buscar: "El comprador el va a buscar"
+      venedor_porta: "El venedor el porta"
+      negociar: "A negociar"
     editar_anunci:
       editar_anunci: "Editar anunci"
+      guardar: "Guardar"
+      anuncis_revisio: "Els anuncis passen un procés de revisió."
+      comprador_buscar: "El comprador el va a buscar"
+      venedor_porta: "El venedor el porta"
+      negociar: "A negociar"
     producte:
       comprador_buscar: "El comprador el va a buscar"
       venedor_porta: "El venedor el porta"

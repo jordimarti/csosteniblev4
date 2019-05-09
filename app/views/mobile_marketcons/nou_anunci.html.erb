@@ -1,13 +1,151 @@
-<div class="container">
-  <%= render "layouts/marketcons_navigation" %>
+<div class="grid-x grid-margin-x">
+	<div class="small-12 cell">
+		<div class="mk-mobile-titol-pagina">
+			<%= t('.nou_anunci') %>
+		</div>
+		
+    <%= simple_form_for(@mk_product) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  	<div class="medium-9 cell">
-  		<h3><%= t('.nou_anunci') %></h3>
-  		<%= render "mk_products/form" %>
-			</div>
+      <div class="form-inputs">
+        <br/>
+        <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+        <%= f.input :aprovat, as: :hidden, input_html: { value: false } %>
+        <%= f.input :visible, as: :hidden, input_html: { value: true } %>
+        <%= f.input :latitud, as: :hidden %>
+        <%= f.input :longitud, as: :hidden %>
+
+        <div class="grid-x grid-margin-x">
+          <div class="medium-6 cell">
+            <%= f.input :nom, label_html: {class: 'mk-mobile-input'} %>
+            <%= f.input :categoria, label_html: {class: 'mk-mobile-input'}, collection: @categories, label_method: :nom_ca, value_method: :id, unitats_method: :unitats, include_blank: false, selected: @mk_product.categoria %>
+          </div>
+          <div class="medium-6 cell">
+            <%= f.input :descripcio, input_html: {rows: 4}, label_html: {class: 'mk-mobile-input'} %>
+          </div>
+        </div>
+        <div class="grid-x grid-margin-x">
+          <div class="medium-2 small-4 cell">
+            <%= f.input :preu, label_html: {class: 'mk-mobile-input'} %>
+          </div>
+          <div class="medium-1 small-2 cell">
+            <div class="mk-text-ressaltat">€</div>
+          </div>
+          <div class="medium-2 small-4 cell">
+            <div id="container-pes">
+              <%= f.input :pes %>
+            </div>
+            <div id="container-unitats">
+              <%= f.input :unitats %>
+            </div>
+          </div>
+          <div class="medium-1 small-2 cell">
+            <div class="mk-text-ressaltat" id="text-kg">kg</div>
+          </div>
+          <div class="medium-6 cell">
+            <%= f.input :enviament, label_html: {class: 'mk-mobile-input'}, collection: [[t('.comprador_buscar'), 'comprador_buscar'], [t('.venedor_porta'), 'venedor_porta'], [t('.a_negociar'), 'negociar']] %>
+          </div>
+        </div>
+        <div class="grid-x grid-margin-x">
+          <div class="medium-6 cell">
+            <%= f.input :adreca, label_html: {class: 'mk-mobile-input'} %>
+          </div>
+          <div class="medium-2 cell">
+            <%= f.input :codi_postal, label_html: {class: 'mk-mobile-input'} %>
+          </div>
+          <div class="medium-4 cell">
+            <%= f.input :municipi, label_html: {class: 'mk-mobile-input'} %>
+          </div>
+        </div>
+        <div class="grid-x grid-margin-x">
+          <div class="medium-12 cell">
+            <%= f.input :adreca_oculta, input_html: {class: 'mk-mobile-input'} %>
+            <br/>
+          </div>
+        </div>
+
+        <div class="grid-x grid-margin-x">
+          <div class="medium-3 cell">
+            <% if @mk_product.mk_image_product.attached? %>
+              <%= image_tag @mk_product.mk_image_product, class: "mk-imatge-producte" %>
+            <% else %>
+              <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
+            <% end %>
+          </div>
+          <div class="medium-9 cell">
+            <%= f.input :mk_image_product, as: :file %>
+          </div>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-actions">
+      	<div class="container">
+	        <div class="grid-x grid-margin-x">
+	          <div class="small-12 cell">
+	          	<div class="mk-mobile-button-right">
+	            	<%= f.button :submit, t('.guardar'), class:'mk-mobile-button' %>
+	            </div>
+	          </div>
+	          <div class="grid-x grid-margin-x">
+	          <div class="small-12 cell">
+	            <span class="mk-text-discret"><%= t('.anuncis_revisio') %></span>
+	          </div>
+	        </div>
+       	</div>
+      </div>
+    <% end %>
+
+
 		</div>
 	</div>
 </div>
+
+<script>
+$(function() {
+  $("#container-unitats").hide();
+  getLocation();
+});
+
+
+$("#mk_product_categoria").change(function() {
+  $.ajax({
+    type: 'GET',
+    url: '<%= marketcons_comprova_unitats_categoria_path %>',
+    data: {
+      categoria_id: $("#mk_product_categoria").val()
+    },
+    success: function(data) {
+      if(data == 'unitats'){
+        $("#container-pes").hide();
+        $("#text-kg").hide();
+        $("#container-unitats").show();
+
+      } 
+      if(data == 'kg') {
+        $("#container-pes").show();
+        $("#text-kg").show();
+        $("#container-unitats").hide();
+      }
+    }
+  });
+});
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(recordPosition);
+  } else {
+    x.innerHTML = "Aquest navegador no suporta la geolocalització";
+  }
+}
+
+function recordPosition(position) {
+  $("#mk_product_latitud").val(position.coords.latitude);
+  $("#mk_product_longitud").val(position.coords.longitude);
+};
+
+</script>
 
 
 		  			
