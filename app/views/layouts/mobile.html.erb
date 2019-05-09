@@ -29,3 +29,20 @@
 
   </body>
 </html>
+
+<script>
+$( document ).ready(function() {
+  if (navigator.userAgent.indexOf('gonative') > -1) {
+    var items = [{
+      label: 'google',
+      url: 'https://google.com'
+    }, {
+      label: 'apple',
+      url: 'https://apple.com'
+    }];
+    var json = JSON.stringify(items);
+
+    window.location.href = 'gonative://sidebar/setItems?items=' + encodeURIComponent(json);
+  }
+});
+</script>
