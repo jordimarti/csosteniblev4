@@ -39,7 +39,11 @@
             url: 'https://www.csostenible.net/mobile_marketcons/nou_anunci'
           }, {
             label: 'My products',
-            url: 'https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>'
+            <% if user_signed_in? %>
+              url: 'https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>'
+            <% else %>
+              url: 'https://www.csostenible.net/mobile_marketcons/venedor'
+            <% end %>
           }, {
             label: 'About MARKETcons',
             url: 'https://www.csostenible.net/mobile_marketcons/about'
@@ -53,7 +57,11 @@
             url: 'https://www.csostenible.net/mobile_marketcons/nou_anunci'
           }, {
             label: 'Mis anuncios',
-            url: 'https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>'
+            <% if user_signed_in? %>
+              url: 'https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>'
+            <% else %>
+              url: 'https://www.csostenible.net/mobile_marketcons/venedor'
+            <% end %>
           }, {
             label: 'Sobre MARKETcons',
             url: 'https://www.csostenible.net/mobile_marketcons/about'
@@ -67,7 +75,11 @@
             url: 'https://www.csostenible.net/mobile_marketcons/nou_anunci'
           }, {
             label: 'Els meus anuncis',
-            url: 'https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>'
+            <% if user_signed_in? %>
+              url: 'https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>'
+            <% else %>
+              url: 'https://www.csostenible.net/mobile_marketcons/venedor'
+            <% end %>
           }, {
             label: 'Sobre MARKETcons',
             url: 'https://www.csostenible.net/mobile_marketcons/about'
