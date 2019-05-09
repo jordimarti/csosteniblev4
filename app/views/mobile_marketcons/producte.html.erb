@@ -83,7 +83,7 @@
 			<br/>
 			<hr class="hr-no-margin"/>
 			<div class="grid-x grid-margin-x">
-				<div class="small-4 cell">
+				<div class="small-12 cell">
 					<div class="mk-mobile-container-text-general">
 						<div class="mk-preu-container">
 							<span class="titol-camp-producte"><%= t('.preu') %></span>
@@ -91,10 +91,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="small-8 cell">
+			</div>
+			<div class="grid-x grid-margin-x">
+				<div class="small-12 cell">
 					<% if user_signed_in? %> 
             <% if @producte.user_id == current_user.id %>
-							<div class="container-boto-eliminar-producte" id="eliminar-producte">
+							<div class="mk-mobile-container-boto-eliminar-producte" id="eliminar-producte">
                 <div id="eliminar-producte"><a class="boto-eliminar-producte"><%= t('.eliminar_producte') %></a></div>
 	  					</div>
 							<div class="container-boto-editar-producte">

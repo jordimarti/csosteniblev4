@@ -6,8 +6,9 @@
         <div class="form-inputs">
           <br/>
           <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
-          <%= f.input :aprovat, as: :hidden, input_html: { value: false } %>
+          <%= f.input :aprovat, as: :hidden, input_html: { value: true } %>
           <%= f.input :visible, as: :hidden, input_html: { value: true } %>
+          <%= f.input :mobile, as: :hidden, input_html: { value: false } %>
           <%= f.input :latitud, as: :hidden %>
           <%= f.input :longitud, as: :hidden %>
 

@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   get 'mobile_marketcons/anula_reserva_producte'
   get 'mobile_marketcons/producte_venut'
   get 'mobile_marketcons/producte_amagar'
+  get 'mobile_marketcons/idioma'
 
   get 'mk_products/aprovar'
   get 'mk_products/desaprovar'

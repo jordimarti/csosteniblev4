@@ -11,6 +11,7 @@
       <%= f.input :destinatari, as: :hidden, input_html: { value: @venedor.id } %>
     <% end %>
     <%= f.input :mk_product_id, as: :hidden, input_html: { value: @producte.id } %>
+    <%= f.input :mobile, as: :hidden, input_html: { value: false } %>
     <%= f.input :missatge, input_html: {rows: 4} %>
     
   </div>

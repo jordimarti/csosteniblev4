@@ -1,0 +1,50 @@
+
+	<div class="grid-x grid-margin-x">
+		<div class="small-12 cell">
+			
+			<% if params[:locale] == 'en' %>
+				<div class="mk-mobile-info-canvi-idioma">
+					<span class="titol-camp-producte">Current language</span><br/>
+					<span class="text-camp-producte">English</span>
+					<br/>
+					<br/>
+					<span class="titol-camp-producte">Change language</span><br/>
+				</div>
+				<div class="mk-mobile-canvi-idioma">
+					<%= link_to 'Català', :locale => 'ca' %>
+				</div>
+				<div class="mk-mobile-canvi-idioma-last">
+			  	<%= link_to 'Español', :locale => 'es' %>
+			  </div>
+		  <% elsif params[:locale] == 'es'%>
+		  	<div class="mk-mobile-info-canvi-idioma">
+					<span class="titol-camp-producte">Idioma actual</span><br/>
+					<span class="text-camp-producte">Español</span>
+					<br/>
+					<br/>
+					<span class="titol-camp-producte">Cambiar idioma</span><br/>
+				</div>
+				<div class="mk-mobile-canvi-idioma">
+					<%= link_to 'Català', :locale => 'ca' %>
+				</div>
+				<div class="mk-mobile-canvi-idioma-last">
+			  	<%= link_to 'English', :locale => 'en' %>
+			  </div>
+		  <% else %>
+		  	<div class="mk-mobile-info-canvi-idioma">
+					<span class="titol-camp-producte">Idioma actual</span><br/>
+					<span class="text-camp-producte">Català</span>
+					<br/>
+					<br/>
+					<span class="titol-camp-producte">Canviar idioma</span><br/>
+				</div>
+				<div class="mk-mobile-canvi-idioma">
+					<%= link_to 'Español', :locale => 'es' %>
+				</div>
+				<div class="mk-mobile-canvi-idioma-last">
+			  	<%= link_to 'English', :locale => 'en' %>
+			  </div>
+		  <% end %>
+		</div>
+	</div>
+

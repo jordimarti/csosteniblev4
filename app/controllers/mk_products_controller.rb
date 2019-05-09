@@ -28,7 +28,11 @@ class MkProductsController < ApplicationController
 
     respond_to do |format|
       if @mk_product.save
-        format.html { redirect_to marketcons_producte_path(mk_product_id: @mk_product.id), notice: 'Mk product was successfully created.' }
+        if @mk_product.mobile == true
+          format.html { redirect_to mobile_marketcons_producte_path(mk_product_id: @mk_product.id), notice: 'Mk product was successfully created.' }
+        else
+          format.html { redirect_to marketcons_producte_path(mk_product_id: @mk_product.id), notice: 'Mk product was successfully created.' }
+        end 
         format.json { render :show, status: :created, location: @mk_product }
       else
         format.html { render :new }
@@ -42,7 +46,11 @@ class MkProductsController < ApplicationController
   def update
     respond_to do |format|
       if @mk_product.update(mk_product_params)
-        format.html { redirect_to marketcons_producte_path(mk_product_id: @mk_product.id), notice: 'Mk product was successfully updated.' }
+        if @mk_product.mobile == true
+          format.html { redirect_to mobile_marketcons_producte_path(mk_product_id: @mk_product.id), notice: 'Mk product was successfully updated.' }
+        else
+          format.html { redirect_to marketcons_producte_path(mk_product_id: @mk_product.id), notice: 'Mk product was successfully updated.' }
+        end
         format.json { render :show, status: :ok, location: @mk_product }
       else
         format.html { render :edit }
@@ -87,6 +95,6 @@ class MkProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mk_product_params
-      params.require(:mk_product).permit(:user_id, :nom, :descripcio, :categoria, :adreca, :codi_postal, :municipi, :latitud, :longitud, :preu, :visible, :venut, :aprovat, :pes, :unitats, :enviament, :adreca_oculta, :mk_image_product, :reservat, :reservat_usuari)
+      params.require(:mk_product).permit(:user_id, :nom, :descripcio, :categoria, :adreca, :codi_postal, :municipi, :latitud, :longitud, :preu, :visible, :venut, :aprovat, :pes, :unitats, :enviament, :adreca_oculta, :mk_image_product, :reservat, :reservat_usuari, :mobile)
     end
 end
