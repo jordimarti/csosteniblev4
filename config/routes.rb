@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :mk_users
   get 'marketcons/index'
-  get 'marketcons', to: redirect('marketcons/index?distancia=tots&preu=tots&locale=ca'), as: :marketcons
+  get 'marketcons', to: redirect('marketcons/index?distancia=tots&preu=tots'), as: :marketcons
   get 'marketcons/about'
   get 'marketcons/producte'
   get 'marketcons/perfil'
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'marketcons/producte_amagar'
 
   get 'mobile_marketcons/index'
-  get 'mobile_marketcons', to: redirect('mobile_marketcons/index?distancia=tots&preu=tots&locale=ca'), as: :mobile_marketcons
+  get 'mobile_marketcons', to: redirect('mobile_marketcons/index?distancia=tots&preu=tots'), as: :mobile_marketcons
   get 'mobile_marketcons/about'
   get 'mobile_marketcons/producte'
   get 'mobile_marketcons/perfil'
