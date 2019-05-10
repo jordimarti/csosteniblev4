@@ -31,7 +31,7 @@
     $( document ).ready(function() {
       if (navigator.userAgent.indexOf('gonative') > -1) {
         <% if params[:locale] == 'en' %>
-          var items = [{
+          var elements = [{
             label: 'Highlights',
             url: 'https://www.csostenible.net/mobile_marketcons/index?distancia=tots&preu=tots&locale=en'
           }, {
@@ -60,7 +60,7 @@
             <% end %>
           }];
         <% elsif params[:locale] == 'es' %>
-          var items = [{
+          var elements = [{
             label: 'Lo más destacado',
             url: 'https://www.csostenible.net/mobile_marketcons/index?distancia=tots&preu=tots&locale=es'
           }, {
@@ -89,7 +89,7 @@
             <% end %>
           }];
         <% else %>
-          var items = [{
+          var elements = [{
             label: 'El més destacat',
             url: 'https://www.csostenible.net/mobile_marketcons/index?distancia=tots&preu=tots&locale=ca'
           }, {
@@ -118,69 +118,69 @@
             <% end %>
           }];
         <% end %>
-        var json = JSON.stringify(items);
+        var json = JSON.stringify(elements);
         window.location.href = 'gonative://sidebar/setItems?items=' + encodeURIComponent(json);
 
         <% if params[:locale] == 'en' %>
           var tabs = {
-            "enabled": true,
-            "items": [{
-                "icon": "fa-star",
-                "label": "Highlights",
-                "url": "https://www.csostenible.net/mobile_marketcons/index?distancia=tots&preu=tots&locale=en"
+            enabled: true,
+            items: [{
+                icon: "fa-star",
+                label: "Highlights",
+                url: "https://www.csostenible.net/mobile_marketcons/index?distancia=tots&preu=tots&locale=en"
             }, {
-                "icon": "fa-plus",
-                "label": "Publish",
-                "url": "https://www.csostenible.net/mobile_marketcons/nou_anunci?locale=en"
+                icon: "fa-plus",
+                label: "Publish",
+                url: "https://www.csostenible.net/mobile_marketcons/nou_anunci?locale=en"
             }, {
-                "icon": "fa-th-large",
-                "label": "My ads",
+                icon: "fa-th-large",
+                label: "My ads",
                 <% if user_signed_in? %>
-                  "url": "https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>&locale=en"
+                  url: "https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>&locale=en"
                 <% else %>
-                  "url": "https://www.csostenible.net/mobile_marketcons/venedor?locale=en"
+                  url: "https://www.csostenible.net/mobile_marketcons/venedor?locale=en"
                 <% end %>
             }]
           };
         <% elsif params[:locale] == 'es' %>
           var tabs = {
-            "enabled": true,
-            "items": [{
-                "icon": "fa-star",
-                "label": "Destacado",
-                "url": "https://www.csostenible.net/mobile_marketcons/index?distancia=tots&preu=tots&locale=es"
+            enabled: true,
+            items: [{
+                icon: "fa-star",
+                label: "Destacado",
+                url: "https://www.csostenible.net/mobile_marketcons/index?distancia=tots&preu=tots&locale=es"
             }, {
-                "icon": "fa-plus",
-                "label": "Publicar",
-                "url": "https://www.csostenible.net/mobile_marketcons/nou_anunci?locale=es"
+                icon: "fa-plus",
+                label: "Publicar",
+                url: "https://www.csostenible.net/mobile_marketcons/nou_anunci?locale=es"
             }, {
-                "icon": "fa-th-large",
-                "label": "Mis anuncions",
+                icon: "fa-th-large",
+                label: "Mis anuncions",
                 <% if user_signed_in? %>
-                  "url": "https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>&locale=es"
+                  url: "https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>&locale=es"
                 <% else %>
-                  "url": "https://www.csostenible.net/mobile_marketcons/venedor?locale=es"
+                  url: "https://www.csostenible.net/mobile_marketcons/venedor?locale=es"
                 <% end %>
             }]
           };
         <% else %>
           var tabs = {
-            "enabled": true,
-            "items": [{
-                "icon": "fa-star",
-                "label": "Destacat",
-                "url": "https://www.csostenible.net/mobile_marketcons/index?distancia=tots&preu=tots&locale=ca"
+            enabled: true,
+            items: [{
+                icon: "fa-star",
+                label: "Destacat",
+                url: "https://www.csostenible.net/mobile_marketcons/index?distancia=tots&preu=tots&locale=ca"
             }, {
-                "icon": "fa-plus",
-                "label": "Publicar",
-                "url": "https://www.csostenible.net/mobile_marketcons/nou_anunci?locale=ca"
+                icon: "fa-plus",
+                label: "Publicar",
+                url: "https://www.csostenible.net/mobile_marketcons/nou_anunci?locale=ca"
             }, {
-                "icon": "fa-th-large",
-                "label": "Anuncis",
+                icon: "fa-th-large",
+                label: "Anuncis",
                 <% if user_signed_in? %>
-                  "url": "https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>&locale=ca"
+                  url: "https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>&locale=ca"
                 <% else %>
-                  "url": "https://www.csostenible.net/mobile_marketcons/venedor?locale=ca"
+                  url: "https://www.csostenible.net/mobile_marketcons/venedor?locale=ca"
                 <% end %>
             }]
           };
