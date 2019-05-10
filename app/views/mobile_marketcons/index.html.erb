@@ -79,5 +79,8 @@ function getPosition(posicio) {
 	goToURL(preu, distancia, latitud, longitud);
 }
 
+if (navigator.userAgent.indexOf('gonative') > -1) {
+	window.location.href = 'gonative://tabs/select/0';
+}
 
 </script>

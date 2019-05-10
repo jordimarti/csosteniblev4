@@ -146,6 +146,10 @@ function recordPosition(position) {
   $("#mk_product_longitud").val(position.coords.longitude);
 };
 
+if (navigator.userAgent.indexOf('gonative') > -1) {
+  window.location.href = 'gonative://tabs/select/1';
+}
+
 </script>
 
 
