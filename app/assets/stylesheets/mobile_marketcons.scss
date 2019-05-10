@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.mk-body-mobile {
-	background-color: #eaeaea;
+	background-color: #D6EFF4;
 }
 
 .mk-mobile-container-text-general {
@@ -15,6 +15,10 @@ body.mk-body-mobile {
 	font-weight: bold;
 	margin-top: 15px;
 	padding-left: 20px;
+}
+
+.mk-mobile-inici-sessio-container {
+	padding: 20px 15px;
 }
 
 .mk-mobile-product-container {
