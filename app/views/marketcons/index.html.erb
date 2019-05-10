@@ -64,6 +64,12 @@
 
 <script>
 
+$(document).ready(function() {
+  if (navigator.userAgent.indexOf('gonative') > -1) {
+    window.location.replace("https://www.csostenible.net/mobile_marketcons");
+  }
+});
+
 function goToURL(preu, distancia, latitud, longitud) {
 	location.href = 'index?preu=' + preu + '&distancia=' + distancia + '&locale=<%= params[:locale] %>&latitud=' + latitud + '&longitud=' + longitud ;
 }
