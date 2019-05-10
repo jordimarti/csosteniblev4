@@ -33,88 +33,88 @@
         <% if params[:locale] == 'en' %>
           var items = [{
             label: 'Highlights',
-            url: 'https://www.csostenible.net/mobile_marketcons'
+            url: 'https://www.csostenible.net/mobile_marketcons?locale=en'
           }, {
             label: 'Publish a product',
-            url: 'https://www.csostenible.net/mobile_marketcons/nou_anunci'
+            url: 'https://www.csostenible.net/mobile_marketcons/nou_anunci?locale=en'
           }, {
             label: 'My products',
             <% if user_signed_in? %>
-              url: 'https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>'
+              url: 'https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>&locale=en'
             <% else %>
-              url: 'https://www.csostenible.net/mobile_marketcons/venedor'
+              url: 'https://www.csostenible.net/mobile_marketcons/venedor?locale=en'
             <% end %>
           }, {
             label: 'About MARKETcons',
-            url: 'https://www.csostenible.net/mobile_marketcons/about'
+            url: 'https://www.csostenible.net/mobile_marketcons/about?locale=en'
           }, {
             label: 'Language',
-            url: 'https://www.csostenible.net/mobile_marketcons/idioma'
+            url: 'https://www.csostenible.net/mobile_marketcons/idioma?locale=en'
           }, {
             <% if user_signed_in? %>
               label: 'User',
-              url: 'https://www.csostenible.net/mobile_marketcons/usuari'
+              url: 'https://www.csostenible.net/mobile_marketcons/usuari?locale=en'
             <% else %>
               label: 'Sign in',
-              url: 'https://www.csostenible.net/users/sign_in'
+              url: 'https://www.csostenible.net/users/sign_in?locale=en'
             <% end %>
           }];
         <% elsif params[:locale] == 'es' %>
           var items = [{
             label: 'Lo más destacado',
-            url: 'https://www.csostenible.net/mobile_marketcons'
+            url: 'https://www.csostenible.net/mobile_marketcons?locale=es'
           }, {
             label: 'Publicar un anuncio',
-            url: 'https://www.csostenible.net/mobile_marketcons/nou_anunci'
+            url: 'https://www.csostenible.net/mobile_marketcons/nou_anunci?locale=es'
           }, {
             label: 'Mis anuncios',
             <% if user_signed_in? %>
-              url: 'https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>'
+              url: 'https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>&locale=es'
             <% else %>
-              url: 'https://www.csostenible.net/mobile_marketcons/venedor'
+              url: 'https://www.csostenible.net/mobile_marketcons/venedor?locale=es'
             <% end %>
           }, {
             label: 'Sobre MARKETcons',
-            url: 'https://www.csostenible.net/mobile_marketcons/about'
+            url: 'https://www.csostenible.net/mobile_marketcons/about?locale=es'
           }, {
             label: 'Idioma',
-            url: 'https://www.csostenible.net/mobile_marketcons/idioma'
+            url: 'https://www.csostenible.net/mobile_marketcons/idioma?locale=es'
           }, {
             <% if user_signed_in? %>
               label: 'Usuario',
-              url: 'https://www.csostenible.net/mobile_marketcons/usuari'
+              url: 'https://www.csostenible.net/mobile_marketcons/usuari?locale=es'
             <% else %>
               label: 'Iniciar sesión',
-              url: 'https://www.csostenible.net/users/sign_in'
+              url: 'https://www.csostenible.net/users/sign_in?locale=es'
             <% end %>
           }];
         <% else %>
           var items = [{
             label: 'El més destacat',
-            url: 'https://www.csostenible.net/mobile_marketcons'
+            url: 'https://www.csostenible.net/mobile_marketcons?locale=ca'
           }, {
             label: 'Publicar un anunci',
-            url: 'https://www.csostenible.net/mobile_marketcons/nou_anunci'
+            url: 'https://www.csostenible.net/mobile_marketcons/nou_anunci?locale=ca'
           }, {
             label: 'Els meus anuncis',
             <% if user_signed_in? %>
-              url: 'https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>'
+              url: 'https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>&locale=ca'
             <% else %>
-              url: 'https://www.csostenible.net/mobile_marketcons/venedor'
+              url: 'https://www.csostenible.net/mobile_marketcons/venedor?locale=ca'
             <% end %>
           }, {
             label: 'Sobre MARKETcons',
-            url: 'https://www.csostenible.net/mobile_marketcons/about'
+            url: 'https://www.csostenible.net/mobile_marketcons/about?locale=ca'
           }, {
             label: 'Idioma',
-            url: 'https://www.csostenible.net/mobile_marketcons/idioma'
+            url: 'https://www.csostenible.net/mobile_marketcons/idioma?locale=ca'
           }, {
             <% if user_signed_in? %>
               label: 'Usuari',
-              url: 'https://www.csostenible.net/mobile_marketcons/usuari'
+              url: 'https://www.csostenible.net/mobile_marketcons/usuari?locale=ca'
             <% else %>
               label: 'Iniciar sessió',
-              url: 'https://www.csostenible.net/users/sign_in'
+              url: 'https://www.csostenible.net/users/sign_in?locale=ca'
             <% end %>
           }];
         <% end %>
