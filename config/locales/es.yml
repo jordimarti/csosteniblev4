@@ -536,14 +536,131 @@ es:
       add: "+ Añadir elemento"
       remove: "Eliminar"
   marketcons:
+    index:
+      reservat: "RESERVADO"
     perfil:
       guardar: "Guardar"
       configuracio_perfil: "Configuración del perfil público"
     venedor:
       anuncis_publicats: "anuncios publicados"
-      membre_des_de: "Miembro desde"
+      membre_des_de: "Miembro des de"
+      publicar_anunci: "Publicar un anuncio"
+      editar_perfil: "Editar perfil"
     nou_anunci:
       nou_anunci: "Crear un nuevo anuncio"
+    editar_anunci:
+      editar_anunci: "Editar anuncio"
+    producte:
+      comprador_buscar: "El comprador lo va a buscar"
+      venedor_porta: "El vendedor lo lleva"
+      negociar: "A negociar"
+      no_definit: "No definido"
+      editar_producte: "Editar anuncio"
+      eliminar_producte: "Eliminar anuncio"
+      confirma_eliminar: "Seguro que quieres eliminar este anuncio?"
+      enviar_missatge: "Enviar mensaje"
+      publicat_per: "Publicado por"
+      producte_reservat: "Producto reservado"
+      producte_venut: "He vendido el producto"
+      producte_amagar: "No quiero mostrar este anuncio"
+      reservat: "Este producto ya está reservado"
+      data_publicacio: "Fecha de publicación"
+      categoria: "Categoría"
+      descripcio: "Descripción"
+      condicions: "Condiciones de envío o recogida"
+      localitzacio: "Localización"
+      preu: "Precio"
+    categoria:
+      no_productes: "No hay ningún producto de esta categoría"
+    aprovacions:
+      aprovar: "Aprovar"
+      eliminar: "Eliminar"
+    missatges:
+      titol_reservar: "Reserva el producto"
+      text_reservar: "Quieres reservar este producto a:"
+      reserva: "Reserva"
+      reservat_a: "Este producto está reservado a: "
+      anula_reserva: "Anular reserva"
+    reserva_producte:
+      ok_reservat: "Reservado!"
+      error_reservat: "Se ha producido un error y el producto no está reservado"
+      anula_reserva: "Anular la reserva"
+    anula_reserva_producte:
+      ok_anulat: "Se ha anulado la reserva"
+      error_anulat: "Se ha producido un error y no se ha podido anular la reserva"
+      reserva: "Reserva"
+  mobile_marketcons:
+    index:
+      reservat: "RESERVADO"
+    perfil:
+      guardar: "Guardar"
+      configuracio_perfil: "Configuración del perfil público"
+    venedor:
+      anuncis_publicats: "anuncios publicados"
+      membre_des_de: "Miembro des de"
+      publicar_anunci: "Publicar un anuncio"
+      editar_perfil: "Editar perfil"
+    nou_anunci:
+      nou_anunci: "Crear un nuevo anuncio"
+      guardar: "Guardar"
+      anuncis_revisio: "Los anuncios pasan un proceso de revisión."
+      comprador_buscar: "El comprador lo va a buscar"
+      venedor_porta: "El vendedor lo lleva"
+      negociar: "A negociar"
+    editar_anunci:
+      editar_anunci: "Editar anuncio"
+      guardar: "Guardar"
+      anuncis_revisio: "Los anuncios pasan un proceso de revisión."
+      comprador_buscar: "El comprador lo va a buscar"
+      venedor_porta: "El vendedor lo lleva"
+      negociar: "A negociar"
+    producte:
+      comprador_buscar: "El comprador lo va a buscar"
+      venedor_porta: "El vendedor lo lleva"
+      negociar: "A negociar"
+      no_definit: "No definido"
+      editar_producte: "Editar anuncio"
+      eliminar_producte: "Eliminar anuncio"
+      confirma_eliminar: "Seguro que quieres eliminar este anuncio?"
+      enviar_missatge: "Enviar mensaje"
+      publicat_per: "Publicado por"
+      producte_reservat: "Producto reservado"
+      producte_venut: "He vendido el producto"
+      producte_amagar: "No quiero mostrar este anuncio"
+      reservat: "Este producto ya está reservado"
+      data_publicacio: "Fecha de publicación"
+      categoria: "Categoría"
+      descripcio: "Descripción"
+      condicions: "Condiciones de envío o recogida"
+      localitzacio: "Localización"
+      preu: "Precio"
+    categoria:
+      no_productes: "No hay ningún producto de esta categoría"
+    aprovacions:
+      aprovar: "Aprovar"
+      eliminar: "Eliminar"
+    missatges:
+      titol_reservar: "Reserva el producto"
+      text_reservar: "Quieres reservar este producto a:"
+      reserva: "Reserva"
+      reservat_a: "Este producto está reservado a: "
+      anula_reserva: "Anular reserva"
+      enviar: "Enviar"
+    reserva_producte:
+      ok_reservat: "Reservado!"
+      error_reservat: "Se ha producido un error y el producto no está reservado"
+      anula_reserva: "Anular la reserva"
+    anula_reserva_producte:
+      ok_anulat: "Se ha anulado la reserva"
+      error_anulat: "Se ha producido un error y no se ha podido anular la reserva"
+      reserva: "Reserva"
   mk_products:
     form:
+      comprador_buscar: "El comprador lo va a buscar"
+      venedor_porta: "El vendedor lo lleva"
+      negociar: "A negociar"
       guardar: "Guardar"
+      anuncis_revisio: "Los anuncios pasan un proceso de revisión."
+  mk_missatges:
+    form:
+      enviar: "Enviar"

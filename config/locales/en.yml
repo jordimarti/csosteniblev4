@@ -462,3 +462,132 @@ en:
     defaults:
       add: "+ Add element"
       remove: "Delete"
+  marketcons:
+    index:
+      reservat: "RESERVED"
+    perfil:
+      guardar: "Save"
+      configuracio_perfil: "Public profile configuration"
+    venedor:
+      anuncis_publicats: "published ads"
+      membre_des_de: "Member since"
+      publicar_anunci: "Post an ad"
+      editar_perfil: "Edit profile"
+    nou_anunci:
+      nou_anunci: "Create a new ad"
+    editar_anunci:
+      editar_anunci: "Edit ad"
+    producte:
+      comprador_buscar: "The buyer goes for it"
+      venedor_porta: "The seller brings it"
+      negociar: "To negotiate"
+      no_definit: "Not defined"
+      editar_producte: "Edit ad"
+      eliminar_producte: "Delete ad"
+      confirma_eliminar: "Are you sure you want to delete this ad?"
+      enviar_missatge: "Send message"
+      publicat_per: "Published by"
+      producte_reservat: "Product reserved"
+      producte_venut: "I've sold the product"
+      producte_amagar: "I don't want to show this ad"
+      reservat: "This product is already reserved"
+      data_publicacio: "Publication date"
+      categoria: "Category"
+      descripcio: "Description"
+      condicions: "Conditions of shipment or collection"
+      localitzacio: "Location"
+      preu: "Price"
+    categoria:
+      no_productes: "There are no products in this category"
+    aprovacions:
+      aprovar: "Approve"
+      eliminar: "Delete"
+    missatges:
+      titol_reservar: "Reserve the product"
+      text_reservar: "Do you want to reserve the product to:"
+      reserva: "Reserve"
+      reservat_a: "This product is reserved to: "
+      anula_reserva: "Delete reservation"
+    reserva_producte:
+      ok_reservat: "Reserved!"
+      error_reservat: "An error has occurred and the product is not reserved"
+      anula_reserva: "Cancel reservation"
+    anula_reserva_producte:
+      ok_anulat: "The reservation has been cancelled"
+      error_anulat: "An error has occurred and the reservation is not deleted"
+      reserva: "Reserve"
+  mobile_marketcons:
+    index:
+      reservat: "RESERVED"
+    perfil:
+      guardar: "Save"
+      configuracio_perfil: "Public profile configuration"
+    venedor:
+      anuncis_publicats: "published ads"
+      membre_des_de: "Member since"
+      publicar_anunci: "Post an ad"
+      editar_perfil: "Edit profile"
+    nou_anunci:
+      nou_anunci: "Create a new ad"
+      guardar: "Save"
+      anuncis_revisio: "Ads go through a review process."
+      comprador_buscar: "The buyer goes for it"
+      venedor_porta: "The seller brings it"
+      negociar: "To negotiate"
+    editar_anunci:
+      editar_anunci: "Edit ad"
+      guardar: "Save"
+      anuncis_revisio: "Ads go through a review process."
+      comprador_buscar: "The buyer goes for it"
+      venedor_porta: "The seller brings it"
+      negociar: "To negotiate"
+    producte:
+      comprador_buscar: "The buyer goes for it"
+      venedor_porta: "The seller brings it"
+      negociar: "To negotiate"
+      no_definit: "Not defined"
+      editar_producte: "Edita ad"
+      eliminar_producte: "Delete ad"
+      confirma_eliminar: "Are you sure you want to delete this ad?"
+      enviar_missatge: "Send message"
+      publicat_per: "Published by"
+      producte_reservat: "Reserved product"
+      producte_venut: "I've sold the product"
+      producte_amagar: "I don't want to show this ad"
+      reservat: "This product is already reserved"
+      data_publicacio: "Publication date"
+      categoria: "Category"
+      descripcio: "Description"
+      condicions: "Conditions of shipment or collection"
+      localitzacio: "Location"
+      preu: "Price"
+    categoria:
+      no_productes: "There are no products in this category"
+    aprovacions:
+      aprovar: "Approve"
+      eliminar: "Delete"
+    missatges:
+      titol_reservar: "Reserve the product"
+      text_reservar: "Do you want to reserve the product to:"
+      reserva: "Reserve"
+      reservat_a: "This product is reserved to: "
+      anula_reserva: "Delete reservation"
+      enviar: "Send"
+    reserva_producte:
+      ok_reservat: "Reserved!"
+      error_reservat: "An error has occurred and the product is not reserved"
+      anula_reserva: "Cancel reservation"
+    anula_reserva_producte:
+      ok_anulat: "The reservation has been cancelled"
+      error_anulat: "An error has occurred and the reservation is not deleted"
+      reserva: "Reserve"
+  mk_products:
+    form:
+      comprador_buscar: "The buyer goes for it"
+      venedor_porta: "The seller brings it"
+      negociar: "To negotiate"
+      guardar: "Save"
+      anuncis_revisio: "Ads go through a review process."
+  mk_missatges:
+    form:
+      enviar: "Send"

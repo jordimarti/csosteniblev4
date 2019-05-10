@@ -597,7 +597,6 @@ ca:
       producte_amagar: "No vull mostrar aquest anunci"
       reservat: "Aquest producte ja està reservat"
       data_publicacio: "Data de publicació"
-      data_publicacio: "Data de publicació"
       categoria: "Categoria"
       descripcio: "Descripció"
       condicions: "Condicions d'enviament o recollida"
