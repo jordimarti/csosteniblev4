@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   get 'mobile_marketcons/missatges'
   get 'mobile_marketcons/aprovacions'
   get 'mobile_marketcons/publicats'
+  get 'mobile_marketcons/usuari'
   get 'mobile_marketcons/usuaris'
   get 'mobile_marketcons/reserva_producte'
   get 'mobile_marketcons/anula_reserva_producte'

@@ -1,0 +1,26 @@
+<div class="grid-x grid-margin-x">
+	<div class="small-12 cell">
+		<div class="mk-mobile-imatge-perfil-container">
+			<% if @mk_user.mk_image_user.attached? %>
+				<%= image_tag @mk_user.mk_image_user.variant(combine_options: { resize: '300x300' }), class: "mk-imatge-perfil" %>
+			<% else %>
+				<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_user.png", class: 'mk-imatge-perfil' %>
+			<% end %>
+		</div>
+		<div class="mk-text-perfil-container">
+			<span class="nom-imatge-perfil"><%= @mk_user.nom %> <%= @mk_user.cognoms %></span>
+			<br/>
+			<span class="municipi-imatge-perfil"><%= @mk_user.municipi %></span>
+			<br/>
+			<% if user_signed_in? %>
+				<% if current_user.id == @mk_user.user_id %>
+					<p><%= link_to t('.editar_perfil'), mobile_marketcons_perfil_path(mk_user_id: @mk_user.id) %></p>
+				<% end %>
+			<% end %>
+		</div>
+
+		<div class="mk-mobile-tancar-sessio">
+			<%= link_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'sessionbar-link' %>
+		</div>
+	</div>
+</div>

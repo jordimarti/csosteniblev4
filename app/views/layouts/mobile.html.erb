@@ -47,6 +47,17 @@
           }, {
             label: 'About MARKETcons',
             url: 'https://www.csostenible.net/mobile_marketcons/about'
+          }, {
+            label: 'Language',
+            url: 'https://www.csostenible.net/mobile_marketcons/idioma'
+          }, {
+            <% if user_signed_in? %>
+              label: 'User',
+              url: 'https://www.csostenible.net/mobile_marketcons/usuari'
+            <% else %>
+              label: 'Sign in',
+              url: 'https://www.csostenible.net/users/sign_in'
+            <% end %>
           }];
         <% elsif params[:locale] == 'es' %>
           var items = [{
@@ -65,6 +76,17 @@
           }, {
             label: 'Sobre MARKETcons',
             url: 'https://www.csostenible.net/mobile_marketcons/about'
+          }, {
+            label: 'Idioma',
+            url: 'https://www.csostenible.net/mobile_marketcons/idioma'
+          }, {
+            <% if user_signed_in? %>
+              label: 'Usuario',
+              url: 'https://www.csostenible.net/mobile_marketcons/usuari'
+            <% else %>
+              label: 'Iniciar sesión',
+              url: 'https://www.csostenible.net/users/sign_in'
+            <% end %>
           }];
         <% else %>
           var items = [{
@@ -83,6 +105,17 @@
           }, {
             label: 'Sobre MARKETcons',
             url: 'https://www.csostenible.net/mobile_marketcons/about'
+          }, {
+            label: 'Idioma',
+            url: 'https://www.csostenible.net/mobile_marketcons/idioma'
+          }, {
+            <% if user_signed_in? %>
+              label: 'Usuari',
+              url: 'https://www.csostenible.net/mobile_marketcons/usuari'
+            <% else %>
+              label: 'Iniciar sessió',
+              url: 'https://www.csostenible.net/users/sign_in'
+            <% end %>
           }];
         <% end %>
         var json = JSON.stringify(items);

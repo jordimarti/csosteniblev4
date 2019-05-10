@@ -109,6 +109,10 @@ class MobileMarketconsController < ApplicationController
     @productes = MkProduct.where(aprovat: true)
   end
 
+  def usuari
+  	@mk_user = MkUser.where(user_id: current_user.id).last
+  end
+
   def usuaris
     @usuaris = MkUser.all
   end
