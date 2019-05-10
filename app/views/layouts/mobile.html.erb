@@ -120,7 +120,12 @@
         <% end %>
         var json_menu = JSON.stringify(elements);
         window.location.href = 'gonative://sidebar/setItems?items=' + encodeURIComponent(json_menu);
+      
+      }
+    });
 
+    $( document ).ready(function() {
+      if (navigator.userAgent.indexOf('gonative') > -1) {
         <% if params[:locale] == 'en' %>
           var tabs = {
             enabled: true,
