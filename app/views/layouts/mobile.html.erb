@@ -38,7 +38,7 @@
             label: 'Publish a product',
             url: 'https://www.csostenible.net/mobile_marketcons/nou_anunci?locale=en'
           }, {
-            label: 'My products',
+            label: 'My ads',
             <% if user_signed_in? %>
               url: 'https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>&locale=en'
             <% else %>
@@ -155,7 +155,7 @@
                 url: "https://www.csostenible.net/mobile_marketcons/nou_anunci?locale=es"
             }, {
                 icon: "fa-th-large",
-                label: "Mis anuncions",
+                label: "Mis anuncios",
                 <% if user_signed_in? %>
                   url: "https://www.csostenible.net/mobile_marketcons/venedor?user_id=<%= current_user.id %>&locale=es"
                 <% else %>

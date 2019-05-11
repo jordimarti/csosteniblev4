@@ -1,5 +1,5 @@
 class MobileMarketconsController < ApplicationController
-	before_action :authenticate_user!, only: [:nou_anunci, :editar_anunci, :missatges]
+	before_action :authenticate_user!, only: [:nou_anunci, :editar_anunci, :missatges, :venedor, :usuari]
   before_action :categories
   layout "buit", only: [:comprova_unitats_categoria, :reserva_producte, :anula_reserva_producte]
   layout "mobile"
