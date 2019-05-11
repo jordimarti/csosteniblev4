@@ -21,13 +21,15 @@
 
       gtag('config', 'UA-127502662-1');
     </script>
-    <script>
-      $(document).ready(function() {
-        if (navigator.userAgent.indexOf('gonative') > -1) {
-          window.location.replace("https://www.csostenible.net/mobile_marketcons");
-        }
-      });
-    </script>
+    <% if params[:from_mobile] = 'true' %>
+      <script>
+        $(document).ready(function() {
+          if (navigator.userAgent.indexOf('gonative') > -1) {
+            window.location.replace("https://www.csostenible.net/mobile_marketcons");
+          }
+        });
+      </script>
+    <% end %>
 
 
 
