@@ -518,6 +518,10 @@ en:
       reserva: "Reserve"
   mobile_marketcons:
     index:
+      filtres: "FILTERS"
+      preu: "Price"
+      distancia: "Distance"
+      categoria: "Category"
       reservat: "RESERVED"
     perfil:
       guardar: "Save"

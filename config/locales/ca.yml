@@ -623,6 +623,10 @@ ca:
       reserva: "Reserva"
   mobile_marketcons:
     index:
+      filtres: "FILTRES"
+      preu: "Preu"
+      distancia: "Distància"
+      categoria: "Categoria"
       reservat: "RESERVAT"
     perfil:
       guardar: "Guardar"

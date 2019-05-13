@@ -1,65 +1,142 @@
+<div class="boto-filtres-container">
+	<div id="boto-filtres"><%= t('.filtres') %></div>
+</div>
+<div class="mk-mobile-filtres-container" id="mk-mobile-filtres">
+	<div class="grid-x grid-margin-x">
+		<div class="small-6 cell">
+		  <span class="mk-mobile-nom-filtre-marketcons"><%= t('.preu') %></span>
+		  <select id="selector-preu" class="filtre-marketcons">
+		    <option value="tots" 
+		    <% if params[:preu] == 'tots' %>
+		      selected
+		    <% end %>><%= t('.qualsevol_preu') %></option>
+		    <option value="50"
+		    <% if params[:preu] == '50' %>
+		      selected
+		    <% end %>><%= t('.50euros') %></option>
+		    <option value="100"
+		    <% if params[:preu] == '100' %>
+		      selected
+		    <% end %>><%= t('.100euros') %></option>
+		    <option value="500"
+		    <% if params[:preu] == '500' %>
+		      selected
+		    <% end %>><%= t('.500euros') %></option>
+		  </select>
+		</div>
+		<div class="small-6 cell">
+		  <span class="mk-mobile-nom-filtre-marketcons"><%= t('.distancia') %></span>
+		  <select id="selector-distancia" class="filtre-marketcons">
+		    <option value="tots"
+		    <% if params[:distancia] == 'tots' %>
+		      selected
+		    <% end %>><%= t('.qualsevol_distancia') %></option>
+		    <option value="5"
+		    <% if params[:distancia] == '5' %>
+		      selected
+		    <% end %>><%= t('.5km') %></option>
+		    <option value="10"
+		    <% if params[:distancia] == '10' %>
+		      selected
+		    <% end %>><%= t('.10km') %></option>
+		    <option value="50"
+		    <% if params[:distancia] == '50' %>
+		      selected
+		    <% end %>><%= t('.50km') %></option>
+		    <option value="100"
+		    <% if params[:distancia] == '100' %>
+		      selected
+		    <% end %>><%= t('.100km') %></option>
+		  </select>
+		</div>
+	</div>
+	<div class="grid-x grid-margin-x">
+		<div class="small-12 cell">
+			<span class="mk-mobile-nom-filtre-marketcons"><%= t('.categoria') %></span>
+		  <select id="selector-categoria" class="filtre-marketcons">
+				<% @categories.each do |categoria| %>     
+          <% if params[:locale] == 'es' %>
+          	<option value="<%= categoria.id %>" <% if params[:categoria_id] == categoria.id.to_s %>selected<% end %>><%= categoria.nom_es %></option>
+          <% elsif params[:locale] == 'en' %>
+            <option value="<%= categoria.id %>" <% if params[:categoria_id] == categoria.id.to_s %>selected<% end %>><%= categoria.nom_en %></option>
+          <% else %>
+            <option value="<%= categoria.id %>" <% if params[:categoria_id] == categoria.id.to_s %>selected<% end %>><%= categoria.nom_ca %></option>
+          <% end %>   
+        <% end %>
+      </select>
+		</div>
+	</div>
+</div>
 
-	<div class="mk-products-container-mobile">
-		
-		<% @productes.each do |producte| %>
-			<% 
-			if params[:latitud].present? 
-    		distancia = distance([params[:latitud].to_d, params[:longitud].to_d], [producte.latitud, producte.longitud])
-    		distancia_km = distancia/1000
-    		distancia_limit = params[:distancia].to_i * 1000 
-    	else
-    		#imposem una condició que compleixi sempre
-    		distancia = 1
-    		distancia_limit = 2
-    	end
-  		%>
-  		<% if distancia < distancia_limit || params[:distancia] == 'tots' %>
-				
-					<%= link_to mobile_marketcons_producte_path(mk_product_id: producte.id), class:"mk-producte-link" do %>
-					<div class="mk-mobile-item">
-						<div class="mk-mobile-item-imatge">
-						  <% if producte.mk_image_product.attached? %>
-		                <%= image_tag producte.mk_image_product.variant(auto_orient: true), class: "mk-mobile-imatge-principal" %>
-		          <% else %>
-		            <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
-		          <% end %>
-					  </div>
-					  <div class="mk-mobile-item-text">
-					  	<div class="mk-mobile-item-text-superior">
-						    <div class="mk-mobile-badge-preu">
-						    	<h4 class="mk-item-preu"><%= producte.preu %> €</h4>
-						    </div>
-						    
-						    <% if producte.reservat == true %>
-						    	<div class="container-badge-producte-reservat">
-						    		<div class="mk-mobile-badge-producte-reservat"><%= t('.reservat') %></div>
-						    	</div>
-						    <% end %>
-						  </div>
-					    <div class="mk-mobile-badge-nom">
-					    	<p class="mk-item-nom"><%= truncate(producte.nom, length: 45) %></p>
-					    </div>
-					    <div class="badge-distancia">
-					    	<span class="mk-item-distancia">
-					    		<% if distancia_km.present? %>
-					    			<%= distancia_km.round(1) %> km
-					    		<% end %>
-					    	</span>
+<div class="mk-mobile-products-container">
+	
+	<% @productes.each do |producte| %>
+		<% 
+		if params[:latitud].present? 
+  		distancia = distance([params[:latitud].to_d, params[:longitud].to_d], [producte.latitud, producte.longitud])
+  		distancia_km = distancia/1000
+  		distancia_limit = params[:distancia].to_i * 1000 
+  	else
+  		#imposem una condició que compleixi sempre
+  		distancia = 1
+  		distancia_limit = 2
+  	end
+		%>
+		<% if distancia < distancia_limit || params[:distancia] == 'tots' %>
+			
+				<%= link_to mobile_marketcons_producte_path(mk_product_id: producte.id), class:"mk-producte-link" do %>
+				<div class="mk-mobile-item">
+					<div class="mk-mobile-item-imatge">
+					  <% if producte.mk_image_product.attached? %>
+	                <%= image_tag producte.mk_image_product.variant(auto_orient: true), class: "mk-mobile-imatge-principal" %>
+	          <% else %>
+	            <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
+	          <% end %>
+				  </div>
+				  <div class="mk-mobile-item-text">
+				  	<div class="mk-mobile-item-text-superior">
+					    <div class="mk-mobile-badge-preu">
+					    	<h4 class="mk-item-preu"><%= producte.preu %> €</h4>
 					    </div>
 					    
+					    <% if producte.reservat == true %>
+					    	<div class="container-badge-producte-reservat">
+					    		<div class="mk-mobile-badge-producte-reservat"><%= t('.reservat') %></div>
+					    	</div>
+					    <% end %>
 					  </div>
-						
-					</div>
-					<% end %>
+				    <div class="mk-mobile-badge-nom">
+				    	<p class="mk-item-nom"><%= truncate(producte.nom, length: 45) %></p>
+				    </div>
+				    <div class="badge-distancia">
+				    	<span class="mk-item-distancia">
+				    		<% if distancia_km.present? %>
+				    			<%= distancia_km.round(1) %> km
+				    		<% end %>
+				    	</span>
+				    </div>
+				    
+				  </div>
+					
+				</div>
+				<% end %>
 
-		
-			<% end %>
+	
 		<% end %>
-		
-	</div>
+	<% end %>
+	
+</div>
 
 
 <script>
+$(document).ready(function() {	
+	$('#mk-mobile-filtres').hide();
+});
+
+$('#boto-filtres').click(function() {
+	
+	$('#mk-mobile-filtres').slideDown("slow");
+});
 
 function goToURL(preu, distancia, latitud, longitud) {
 	location.href = 'index?preu=' + preu + '&distancia=' + distancia + '&locale=<%= params[:locale] %>&latitud=' + latitud + '&longitud=' + longitud ;
@@ -84,5 +161,7 @@ function getPosition(posicio) {
 if (navigator.userAgent.indexOf('gonative') > -1) {
 	window.location.href = 'gonative://tabs/select/0';
 }
+
+
 
 </script>

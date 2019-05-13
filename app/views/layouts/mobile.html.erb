@@ -29,6 +29,10 @@
 
     <script>
     $(document).ready(function() {
+      <% if params[:locale] == nil %>
+        window.location.href = 'https://www.csostenible.net/mobile_marketcons/index?distancia=tots&preu=tots&locale=ca';
+      <% end %>
+
       if (navigator.userAgent.indexOf('gonative') > -1) {
         <% if params[:locale] == 'en' %>
           var elements = [{

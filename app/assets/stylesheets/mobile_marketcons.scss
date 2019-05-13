@@ -10,8 +10,8 @@ body.mk-body-mobile {
 	padding: 0px 15px;
 }
 
-.mk-products-container-mobile {
-	
+.mk-mobile-products-container {
+	margin-top: 5px;
 }
 
 .mk-mobile-titol-pagina {
@@ -23,6 +23,24 @@ body.mk-body-mobile {
 
 .mk-mobile-inici-sessio-container {
 	padding: 20px 15px;
+}
+
+.mk-mobile-filtres-container {
+	padding: 10px 15px;
+	background-color: #666;
+}
+
+.mk-mobile-nom-filtre-marketcons {
+	color: white;
+}
+
+#boto-filtres {
+	padding: 4px 15px;
+	background-color: #666;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 0.8em;
 }
 
 .mk-mobile-product-container {
@@ -46,6 +64,8 @@ body.mk-body-mobile {
 	width: 100px;
 	height: 100px;
 	object-fit: cover;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 }
 
 .mk-mobile-item-imatge {
