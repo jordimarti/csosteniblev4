@@ -23,9 +23,11 @@
     </script>
     <% if params[:from_mobile] == 'true' %>
       <script>
-        if (navigator.userAgent.indexOf('gonative') > -1) {
-          window.location.replace("https://www.csostenible.net/mobile_marketcons");
-        }
+        $(document).ready(function() {
+          if (navigator.userAgent.indexOf('gonative') > -1) {
+            window.location.replace("https://www.csostenible.net/mobile_marketcons");
+          }
+        });
       </script>
     <% end %>
   </head>

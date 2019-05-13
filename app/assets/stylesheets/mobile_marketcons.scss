@@ -10,6 +10,10 @@ body.mk-body-mobile {
 	padding: 0px 15px;
 }
 
+.mk-products-container-mobile {
+	
+}
+
 .mk-mobile-titol-pagina {
 	font-size: 1.4em;
 	font-weight: bold;
@@ -27,14 +31,47 @@ body.mk-body-mobile {
 }
 
 .mk-mobile-item {
-	border: 1px solid #cccccc;
 	border-radius: 5px;
-	margin: 10px 0px;
 	background-color: white;
+	height: 100px;
+	margin: 0px 5px 5px 5px;
+	padding-right: 5px;
 }
 
 .mk-mobile-image-container {
 	margin-bottom: 15px;
+}
+
+.mk-mobile-imatge-principal {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+}
+
+.mk-mobile-item-imatge {
+	float: left;
+}
+
+.mk-mobile-item-text {
+	margin-left: 115px;
+}
+
+.mk-mobile-badge-preu {
+	float: left;
+}
+
+.mk-mobile-badge-nom {
+	position: relative;
+ 	padding-top: 30px;
+}
+
+.mk-mobile-badge-producte-reservat {
+	background-color: #0D5D72;
+	color: #fff;
+	font-weight: bold;
+	font-size: 0.7em;
+	border-radius: 5px;
+	padding: 3px 6px;
 }
 
 .mk-mobile-hr {

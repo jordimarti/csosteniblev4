@@ -28,7 +28,7 @@
     <%= yield %>
 
     <script>
-    $( document ).ready(function() {
+    $(document).ready(function() {
       if (navigator.userAgent.indexOf('gonative') > -1) {
         <% if params[:locale] == 'en' %>
           var elements = [{
@@ -190,7 +190,7 @@
         var menu_lateral = setInterval(function(){ 
           window.location.href = 'gonative://sidebar/setItems?items=' + encodeURIComponent(json_menu);
           typeof menu_lateral !== 'undefined' && window.clearInterval(menu_lateral);
-         }, 1000);
+         }, 2000);
         window.location.href='gonative://tabs/setTabs?tabs=' + encodeURIComponent(json);
         }
       });
