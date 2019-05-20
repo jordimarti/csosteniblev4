@@ -497,6 +497,8 @@ en:
       condicions: "Conditions of shipment or collection"
       localitzacio: "Location"
       preu: "Price"
+      descarregar: "Download"
+      documents: "Documents"
     categoria:
       no_productes: "There are no products in this category"
     aprovacions:
@@ -565,6 +567,8 @@ en:
       condicions: "Conditions of shipment or collection"
       localitzacio: "Location"
       preu: "Price"
+      descarregar: "Download"
+      documents: "Documents"
     categoria:
       no_productes: "There are no products in this category"
     aprovacions:
@@ -592,6 +596,7 @@ en:
       negociar: "To negotiate"
       guardar: "Save"
       anuncis_revisio: "Ads go through a review process."
+      adjuntar_documents: "Attach documents"
   mk_missatges:
     form:
       enviar: "Send"

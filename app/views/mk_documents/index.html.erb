@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mk Documents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Mk product</th>
+      <th>Nom</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mk_documents.each do |mk_document| %>
+      <tr>
+        <td><%= mk_document.user_id %></td>
+        <td><%= mk_document.mk_product_id %></td>
+        <td><%= mk_document.nom %></td>
+        <td><%= link_to 'Show', mk_document %></td>
+        <td><%= link_to 'Edit', edit_mk_document_path(mk_document) %></td>
+        <td><%= link_to 'Destroy', mk_document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mk Document', new_mk_document_path %>

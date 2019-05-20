@@ -1,0 +1,20 @@
+<div class="nested-fields">
+	<div class="grid-x grid-margin-x">
+		<div class="medium-12 cell">
+			<hr/>
+			<div class="grid-x grid-margin-x">
+				<div class="medium-5 cell">
+					<%= f.input :nom %>
+				</div>
+				<div class="medium-5 cell">
+					<%= f.input :document, as: :file %>
+				</div>
+				<div class="medium-2 cell">
+					<div class="eliminar-document">
+						<%= link_to_remove_association "Eliminar", f %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

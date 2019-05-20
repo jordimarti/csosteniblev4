@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @mk_document.user_id %>
+</p>
+
+<p>
+  <strong>Mk product:</strong>
+  <%= @mk_document.mk_product_id %>
+</p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @mk_document.nom %>
+</p>
+
+
+
+<% if @mk_document.document.attached? %>
+                
+  <%= image_tag @mk_document.document, class: 'img-index-noticia' %>
+  
+<% end %> 
+
+<%= link_to 'Edit', edit_mk_document_path(@mk_document) %> |
+<%= link_to 'Back', mk_documents_path %>

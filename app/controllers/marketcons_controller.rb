@@ -51,6 +51,7 @@ class MarketconsController < ApplicationController
   def editar_anunci
     @filtres = false
     @mk_product = MkProduct.find(params[:mk_product_id])
+    @mk_documents = MkDocument.where(mk_product_id: @mk_product.id)
   end
 
   def venedor

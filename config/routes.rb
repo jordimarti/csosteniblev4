@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mk_documents
   resources :mk_users
   get 'marketcons/index'
   get 'marketcons', to: redirect('marketcons/index?distancia=tots&preu=tots'), as: :marketcons

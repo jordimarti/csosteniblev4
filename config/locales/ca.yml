@@ -602,6 +602,8 @@ ca:
       condicions: "Condicions d'enviament o recollida"
       localitzacio: "Localització"
       preu: "Preu"
+      descarregar: "Descarregar"
+      documents: "Documents"
     categoria:
       no_productes: "No hi ha cap producte d'aquesta categoria"
     aprovacions:
@@ -670,6 +672,8 @@ ca:
       condicions: "Condicions d'enviament o recollida"
       localitzacio: "Localització"
       preu: "Preu"
+      descarregar: "Descarregar"
+      documents: "Documents"
     categoria:
       no_productes: "No hi ha cap producte d'aquesta categoria"
     aprovacions:
@@ -697,6 +701,7 @@ ca:
       negociar: "A negociar"
       guardar: "Guardar"
       anuncis_revisio: "Els anuncis passen un procés de revisió."
+      adjuntar_documents: "Adjuntar documents"
   mk_missatges:
     form:
       enviar: "Enviar"

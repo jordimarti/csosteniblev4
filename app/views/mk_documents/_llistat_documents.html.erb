@@ -1,0 +1,9 @@
+<% if @mk_documents.any? %>
+	<% @mk_documents.each do |document| %>
+		<div class="mk-documents-item">
+			
+		  <%= document.nom %>
+		   
+		</div>
+	<% end %>
+<% end %>

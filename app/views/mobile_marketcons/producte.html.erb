@@ -81,6 +81,34 @@
 				</div>
 			</div>
 			<br/>
+
+			<% if @producte.mk_documents.any? %>
+      <hr/>
+			<div class="grid-x grid-margin-x">
+        <div class="medium-12 cell">
+        	<div class="mk-mobile-container-text-general">
+          	<span class="titol-camp-producte"><%= t('.documents') %></span>
+          
+            <ul>
+            <% @producte.mk_documents.each do |docu| %>
+              <li><%= docu.nom %>
+              <% if docu.document.previewable? %>
+                <%= link_to(image_tag(docu.document.preview(resize: "200x200>")),  rails_blob_path(docu.document, disposition: "attachment"))
+                %>
+              <% elsif docu.document.variable? %>
+                <%= link_to(image_tag(docu.document.variant(resize: "200x200")), rails_blob_path(docu.document, disposition: "attachment"))%>
+              <% else %>
+                [<%= link_to t('.descarregar'), rails_blob_path(docu.document, disposition: "attachment") %>]
+              <% end %>
+            <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <br/>
+      <% end %>
+
 			<hr class="hr-no-margin"/>
 			<div class="grid-x grid-margin-x">
 				<div class="small-12 cell">

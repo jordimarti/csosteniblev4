@@ -62,6 +62,20 @@
           </div>
 
           <div class="grid-x grid-margin-x">
+            <div class="medium-12 cell">
+              <div class="mk-documents-container">
+                <%= t('.adjuntar_documents') %>
+                <%= f.simple_fields_for :mk_documents do |mk_document| %>
+                  <%= render 'mk_document_fields', f: mk_document %>
+                <% end %>
+                <div class="links">
+                  <%= link_to_add_association "+ Afegeix document", f, :mk_documents, html_options = {class: "mk-afegir-document button"} %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-x grid-margin-x">
             <div class="medium-3 cell">
               <% if @mk_product.mk_image_product.attached? %>
                 <%= image_tag @mk_product.mk_image_product, class: "mk-imatge-producte" %>
