@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(user)
-    mobile_marketcons_index_path
+    mobile_marketcons_index_path(distancia: 'tots', preu: 'tots', locale: 'ca')
   end 
 
   protected
