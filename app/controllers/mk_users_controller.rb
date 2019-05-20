@@ -42,7 +42,11 @@ class MkUsersController < ApplicationController
   def update
     respond_to do |format|
       if @mk_user.update(mk_user_params)
-        format.html { redirect_to marketcons_venedor_path(user_id: @mk_user.user_id), notice: 'Mk user was successfully updated.' }
+        if @mk_user.mobile == true
+          format.html { redirect_to mobile_marketcons_venedor_path(user_id: @mk_user.user_id), notice: 'Mk user was successfully updated.' }
+        else
+          format.html { redirect_to marketcons_venedor_path(user_id: @mk_user.user_id), notice: 'Mk user was successfully updated.' }
+        end
         format.json { render :show, status: :ok, location: @mk_user }
       else
         format.html { render :edit }
@@ -69,6 +73,6 @@ class MkUsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mk_user_params
-      params.require(:mk_user).permit(:user_id, :nom, :cognoms, :adreca, :codi_postal, :municipi, :email, :telefon, :web, :mostrar_adreca, :mostrar_email, :mostrar_telefon, :mostrar_web, :mk_image_user)
+      params.require(:mk_user).permit(:user_id, :nom, :cognoms, :adreca, :codi_postal, :municipi, :email, :telefon, :web, :mostrar_adreca, :mostrar_email, :mostrar_telefon, :mostrar_web, :mk_image_user, :mobile)
     end
 end

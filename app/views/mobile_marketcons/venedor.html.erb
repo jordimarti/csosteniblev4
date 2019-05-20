@@ -50,30 +50,66 @@
 				<% end %>
 			<% end %>
 			
-			<div class="container">
-				<div class="grid-x grid-margin-x">
-					<% @productes.each do |producte| %>
-						<div class="large-3 medium-6 small-6 cell">
-							<%= link_to mobile_marketcons_producte_path(mk_product_id: producte.id), class:"mk-producte-link" do %>
-							<div class="mk-mobile-item">
-								<div class="crop">
-								  <% if producte.mk_image_product.attached? %>
-				                <%= image_tag producte.mk_image_product, class: "mk-image-principal" %>
-				          <% else %>
-				            <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
-				          <% end %>
-							  </div>
-							  <div class="mk-item-text">
-							    <h4 class="mk-item-preu"><%= producte.preu %> €</h4>
-							    <p class="mk-item-nom"><%= truncate(producte.nom, length: 45) %></p>
-							  </div>
-								
-							</div>
-							<% end %>
-						</div>
-					<% end %>
+			
+
+<div class="mk-mobile-products-container">
+	
+	<% @productes.each do |producte| %>
+		<% 
+		if params[:latitud].present? 
+  		distancia = distance([params[:latitud].to_d, params[:longitud].to_d], [producte.latitud, producte.longitud])
+  		distancia_km = distancia/1000
+  		distancia_limit = params[:distancia].to_i * 1000 
+  	else
+  		#imposem una condició que compleixi sempre
+  		distancia = 1
+  		distancia_limit = 2
+  	end
+		%>
+		<% if distancia < distancia_limit || params[:distancia] == 'tots' %>
+			
+				<%= link_to mobile_marketcons_producte_path(mk_product_id: producte.id), class:"mk-producte-link" do %>
+				<div class="mk-mobile-item">
+					<div class="mk-mobile-item-imatge">
+					  <% if producte.mk_image_product.attached? %>
+	                <%= image_tag producte.mk_image_product.variant(auto_orient: true), class: "mk-mobile-imatge-principal" %>
+	          <% else %>
+	            <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
+	          <% end %>
+				  </div>
+				  <div class="mk-mobile-item-text">
+				  	<div class="mk-mobile-item-text-superior">
+					    <div class="mk-mobile-badge-preu">
+					    	<h4 class="mk-item-preu"><%= producte.preu %> €</h4>
+					    </div>
+					    
+					    <% if producte.reservat == true %>
+					    	<div class="container-badge-producte-reservat">
+					    		<div class="mk-mobile-badge-producte-reservat"><%= t('.reservat') %></div>
+					    	</div>
+					    <% end %>
+					  </div>
+				    <div class="mk-mobile-badge-nom">
+				    	<p class="mk-item-nom"><%= truncate(producte.nom, length: 45) %></p>
+				    </div>
+				    <div class="badge-distancia">
+				    	<span class="mk-item-distancia">
+				    		<% if distancia_km.present? %>
+				    			<%= distancia_km.round(1) %> km
+				    		<% end %>
+				    	</span>
+				    </div>
+				    
+				  </div>
+					
 				</div>
-			</div>
+				<% end %>
+
+	
+		<% end %>
+	<% end %>
+	
+</div>
 		</div>
 	</div>
 

@@ -23,11 +23,11 @@
 	        </div>
 	      <% end %>
 				<div class="grid-x grid-margin-x">
-					<div class="small-4 cell">
+					<div class="small-6 cell">
 						<span class="titol-camp-producte"><%= t('.data_publicacio') %></span><br/>
 						<span class="text-camp-producte"><%= @producte.created_at.strftime("%d-%m-%Y") %></span>
 					</div>
-					<div class="small-8 cell">
+					<div class="small-6 cell">
 						<span class="titol-camp-producte"><%= t('.categoria') %></span><br/>
 						<span class="text-camp-producte">
 							<% if params[:locale] == 'es' %>
@@ -80,10 +80,9 @@
 
 				</div>
 			</div>
-			<br/>
 
 			<% if @producte.mk_documents.any? %>
-      <hr/>
+      <hr class="mk-mobile-hr"/>
 			<div class="grid-x grid-margin-x">
         <div class="medium-12 cell">
         	<div class="mk-mobile-container-text-general">
@@ -106,12 +105,11 @@
           </div>
         </div>
       </div>
-      <br/>
       <% end %>
 
 			<hr class="hr-no-margin"/>
 			<div class="grid-x grid-margin-x">
-				<div class="small-12 cell">
+				<div class="small-6 cell">
 					<div class="mk-mobile-container-text-general">
 						<div class="mk-preu-container">
 							<span class="titol-camp-producte"><%= t('.preu') %></span>
@@ -119,9 +117,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="grid-x grid-margin-x">
-				<div class="small-12 cell">
+			
+				<div class="small-6 cell">
 					<% if user_signed_in? %> 
             <% if @producte.user_id == current_user.id %>
 							<div class="mk-mobile-container-boto-eliminar-producte" id="eliminar-producte">
