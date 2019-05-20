@@ -53,7 +53,15 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, t('.login_button') %>
+      <div class="container">
+        <div class="grid-x grid-margin-x">
+          <div class="small-12 cell">
+            <div class="mk-mobile-button-right">
+              <%= f.button :submit, t('.login_button'), class:'mk-mobile-button' %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>
@@ -63,9 +71,9 @@ $( document ).ready(function() {
   if (navigator.userAgent.indexOf('gonative') > -1) {
     $( "#top-capcalera" ).hide();
     $( "#mk-inici-sessio" ).hide();
+    $( ".footer-container" ).hide();
   } else {
     $( "#mobile-inici-sessio" ).hide();
-    $( ".footer-container" ).hide();
   }
 });
 </script>

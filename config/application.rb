@@ -30,6 +30,6 @@ module Csosteniblev4
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    config.action_mailer.default_url_options = { host: 'http://www.csostenible.net' }
+    config.action_mailer.default_url_options = { host: 'https://www.csostenible.net' }
   end
 end

@@ -1,8 +1,11 @@
 class MobileMarketconsController < ApplicationController
 	before_action :authenticate_user!, only: [:nou_anunci, :editar_anunci, :missatges, :venedor, :usuari]
   before_action :categories
+  before_action :check_locale
   layout "buit", only: [:comprova_unitats_categoria, :reserva_producte, :anula_reserva_producte]
   layout "mobile"
+
+  
 
   def index
   	@filtres = true
@@ -10,9 +13,7 @@ class MobileMarketconsController < ApplicationController
     @productes = MkProduct.where(aprovat: true, visible: true)
     if params[:preu] != 'tots'
 		  @productes = @productes.where("preu < :limit_preu", {limit_preu: params[:preu] })
-    end
-
-    
+    end  
   end
 
   def producte
@@ -160,6 +161,12 @@ class MobileMarketconsController < ApplicationController
 
 
   private
+    def check_locale
+      if params[:locale] == nil
+        params[:locale] = 'ca'
+      end
+    end
+
     def categories
       @categories = MkCategoria.all
     end

@@ -20,7 +20,7 @@
       gtag('config', 'UA-127502662-1');
     </script>
 
-
+ 
   </head>
 
   <body class="mk-body-mobile">
@@ -29,9 +29,11 @@
 
     <script>
     $(document).ready(function() {
-      <% if params[:locale] == nil %>
-        window.location.href = 'https://www.csostenible.net/mobile_marketcons/index?distancia=tots&preu=tots&locale=ca';
-      <% end %>
+      <% 
+      if params[:locale] == nil
+        params[:locale] = 'ca'
+      end
+      %>
 
       if (navigator.userAgent.indexOf('gonative') > -1) {
         <% if params[:locale] == 'en' %>
@@ -125,10 +127,13 @@
         var json_menu = JSON.stringify(elements);
         window.location.href = 'gonative://sidebar/setItems?items=' + encodeURIComponent(json_menu);
 
+      } else {
+        window.location.href = 'https://www.csostenible.net';
       }
         
     });
     </script>
+      }
   </body>
 </html>
 
