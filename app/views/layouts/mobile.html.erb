@@ -29,12 +29,6 @@
 
     <script>
     $(document).ready(function() {
-      <% 
-      if params[:locale] == nil
-        params[:locale] = 'ca'
-      end
-      %>
-
       if (navigator.userAgent.indexOf('gonative') > -1) {
         <% if params[:locale] == 'en' %>
           var elements = [{
@@ -62,7 +56,7 @@
               url: 'https://www.csostenible.net/mobile_marketcons/usuari?locale=en'
             <% else %>
               label: 'Sign in',
-              url: 'https://www.csostenible.net/users/sign_in?from_mobile=true&locale=en'
+              url: 'https://www.csostenible.net/users/sign_in?locale=en'
             <% end %>
           }];
         <% elsif params[:locale] == 'es' %>
@@ -91,7 +85,7 @@
               url: 'https://www.csostenible.net/mobile_marketcons/usuari?locale=es'
             <% else %>
               label: 'Iniciar sesión',
-              url: 'https://www.csostenible.net/users/sign_in?from_mobile=true&locale=es'
+              url: 'https://www.csostenible.net/users/sign_in?locale=es'
             <% end %>
           }];
         <% else %>
@@ -120,7 +114,7 @@
               url: 'https://www.csostenible.net/mobile_marketcons/usuari?locale=ca'
             <% else %>
               label: 'Iniciar sessió',
-              url: 'https://www.csostenible.net/users/sign_in?from_mobile=true&locale=ca'
+              url: 'https://www.csostenible.net/users/sign_in?locale=ca'
             <% end %>
           }];
         <% end %>
@@ -128,12 +122,12 @@
         window.location.href = 'gonative://sidebar/setItems?items=' + encodeURIComponent(json_menu);
 
       } else {
-        window.location.href = 'https://www.csostenible.net';
+        //window.location.href = 'https://www.csostenible.net';
       }
         
     });
     </script>
-      }
+      
   </body>
 </html>
 
