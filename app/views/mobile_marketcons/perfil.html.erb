@@ -43,6 +43,11 @@
 	  			<div class="medium-4 cell">
 	  				<%= f.input :municipi, label_html: {class: 'mk-mobile-input'} %>
 	  			</div>
+	  		</div>
+	  		<div class="grid-x grid-margin-x">
+	  			<div class="medium-6 cell">
+	  				<%= f.input :email, label_html: {class: 'mk-mobile-input'} %>
+	  			</div>
 	  		</div>	    
 		  </div>
 
@@ -50,9 +55,11 @@
 		    <div class="container">
 	        <div class="grid-x grid-margin-x">
 	          <div class="small-12 cell">
-	          	<div class="mk-mobile-button-right">
-	            	<%= f.button :submit, t('.guardar'), class:'mk-mobile-button' %>
+	          	<br/>
+	          	<div class="mk-mobile-boto-sencer-container">
+	            	<%= f.button :submit, t('.guardar'), class:'mk-mobile-boto-sencer' %>
 	            </div>
+
 	          </div>
 	        </div>
        	</div>

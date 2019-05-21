@@ -662,6 +662,8 @@ es:
       ok_anulat: "Se ha anulado la reserva"
       error_anulat: "Se ha producido un error y no se ha podido anular la reserva"
       reserva: "Reserva"
+    usuari:
+      sign_out: "Cerrar la sesión"
   mk_products:
     form:
       comprador_buscar: "El comprador lo va a buscar"

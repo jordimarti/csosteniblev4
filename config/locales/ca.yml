@@ -694,6 +694,8 @@ ca:
       ok_anulat: "S'ha anul·lat la reserva"
       error_anulat: "S'ha produït un error i no s'ha pogut anul·lar la reserva"
       reserva: "Reserva"
+    usuari:
+      sign_out: "Tancar la sessió"
   mk_products:
     form:
       comprador_buscar: "El comprador el va a buscar"

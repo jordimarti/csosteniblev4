@@ -12,6 +12,7 @@ class User < ApplicationRecord
   def create_mkuser
     mkuser = MkUser.new
     mkuser.user_id = self.id
+    mkuser.email = self.email
     mkuser.save
   end
 

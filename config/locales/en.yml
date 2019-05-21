@@ -589,6 +589,8 @@ en:
       ok_anulat: "The reservation has been cancelled"
       error_anulat: "An error has occurred and the reservation is not deleted"
       reserva: "Reserve"
+    usuari:
+      sign_out: "Sign out"
   mk_products:
     form:
       comprador_buscar: "The buyer goes for it"

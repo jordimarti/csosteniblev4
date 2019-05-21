@@ -25,6 +25,18 @@ body.mk-body-mobile {
 	padding: 20px 15px;
 }
 
+.mk-mobile-boto-sencer-container {
+	width: 100%;
+	background-color: #1779ba;
+	text-align: center;
+	padding: 10px;
+}
+
+.mk-mobile-boto-sencer {
+	color: white;
+	margin-bottom: 0px;
+}
+
 .mk-mobile-filtres-container {
 	padding: 10px 15px;
 	background-color: #666;
@@ -205,6 +217,10 @@ body.mk-body-mobile {
 }
 
 .mk-mobile-container-boto-eliminar-producte {
+	margin-right: 15px;
+}
+
+.mk-mobile-container-boto-editar-producte {
 	margin-right: 15px;
 }
 
