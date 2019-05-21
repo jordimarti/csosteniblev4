@@ -1,13 +1,29 @@
 <% @missatges_ordenats.each do |missatge| %>
-	<% if missatge.user_id == current_user.id %>
-		<div class="mk-mobile-missatge-usuari">
-			<span class="nom-mk-missatge"><%= @comprador.nom %> <%= @comprador.cognoms %></span>
-			<p class="text-mk-missatge"><%= simple_format(missatge.missatge) %></p>
-		</div>
-	<% else %>
-		<div class="mk-mobile-missatge-venedor">
-			<span class="nom-mk-missatge"><%= @mk_user.nom %> <%= @mk_user.cognoms %></span>
-			<p class="text-mk-missatge"><%= simple_format(missatge.missatge) %></p>
-		</div>
+	<% if params[:user_id].to_i == current_user.id #sóc el comprador %>
+		<% if missatge.user_id == current_user.id %>
+			<div class="mk-mobile-missatge-usuari">
+				<span class="nom-mk-missatge"><%= @comprador.nom %> <%= @comprador.cognoms %></span>
+				<p class="text-mk-missatge"><%= simple_format(missatge.missatge) %></p>
+			</div>
+		<% else %>
+			<div class="mk-mobile-missatge-altre">
+				<span class="nom-mk-missatge"><%= @mk_user.nom %> <%= @mk_user.cognoms %></span>
+				<p class="text-mk-missatge"><%= simple_format(missatge.missatge) %></p>
+			</div>
+		<% end %>
+	<% else #sóc el venedor %>
+		<% if missatge.user_id == current_user.id %>
+			<div class="mk-mobile-missatge-usuari">
+				<span class="nom-mk-missatge"><%= @mk_user.nom %> <%= @mk_user.cognoms %></span>
+				<p class="text-mk-missatge"><%= simple_format(missatge.missatge) %></p>
+				<div class="data-mk-missatge"><%= missatge.created_at.strftime("%H:%M h (%d-%m-%Y) ") %></div>
+			</div>
+		<% else %>
+			<div class="mk-mobile-missatge-altre">
+				<span class="nom-mk-missatge"><%= @comprador.nom %> <%= @comprador.cognoms %></span>
+				<p class="text-mk-missatge"><%= simple_format(missatge.missatge) %></p>
+				<div class="data-mk-missatge"><%= missatge.created_at.strftime("%H:%M h (%d-%m-%Y) ") %></div>
+			</div>
+		<% end %>
 	<% end %>
 <% end %>
