@@ -3,8 +3,10 @@
 	<div class="grid-x grid-margin-x">
 		<div class="small-12 cell">
       <div class="mk-mobile-image-container">
-        <% if @producte.mk_image_product.attached? %>
-              <%= image_tag @producte.mk_image_product.variant(auto_orient: true), class: "mk-image-principal" %>
+        <% if @producte.mk_imatges.any? %>
+          <% @producte.mk_imatges.each do |imatge| %>
+            <div><%= image_tag imatge.mk_product_imatge.variant(auto_orient: true), class: "mk-image-principal" %></div>
+          <% end %>
         <% else %>
           <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
         <% end %>
@@ -227,4 +229,12 @@ $(function() {
 $("#eliminar-producte").click(function() {
   $("#opcions-eliminar-producte").show();
 });
+
+$('.mk-mobile-image-container').slick({
+  dots: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 1,
+  adaptiveHeight: true
+  });
 </script>

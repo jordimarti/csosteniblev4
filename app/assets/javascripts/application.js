@@ -18,6 +18,7 @@
 //= require jquery-ui/widgets/datepicker
 //= require jquery-ui/i18n/datepicker-es
 //= require lightbox
+//= require slick
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
