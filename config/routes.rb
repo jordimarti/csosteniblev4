@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mk_imatges
   resources :mk_documents
   resources :mk_users
   get 'marketcons/index'

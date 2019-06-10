@@ -46,80 +46,80 @@
   </div>
 
   
-    <div class="container">
-    	<div class="grid-x grid-margin-x">
-        <% if @producte.user_id == current_user.id %>
-          <div class="medium-6 cell">
-            <%= simple_form_for(@mk_missatge) do |f| %>
-              <%= f.error_notification %>
-              <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="container">
+  	<div class="grid-x grid-margin-x">
+      <% if @producte.user_id == current_user.id %>
+        <div class="medium-6 cell">
+          <%= simple_form_for(@mk_missatge) do |f| %>
+            <%= f.error_notification %>
+            <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-              <div class="form-inputs">
-                <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
-                <% if @venedor.id == current_user.id %>
-                  <%= f.input :destinatari, as: :hidden, input_html: { value: params[:user_id] } %>
-                <% else %>
-                  <%= f.input :destinatari, as: :hidden, input_html: { value: @venedor.id } %>
-                <% end %>
-                <%= f.input :mk_product_id, as: :hidden, input_html: { value: @producte.id } %>
-                <%= f.input :mobile, as: :hidden, input_html: { value: true } %>
-                <%= f.input :missatge, input_html: {rows: 4} %>
-                
-              </div>
-
-              <div class="form-actions">
-                <div class="mk-mobile-button-right">
-                  <%= f.button :submit, t('.enviar'), class:'mk-mobile-button' %>
-                </div>
-              </div>
-            <% end %>
-          </div>
-          <div class="medium-6 cell">
-            <div class="container-reserva-mkproduct">
-              <h4 class="titol-text-reserva-mkproduct"><%= t('.titol_reservar') %></h4>
-              <% if @producte.reservat == true %>
-                <%= t(".reservat_a") %> <%= @mk_user_reserva.nom %> <%= @mk_user_reserva.cognoms %>
-                <div id="resposta-reserva" class="container-resposta-reserva">
-                  <button class="button" id="boto-anula-reserva"><%= t('.anula_reserva') %></button>
-                </div>
+            <div class="form-inputs">
+              <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+              <% if @venedor.id == current_user.id %>
+                <%= f.input :destinatari, as: :hidden, input_html: { value: params[:user_id] } %>
               <% else %>
-                <span class="text-reserva-mkproduct"><%= t('.text_reservar') %> <br/><%= @comprador.nom %> <%= @comprador.cognoms %>?</span>
-                <div id="resposta-reserva" class="container-resposta-reserva">
-                  <button class="button" id="boto-reserva"><%= t('.reserva') %></button>
-                </div>
+                <%= f.input :destinatari, as: :hidden, input_html: { value: @venedor.id } %>
               <% end %>
+              <%= f.input :mk_product_id, as: :hidden, input_html: { value: @producte.id } %>
+              <%= f.input :mobile, as: :hidden, input_html: { value: true } %>
+              <%= f.input :missatge, input_html: {rows: 4} %>
+              
             </div>
-          </div>
-        <% else %>
-    			<div class="medium-12 cell">
-    				<%= simple_form_for(@mk_missatge) do |f| %>
-              <%= f.error_notification %>
-              <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-              <div class="form-inputs">
-                <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
-                <% if @venedor.id == current_user.id %>
-                  <%= f.input :destinatari, as: :hidden, input_html: { value: params[:user_id] } %>
-                <% else %>
-                  <%= f.input :destinatari, as: :hidden, input_html: { value: @venedor.id } %>
-                <% end %>
-                <%= f.input :mk_product_id, as: :hidden, input_html: { value: @producte.id } %>
-                <%= f.input :mobile, as: :hidden, input_html: { value: true } %>
-                <%= f.input :missatge, input_html: {rows: 4} %>
-                
+            <div class="form-actions">
+              <div class="mk-mobile-button-right">
+                <%= f.button :submit, t('.enviar'), class:'mk-mobile-button' %>
               </div>
-
-              <div class="form-actions">
-                <div class="mk-mobile-button-right">
-                  <%= f.button :submit, t('.enviar'), class:'mk-mobile-button' %>
-                </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="medium-6 cell">
+          <div class="container-reserva-mkproduct">
+            <h4 class="titol-text-reserva-mkproduct"><%= t('.titol_reservar') %></h4>
+            <% if @producte.reservat == true %>
+              <%= t(".reservat_a") %> <%= @mk_user_reserva.nom %> <%= @mk_user_reserva.cognoms %>
+              <div id="resposta-reserva" class="container-resposta-reserva">
+                <button class="button" id="boto-anula-reserva"><%= t('.anula_reserva') %></button>
+              </div>
+            <% else %>
+              <span class="text-reserva-mkproduct"><%= t('.text_reservar') %> <br/><%= @comprador.nom %> <%= @comprador.cognoms %>?</span>
+              <div id="resposta-reserva" class="container-resposta-reserva">
+                <button class="button" id="boto-reserva"><%= t('.reserva') %></button>
               </div>
             <% end %>
+          </div>
+        </div>
+      <% else %>
+  			<div class="medium-12 cell">
+  				<%= simple_form_for(@mk_missatge) do |f| %>
+            <%= f.error_notification %>
+            <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    			</div>
-        <% end %>
-    	</div>
-    </div>
+            <div class="form-inputs">
+              <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+              <% if @venedor.id == current_user.id %>
+                <%= f.input :destinatari, as: :hidden, input_html: { value: params[:user_id] } %>
+              <% else %>
+                <%= f.input :destinatari, as: :hidden, input_html: { value: @venedor.id } %>
+              <% end %>
+              <%= f.input :mk_product_id, as: :hidden, input_html: { value: @producte.id } %>
+              <%= f.input :mobile, as: :hidden, input_html: { value: true } %>
+              <%= f.input :missatge, input_html: {rows: 4} %>
+              
+            </div>
+
+            <div class="form-actions">
+              <div class="mk-mobile-button-right">
+                <%= f.button :submit, t('.enviar'), class:'mk-mobile-button' %>
+              </div>
+            </div>
+          <% end %>
+
+  			</div>
+      <% end %>
+  	</div>
+  </div>
   
 
 

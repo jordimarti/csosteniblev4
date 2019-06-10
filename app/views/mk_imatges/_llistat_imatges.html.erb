@@ -1,0 +1,9 @@
+<% if @mk_imatges.any? %>
+	<% @mk_imatges.each do |imatge| %>
+		<div class="mk-documents-item">
+			
+		  <%= imatge.descripcio %>
+		   
+		</div>
+	<% end %>
+<% end %>

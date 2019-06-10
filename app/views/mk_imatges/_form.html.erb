@@ -1,0 +1,21 @@
+
+<%= simple_form_for(@mk_imatge) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :user_id %>
+    <%= f.input :mk_product_id %>
+    <%= f.input :descripcio %>
+
+    <%= f.input :mk_product_imatge, as: :file %>
+  
+    <% if @mk_imatge.mk_product_imatge.attached? %>
+      <%= image_tag @mk_imatge.mk_product_imatge, class: 'img-noticia' %>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

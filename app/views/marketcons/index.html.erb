@@ -21,8 +21,8 @@
 							<%= link_to marketcons_producte_path(mk_product_id: producte.id), class:"mk-producte-link" do %>
 							<div class="mk-item">
 								<div class="crop">
-								  <% if producte.mk_image_product.attached? %>
-				                <%= image_tag producte.mk_image_product.variant(auto_orient: true), class: "mk-image-principal" %>
+								  <% if producte.mk_imatges.any? %>
+		                <%= image_tag producte.mk_imatges.first.mk_product_imatge.variant(auto_orient: true), class: "mk-image-principal" %>
 				          <% else %>
 				            <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
 				          <% end %>

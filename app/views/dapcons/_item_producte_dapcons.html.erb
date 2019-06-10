@@ -40,11 +40,11 @@
 		      							<% end %>
 		      							<% producte.document_dapcons.each do |document| %>
 		      								<% if params[:locale] == 'ca' %>
-		      									<%= link_to document.nom_ca, interaccions_path(nom: document.nom_ca, categoria: "Download DAPcons", link: document.link) %><br/>
+		      									<%= link_to document.nom_ca, document.link %><br/>
 		      								<% elsif params[:locale] == 'es' %>
-		      									<%= link_to document.nom_es, interaccions_path(nom: document.nom_es, categoria: "Download DAPcons", link: document.link) %><br/>
+		      									<%= link_to document.nom_es, document.link %><br/>
 		      								<% else %>
-		      									<%= link_to document.nom_en, interaccions_path(nom: document.nom_en, categoria: "Download DAPcons", link: document.link) %><br/>
+		      									<%= link_to document.nom_en, document.link %><br/>
 		      								<% end %>
 		      							<% end %>
 		      						</div>

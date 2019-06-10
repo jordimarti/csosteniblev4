@@ -4,8 +4,12 @@
   	<div class="medium-9 cell">
   		<div class="grid-x grid-margin-x">
   			<div class="medium-4 cell">
-          <% if @producte.mk_image_product.attached? %>
-                <%= image_tag @producte.mk_image_product.variant(auto_orient: true), class: "mk-image-principal" %>
+          <% if @producte.mk_imatges.any? %>
+            <% @producte.mk_imatges.each do |imatge| %>
+              <%= link_to imatge.mk_product_imatge, data: {lightbox: 'imatge-lightbox', title: imatge.descripcio} do %>
+                <%= image_tag imatge.mk_product_imatge.variant(auto_orient: true), class: "mk-image-principal" %>
+              <% end %>
+            <% end %>
           <% else %>
             <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
           <% end %>
@@ -213,5 +217,10 @@ $(function() {
 
 $("#eliminar-producte").click(function() {
   $("#opcions-eliminar-producte").show();
+});
+
+lightbox.option({
+  'albumLabel': "Imatge %1 de %2",
+  'wrapAround': true
 });
 </script>

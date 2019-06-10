@@ -17,6 +17,7 @@
 //= require cocoon
 //= require jquery-ui/widgets/datepicker
 //= require jquery-ui/i18n/datepicker-es
+//= require lightbox
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

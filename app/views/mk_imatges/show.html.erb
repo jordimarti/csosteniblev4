@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @mk_imatge.user_id %>
+</p>
+
+<p>
+  <strong>Mk product:</strong>
+  <%= @mk_imatge.mk_product_id %>
+</p>
+
+<p>
+  <strong>Descripcio:</strong>
+  <%= @mk_imatge.descripcio %>
+</p>
+
+<%= link_to 'Edit', edit_mk_imatge_path(@mk_imatge) %> |
+<%= link_to 'Back', mk_imatges_path %>
