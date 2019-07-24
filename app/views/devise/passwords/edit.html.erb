@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="mk-inici-sessio">
   <div class="grid-x">
     <div class="medium-12 cell">
 
@@ -25,3 +25,36 @@
     </div>
   </div>
 </div>
+
+<div id="mobile-inici-sessio" class="mk-mobile-inici-sessio-container">
+  <h2><%= t('.change_password_title') %></h2>
+
+  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
+
+    <%= f.input :reset_password_token, as: :hidden %>
+    <%= f.full_error :reset_password_token %>
+
+    <div class="form-inputs">
+      <%= f.input :password, label: t('.nova_contrasenya'), required: true, autofocus: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+      <%= f.input :password_confirmation, label: t('.confirma_nova_contrasenya'), required: true %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, t('.change_password') %>
+    </div>
+  <% end %>
+
+</div>
+
+<script>
+$( document ).ready(function() {
+  if (navigator.userAgent.indexOf('gonative') > -1) {
+    $( "#top-capcalera" ).hide();
+    $( "#mk-inici-sessio" ).hide();
+    $( ".footer-container" ).hide();
+  } else {
+    $( "#mobile-inici-sessio" ).hide();
+  }
+});
+</script>
