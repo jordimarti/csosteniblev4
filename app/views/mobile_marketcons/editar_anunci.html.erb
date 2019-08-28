@@ -68,6 +68,21 @@
 
         <div class="grid-x grid-margin-x">
           <div class="medium-12 cell">
+            <div class="mk-imatges-container">
+              <span class="mk-mobile-input"><%= t('.adjuntar_imatges') %></span>
+              <br/>
+              <%= f.simple_fields_for :mk_imatges do |mk_imatge| %>
+                <%= render 'mk_imatge_fields', f: mk_imatge %>
+              <% end %>
+              <div class="links">
+                <%= link_to_add_association "+ Afegeix imatge", f, :mk_imatges, html_options = {class: "mk-afegir-imatge button"} %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-x grid-margin-x">
+          <div class="medium-12 cell">
             <div class="mk-documents-container">
               <%= t('.adjuntar_documents') %>
               <%= f.simple_fields_for :mk_documents do |mk_document| %>
@@ -80,19 +95,6 @@
           </div>
         </div>
 
-        <div class="grid-x grid-margin-x">
-          <div class="medium-12 cell">
-            <div class="mk-imatges-container">
-              <%= t('.adjuntar_imatges') %>
-              <%= f.simple_fields_for :mk_imatges do |mk_imatge| %>
-                <%= render 'mk_imatge_fields', f: mk_imatge %>
-              <% end %>
-              <div class="links">
-                <%= link_to_add_association "+ Afegeix imatge", f, :mk_imatges, html_options = {class: "mk-afegir-imatge button"} %>
-              </div>
-            </div>
-          </div>
-        </div>
         <br/>
       </div>
 
