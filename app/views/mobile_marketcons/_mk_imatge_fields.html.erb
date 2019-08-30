@@ -1,23 +1,17 @@
-<div class="nested-fields mk-mobile-imatges-edicio-container">
-	<div class="grid-x grid-margin-x">
-		<div class="medium-12 cell">
-			<div class="grid-x grid-margin-x">
-				<% if f.object.mk_product_imatge.attached? %>
-					<div class="small-12 cell">
-						<%= image_tag f.object.mk_product_imatge.variant(combine_options: {resize: '300x300^', extent: '300x300', gravity: 'Center', auto_orient: true}), class: "mk-mobile-imatges-edicio" %>
-						<%= link_to_remove_association "X", f, class: "mk-mobile-imatges-eliminar" %>
-					</div>
-				<% else %>
-					<div class="small-10 cell">
-						<%= f.input :mk_product_imatge, as: :file %>
-					</div>
-					<div class="small-2 cell">
-						<div class="eliminar-document">
-							<%= link_to_remove_association "X", f, class: "mk-mobile-imatges-eliminar" %>
-						</div>
-					</div>
-				<% end %>
+
+	<% if f.object.mk_product_imatge.attached? %>
+		<div class="nested-fields mk-mobile-imatges-edicio-existent-container">
+			<%= image_tag f.object.mk_product_imatge.variant(combine_options: {resize: '300x300^', extent: '300x300', gravity: 'Center', auto_orient: true}), class: "mk-mobile-imatges-edicio" %>
+			<%= link_to_remove_association "X", f, class: "mk-mobile-imatges-eliminar" %>
+			<div class="mk-mobile-descripcio-imatge-container">
+				<%= f.object.descripcio %>
 			</div>
 		</div>
-	</div>
-</div>
+	<% else %>
+		<div class="nested-fields mk-mobile-imatges-edicio-container">
+			<%= f.input :mk_product_imatge, as: :file %>
+			<%= f.input :descripcio %>
+			<%= link_to_remove_association "X", f, class: "mk-mobile-imatges-eliminar" %>
+		</div>
+	<% end %>
+			

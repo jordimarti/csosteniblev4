@@ -185,6 +185,12 @@ ca:
         municipi: "Municipi"
         adreca_oculta: "Ocultar adreça al públic (només es mostrarà el municipi)"
         mk_image_product: "Imatge del producte"
+        mk_imatges:
+          mk_product_imatge: "Nova imatge"
+          descripcio: "Descripció"
+        mk_documents:
+          nom: "Nom del document"
+          document: "Document"
   layouts:
     top:
       register: "Registrar-se"
