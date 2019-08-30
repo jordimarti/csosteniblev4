@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .dialog {
-    width: 80%;
     margin-top: 60px;
     text-align: center;
   }
@@ -15,20 +14,10 @@
 <body class="rails-default-error-page">
   <div class="dialog">
     <div>
-      <h1>S'ha produït un error</h1>
-      <h1>Se ha producido un error</h1>
-      <h1>An error has occurred</h1>
+      <p>S'ha produït un error</p>
+      <p>Se ha producido un error</p>
+      <p>An error has occurred</p>
     </div>
   </div>
 </body>
 </html>
-
-<script>
-  $(document).ready(function() {
-    if (navigator.userAgent.indexOf('gonative') > -1) {
-      window.setTimeout(function(){
-        window.location.href = "https://www.csostenible.net/mobile_marketcons";
-      }, 5000);
-    }
-  });
-</script>
