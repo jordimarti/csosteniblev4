@@ -652,6 +652,8 @@ ca:
       comprador_buscar: "El comprador el va a buscar"
       venedor_porta: "El venedor el porta"
       negociar: "A negociar"
+      adjuntar_imatges: "Adjuntar imatges"
+      nova_imatge: "+ Nova imatge"
     producte:
       comprador_buscar: "El comprador el va a buscar"
       venedor_porta: "El venedor el porta"
