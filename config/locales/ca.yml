@@ -704,6 +704,8 @@ ca:
       reserva: "Reserva"
     usuari:
       sign_out: "Tancar la sessió"
+    about:
+      sobre_marketcons: "Sobre MARKETcons"
   mk_products:
     form:
       comprador_buscar: "El comprador el va a buscar"

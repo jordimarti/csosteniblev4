@@ -1,8 +1,70 @@
-<div class="container">
-  <%= render "layouts/marketcons_navigation" %>
+<% if params[:locale] == 'ca' %>
 
-  	<div class="medium-9 cell">
-  		<h3><%= t('.sobre_marketcons') %></h3>
+	<div class="mk-mobile-about">
+		<div class="mk-mobile-titol-pagina">
+				Sobre MARKETcons
+			</div>
+		<%= image_tag 'https://csosteniblev4.s3-eu-west-1.amazonaws.com/marketcons/about_marketcons.png', class: 'mk-mobile-about-marketcons' %>
+
+		<div class="mk-mobile-about-text">
+			<p>L'objectiu de MARKETcons és promoure la reutilització de productes de la construcció per tal d'apropar-nos més a un model d'economia circular.</p>
+
+			<p>MARKETcons ha estat realitzat pel Col·legi d'Aparelladors, Arquitectes Tècnics i Enginyers d'Edificació de Barcelona, amb el suport de l'Agència Catalana de Residus.</p>
+
+			<div class="mk-mobile-about-marketcons-logo">
+				<%= image_tag 'https://csosteniblev4.s3-eu-west-1.amazonaws.com/marketcons/logo-caateeb.jpg', class: 'mk-mobile-about-marketcons' %>
+			</div>
+
+			<div class="mk-mobile-about-marketcons-logo">
+				<%= image_tag 'https://csosteniblev4.s3-eu-west-1.amazonaws.com/marketcons/arcgen_color_h.jpg', class: 'mk-mobile-about-marketcons' %>
+			</div>
 		</div>
 	</div>
-</div>
+	
+<% elsif params[:locale] == 'es' %>
+
+	<div class="mk-mobile-about">
+		<div class="mk-mobile-titol-pagina">
+				Sobre MARKETcons
+			</div>
+		<%= image_tag 'https://csosteniblev4.s3-eu-west-1.amazonaws.com/marketcons/about_marketcons_es.png', class: 'mk-mobile-about-marketcons' %>
+
+		<div class="mk-mobile-about-text">
+			<p>El objetivo de MARKETcons es promover la reutilización de productos de la construcción con el fin de acercarnos más a un modelo de economía circular.</p>
+
+			<p>MARKETcons ha sido realizado por el Colegio de Aparejadores, Arquitectos Técnicos e Ingenieros de Edificación de Barcelona, con el apoyo de la Agencia Catalana de Residuos.</p>
+
+			<div class="mk-mobile-about-marketcons-logo">
+				<%= image_tag 'https://csosteniblev4.s3-eu-west-1.amazonaws.com/marketcons/logo-caateeb.jpg', class: 'mk-mobile-about-marketcons' %>
+			</div>
+
+			<div class="mk-mobile-about-marketcons-logo">
+				<%= image_tag 'https://csosteniblev4.s3-eu-west-1.amazonaws.com/marketcons/arcgen_color_h.jpg', class: 'mk-mobile-about-marketcons' %>
+			</div>
+		</div>
+	</div>
+
+<% else %>
+
+	<div class="mk-mobile-about">
+		<div class="mk-mobile-titol-pagina">
+				About MARKETcons
+			</div>
+		<%= image_tag 'https://csosteniblev4.s3-eu-west-1.amazonaws.com/marketcons/about_marketcons_en.png', class: 'mk-mobile-about-marketcons' %>
+
+		<div class="mk-mobile-about-text">
+			<p>The goal of MARKETcons is to promote the reuse of construction products in order to get closer to a circular economy model.</p>
+
+			<p>MARKETcons has been made by Col·legi d'Aparelladors, Arquitectes Tècnics i Enginyers d'Edificació de Barcelona, with the support of Agència Catalana de Residus.</p>
+
+			<div class="mk-mobile-about-marketcons-logo">
+				<%= image_tag 'https://csosteniblev4.s3-eu-west-1.amazonaws.com/marketcons/logo-caateeb.jpg', class: 'mk-mobile-about-marketcons' %>
+			</div>
+
+			<div class="mk-mobile-about-marketcons-logo">
+				<%= image_tag 'https://csosteniblev4.s3-eu-west-1.amazonaws.com/marketcons/arcgen_color_h.jpg', class: 'mk-mobile-about-marketcons' %>
+			</div>
+		</div>
+	</div>
+
+<% end %>

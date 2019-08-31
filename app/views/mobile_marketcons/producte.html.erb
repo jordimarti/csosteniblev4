@@ -5,7 +5,11 @@
       <div class="mk-mobile-image-container">
         <% if @producte.mk_imatges.any? %>
           <% @producte.mk_imatges.each do |imatge| %>
-            <div><%= image_tag imatge.mk_product_imatge.variant(auto_orient: true), class: "mk-image-principal" %></div>
+            <% if imatge.mk_product_imatge.attached? %>
+            	<div><%= image_tag imatge.mk_product_imatge.variant(auto_orient: true), class: "mk-image-principal" %></div>
+            <% else %>
+            	<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
+            <% end %>
           <% end %>
         <% else %>
           <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-imatge-producte' %>
