@@ -682,6 +682,7 @@ ca:
       preu: "Preu"
       descarregar: "Descarregar"
       documents: "Documents"
+      tornar_productes: "Tornar a productes"
     categoria:
       no_productes: "No hi ha cap producte d'aquesta categoria"
     aprovacions:
