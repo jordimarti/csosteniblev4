@@ -54,7 +54,7 @@
               
               <li class="menu-marketcons-item menu-marketcons-actiu">
                 <%= link_to marketcons_venedor_path(user_id: current_user.id), class: 'link-menu-marketcons link-marketcons-actiu' do %>
-                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_light.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_anuncis_light.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %>
                 <% end %>
               </li>
               
@@ -62,7 +62,7 @@
             
               <li class="menu-marketcons-item">
                 <%= link_to new_user_session_path, class: 'link-menu-marketcons' do %>
-                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_dark.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_anuncis_dark.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %>
                 <% end %>
               </li>
               
@@ -72,7 +72,7 @@
               
               <li class="menu-marketcons-item">
                 <%= link_to marketcons_venedor_path(user_id: current_user.id), class: 'link-menu-marketcons' do %>
-                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_dark.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_anuncis_dark.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %>
                 <% end %>
               </li>
               
@@ -80,7 +80,45 @@
             
               <li class="menu-marketcons-item">
                 <%= link_to new_user_session_path, class: 'link-menu-marketcons' do %>
-                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_dark.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_anuncis_dark.png", class: 'mk-icons-navigation' %> <%= t('.meus_anuncis') %>
+                <% end %>
+              </li>
+              
+            <% end %>
+          <% end %>
+
+          <% if @menu_actiu == 'perfil' %>
+            <% if user_signed_in? %>
+              
+              <li class="menu-marketcons-item menu-marketcons-actiu">
+                <%= link_to marketcons_perfil_path, class: 'link-menu-marketcons link-marketcons-actiu' do %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_light.png", class: 'mk-icons-navigation' %> <%= t('.perfil') %>
+                <% end %>
+              </li>
+              
+            <% else %> 
+            
+              <li class="menu-marketcons-item">
+                <%= link_to new_user_session_path, class: 'link-menu-marketcons' do %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_dark.png", class: 'mk-icons-navigation' %> <%= t('.perfil') %>
+                <% end %>
+              </li>
+              
+            <% end %>
+          <% else %>
+            <% if user_signed_in? %>
+              
+              <li class="menu-marketcons-item">
+                <%= link_to marketcons_perfil_path, class: 'link-menu-marketcons' do %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_dark.png", class: 'mk-icons-navigation' %> <%= t('.perfil') %>
+                <% end %>
+              </li>
+              
+            <% else %> 
+            
+              <li class="menu-marketcons-item">
+                <%= link_to new_user_session_path, class: 'link-menu-marketcons' do %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icones_marketcons_perfil_dark.png", class: 'mk-icons-navigation' %> <%= t('.perfil') %>
                 <% end %>
               </li>
               

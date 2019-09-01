@@ -6,7 +6,9 @@ class SendMkMessageMailer < ApplicationMailer
 		@destinatari = destinatari
 		@producte = producte
 		@missatge = missatge
-		mail( :to => @destinatari.email,
-    :subject => 'Missatge de MARKETcons' )
+		usuari_receptor = User.find(@destinatari.user_id)
+		email_usuari_receptor = usuari_receptor.email
+		mail(:to => email_usuari_receptor,
+    :subject => 'MARKETcons' )
 	end
 end

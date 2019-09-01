@@ -56,6 +56,7 @@ class MarketconsController < ApplicationController
 
   def venedor
     @filtres = false
+    @menu_actiu = "venedor"
     if user_signed_in? && current_user.id == params[:user_id]
       @menu_actiu = "venedor"
     end 
@@ -65,7 +66,9 @@ class MarketconsController < ApplicationController
 
   def perfil
     @filtres = false
-    @mk_user = MkUser.find(params[:mk_user_id])
+    @menu_actiu = "perfil"
+    #@mk_user = MkUser.find(params[:mk_user_id])
+    @mk_user = MkUser.find_by(user_id: current_user.id)
   end
 
   def about
