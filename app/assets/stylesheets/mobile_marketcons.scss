@@ -12,7 +12,7 @@ body.mk-body-mobile {
 }
 
 .mk-mobile-container-text-general {
-	padding: 15px 15px;
+	padding: 15px 15px 0px 15px;
 }
 
 .mk-mobile-goback {
@@ -21,7 +21,7 @@ body.mk-body-mobile {
 }
 
 .mk-mobile-link-back {
-	color: #0D5D72;
+	color: #0091FE;
 }
 
 .back-arrow {
@@ -143,6 +143,11 @@ body.mk-body-mobile {
 	padding-top: 15px;
 }
 
+.mk-mobile-preu-container {
+	height: 45px;
+	margin-top: -10px;
+}
+
 .mk-mobile-hr-missatges {
 	margin-top: 0px;
 	margin-bottom: 5px;
@@ -255,6 +260,41 @@ body.mk-body-mobile {
 
 .mk-mobile-container-boto-editar-producte {
 	margin-right: 15px;
+}
+
+.mk-mobile-boto-enviar-missatge {
+	background-color: #D6EFF4;
+	color: #0D5D72;
+	font-weight: bold;
+	float: right;
+	width: 200px;
+	height: 60px;
+	margin-top: -10px;
+}
+
+.mk-mobile-img-icona-dialeg {
+	width: 20px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 22px;
+}
+
+.mk-mobile-container-venedor-producte {
+	height: 120px;
+}
+
+.mk-mobile-product-imatge-perfil-container {
+	float: left;
+}
+
+.mk-mobile-product-text-perfil-container {
+	margin-left: 110px;
+	padding-top: 20px;
+}
+
+.mk-mobile-text-enviar-missatge {
+	float: right;
+	margin: 17px 20px 0px 0px;
 }
 
 .mk-mobile-info-canvi-idioma {

@@ -98,11 +98,11 @@
         
       <% end %>
 
-			<hr class="hr-no-margin"/>
+			<hr class="mk-mobile-hr"/>
 			
 			<div class="mk-mobile-50">
 				<div class="mk-mobile-container-text-general">
-					<div class="mk-preu-container">
+					<div class="mk-mobile-preu-container">
 						<span class="titol-camp-producte"><%= t('.preu') %></span>
 						<span class="preu-producte"><%= @producte.preu %> €</span>
 					</div>
@@ -130,7 +130,7 @@
 	  					
 						<% else %>
               <%= link_to mobile_marketcons_missatges_path(mk_product_id: @producte.id, user_id: current_user.id) do %>
-	  						<div class="boto-enviar-missatge">
+	  						<div class="mk-mobile-boto-enviar-missatge">
                   <div class="icona-dialeg">
 	  								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "img-icona-dialeg" %>
 	  							</div>
@@ -142,11 +142,11 @@
             <% end %>
           <% else %>
             <%= link_to new_user_session_path do %>
-              <div class="boto-enviar-missatge">
+              <div class="mk-mobile-boto-enviar-missatge">
                 <div class="icona-dialeg">
-                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "img-icona-dialeg" %>
+                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "mk-mobile-img-icona-dialeg" %>
                 </div>
-                <div class="text-enviar-missatge">
+                <div class="mk-mobile-text-enviar-missatge">
                   <%= t('.enviar_missatge') %>
                 </div>
               </div>
@@ -186,19 +186,21 @@
 	              <% end %>
 	            <% end %>
 	          <% else %>
-	            <%= link_to mobile_marketcons_venedor_path(user_id: @producte.user_id), class:"mk-venedor-link" do %>
-	  						<div class="mk-product-imatge-perfil-container">
-		  						<% if @mk_user.mk_image_user.attached? %>
-				  					<%= image_tag @mk_user.mk_image_user, class: "mk-imatge-perfil-producte" %>
-	                <% else %>
-	                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_user.png", class: 'mk-imatge-perfil-producte' %>
-				  				<% end %>
-				  			</div>
-				  			<div class="mk-product-text-perfil-container">
-				  				<span class="titol-camp-producte"><%= t('.publicat_per') %></span><br/>
-	  							<span class="text-camp-producte"><%= @mk_user.nom %> <%= @mk_user.cognoms %></span>
-				  			</div>
-				  		<% end %>
+	            <div class="mk-mobile-container-venedor-producte">
+		            <%= link_to mobile_marketcons_venedor_path(user_id: @producte.user_id), class:"mk-venedor-link" do %>
+		  						<div class="mk-mobile-product-imatge-perfil-container">
+			  						<% if @mk_user.mk_image_user.attached? %>
+					  					<%= image_tag @mk_user.mk_image_user, class: "mk-imatge-perfil-producte" %>
+		                <% else %>
+		                  <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_user.png", class: 'mk-imatge-perfil-producte' %>
+					  				<% end %>
+					  			</div>
+					  			<div class="mk-mobile-product-text-perfil-container">
+					  				<span class="titol-camp-producte"><%= t('.publicat_per') %></span><br/>
+		  							<span class="text-camp-producte"><%= @mk_user.nom %> <%= @mk_user.cognoms %></span>
+					  			</div>
+					  		<% end %>
+					  	</div>
 	          <% end %>
 	        </div>
 				
