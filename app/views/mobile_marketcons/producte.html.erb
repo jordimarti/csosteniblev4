@@ -110,36 +110,39 @@
 			</div>
 				
 			
-				
+			
 					<% if user_signed_in? %> 
-            <% if @producte.user_id == current_user.id %>
-							<div class="mk-mobile-container-boto-editar-producte">
-	  						<%= link_to t('.editar_producte'), mobile_marketcons_editar_anunci_path(mk_product_id: @producte.id), class:'boto-editar-producte' %>
-	  					</div>
-	  					<div class="mk-mobile-container-boto-eliminar-producte" id="eliminar-producte">
-                <div id="eliminar-producte"><a class="boto-eliminar-producte"><%= t('.eliminar_producte') %></a></div>
-	  					</div>
-              <div id="opcions-eliminar-producte">
-                <div class="producte-venut">
-                  <%= link_to t('.producte_venut'), mobile_marketcons_producte_venut_path(mk_product_id: @producte.id), class:'boto-producte-venut' %>
-                </div>
-                <div class="producte-amagar">
-                  <%= link_to t('.producte_amagar'), mobile_marketcons_producte_amagar_path(mk_product_id: @producte.id), class:'boto-producte-amagar' %>
-                </div>
-              </div>
-	  					
-						<% else %>
-              <%= link_to mobile_marketcons_missatges_path(mk_product_id: @producte.id, user_id: current_user.id) do %>
-	  						<div class="mk-mobile-boto-enviar-missatge">
-                  <div class="icona-dialeg">
-	  								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "img-icona-dialeg" %>
-	  							</div>
-	  							<div class="text-enviar-missatge">
-	  								<%= t('.enviar_missatge') %>
-	  							</div>
-	  						</div>
-              <% end %>
-            <% end %>
+	          	
+	            <% if @producte.user_id == current_user.id %>
+	            <div class="mk-mobile-container-text-general clear-container">	
+								<div class="mk-mobile-container-boto-editar-producte">
+		  						<%= link_to t('.editar_producte'), mobile_marketcons_editar_anunci_path(mk_product_id: @producte.id), class:'boto-editar-producte' %>
+		  					</div>
+		  					<div class="mk-mobile-container-boto-eliminar-producte" id="eliminar-producte">
+	                <div id="eliminar-producte"><a class="boto-eliminar-producte"><%= t('.eliminar_producte') %></a></div>
+		  					</div>
+	              <div id="opcions-eliminar-producte">
+	                <div class="producte-venut">
+	                  <%= link_to t('.producte_venut'), mobile_marketcons_producte_venut_path(mk_product_id: @producte.id), class:'boto-producte-venut' %>
+	                </div>
+	                <div class="producte-amagar">
+	                  <%= link_to t('.producte_amagar'), mobile_marketcons_producte_amagar_path(mk_product_id: @producte.id), class:'boto-producte-amagar' %>
+	                </div>
+	              </div>
+		  				</div>
+							<% else %>
+	              <%= link_to mobile_marketcons_missatges_path(mk_product_id: @producte.id, user_id: current_user.id) do %>
+		  						<div class="mk-mobile-boto-enviar-missatge">
+	                  <div class="icona-dialeg">
+		  								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "img-icona-dialeg" %>
+		  							</div>
+		  							<div class="text-enviar-missatge">
+		  								<%= t('.enviar_missatge') %>
+		  							</div>
+		  						</div>
+	              <% end %>
+	            <% end %>
+
           <% else %>
             <%= link_to new_user_session_path do %>
               <div class="mk-mobile-boto-enviar-missatge">
@@ -152,7 +155,7 @@
               </div>
             <% end %>
 					<% end %>
-				
+			
 			<hr class="hr-no-margin"/>
 			<div class="mk-mobile-container-text-general">
 				
