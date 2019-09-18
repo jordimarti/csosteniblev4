@@ -114,7 +114,7 @@
 					<% if user_signed_in? %> 
 	          	
 	            <% if @producte.user_id == current_user.id %>
-	            <div class="mk-mobile-container-text-general clear-container">	
+	            <div class="clear-container">	
 								<div class="mk-mobile-container-boto-editar-producte">
 		  						<%= link_to t('.editar_producte'), mobile_marketcons_editar_anunci_path(mk_product_id: @producte.id), class:'boto-editar-producte' %>
 		  					</div>
