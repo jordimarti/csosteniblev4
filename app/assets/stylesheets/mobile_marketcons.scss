@@ -7,7 +7,7 @@ body.mk-body-mobile {
 }
 
 .mk-mobile-50 {
-	width: 50%;
+	width: 150px;
 	float: left;
 }
 
@@ -391,6 +391,10 @@ body.mk-body-mobile {
 
 .clear-container {
 	clear: both;
+}
+
+.spacer-container {
+	height: 20px;
 }
 
 /* Dots Slick Slider */

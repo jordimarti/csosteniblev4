@@ -159,6 +159,38 @@ es:
         text_imatge_cas_2_en: "Descripción imagen 2"
         text_imatge_cas_3_en: "Descripción imagen 3"
         text_imatge_cas_4_en: "Descripción imagen 4"
+      mk_user:
+        mk_image_user: "Imagen de perfil"
+        nom: "Nombre"
+        cognoms: "Apellidos"
+        adreca: "Dirección"
+        codi_postal: "Código postal"
+        municipi: "Municipio"
+        email: "Correo electrónico"
+        telefon: "Teléfono"
+        web: "Página web"
+        mostrar_adreca: "Mostrar dirección"
+        mostrar_email: "Mostrar correo electrónico"
+        mostrar_telefon: "Mostrar teléfono"
+        mostrar_web: "Mostrar página web"
+      mk_product:
+        nom: "Título"
+        descripcio: "Descripción"
+        categoria: "Categoría"
+        preu: "Precio"
+        pes: "Peso aproximado"
+        enviament: "Envío o recogida"
+        adreca: "Dirección"
+        codi_postal: "Código postal"
+        municipi: "Municipio"
+        adreca_oculta: "Ocultar dirección al público (sólo se mostrará el municipio)"
+        mk_image_product: "Imagen del producto"
+        mk_imatges:
+          mk_product_imatge: "Nueva imagen"
+          descripcio: "Descripción"
+        mk_documents:
+          nom: "Nombre del documento"
+          document: "Documento"
   layouts:
     top:
       register: "Registrarse"
@@ -620,6 +652,10 @@ es:
       comprador_buscar: "El comprador lo va a buscar"
       venedor_porta: "El vendedor lo lleva"
       negociar: "A negociar"
+      adjuntar_imatges: "Adjuntar imágenes"
+      nova_imatge: "+ Nueva imagen"
+      adjuntar_documents: "Adjuntar documentos"
+      nou_document: "+ Nuevo documento"
     producte:
       comprador_buscar: "El comprador lo va a buscar"
       venedor_porta: "El vendedor lo lleva"
@@ -642,6 +678,8 @@ es:
       preu: "Precio"
       descarregar: "Descargar"
       documents: "Documentos"
+      tornar_productes: "Volver a productos"
+      missatges: "Mensajes"
     categoria:
       no_productes: "No hay ningún producto de esta categoría"
     aprovacions:
@@ -664,6 +702,8 @@ es:
       reserva: "Reserva"
     usuari:
       sign_out: "Cerrar la sesión"
+    about:
+      sobre_marketcons: "Sobre MARKETcons"
   mk_products:
     form:
       comprador_buscar: "El comprador lo va a buscar"
