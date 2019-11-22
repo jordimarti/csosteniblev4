@@ -203,6 +203,7 @@
 
 .mk-imatge-producte {
 	width: 250px;
+	margin-bottom: 10px;
 }
 
 
@@ -210,8 +211,6 @@
 /* Detall producte */
 
 .mk-imatge-principal {
-	width: 150px;
-	height: 150px;
 	object-fit: cover;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;

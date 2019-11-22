@@ -7,7 +7,7 @@
           <% if @producte.mk_imatges.any? %>
             <% @producte.mk_imatges.each do |imatge| %>
               <%= link_to imatge.mk_product_imatge, data: {lightbox: 'imatge-lightbox', title: imatge.descripcio} do %>
-                <%= image_tag imatge.mk_product_imatge.variant(auto_orient: true), class: "mk-image-principal" %>
+                <%= image_tag imatge.standard_imatge, class: "mk-imatge-producte" %>
               <% end %>
             <% end %>
           <% else %>

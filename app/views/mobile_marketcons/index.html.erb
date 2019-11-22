@@ -88,7 +88,7 @@
 				<div class="mk-mobile-item">
 					<div class="mk-mobile-item-imatge">
 					  <% if producte.mk_imatges.any? %>
-              <%= image_tag producte.mk_imatges.first.mk_product_imatge.variant(auto_orient: true), class: "mk-mobile-imatge-principal" %>
+              <%= image_tag producte.mk_imatges.first.miniatura_imatge, class: "mk-mobile-imatge-principal" %>
 	          <% else %>
 	            <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_product.jpg", class: 'mk-mobile-imatge-principal' %>
 	          <% end %>

@@ -178,7 +178,7 @@ es:
         descripcio: "Descripción"
         categoria: "Categoría"
         preu: "Precio"
-        pes: "Peso aproximado"
+        pes: "Peso"
         enviament: "Envío o recogida"
         adreca: "Dirección"
         codi_postal: "Código postal"
