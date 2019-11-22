@@ -209,8 +209,13 @@
 
 /* Detall producte */
 
-.mk-image-principal {
-	margin-bottom: 10px;	
+.mk-imatge-principal {
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	margin-bottom: 10px;
 }
 
 .mk-product-nom {

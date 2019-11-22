@@ -634,9 +634,18 @@ ca:
     index:
       filtres: "FILTRES"
       preu: "Preu"
+      50euros: "Menys de 50 €"
+      100euros: "Menys de 100 €"
+      500euros: "Menys de 500 €"
       distancia: "Distància"
       categoria: "Categoria"
       reservat: "RESERVAT"
+      qualsevol_preu: "Tot"
+      5km: "Menys de 5 km"
+      10km: "Menys de 10 km"
+      50km: "Menys de 50 km"
+      100km: "Menys de 100 km"
+      qualsevol_distancia: "Tot"
     perfil:
       guardar: "Guardar"
       configuracio_perfil: "Configuració del perfil públic"
@@ -652,6 +661,10 @@ ca:
       comprador_buscar: "El comprador el va a buscar"
       venedor_porta: "El venedor el porta"
       negociar: "A negociar"
+      adjuntar_imatges: "Adjuntar imatges"
+      nova_imatge: "+ Nova imatge"
+      adjuntar_documents: "Adjuntar documents"
+      nou_document: "+ Nou document"
     editar_anunci:
       editar_anunci: "Editar anunci"
       guardar: "Guardar"
@@ -686,6 +699,7 @@ ca:
       descarregar: "Descarregar"
       documents: "Documents"
       tornar_productes: "Tornar a productes"
+      missatges: "Missatges"
     categoria:
       no_productes: "No hi ha cap producte d'aquesta categoria"
     aprovacions:

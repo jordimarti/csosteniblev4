@@ -15,6 +15,18 @@ body.mk-body-mobile {
 	padding: 15px 15px 0px 15px;
 }
 
+.mk-mobile-container-localitzacio {
+	padding: 0px 15px;
+}
+
+.mk-mobile-container-documents {
+	padding: 0px 15px;
+}
+
+.mk-mobile-llistat {
+	margin-bottom: 0px;
+}
+
 .mk-mobile-goback {
 	padding: 10px 15px;
 	font-weight: bold;
@@ -181,7 +193,6 @@ body.mk-body-mobile {
 	background-color: white;
 	padding: 5px 15px;
 	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
 }
 
 .mk-mobile-missatge-imatge-perfil-container {
@@ -202,7 +213,7 @@ body.mk-body-mobile {
 }
 
 .mk-mobile-background-missatges {
-	background-color: #999;
+	background-color: #fff;
 	padding-top: 20px;
 	margin-bottom: 10px;
 }
@@ -277,6 +288,10 @@ body.mk-body-mobile {
 	float: left;
 	margin-left: 20px;
 	margin-top: 22px;
+}
+
+.mk-mobile-text-enviar-missatge {
+	margin-top: 16px;
 }
 
 .mk-mobile-container-venedor-producte {

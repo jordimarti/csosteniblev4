@@ -65,7 +65,7 @@
 				
 			<hr class="mk-mobile-hr"/>
 			
-			<div class="mk-mobile-container-text-general">
+			<div class="mk-mobile-container-localitzacio">
 				<span class="titol-camp-producte"><%= t('.localitzacio') %></span><br/>
 				<span class="text-camp-producte">
 					<% if @producte.adreca_oculta != true %>
@@ -77,10 +77,10 @@
 			<% if @producte.mk_documents.any? %>
       <hr class="mk-mobile-hr"/>
 			
-    	<div class="mk-mobile-container-text-general">
+    	<div class="mk-mobile-container-documents">
       	<span class="titol-camp-producte"><%= t('.documents') %></span>
       
-        <ul>
+        <ul class="mk-mobile-llistat">
         <% @producte.mk_documents.each do |docu| %>
           <li><%= docu.nom %>
           <% if docu.document.previewable? %>
@@ -134,9 +134,9 @@
 	              <%= link_to mobile_marketcons_missatges_path(mk_product_id: @producte.id, user_id: current_user.id) do %>
 		  						<div class="mk-mobile-boto-enviar-missatge">
 	                  <div class="icona-dialeg">
-		  								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "img-icona-dialeg" %>
+		  								<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/icon_dialeg.png", class: "mk-mobile-img-icona-dialeg" %>
 		  							</div>
-		  							<div class="text-enviar-missatge">
+		  							<div class="mk-mobile-text-enviar-missatge">
 		  								<%= t('.enviar_missatge') %>
 		  							</div>
 		  						</div>
