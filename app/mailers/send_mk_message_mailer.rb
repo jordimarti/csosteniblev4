@@ -1,5 +1,5 @@
 class SendMkMessageMailer < ApplicationMailer
-	default from: 'jordimarti@me.com'
+	default from: 'noreply@csostenible.net'
 
 	def send_missatge(emissor, destinatari, producte, missatge)
 		@emissor = emissor
@@ -9,6 +9,6 @@ class SendMkMessageMailer < ApplicationMailer
 		usuari_receptor = User.find(@destinatari.user_id)
 		email_usuari_receptor = usuari_receptor.email
 		mail(:to => email_usuari_receptor,
-    :subject => 'MARKETcons' )
+    :subject => 'Missatge MARKETcons' )
 	end
 end
