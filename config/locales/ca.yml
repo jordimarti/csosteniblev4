@@ -204,6 +204,7 @@ ca:
       productes: "Productes"
       marketcons: "MarketCons"
       dapcons: "DAPcons"
+      panell_control: "Panell de control"
     footer:
       quisom: "Qui som"
       contacta: "Contacta"

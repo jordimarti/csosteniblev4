@@ -76,7 +76,7 @@ class MarketconsController < ApplicationController
   end
 
   def categoria
-    @productes = MkProduct.where(categoria: params[:categoria_id])
+    @productes = MkProduct.where(categoria: params[:categoria_id], aprovat:true, visible: true)
     @categoria = MkCategoria.find(params[:categoria_id])
   end
 
