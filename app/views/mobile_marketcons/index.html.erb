@@ -151,6 +151,10 @@ $('#selector-distancia').change(function() {
 	navigator.geolocation.getCurrentPosition(getPosition);
 });
 
+$('#selector-categoria').change(function() {
+	navigator.geolocation.getCurrentPosition(getPosition);
+});
+
 function getPosition(posicio) {
 	var latitud = posicio.coords.latitude;
 	var longitud = posicio.coords.longitude;
