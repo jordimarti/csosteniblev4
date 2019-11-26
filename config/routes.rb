@@ -111,6 +111,7 @@ Rails.application.routes.draw do
   get 'home/avislegal'
   get 'home/cookies'
   get 'home/contacta'
+  get 'home/logout'
 
   get 'index.php/ca/sistema_dapc/*other', to: redirect('dapcons/index?locale=ca')
   get 'index.php/es/sistema_dapc/*other', to: redirect('dapcons/index?locale=es')

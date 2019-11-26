@@ -6,4 +6,8 @@ class HomeController < ApplicationController
   def panel
   	@casos_practics = CasPractic.where(visible: false)
   end
+
+  def logout
+  	render layout: "mobile"
+  end
 end

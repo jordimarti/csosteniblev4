@@ -11,7 +11,7 @@ class MobileMarketconsController < ApplicationController
   	@filtres = true
     @menu_actiu = "destacat" 
     @productes = MkProduct.where(aprovat: true, visible: true)
-    if params[:preu] != 'tots'
+    if params[:preu] != 'tots' || params[:categoria] != 'tots'
 		  @productes = @productes.where("preu < :limit_preu", {limit_preu: params[:preu] })
     end  
   end
