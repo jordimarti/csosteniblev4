@@ -54,6 +54,7 @@
 		<div class="small-12 cell">
 			<span class="mk-mobile-nom-filtre-marketcons"><%= t('.categoria') %></span>
 		  <select id="selector-categoria" class="filtre-marketcons">
+				<option value="tots"></option>
 				<% @categories.each do |categoria| %>     
           <% if params[:locale] == 'es' %>
           	<option value="<%= categoria.id %>" <% if params[:categoria_id] == categoria.id.to_s %>selected<% end %>><%= categoria.nom_es %></option>
@@ -155,8 +156,8 @@ function getPosition(posicio) {
 	var longitud = posicio.coords.longitude;
 	var preu = $( "select#selector-preu option:checked" ).val();
 	var distancia = $( "select#selector-distancia option:checked" ).val();
-	//var categoria = $( "select#selector-categoria option:checked" ).val();
-	goToURL(preu, distancia, latitud, longitud);
+	var categoria = $( "select#selector-categoria option:checked" ).val();
+	goToURL(preu, distancia, latitud, longitud, categoria);
 }
 
 </script>

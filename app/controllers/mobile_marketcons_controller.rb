@@ -13,7 +13,13 @@ class MobileMarketconsController < ApplicationController
     @productes = MkProduct.where(aprovat: true, visible: true)
     if params[:preu] != 'tots'
 		  @productes = @productes.where("preu < :limit_preu", {limit_preu: params[:preu] })
-    end  
+    end
+    if params[:distancia] != 'tots'
+      @productes = @productes.where("distancia < :limit_distancia", {limit_distancia: params[:distancia] })
+    end
+    if params[:categoria] != 'tots'
+      @productes = @productes.where(categoria: params[:categoria])
+    end
   end
 
   def producte
