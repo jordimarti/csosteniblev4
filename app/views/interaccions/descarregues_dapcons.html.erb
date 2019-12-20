@@ -1,26 +1,39 @@
 <div class="container">
   <div class="grid-x grid-margin-x">
     <div class="medium-12 cell">
-    	<span class="main-title">Descàrregues de documents DAPcons</span>
+    	<span class="main-title"><%= t('.titol_descarregues') %></span>
     	<br/>
     	<br/>
-    	<table>
-    		<thead>
-    			<tr>
-    				<th>Nom document</th>
-    				<th>Data</th>
-    			</tr>
-    		</thead>
-    		<tbody>
-		    	<% @interaccions.each do |interaccio| %>
-		    		<tr>
-		    			<td><%= interaccio.nom %></td>
-		    			<td><%= interaccio.created_at %></td>
-		    		</tr>
-		    	<% end %>
-		    </tbody>
-		   </table>
-		  </div>
+      <% 
+      # Mostrem dades de l'any actual i de l'any anterior
+      for i in 0..1
+        for j in 0..11
+          any = Date.today.year - i
+          # Com que vull que els mesos es mostren del 12 al 1 i no es pot fer un for 12..1, li resto j al 12
+          mes = 12 - j
+          dia = 1
+          date = Date.new(any, mes, dia)
+          start_date = date.at_beginning_of_month
+          end_date = date.at_end_of_month
+          interaccions = @interaccions.where(:created_at => start_date..end_date)
+          productes = interaccions.pluck(:nom)
+          productes = productes.uniq
+          %>
+          <% if interaccions.count > 0 %>
+            <h4><%= l(start_date, format: '%B') %> <%= start_date.year %></h4>
+            <% productes.each do |producte|
+              int = interaccions.where(nom: producte) %>
+              <%= int.first.nom %>: <strong><%= int.count %> <%= t('.descarregues') %></strong>
+              <ul>
+                <% int.each do |interaccio| %>
+                <li><%= interaccio.user_first_name %> <%= interaccio.user_last_name %>, <%= interaccio.user_email %></li>
+                <% end %>
+              </ul>
+            <% end %>
+          <% end %>
+        <% end
+      end %>
+
     </div>
   </div>
 </div>

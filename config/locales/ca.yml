@@ -488,6 +488,7 @@ ca:
       descripcio: "Descripció del producte"
       documents: "Documents"
       solicitar_documents: "Sol·licitar document al fabricant"
+      registre_necessari: "És necessari iniciar sessió per poder consultar la DAPcons"
     productes_registrats:
       productes_registrats: "Productes registrats"
       dapcons_vigent: "DAPcons vigent"
@@ -736,3 +737,7 @@ ca:
   mk_missatges:
     form:
       enviar: "Enviar"
+  interaccions:
+    descarregues_dapcons:
+      titol_descarregues: "Descàrregues de documents DAPcons"
+      descarregues: "descàrregues"

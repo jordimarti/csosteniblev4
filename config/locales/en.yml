@@ -375,6 +375,7 @@ en:
       descripcio: "Description of the product"
       documents: "Documents"
       solicitar_documents: "Request document from the manufacturer"
+      registre_necessari: "You must be logged in to view the DAPcons"
     productes_registrats:
       productes_registrats: "Registered products"
       dapcons_vigent: "Current DAPcons"
@@ -602,3 +603,7 @@ en:
   mk_missatges:
     form:
       enviar: "Send"
+  interaccions:
+    descarregues_dapcons:
+      titol_descarregues: "DAPcons downloads"
+      descarregues: "downloads"

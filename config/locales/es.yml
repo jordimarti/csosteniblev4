@@ -36,18 +36,18 @@ es:
       short: "%d de %b"
     month_names:
     -
-    - enero
-    - febrero
-    - marzo
-    - abril
-    - mayo
-    - junio
-    - julio
-    - agosto
-    - septiembre
-    - octubre
-    - noviembre
-    - diciembre
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
     order:
     - :day
     - :month
@@ -482,6 +482,7 @@ es:
       descripcio: "Descripción del producto"
       documents: "Documentos"
       solicitar_documents: "Solicitar documento al fabricante"
+      registre_necessari: "Es necesario iniciar sesión para poder consultar la DAPcons"
     productes_registrats:
       productes_registrats: "Productos registrados"
       dapcons_vigent: "DAPcons vigente"
@@ -731,3 +732,7 @@ es:
   mk_missatges:
     form:
       enviar: "Enviar"
+  interaccions:
+    descarregues_dapcons:
+      titol_descarregues: "Descargas de documentos DAPcons"
+      descarregues: "descargas"

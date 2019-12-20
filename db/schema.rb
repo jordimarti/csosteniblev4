@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_10_065841) do
+ActiveRecord::Schema.define(version: 2019_12_19_225958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -187,6 +187,12 @@ ActiveRecord::Schema.define(version: 2019_06_10_065841) do
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "user_email"
+    t.string "user_first_name"
+    t.string "user_last_name"
+    t.integer "producte_dapcons_id"
+    t.integer "producte_dapcons_user_id"
   end
 
   create_table "mk_categories", force: :cascade do |t|
@@ -322,6 +328,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_065841) do
     t.text "unitat_declarada_ca"
     t.text "unitat_declarada_es"
     t.text "unitat_declarada_en"
+    t.integer "user_id"
   end
 
   create_table "producte_dapcons_usuaris", force: :cascade do |t|

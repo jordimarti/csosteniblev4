@@ -121,4 +121,20 @@
       </div>
     <% end %>
   <% end %>
+
+  <% if current_user.role == 'empresa_dapcons' %>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-4 large-3 cell">
+        <%= link_to interaccions_descarregues_dapcons_path do %>
+          <div class="panell-control-item">
+            <%= image_tag("https://dcyqocdz7x3wj.cloudfront.net/imatges/taula_descarregues.jpg", class: 'imatge-item-panell-control') %>
+            <div class="text-item-panell-control">
+              <h3 class="panell-control-item-title"><%= t('.descarregues') %></h3>
+              <p><%= t('.text_descarregues') %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
