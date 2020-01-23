@@ -135,7 +135,7 @@ class DapconsController < ApplicationController
 
   private
     def noticies_dapc
-      @noticies = Noticia.where(dapc: true).last(6)
+      @noticies = Noticia.where(dapc: true).order('data').last(6)
     end
 end
 
