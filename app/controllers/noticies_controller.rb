@@ -4,7 +4,7 @@ class NoticiesController < ApplicationController
   # GET /noticies
   # GET /noticies.json
   def index
-    @noticies = Noticia.all.order(created_at: :desc)
+    @noticies = Noticia.all.order(data: :desc)
   end
 
   # GET /noticies/1
