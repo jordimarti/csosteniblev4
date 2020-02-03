@@ -70,6 +70,48 @@ class MobileMarketconsController < ApplicationController
     end 
     @mk_user = MkUser.where(user_id: params[:user_id]).last
     @productes = MkProduct.where(user_id: params[:user_id], aprovat:true, visible: true)
+    @puntuacio = calcul_puntuacio(params[:user_id])
+    @puntuacions = MkPuntuacio.where(mk_user_id: params[:user_id])
+    @nombre_puntuacions = @puntuacions.count
+  end
+
+  def calcul_puntuacio(user_id)
+    puntuacions = MkPuntuacio.where(mk_user_id: user_id)
+    suma_puntuacions = 0.0
+    puntuacions.each do |estrelles|
+      suma_puntuacions += estrelles.puntuacio
+    end
+    if puntuacions.count > 0
+      puntuacio_mitjana = suma_puntuacions / puntuacions.count
+      puntuacio = puntuacio_mitjana.round
+      return puntuacio
+    else
+      return 0
+    end
+  end
+
+  def puntua_usuari
+    @mk_user = MkUser.where(user_id: params[:user_id]).last
+    @puntuacio = calcul_puntuacio(params[:user_id])
+    @puntuacions = MkPuntuacio.where(mk_user_id: params[:user_id])
+    @nombre_puntuacions = @puntuacions.count
+  end
+
+  def grava_puntuacio_usuari
+    puntuacio_anterior = MkPuntuacio.where(user_id: current_user.id, mk_user_id: params[:user_id]).last
+    if puntuacio_anterior.present?
+      estrelles = puntuacio_anterior
+      valor = params[:estrelles]
+      estrelles.puntuacio = valor.to_f
+      estrelles.save
+    else
+      estrelles = MkPuntuacio.new
+      estrelles.user_id = current_user.id
+      estrelles.mk_user_id = params[:user_id]
+      estrelles.puntuacio = params[:estrelles]
+      estrelles.save
+    end
+    redirect_to action: "venedor", user_id: estrelles.mk_user_id
   end
 
   def perfil

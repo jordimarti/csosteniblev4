@@ -12,7 +12,42 @@
 				<span class="nom-imatge-perfil"><%= @mk_user.nom %> <%= @mk_user.cognoms %></span>
 				<br/>
 				<span class="municipi-imatge-perfil"><%= @mk_user.municipi %></span>
-				<br/>
+  			<br/>
+  			<% if @puntuacio != nil %>
+  				<% if current_user.id != @mk_user.user_id %>
+  					<%= link_to mobile_marketcons_puntua_usuari_path(user_id: params[:user_id]) do %>
+		  				<% if @puntuacio == 1 %>
+		  					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_1.png", class: 'mk-estrelles' %>
+		  				<% elsif @puntuacio == 2 %>
+		  					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_2.png", class: 'mk-estrelles' %>
+		  				<% elsif @puntuacio == 3 %>
+		  					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_3.png", class: 'mk-estrelles' %>
+		  				<% elsif @puntuacio == 4 %>
+		  					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_4.png", class: 'mk-estrelles' %>
+		  				<% elsif @puntuacio == 5 %>
+		  					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_5.png", class: 'mk-estrelles' %>
+		  				<% else %>
+		  					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_0.png", class: 'mk-estrelles' %>
+		  				<% end %>
+		  			<% end %>
+	  			<% else %>
+	  				<% if @puntuacio == 1 %>
+	  					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_1.png", class: 'mk-estrelles' %>
+	  				<% elsif @puntuacio == 2 %>
+	  					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_2.png", class: 'mk-estrelles' %>
+	  				<% elsif @puntuacio == 3 %>
+	  					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_3.png", class: 'mk-estrelles' %>
+	  				<% elsif @puntuacio == 4 %>
+	  					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_4.png", class: 'mk-estrelles' %>
+	  				<% elsif @puntuacio == 5 %>
+	  					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_5.png", class: 'mk-estrelles' %>
+	  				<% else %>
+	  					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_0.png", class: 'mk-estrelles' %>
+	  				<% end %>
+	  			<% end %>
+  			<% end %>
+  			<span class="mk-estrelles-nombre">(<%= @nombre_puntuacions %>)</span>
+  			<br/>
 				<% if user_signed_in? %>
   				<% if current_user.id == @mk_user.user_id %>
   					<p><%= link_to t('.editar_perfil'), mobile_marketcons_perfil_path(mk_user_id: @mk_user.id) %></p>

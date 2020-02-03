@@ -1,0 +1,54 @@
+<div class="grid-x grid-margin-x">
+	<div class="small-12 cell">
+		<div class="mk-mobile-imatge-perfil-container">
+			<% if @mk_user.mk_image_user.attached? %>
+				<%= image_tag @mk_user.mk_image_user.variant(combine_options: { resize: '300x300' }), class: "mk-imatge-perfil" %>
+			<% else %>
+				<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/imatges/default_user.png", class: 'mk-imatge-perfil' %>
+			<% end %>
+		</div>
+		<div class="mk-text-perfil-container">
+			<span class="nom-imatge-perfil"><%= @mk_user.nom %> <%= @mk_user.cognoms %></span>
+			<br/>
+			<span class="municipi-imatge-perfil"><%= @mk_user.municipi %></span>
+			<br/>
+      <br/>
+      <p class="mk-text-puntuacio-actual"><%= t('.puntuacio_actual') %>: 
+			<% if @puntuacio != nil %>
+				<% if @puntuacio == 1 %>
+					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_1.png", class: 'mk-estrelles' %>
+				<% elsif @puntuacio == 2 %>
+					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_2.png", class: 'mk-estrelles' %>
+				<% elsif @puntuacio == 3 %>
+					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_3.png", class: 'mk-estrelles' %>
+				<% elsif @puntuacio == 4 %>
+					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_4.png", class: 'mk-estrelles' %>
+				<% elsif @puntuacio == 5 %>
+					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_5.png", class: 'mk-estrelles' %>
+				<% else %>
+					<%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrelles_0.png", class: 'mk-estrelles' %>
+				<% end %>
+			<% end %>
+			<span class="mk-estrelles-nombre">(<%= @nombre_puntuacions %>)</span>
+			</p>
+		</div>
+
+    <div class="mk-text-perfil-container">
+      <%= link_to mobile_marketcons_grava_puntuacio_usuari_path(user_id: params[:user_id], estrelles: 1) do %>
+        <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrella_buida.png", class: 'mk-estrella-individual', id: 'estrella-1' %>
+      <% end %>
+      <%= link_to mobile_marketcons_grava_puntuacio_usuari_path(user_id: params[:user_id], estrelles: 2) do %>
+        <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrella_buida.png", class: 'mk-estrella-individual', id: 'estrella-1' %>
+      <% end %>
+      <%= link_to mobile_marketcons_grava_puntuacio_usuari_path(user_id: params[:user_id], estrelles: 3) do %>
+        <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrella_buida.png", class: 'mk-estrella-individual', id: 'estrella-1' %>
+      <% end %>
+      <%= link_to mobile_marketcons_grava_puntuacio_usuari_path(user_id: params[:user_id], estrelles: 4) do %>
+        <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrella_buida.png", class: 'mk-estrella-individual', id: 'estrella-1' %>
+      <% end %>
+      <%= link_to mobile_marketcons_grava_puntuacio_usuari_path(user_id: params[:user_id], estrelles: 5) do %>
+        <%= image_tag "https://dcyqocdz7x3wj.cloudfront.net/marketcons/estrella_buida.png", class: 'mk-estrella-individual', id: 'estrella-1' %>
+      <% end %>
+    </div>
+	</div>
+</div>

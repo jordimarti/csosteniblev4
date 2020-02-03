@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @mk_puntuacio.user_id %>
+</p>
+
+<p>
+  <strong>Mk user:</strong>
+  <%= @mk_puntuacio.mk_user_id %>
+</p>
+
+<p>
+  <strong>Puntuacio:</strong>
+  <%= @mk_puntuacio.puntuacio %>
+</p>
+
+<%= link_to 'Edit', edit_mk_puntuacio_path(@mk_puntuacio) %> |
+<%= link_to 'Back', mk_puntuacions_path %>

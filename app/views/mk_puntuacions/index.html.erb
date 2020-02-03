@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mk Puntuacions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Mk user</th>
+      <th>Puntuacio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mk_puntuacions.each do |mk_puntuacio| %>
+      <tr>
+        <td><%= mk_puntuacio.user_id %></td>
+        <td><%= mk_puntuacio.mk_user_id %></td>
+        <td><%= mk_puntuacio.puntuacio %></td>
+        <td><%= link_to 'Show', mk_puntuacio %></td>
+        <td><%= link_to 'Edit', edit_mk_puntuacio_path(mk_puntuacio) %></td>
+        <td><%= link_to 'Destroy', mk_puntuacio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mk Puntuacio', new_mk_puntuacio_path %>

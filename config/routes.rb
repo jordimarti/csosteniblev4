@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mk_puntuacions
   resources :mk_imatges
   resources :mk_documents
   resources :mk_users
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
   get 'mobile_marketcons/producte'
   get 'mobile_marketcons/perfil'
   get 'mobile_marketcons/venedor'
+  get 'mobile_marketcons/puntua_usuari'
+  get 'mobile_marketcons/grava_puntuacio_usuari'
   get 'mobile_marketcons/nou_anunci'
   get 'mobile_marketcons/editar_anunci'
   get 'mobile_marketcons/comprova_unitats_categoria'
