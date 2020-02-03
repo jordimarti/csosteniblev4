@@ -38,19 +38,17 @@
 		      							<% if producte.document_dapcons.count == 0 && producte.validesa_fi > Date.today %>
 		      								<%= t('.solicitar_documents') %>
 		      							<% end %>
-		      							<% if user_signed_in? %>
+		      							
 		      								<% producte.document_dapcons.each do |document| %>
 			      								<% if params[:locale] == 'ca' %>
-			      									<%= link_to document.nom_ca, interaccions_path(link: document.link, categoria: 'Download DAPcons', nom: document.nom_ca, producte_dapcons_id: producte.id, producte_dapcons_user_id: producte.user_id) %><br/>
+			      									<%= link_to document.nom_ca, document.link %><br/>
 			      								<% elsif params[:locale] == 'es' %>
-			      									<%= link_to document.nom_es, interaccions_path(link: document.link, categoria: 'Download DAPcons', nom: document.nom_es, producte_dapcons_id: producte.id, producte_dapcons_user_id: producte.user_id) %><br/>
+			      									<%= link_to document.nom_es, document.link %><br/>
 			      								<% else %>
-			      									<%= link_to document.nom_en, interaccions_path(link: document.link, categoria: 'Download DAPcons', nom: document.nom_en, producte_dapcons_id: producte.id, producte_dapcons_user_id: producte.user_id) %><br/>
+			      									<%= link_to document.nom_en, document.link %><br/>
 			      								<% end %>
 			      							<% end %>
-		      							<% else %>
-			      							<%= t('.registre_necessari') %>
-			      						<% end %>
+		      							
 		      						</div>
 		      					</div>
 	      					</div>
