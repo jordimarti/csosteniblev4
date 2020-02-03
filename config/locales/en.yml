@@ -534,6 +534,8 @@ en:
       membre_des_de: "Member since"
       publicar_anunci: "Post an ad"
       editar_perfil: "Edit profile"
+    puntua_usuari:
+      puntuacio_actual: "Current rating"
     nou_anunci:
       nou_anunci: "Create a new ad"
       guardar: "Save"

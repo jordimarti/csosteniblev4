@@ -6,6 +6,26 @@ body.mk-body-mobile {
 	background-color: #D6EFF4;
 }
 
+.container-guia-tutorial {
+	background-color: #0D5D72;
+}
+
+.titol-guia-tutorial {
+	text-align: center;
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: bold;
+	padding-top: 40px;
+}
+
+.text-guia-tutorial {
+	text-align: center;
+	color: #ffffff;
+	font-size: 16px;
+	margin: 30px 0px;
+	padding: 15px;
+}
+
 .mk-mobile-50 {
 	width: 150px;
 	float: left;
@@ -92,11 +112,14 @@ body.mk-body-mobile {
 
 #boto-filtres {
 	padding: 4px 15px;
-	background-color: #666;
-	color: white;
-	text-align: center;
+	background-color: #fff;
+	text-align: right;
 	font-weight: bold;
 	font-size: 0.8em;
+}
+
+.mk-filtre {
+	width: 20px;
 }
 
 .mk-mobile-product-container {

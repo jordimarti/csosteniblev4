@@ -651,6 +651,8 @@ es:
       membre_des_de: "Miembro des de"
       publicar_anunci: "Publicar un anuncio"
       editar_perfil: "Editar perfil"
+    puntua_usuari:
+      puntuacio_actual: "Puntuación actual"
     nou_anunci:
       nou_anunci: "Crear un nuevo anuncio"
       guardar: "Guardar"

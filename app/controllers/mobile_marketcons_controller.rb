@@ -20,6 +20,9 @@ class MobileMarketconsController < ApplicationController
     if params[:categoria] != 'tots'
       @productes = @productes.where(categoria: params[:categoria])
     end
+
+    #Si és la primera vegada que entra l'usuari es mostra guia
+    
   end
 
   def producte

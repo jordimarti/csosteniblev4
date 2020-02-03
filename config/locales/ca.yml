@@ -656,6 +656,8 @@ ca:
       membre_des_de: "Membre des de"
       publicar_anunci: "Publicar un anunci"
       editar_perfil: "Editar perfil"
+    puntua_usuari:
+      puntuacio_actual: "Puntuació actual"
     nou_anunci:
       nou_anunci: "Crear un nou anunci"
       guardar: "Guardar"
