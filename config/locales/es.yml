@@ -236,6 +236,7 @@ es:
       mes_destacat: "Lo más destacado"
       publicar_anunci: "Publicar un anuncio"
       meus_anuncis: "Mis anuncios"
+      perfil: "Mi perfil"
       sobre_marketcons: "Sobre MARKETcons"
       filtres: "FILTROS"
       preu: "Precio"
@@ -651,6 +652,7 @@ es:
       membre_des_de: "Miembro des de"
       publicar_anunci: "Publicar un anuncio"
       editar_perfil: "Editar perfil"
+      reservat: "RESERVADO"
     puntua_usuari:
       puntuacio_actual: "Puntuación actual"
     nou_anunci:
