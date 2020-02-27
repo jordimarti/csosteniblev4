@@ -648,6 +648,8 @@ ca:
       50km: "Menys de 50 km"
       100km: "Menys de 100 km"
       qualsevol_distancia: "Tot"
+      benvingut: "Benvingut/da a"
+      explorar: "Explorar productes"
     perfil:
       guardar: "Guardar"
       configuracio_perfil: "Configuració del perfil públic"

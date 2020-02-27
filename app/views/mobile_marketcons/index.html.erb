@@ -1,10 +1,17 @@
 <div class="full reveal" id="guia-tutorial" data-reveal>
 	<div class="container-guia-tutorial">
-		<p class="titol-guia-tutorial">Benvingut/da a <br/>MARKETcons</p>
-		<p class="text-guia-tutorial">Una eina per a la promoció de l'economia circular al sector de l'edificació</p>
-		<p class="text-guia-tutorial">
-			<%= image_tag 'https://csosteniblev4.s3-eu-west-1.amazonaws.com/marketcons/about_marketcons.png', class: 'mk-mobile-about-marketcons' %>
-		</p>
+		<p class="titol-guia-tutorial"><%= t('.benvingut') %><br/>MARKETcons</p>
+		<p class="text-guia-tutorial">Una plataforma de compravenda de material a reutilitzar en la construcció d’edificis. Es tracta d’una eina per a la promoció de l’economia circular al sector de l’edificació.</p>
+		<div class="imatge-guia-tutorial">
+			<%= image_tag 'https://csosteniblev4.s3-eu-west-1.amazonaws.com/marketcons/intro_app_marketcons.png', class: 'mk-mobile-about-marketcons' %>
+		</div>
+	</div>
+	<div class="logo-guia-tutorial">
+		Realitzat per:<br/>
+		<%= image_tag 'https://csosteniblev4.s3-eu-west-1.amazonaws.com/marketcons/logo_nou_caateeb.png', class: 'mk-mobile-intro-logo-caateeb' %>
+		<br/>
+		<br/>
+		<button class="button mk-mobile-button" data-close><%= t('.explorar') %></button>
 	</div>
 	<button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
@@ -148,9 +155,11 @@
 <script>
 $(document).ready(function() {	
 	$('#mk-mobile-filtres').hide();
-	<% if current_user.id == 1 %>
-		$('#guia-tutorial').foundation('open');
-	<% end %>
+	
+	if (!sessionStorage.getItem("introMostrada")) {
+    $('#guia-tutorial').foundation('open');
+    sessionStorage.setItem("introMostrada", true);
+  }
 });
 
 $('#boto-filtres').click(function() {
