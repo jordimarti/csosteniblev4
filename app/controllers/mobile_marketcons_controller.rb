@@ -22,7 +22,16 @@ class MobileMarketconsController < ApplicationController
     end
 
     #Si és la primera vegada que entra l'usuari es mostra guia
-    
+    mk_user = MkUser.find_by(user_id: current_user)
+    if user_signed_in?
+      if mk_user.app_primera_vegada == true
+        @nou_usuari = true
+        mk_user.app_primera_vegada = false
+        mk_user.save
+      else
+        @nou_usuari = false
+      end
+    end
   end
 
   def producte

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_03_060325) do
+ActiveRecord::Schema.define(version: 2020_02_28_111437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -286,6 +286,7 @@ ActiveRecord::Schema.define(version: 2020_02_03_060325) do
     t.boolean "mobile"
     t.boolean "primer_us"
     t.decimal "puntuacio"
+    t.boolean "app_primera_vegada", default: true
   end
 
   create_table "noticies", force: :cascade do |t|
