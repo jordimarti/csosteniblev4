@@ -278,6 +278,8 @@ es:
       un_cas_pendent: "Hay un caso práctico pendiente de moderación"
       hi_ha: "Hay"
       casos_pendents: "casos pendientes de moderación"
+      marketcons: "MARKETcons"
+      text_marketcons: "Administra los productos y usuarios de MARKETcons"
   noticies:
     index:
       actualitat: "Actualidad"
@@ -385,6 +387,9 @@ es:
       titol_arquitectes: "Equipo"
       text_arquitectes: "Quien ha trabajado en el proyecto? Arquitectos, aparejadores, consultores, etc."
       guardar: "Guardar"
+    edit:
+      titol_editar: "Editar caso práctico"
+      tornar_llistat_casos: "<- Volver al listado de casos prácticos"
     edit_ca:
       titol_editar: "Editar caso práctico"
       tornar_llistat_casos: "<- Volver al listado de casos prácticos"
@@ -631,19 +636,22 @@ es:
     index:
       filtres: "FILTROS"
       preu: "Precio"
+      50euros: "Menys de 50 €"
+      100euros: "Menys de 100 €"
+      500euros: "Menys de 500 €"
       distancia: "Distancia"
       categoria: "Categoría"
       reservat: "RESERVADO"
       qualsevol_preu: "Todo"
-      50euros: "Menos de 50 €"
-      100euros: "Menos de 100 €"
-      500euros: "Menos de 500 €"
-      distancia: "Distancia"
       5km: "Menos de 5 km"
       10km: "Menos de 10 km"
       50km: "Menos de 50 km"
       100km: "Menos de 100 km"
       qualsevol_distancia: "Todo"
+      benvingut: "Bienvenido/da a"
+      text_benvinguda: "Una plataforma de compraventa de material a reutilizar en la construcción de edificios. Se trata de una herramienta para la promoción de la economía circular en el sector de la edificación."
+      realitzat_per: "Realizado por"
+      explorar: "Explorar productos"
     perfil:
       guardar: "Guardar"
       configuracio_perfil: "Configuración del perfil público"

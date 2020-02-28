@@ -39,6 +39,11 @@ body.mk-body-mobile {
 	max-width: 200px;
 }
 
+.intro-button {
+	font-size: 1.5em;
+	background-color: #0D5D72;
+}
+
 .mk-mobile-50 {
 	width: 150px;
 	float: left;
@@ -116,11 +121,12 @@ body.mk-body-mobile {
 
 .mk-mobile-filtres-container {
 	padding: 10px 15px;
-	background-color: #666;
+	background-color: #eaeaea;
+	background-image: linear-gradient(to bottom, white , #D6EFF4);
 }
 
 .mk-mobile-nom-filtre-marketcons {
-	color: white;
+	
 }
 
 #boto-filtres {

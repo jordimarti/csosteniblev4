@@ -649,6 +649,8 @@ ca:
       100km: "Menys de 100 km"
       qualsevol_distancia: "Tot"
       benvingut: "Benvingut/da a"
+      text_benvinguda: "Una plataforma de compravenda de material a reutilitzar en la construcció d’edificis. Es tracta d’una eina per a la promoció de l’economia circular al sector de l’edificació."
+      realitzat_per: "Realitzat per"
       explorar: "Explorar productes"
     perfil:
       guardar: "Guardar"

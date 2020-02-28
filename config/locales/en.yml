@@ -1,4 +1,57 @@
 en:
+  date:
+    abbr_day_names:
+    - Su
+    - Mo
+    - Tu
+    - We
+    - Th
+    - Fr
+    - Sa
+    abbr_month_names:
+    -
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: "%d-%m-%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %b"
+    month_names:
+    -
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :day
+    - :month
+    - :year
   activerecord:
     errors:
       models:
@@ -106,6 +159,38 @@ en:
         text_imatge_cas_2_en: "Description image 2"
         text_imatge_cas_3_en: "Description image 3"
         text_imatge_cas_4_en: "Description image 4"
+      mk_user:
+        mk_image_user: "Profile image"
+        nom: "Name"
+        cognoms: "Surnames"
+        adreca: "Address"
+        codi_postal: "Postal code"
+        municipi: "Town"
+        email: "Email"
+        telefon: "Telephone"
+        web: "Website"
+        mostrar_adreca: "Show address"
+        mostrar_email: "Show email"
+        mostrar_telefon: "Show telephone"
+        mostrar_web: "Show website"
+      mk_product:
+        nom: "Title"
+        descripcio: "Description"
+        categoria: "Category"
+        preu: "Price"
+        pes: "Weight"
+        enviament: "Delivery or collection"
+        adreca: "Address"
+        codi_postal: "Postal code"
+        municipi: "Town"
+        adreca_oculta: "Hide address (only the town will be displayed)"
+        mk_image_product: "Product image"
+        mk_imatges:
+          mk_product_imatge: "New image"
+          descripcio: "Description"
+        mk_documents:
+          nom: "Document name"
+          document: "Document"
   layouts:
     top:
       register: "Register"
@@ -119,6 +204,7 @@ en:
       productes: "Products"
       marketcons: "MarketCons"
       dapcons: "DAPcons"
+      panell_control: "Dashboard"
     footer:
       quisom: "Who we are"
       contacta: "Contact"
@@ -146,6 +232,25 @@ en:
       afiliacio: "Program affiliation"
       registrar_producte: "Register a product"
       contacte: "Contact us"
+    marketcons_navigation:
+      mes_destacat: "Highlights"
+      publicar_anunci: "Publish a product"
+      meus_anuncis: "My ads"
+      perfil: "My profile"
+      sobre_marketcons: "About MARKETcons"
+      filtres: "FILTERS"
+      preu: "Price"
+      qualsevol_preu: "Any price"
+      50euros: "Less than 50 €"
+      100euros: "Less than 100 €"
+      500euros: "Less than 500 €"
+      distancia: "Distance"
+      qualsevol_distancia: "Any distance"
+      5km: "Less than 5 km"
+      10km: "Less than 10 km"
+      50km: "Less than 50 km"
+      100km: "Less than 100 km"
+      categories: "SEARCH PRODUCTS BY CATEGORY"
   home:
     index:
       novetats_web: "NEWS ON THE WEB"
@@ -173,6 +278,8 @@ en:
       un_cas_pendent: "There is a study case pending moderation"
       hi_ha: "There are"
       casos_pendents: "study cases pending moderation"
+      marketcons: "MARKETcons"
+      text_marketcons: "Admin MARKETcons products and users"
   noticies:
     index:
       actualitat: "News"
@@ -280,12 +387,18 @@ en:
       titol_arquitectes: "Team"
       text_arquitectes: "Who worked on the project? Architects, quantity surveyors, consultants, etc."
       guardar: "Save"
+    edit:
+      titol_editar: "Edit case study"
+      tornar_llistat_casos: "<- Return to the case studies list"
     edit_ca:
       titol_editar: "Edit case"
+      tornar_llistat_casos: "<- Return to the case studies list"
     edit_es:
       titol_editar: "Edit case"
+      tornar_llistat_casos: "<- Return to the case studies list"
     edit_en:
       titol_editar: "Edit case"
+      tornar_llistat_casos: "<- Return to the case studies list"
     new:
       titol_nou: "Create a new case study"
       tornar_llistat_casos: "<- Return to the case studies list"
@@ -523,9 +636,22 @@ en:
     index:
       filtres: "FILTERS"
       preu: "Price"
+      50euros: "Less than 50 €"
+      100euros: "Less than 100 €"
+      500euros: "Less than 500 €"
       distancia: "Distance"
       categoria: "Category"
       reservat: "RESERVED"
+      qualsevol_preu: "Any"
+      5km: "Less than 5 km"
+      10km: "Less than 10 km"
+      50km: "Less than 50 km"
+      100km: "Less than 100 km"
+      qualsevol_distancia: "Any"
+      benvingut: "Welcome to"
+      text_benvinguda: "A platform for the sale of material to be reused in the construction of buildings. It is a tool for the promotion of the circular economy in the construction field."
+      realitzat_per: "Made by"
+      explorar: "Explore products"
     perfil:
       guardar: "Save"
       configuracio_perfil: "Public profile configuration"
@@ -534,6 +660,7 @@ en:
       membre_des_de: "Member since"
       publicar_anunci: "Post an ad"
       editar_perfil: "Edit profile"
+      reservat: "RESERVED"
     puntua_usuari:
       puntuacio_actual: "Current rating"
     nou_anunci:
@@ -543,6 +670,10 @@ en:
       comprador_buscar: "The buyer goes for it"
       venedor_porta: "The seller brings it"
       negociar: "To negotiate"
+      adjuntar_imatges: "Attach images"
+      nova_imatge: "+ New image"
+      adjuntar_documents: "Attach documents"
+      nou_document: "+ New document"
     editar_anunci:
       editar_anunci: "Edit ad"
       guardar: "Save"
@@ -550,6 +681,10 @@ en:
       comprador_buscar: "The buyer goes for it"
       venedor_porta: "The seller brings it"
       negociar: "To negotiate"
+      adjuntar_imatges: "Attach images"
+      nova_imatge: "+ New image"
+      adjuntar_documents: "Attach documents"
+      nou_document: "+ New document"
     producte:
       comprador_buscar: "The buyer goes for it"
       venedor_porta: "The seller brings it"
@@ -572,6 +707,8 @@ en:
       preu: "Price"
       descarregar: "Download"
       documents: "Documents"
+      tornar_productes: "Return to products"
+      missatges: "Messages"
     categoria:
       no_productes: "There are no products in this category"
     aprovacions:
@@ -594,6 +731,8 @@ en:
       reserva: "Reserve"
     usuari:
       sign_out: "Sign out"
+    about:
+      sobre_marketcons: "About MARKETcons"
   mk_products:
     form:
       comprador_buscar: "The buyer goes for it"
