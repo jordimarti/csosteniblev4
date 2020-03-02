@@ -280,6 +280,8 @@ ca:
       casos_pendents: "casos pendents de moderació"
       marketcons: "MARKETcons"
       text_marketcons: "Administra els productes i usuaris de MARKETcons"
+    logout:
+      sessio_finalitzada: "S'ha tancat la sessió."
   noticies:
     index:
       actualitat: "Actualitat"

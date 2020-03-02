@@ -280,6 +280,8 @@ es:
       casos_pendents: "casos pendientes de moderación"
       marketcons: "MARKETcons"
       text_marketcons: "Administra los productos y usuarios de MARKETcons"
+    logout:
+      sessio_finalitzada: "Se ha cerrado la sesión."
   noticies:
     index:
       actualitat: "Actualidad"

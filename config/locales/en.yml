@@ -280,6 +280,8 @@ en:
       casos_pendents: "study cases pending moderation"
       marketcons: "MARKETcons"
       text_marketcons: "Admin MARKETcons products and users"
+    logout:
+      sessio_finalitzada: "Signed out."
   noticies:
     index:
       actualitat: "News"
