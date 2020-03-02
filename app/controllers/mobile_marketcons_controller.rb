@@ -14,9 +14,6 @@ class MobileMarketconsController < ApplicationController
     if params[:preu] != 'tots'
 		  @productes = @productes.where("preu < :limit_preu", {limit_preu: params[:preu] })
     end
-    if params[:distancia] != 'tots'
-      @productes = @productes.where("distancia < :limit_distancia", {limit_distancia: params[:distancia] })
-    end
     if params[:categoria] != 'tots'
       @productes = @productes.where(categoria: params[:categoria])
     end

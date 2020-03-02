@@ -7,27 +7,34 @@ class MarketconsController < ApplicationController
   	@filtres = true
     @menu_actiu = "destacat" 
     @productes = MkProduct.where(aprovat: true, visible: true)
+    # Si falten paràmetres a la URL, normalment per canvi d'idioma, els afegim
+    if params[:preu] == nil
+      redirect_to marketcons_index_path(preu: 'tots', distancia: 'tots', categoria: 'tots')
+    end
+    # Filtres aplicats
     if params[:preu] != 'tots'
       @productes = @productes.where("preu < :limit_preu", {limit_preu: params[:preu] })
-    end
-    if params[:distancia] != 'tots'
-      @productes = @productes.where("distancia < :limit_distancia", {limit_distancia: params[:distancia] })
     end
   end
 
   def producte
     @filtres = false
-    @producte = MkProduct.find(params[:mk_product_id])
-    @categoria = MkCategoria.where(id: @producte.categoria.to_i).last
-    @mk_user = MkUser.where(user_id: @producte.user_id).last
-    missatges = MkMissatge.where(mk_product_id: params[:mk_product_id])
-    compradors = Array.new
-    missatges.each do |m|
-      compradors.push(m.user_id)
+    # Si falten paràmetres a la URL, normalment per canvi d'idioma, els afegim
+    if params[:mk_product_id] == nil
+      redirect_to marketcons_index_path(preu: 'tots', distancia: 'tots', categoria: 'tots')
+    else
+      @producte = MkProduct.find(params[:mk_product_id])
+      @categoria = MkCategoria.where(id: @producte.categoria.to_i).last
+      @mk_user = MkUser.where(user_id: @producte.user_id).last
+      missatges = MkMissatge.where(mk_product_id: params[:mk_product_id])
+      compradors = Array.new
+      missatges.each do |m|
+        compradors.push(m.user_id)
+      end
+      #Si hi ha diversos missatges d'una mateixa persona hi haurà duplicats, els eliminem
+      compradors = compradors.uniq
+      @compradors = MkUser.where(user_id: compradors)
     end
-    #Si hi ha diversos missatges d'una mateixa persona hi haurà duplicats, els eliminem
-    compradors = compradors.uniq
-    @compradors = MkUser.where(user_id: compradors)
   end
 
   def producte_venut
