@@ -16,8 +16,9 @@ class MobileMarketconsController < ApplicationController
     end
     if params[:categoria] != 'tots'
       @productes = @productes.where(categoria: params[:categoria])
+      @categoria = MkCategoria.find(params[:categoria])
     end
-
+    
     #Si és la primera vegada que entra l'usuari es mostra guia
     mk_user = MkUser.find_by(user_id: current_user)
     if user_signed_in?
@@ -29,6 +30,7 @@ class MobileMarketconsController < ApplicationController
         @nou_usuari = false
       end
     end
+
   end
 
   def producte

@@ -142,6 +142,53 @@ body.mk-body-mobile {
 	width: 20px;
 }
 
+.mk-mobile-scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  .container-card-categoria {
+    flex: 0 0 auto;
+    margin: 5px 0px 0px 5px;
+
+    .card-categoria {
+    	text-align: center;
+    	background-color: #fff;
+    	border-radius: 5px;
+    	padding: 5px;
+    	width: 100px;
+    	height: 76px;
+    	line-height: 1;
+    }
+
+    .last-card {
+    	margin-right: 5px;
+    }
+  }
+}
+
+.mk-mobile-imatge-categoria {
+	max-width: 25px;
+	margin-bottom: 5px;
+}
+
+.mk-mobile-text-categoria {
+	font-size: 0.8em;
+}
+
+.mk-mobile-titol-categoria {
+	padding: 15px;
+	font-size: 1.4em;
+	font-weight: bold;
+	color: #0D5D72;
+}
+
+.mk-mobile-no-items {
+	padding: 15px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
 .mk-mobile-product-container {
 	background-color: white;
 	padding-bottom: 40px;

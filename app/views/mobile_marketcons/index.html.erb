@@ -92,8 +92,124 @@
 	</div>
 </div>
 
+<div class="mk-mobile-selector-categories">
+	<div class="mk-mobile-scrolling-wrapper-flexbox">
+	  <div class="container-card-categoria">
+	  	<div class="card-categoria" data-categoria="36">
+		  	<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/finestra.png', class: 'mk-mobile-imatge-categoria' %><br/>
+		  	<span class="mk-mobile-text-categoria"><%= t('.categoria_portes') %></span>
+		  </div>
+	  </div>
+
+	  <div class="container-card-categoria">
+	  	<div class="card-categoria" data-categoria="37">
+		  	<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/rajoles.png', class: 'mk-mobile-imatge-categoria' %><br/>
+		  	<span class="mk-mobile-text-categoria"><%= t('.categoria_rajoles') %></span>
+		  </div>
+	  </div>
+
+	  <div class="container-card-categoria">
+	  	<div class="card-categoria" data-categoria="38">
+		  	<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/barana.png', class: 'mk-mobile-imatge-categoria' %><br/>
+		  	<span class="mk-mobile-text-categoria"><%= t('.categoria_baranes') %></span>
+		  </div>
+	  </div>
+
+	  <div class="container-card-categoria">
+	  	<div class="card-categoria" data-categoria="39">
+		  	<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/teules.png', class: 'mk-mobile-imatge-categoria' %><br/>
+		  	<span class="mk-mobile-text-categoria"><%= t('.categoria_coberta') %></span>
+		  </div>
+	  </div>
+
+	  <div class="container-card-categoria">
+	  	<div class="card-categoria" data-categoria="40">
+		  	<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/aixeta.png', class: 'mk-mobile-imatge-categoria' %><br/>
+		  	<span class="mk-mobile-text-categoria"><%= t('.categoria_aixetes') %></span>
+		  </div>
+	  </div>
+
+	  <div class="container-card-categoria">
+	  	<div class="card-categoria" data-categoria="41">
+		  	<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/accessoris_bany.png', class: 'mk-mobile-imatge-categoria' %><br/>
+		  	<span class="mk-mobile-text-categoria"><%= t('.categoria_accessoris') %></span>
+		  </div>
+	  </div>
+
+	  <div class="container-card-categoria">
+	  	<div class="card-categoria" data-categoria="42">
+		  	<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/radiador.png', class: 'mk-mobile-imatge-categoria' %><br/>
+		  	<span class="mk-mobile-text-categoria"><%= t('.categoria_clima') %></span>
+		  </div>
+	  </div>
+
+	  <div class="container-card-categoria">
+	  	<div class="card-categoria" data-categoria="43">
+		  	<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/endoll.png', class: 'mk-mobile-imatge-categoria' %><br/>
+		  	<span class="mk-mobile-text-categoria"><%= t('.categoria_electrics') %></span>
+		  </div>
+	  </div>
+	  
+	  <div class="container-card-categoria">
+	  	<div class="card-categoria" data-categoria="44">
+		  	<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/tanca.png', class: 'mk-mobile-imatge-categoria' %><br/>
+		  	<span class="mk-mobile-text-categoria"><%= t('.categoria_tanques') %></span>
+		  </div>
+	  </div>
+
+	  <div class="container-card-categoria">
+	  	<div class="card-categoria" data-categoria="45">
+		  	<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/banc_v2.png', class: 'mk-mobile-imatge-categoria' %><br/>
+		  	<span class="mk-mobile-text-categoria"><%= t('.categoria_urbanisme') %></span>
+		  </div>
+	  </div>
+
+	  <div class="container-card-categoria">
+	  	<div class="card-categoria" data-categoria="46">
+		  	<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/ornament_v2.png', class: 'mk-mobile-imatge-categoria' %><br/>
+		  	<span class="mk-mobile-text-categoria"><%= t('.categoria_ornamentals') %></span>
+		  </div>
+	  </div>
+
+	  <div class="container-card-categoria">
+	  	<div class="card-categoria" data-categoria="48">
+		  	<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/materials_v2.png', class: 'mk-mobile-imatge-categoria' %><br/>
+		  	<span class="mk-mobile-text-categoria"><%= t('.categoria_materials') %></span>
+		  </div>
+	  </div>
+
+	  <div class="container-card-categoria">
+	  	<div class="card-categoria last-card" data-categoria="47">
+		  	<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/altres.png', class: 'mk-mobile-imatge-categoria' %><br/>
+		  	<span class="mk-mobile-text-categoria"><%= t('.categoria_altres') %></span>
+		  </div>
+	  </div>
+	  
+	</div>
+</div>
+
+
+
 <div class="mk-mobile-products-container">
-	
+
+	<% if params[:categoria] != 'tots' %>
+		<div class="mk-mobile-titol-categoria">
+			<% if params[:locale] == 'es' %>
+				<%= @categoria.nom_es %>
+			<% elsif params[:locale] == 'en' %>
+				<%= @categoria.nom_en %>
+			<% else %>
+				<%= @categoria.nom_ca %>
+			<% end %>
+		</div>
+	<% end %>
+
+	<% if @productes.first.nil? %>
+		<div class="mk-mobile-no-items">
+			<%= t('.no_productes') %>
+		</div>
+	<% end %>
+
 	<% @productes.each do |producte| %>
 		<% 
 		if params[:latitud].present? 
@@ -167,9 +283,16 @@ $(document).ready(function() {
 });
 
 $('#boto-filtres').click(function() {
-	
 	$('#mk-mobile-filtres').slideDown("slow");
 });
+
+$('.card-categoria').click(function() {
+	gotoCategoria($(this).data("categoria"));
+});
+
+function gotoCategoria(categoria) {
+	location.href = 'index?distancia=tots&preu=tots&categoria=' + categoria + '&locale=<%= params[:locale] %>';
+}
 
 function goToURL(preu, distancia, latitud, longitud, categoria) {
 	location.href = 'index?preu=' + preu + '&distancia=' + distancia + '&locale=<%= params[:locale] %>&latitud=' + latitud + '&longitud=' + longitud + '&categoria=' + categoria;
@@ -194,6 +317,20 @@ function getPosition(posicio) {
 	var distancia = $( "select#selector-distancia option:checked" ).val();
 	var categoria = $( "select#selector-categoria option:checked" ).val();
 	goToURL(preu, distancia, latitud, longitud, categoria);
+}
+
+function success(posicio) {
+	var crd = posicio.coords;
+	console.log('Your current position is:');
+  console.log('Latitude : ' + crd.latitude);
+  console.log('Longitude: ' + crd.longitude);
+  console.log('More or less ' + crd.accuracy + ' meters.');
+  return crd.latitude;
+}
+
+function getLongitud(posicio) {
+	var longitud = posicio.coords.longitude;
+	return longitud;
 }
 
 </script>
