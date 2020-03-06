@@ -30,7 +30,6 @@ class MobileMarketconsController < ApplicationController
         @nou_usuari = false
       end
     end
-
   end
 
   def producte
