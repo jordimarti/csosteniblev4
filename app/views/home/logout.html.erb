@@ -22,8 +22,9 @@
 <script>
   $(document).ready(function() {
     if (navigator.userAgent.indexOf('gonative') > -1) {
-      var url = "https://www.csostenible.net/mobile_marketcons/index?distancia=tots&preu=tots&categoria=tots&locale=ca";    
-      $(location).attr('href',url);
+      setTimeout(function() {
+        window.location.href = "https://www.csostenible.net/mobile_marketcons/index?distancia=tots&preu=tots&categoria=tots&locale=ca"; 
+      }, 500);
     }
     else {
       window.location.href = 'https://www.csostenible.net/home/index?locale=ca';
