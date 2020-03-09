@@ -65,13 +65,17 @@ class MarketconsController < ApplicationController
   end
 
   def venedor
-    @filtres = false
-    @menu_actiu = "venedor"
-    if user_signed_in? && current_user.id == params[:user_id]
+    if params[:user_id].present?
+      @filtres = false
       @menu_actiu = "venedor"
-    end 
-    @mk_user = MkUser.where(user_id: params[:user_id]).last
-    @productes = MkProduct.where(user_id: params[:user_id], aprovat:true, visible: true)
+      if user_signed_in? && current_user.id == params[:user_id]
+        @menu_actiu = "venedor"
+      end 
+      @mk_user = MkUser.where(user_id: params[:user_id]).last
+      @productes = MkProduct.where(user_id: params[:user_id], aprovat:true, visible: true)
+    else
+      redirect_to marketcons_index_path
+    end
   end
 
   def perfil

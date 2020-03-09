@@ -15,7 +15,13 @@
           <div class="grid-x grid-margin-x">
             <div class="medium-6 cell">
               <%= f.input :nom %>
-              <%= f.input :categoria, collection: @categories, label_method: :nom_ca, value_method: :id, unitats_method: :unitats, include_blank: false, selected: @mk_product.categoria %>
+              <% if params[:locale] == 'es' %>
+                <%= f.input :categoria, collection: @categories, label_method: :nom_es, value_method: :id, unitats_method: :unitats, include_blank: false, selected: @mk_product.categoria %>
+              <% elsif params[:locale] == 'en' %>
+                <%= f.input :categoria, collection: @categories, label_method: :nom_en, value_method: :id, unitats_method: :unitats, include_blank: false, selected: @mk_product.categoria %>
+              <% else %>
+                <%= f.input :categoria, collection: @categories, label_method: :nom_ca, value_method: :id, unitats_method: :unitats, include_blank: false, selected: @mk_product.categoria %>
+              <% end %>
             </div>
             <div class="medium-6 cell">
               <%= f.input :descripcio, input_html: {rows: 4} %>
