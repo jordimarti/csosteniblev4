@@ -165,7 +165,7 @@ en:
         cognoms: "Surnames"
         adreca: "Address"
         codi_postal: "Postal code"
-        municipi: "Town"
+        municipi: "City"
         email: "Email"
         telefon: "Telephone"
         web: "Website"
@@ -179,11 +179,12 @@ en:
         categoria: "Category"
         preu: "Price"
         pes: "Weight"
+        unitats: "Units"
         enviament: "Delivery or collection"
         adreca: "Address"
         codi_postal: "Postal code"
-        municipi: "Town"
-        adreca_oculta: "Hide address (only the town will be displayed)"
+        municipi: "City"
+        adreca_oculta: "Hide address (only the city will be displayed)"
         mk_image_product: "Product image"
         mk_imatges:
           mk_product_imatge: "New image"
@@ -686,9 +687,9 @@ en:
       comprador_buscar: "The buyer goes for it"
       venedor_porta: "The seller brings it"
       negociar: "To negotiate"
-      adjuntar_imatges: "Attach images"
+      adjuntar_imatges: "Add images"
       nova_imatge: "+ New image"
-      adjuntar_documents: "Attach documents"
+      adjuntar_documents: "Add documents"
       nou_document: "+ New document"
     editar_anunci:
       editar_anunci: "Edit ad"
@@ -746,6 +747,7 @@ en:
       error_anulat: "An error has occurred and the reservation is not deleted"
       reserva: "Reserve"
     usuari:
+      editar_perfil: "Edit profile"
       sign_out: "Sign out"
     about:
       sobre_marketcons: "About MARKETcons"

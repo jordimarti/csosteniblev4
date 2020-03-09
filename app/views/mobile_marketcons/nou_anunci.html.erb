@@ -20,7 +20,13 @@
         <div class="grid-x grid-margin-x">
           <div class="medium-6 cell">
             <%= f.input :nom, label_html: {class: 'mk-mobile-input'} %>
-            <%= f.input :categoria, label_html: {class: 'mk-mobile-input'}, collection: @categories, label_method: :nom_ca, value_method: :id, unitats_method: :unitats, include_blank: false, selected: @mk_product.categoria %>
+            <% if params[:locale] == 'es' %>
+              <%= f.input :categoria, label_html: {class: 'mk-mobile-input'}, collection: @categories, label_method: :nom_es, value_method: :id, unitats_method: :unitats, include_blank: false, selected: @mk_product.categoria %>
+            <% elsif params[:locale] == 'en' %>
+              <%= f.input :categoria, label_html: {class: 'mk-mobile-input'}, collection: @categories, label_method: :nom_en, value_method: :id, unitats_method: :unitats, include_blank: false, selected: @mk_product.categoria %>
+            <% else %>
+              <%= f.input :categoria, label_html: {class: 'mk-mobile-input'}, collection: @categories, label_method: :nom_ca, value_method: :id, unitats_method: :unitats, include_blank: false, selected: @mk_product.categoria %>
+            <% end %>
           </div>
           <div class="medium-6 cell">
             <%= f.input :descripcio, input_html: {rows: 4}, label_html: {class: 'mk-mobile-input'} %>
@@ -45,7 +51,7 @@
             <div class="mk-text-ressaltat" id="text-kg">kg</div>
           </div>
           <div class="medium-6 cell">
-            <%= f.input :enviament, label_html: {class: 'mk-mobile-input'}, collection: [[t('.comprador_buscar'), 'comprador_buscar'], [t('.venedor_porta'), 'venedor_porta'], [t('.a_negociar'), 'negociar']] %>
+            <%= f.input :enviament, label_html: {class: 'mk-mobile-input'}, collection: [[t('.comprador_buscar'), 'comprador_buscar'], [t('.venedor_porta'), 'venedor_porta'], [t('.negociar'), 'negociar']] %>
           </div>
         </div>
         <div class="grid-x grid-margin-x">

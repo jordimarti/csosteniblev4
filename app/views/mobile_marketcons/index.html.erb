@@ -3,7 +3,13 @@
 		<p class="titol-guia-tutorial"><%= t('.benvingut') %><br/>MARKETcons</p>
 		<p class="text-guia-tutorial"><%= t('.text_benvinguda') %></p>
 		<div class="imatge-guia-tutorial">
-			<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/intro_app_marketcons.png', class: 'mk-mobile-about-marketcons' %>
+			<% if params[:locale] == 'es' %>
+				<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/intro_app_marketcons_es.png', class: 'mk-mobile-about-marketcons' %>
+			<% elsif params[:locale] == 'en' %>
+				<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/intro_app_marketcons_en.png', class: 'mk-mobile-about-marketcons' %>
+			<% else %>
+				<%= image_tag 'https://dcyqocdz7x3wj.cloudfront.net/marketcons/intro_app_marketcons.png', class: 'mk-mobile-about-marketcons' %>
+			<% end %>
 		</div>
 	</div>
 	<div class="logo-guia-tutorial">
@@ -284,7 +290,7 @@ $('#intro-button').click(function() {
 });
 
 $('#boto-filtres').click(function() {
-	$('#mk-mobile-filtres').slideDown("slow");
+	$('#mk-mobile-filtres').slideToggle("slow");
 });
 
 $('.card-categoria').click(function() {

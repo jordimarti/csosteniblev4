@@ -179,6 +179,7 @@ ca:
         categoria: "Categoria"
         preu: "Preu"
         pes: "Pes"
+        unitats: "Unitats"
         enviament: "Enviament o recollida"
         adreca: "Adreça"
         codi_postal: "Codi postal"
@@ -746,6 +747,7 @@ ca:
       error_anulat: "S'ha produït un error i no s'ha pogut anul·lar la reserva"
       reserva: "Reserva"
     usuari:
+      editar_perfil: "Editar perfil"
       sign_out: "Tancar la sessió"
     about:
       sobre_marketcons: "Sobre MARKETcons"
