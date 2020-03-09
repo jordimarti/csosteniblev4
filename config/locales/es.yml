@@ -616,6 +616,7 @@ es:
       preu: "Precio"
       descarregar: "Descargar"
       documents: "Documentos"
+      missatges: "Mensajes"
     categoria:
       no_productes: "No hay ningún producto de esta categoría"
     aprovacions:
@@ -759,6 +760,9 @@ es:
       guardar: "Guardar"
       anuncis_revisio: "Los anuncios pasan un proceso de revisión."
       adjuntar_documents: "Adjuntar documentos"
+      afegeix_document: "+ Añadir documento"
+      adjuntar_imatges: "Adjuntar imágenes"
+      afegeix_imatge: "+ Añadir imagen"
   mk_missatges:
     form:
       enviar: "Enviar"

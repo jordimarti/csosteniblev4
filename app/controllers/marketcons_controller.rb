@@ -86,8 +86,12 @@ class MarketconsController < ApplicationController
   end
 
   def categoria
-    @productes = MkProduct.where(categoria: params[:categoria_id], aprovat:true, visible: true)
-    @categoria = MkCategoria.find(params[:categoria_id])
+    if params[:categoria_id].present?
+      @productes = MkProduct.where(categoria: params[:categoria_id], aprovat:true, visible: true)
+      @categoria = MkCategoria.find(params[:categoria_id])
+    else
+      redirect_to marketcons_index_path
+    end
   end
 
   def comprova_unitats_categoria

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :mk_documents
   resources :mk_users
   get 'marketcons/index'
-  get 'marketcons', to: redirect('marketcons/index?distancia=tots&preu=tots&categoria=tots'), as: :marketcons
+  get 'marketcons', to: 'marketcons#index', as: :marketcons
   get 'marketcons/about'
   get 'marketcons/producte'
   get 'marketcons/perfil'

@@ -29,7 +29,7 @@
   						<span class="text-camp-producte"><%= @producte.created_at.strftime("%d-%m-%Y") %></span>
   					</div>
   					<div class="medium-8 cell">
-  						<span class="titol-camp-producte">Categoria</span><br/>
+  						<span class="titol-camp-producte"><%= t('.categoria') %></span><br/>
   						<span class="text-camp-producte">
   							<% if params[:locale] == 'es' %>
   								<%= @categoria.nom_es %>
@@ -45,9 +45,9 @@
   				<hr/>
   				<div class="grid-x grid-margin-x">
   					<div class="medium-12 cell">
-  						<span class="titol-camp-producte">Descripció</span><br/>
+  						<span class="titol-camp-producte"><%= t('.descripcio') %></span><br/>
   						<p class="text-camp-producte"><%= @producte.descripcio %></p>
-  						<span class="titol-camp-producte">Condicions d'enviament o recollida</span><br/>
+  						<span class="titol-camp-producte"><%= t('.condicions') %></span><br/>
   						<span class="text-camp-producte">
   							<% if @producte.enviament == 'comprador_buscar' %>
   								<%= t('.comprador_buscar') %>
@@ -65,7 +65,7 @@
   			
   				<div class="grid-x grid-margin-x">
   					<div class="medium-8 cell">
-  						<span class="titol-camp-producte">Localització</span><br/>
+  						<span class="titol-camp-producte"><%= t('.localitzacio') %></span><br/>
   						<span class="text-camp-producte">
   							<% if @producte.adreca_oculta != true %>
   								<%= @producte.adreca %>,
@@ -108,7 +108,7 @@
           <div class="grid-x grid-margin-x">
   					<div class="small-4 cell">
   						<div class="mk-preu-container">
-  							<span class="titol-camp-producte">Preu </span>
+  							<span class="titol-camp-producte"><%= t('.preu') %></span>
   							<span class="preu-producte"><%= @producte.preu %> €</span>
   						</div>
   					</div>
@@ -161,7 +161,7 @@
   					<div class="medium-12 cell">
               <% if user_signed_in? && current_user.id == @producte.user_id %>
                 <% if @compradors.count != 0 %>
-                  <p>Missatges</p>
+                  <p><%= t('.missatges') %></p>
                 <% end %>
                 <% @compradors.each do |comprador| %>
                   <% if comprador.user_id != current_user.id %>

@@ -616,6 +616,7 @@ en:
       preu: "Price"
       descarregar: "Download"
       documents: "Documents"
+      missatges: "Messages"
     categoria:
       no_productes: "There are no products in this category"
     aprovacions:
@@ -758,7 +759,10 @@ en:
       negociar: "To negotiate"
       guardar: "Save"
       anuncis_revisio: "Ads go through a review process."
-      adjuntar_documents: "Attach documents"
+      adjuntar_documents: "Add documents"
+      afegeix_document: "+ Add document"
+      adjuntar_imatges: "Add pictures"
+      afegeix_imatge: "+ Add picture"
   mk_missatges:
     form:
       enviar: "Send"

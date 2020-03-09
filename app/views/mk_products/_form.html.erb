@@ -69,7 +69,7 @@
                   <%= render 'mk_document_fields', f: mk_document %>
                 <% end %>
                 <div class="links">
-                  <%= link_to_add_association "+ Afegeix document", f, :mk_documents, html_options = {class: "mk-afegir-document button"} %>
+                  <%= link_to_add_association t('.afegeix_document'), f, :mk_documents, html_options = {class: "mk-afegir-document button"} %>
                 </div>
               </div>
             </div>
@@ -83,7 +83,7 @@
                   <%= render 'mk_imatge_fields', f: mk_imatge %>
                 <% end %>
                 <div class="links">
-                  <%= link_to_add_association "+ Afegeix imatge", f, :mk_imatges, html_options = {class: "mk-afegir-imatge button"} %>
+                  <%= link_to_add_association t('.afegeix_imatge'), f, :mk_imatges, html_options = {class: "mk-afegir-imatge button"} %>
                 </div>
               </div>
             </div>

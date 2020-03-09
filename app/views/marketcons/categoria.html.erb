@@ -5,7 +5,13 @@
   		<div class="grid-x grid-margin-x">
   			<div class="medium-12 cell">
   				<div class="container-llistat-mkproducts">
-  					<h3><%= @categoria.nom_ca %></h3>
+  					<% if params[:locale] == 'es' %>
+  						<h3><%= @categoria.nom_es %></h3>
+  					<% elsif params[:locale] == 'en' %>
+  						<h3><%= @categoria.nom_en %></h3>
+  					<% else %>
+  						<h3><%= @categoria.nom_ca %></h3>
+  					<% end %>
   					<div class="grid-x grid-margin-x">
 	  					<% if @productes.count == 0 %>
 	  						<div class="medium-12 cell">
