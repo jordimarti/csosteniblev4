@@ -20,7 +20,7 @@
           <div class="index-noticia-container">
               <% if noticia.imatge_noticia.attached? %>
                 <%= link_to noticia do %>
-                  <%= image_tag noticia.imatge_noticia.variant(resize: "500x500"), class: 'img-index-noticia' %>
+                  <%= image_tag noticia.imatge_noticia, class: 'img-index-noticia' %>
                 <% end %>
               <% end %> 
             <div class="titol-index-noticia">
