@@ -1,4 +1,5 @@
 class ProducteDapconsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   before_action :set_producte_dapcons, only: [:show, :edit, :update, :destroy]
 
   # GET /producte_dapcons
