@@ -79,6 +79,8 @@ en:
           attributes:
             tipus_indicadors:
               required: "It is necessary to set the type of indicator"
+      messages:
+        content_type_invalid: "has an invalid content type"
   simple_form:
     labels:
       user:

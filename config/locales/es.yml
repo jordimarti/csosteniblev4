@@ -79,6 +79,8 @@ es:
           attributes:
             tipus_indicadors:
               required: "Es necesario poner el tipo de indicador"
+      messages:
+        content_type_invalid: "Formato incorrecto de la imagen"
   simple_form:
     labels:
       user:

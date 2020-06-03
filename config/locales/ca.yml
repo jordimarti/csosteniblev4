@@ -79,6 +79,8 @@ ca:
           attributes:
             tipus_indicadors:
               required: "És necessari posar el tipus d'indicador"
+      messages:
+        content_type_invalid: "Format incorrecte de la imatge"
   simple_form:
     labels:
       user:

@@ -35,7 +35,11 @@ class MkProductsController < ApplicationController
         end 
         format.json { render :show, status: :created, location: @mk_product }
       else
-        format.html { render :new }
+        if @mk_product.mobile == true
+          format.html { redirect_to mobile_marketcons_nou_anunci_path }
+        else
+          format.html { redirect_to marketcons_nou_anunci_path }
+        end 
         format.json { render json: @mk_product.errors, status: :unprocessable_entity }
       end
     end

@@ -3,6 +3,7 @@ class MkImatge < ApplicationRecord
 	belongs_to :mk_product
 	has_one_attached :mk_product_imatge
 
+	validates :mk_product_imatge, presence: true, blob: { content_type: ['image/jpg', 'image/jpeg', 'image/png'] }
 
 	def miniatura_imatge
 		return self.mk_product_imatge.variant(resize: '200x200', auto_orient: true).processed
