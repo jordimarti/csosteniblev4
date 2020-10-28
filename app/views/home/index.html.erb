@@ -21,16 +21,16 @@
 			<div class="medium-6 cell">
 				<div class="home-top-image-container">
           <% if params[:locale] == 'es' %>
-						<%= link_to video_path(100) do %>
-          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/Residus_ES.jpg', :class => 'responsive-img') %>
+						<%= link_to temes_clau_economia_circular_path do %>
+          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/Economia_circular_ES.jpg', :class => 'responsive-img') %>
           	<% end %>
           <% elsif params[:locale] == 'en' %>
-          	<%= link_to video_path(100) do %>
-          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/Residus_EN.jpg', :class => 'responsive-img') %>
+          	<%= link_to temes_clau_economia_circular_path do %>
+          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/Economia_circular_ES.jpg', :class => 'responsive-img') %>
           	<% end %>
           <% else %>
-          	<%= link_to video_path(100) do %>
-          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/Residus_CA.jpg', :class => 'responsive-img') %>
+          	<%= link_to temes_clau_economia_circular_path do %>
+          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/Economia_circular_CA.jpg', :class => 'responsive-img') %>
           	<% end %>
           <% end %>
 		    </div>
