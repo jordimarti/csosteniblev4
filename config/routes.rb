@@ -101,6 +101,7 @@ Rails.application.routes.draw do
   get 'temes_clau/residus'
   get 'temes_clau/salut'
   get 'temes_clau/economia_circular'
+  get 'temes_clau/infraestructura_verda'
 
 
   get 'cas_practics/:cas_practics_id/edit_ca', to: 'cas_practics#edit_ca', :as => :cas_practics_edit_ca
