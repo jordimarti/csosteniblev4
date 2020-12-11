@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Epd Indicators</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Epd uuid</th>
+      <th>Indicator</th>
+      <th>Unit</th>
+      <th>A1-a3</th>
+      <th>A4</th>
+      <th>A5</th>
+      <th>B1</th>
+      <th>B2</th>
+      <th>B3</th>
+      <th>B4</th>
+      <th>B5</th>
+      <th>B6</th>
+      <th>B7</th>
+      <th>C1</th>
+      <th>C2</th>
+      <th>C3</th>
+      <th>C4</th>
+      <th>D</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @epd_indicators.each do |epd_indicator| %>
+      <tr>
+        <td><%= epd_indicator.epd_id %></td>
+        <td><%= epd_indicator.indicator %></td>
+        <td><%= epd_indicator.unit %></td>
+        <td><%= epd_indicator.a1_a3 %></td>
+        <td><%= epd_indicator.a4 %></td>
+        <td><%= epd_indicator.a5 %></td>
+        <td><%= epd_indicator.b1 %></td>
+        <td><%= epd_indicator.b2 %></td>
+        <td><%= epd_indicator.b3 %></td>
+        <td><%= epd_indicator.b4 %></td>
+        <td><%= epd_indicator.b5 %></td>
+        <td><%= epd_indicator.b6 %></td>
+        <td><%= epd_indicator.b7 %></td>
+        <td><%= epd_indicator.c1 %></td>
+        <td><%= epd_indicator.c2 %></td>
+        <td><%= epd_indicator.c3 %></td>
+        <td><%= epd_indicator.c4 %></td>
+        <td><%= epd_indicator.d %></td>
+        <td><%= link_to 'Show', epd_indicator %></td>
+        <td><%= link_to 'Edit', edit_epd_indicator_path(epd_indicator) %></td>
+        <td><%= link_to 'Destroy', epd_indicator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Epd Indicator', new_epd_indicator_path %>

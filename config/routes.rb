@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  resources :epd_indicators
+  resources :epds
   resources :mk_puntuacions
   resources :mk_imatges
   resources :mk_documents

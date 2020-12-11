@@ -1,0 +1,103 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Epds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Classification</th>
+      <th>General comment</th>
+      <th>Data set lca report</th>
+      <th>Generic data uncertaintiy loads</th>
+      <th>Description generic data uncertainty loads</th>
+      <th>Scenario name</th>
+      <th>Scenario default</th>
+      <th>Scenario group</th>
+      <th>Scenario description</th>
+      <th>Module name</th>
+      <th>Module product system</th>
+      <th>Reference flow</th>
+      <th>Functional unit</th>
+      <th>Reference year</th>
+      <th>Data set valid until</th>
+      <th>Time representativeness description</th>
+      <th>Location</th>
+      <th>Geographical representativeness description</th>
+      <th>Technology description</th>
+      <th>Technical purpose of product</th>
+      <th>Pictogram of technology</th>
+      <th>Flow diagram picture</th>
+      <th>Lca methodology report</th>
+      <th>Subtype</th>
+      <th>Data sources</th>
+      <th>Use advise for data set</th>
+      <th>Type of review</th>
+      <th>Review details</th>
+      <th>Reviewer name</th>
+      <th>Complete review report</th>
+      <th>Compliance system name</th>
+      <th>Data set format</th>
+      <th>Data entry by</th>
+      <th>Date of last revision</th>
+      <th>Issuer</th>
+      <th>Registration number</th>
+      <th>Owner of data set</th>
+      <th>Copyright</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @epds.each do |epd| %>
+      <tr>
+        <td><%= epd.name %></td>
+        <td><%= epd.classification %></td>
+        <td><%= epd.general_comment %></td>
+        <td><%= epd.data_set_lca_report %></td>
+        <td><%= epd.generic_data_uncertaintiy_loads %></td>
+        <td><%= epd.description_generic_data_uncertainty_loads %></td>
+        <td><%= epd.scenario_name %></td>
+        <td><%= epd.scenario_default %></td>
+        <td><%= epd.scenario_group %></td>
+        <td><%= epd.scenario_description %></td>
+        <td><%= epd.module_name %></td>
+        <td><%= epd.module_product_system_id %></td>
+        <td><%= epd.reference_flow %></td>
+        <td><%= epd.functional_unit %></td>
+        <td><%= epd.reference_year %></td>
+        <td><%= epd.data_set_valid_until %></td>
+        <td><%= epd.time_representativeness_description %></td>
+        <td><%= epd.location %></td>
+        <td><%= epd.geographical_representativeness_description %></td>
+        <td><%= epd.technology_description %></td>
+        <td><%= epd.technical_purpose_of_product %></td>
+        <td><%= epd.pictogram_of_technology %></td>
+        <td><%= epd.flow_diagram_picture %></td>
+        <td><%= epd.lca_methodology_report %></td>
+        <td><%= epd.subtype %></td>
+        <td><%= epd.data_sources %></td>
+        <td><%= epd.use_advise_for_data_set %></td>
+        <td><%= epd.type_of_review %></td>
+        <td><%= epd.review_details %></td>
+        <td><%= epd.reviewer_name %></td>
+        <td><%= epd.complete_review_report %></td>
+        <td><%= epd.compliance_system_name %></td>
+        <td><%= epd.data_set_format %></td>
+        <td><%= epd.data_entry_by %></td>
+        <td><%= epd.date_of_last_revision %></td>
+        <td><%= epd.issuer %></td>
+        <td><%= epd.registration_number %></td>
+        <td><%= epd.owner_of_data_set %></td>
+        <td><%= epd.copyright %></td>
+        <td><%= link_to 'Show', epd %></td>
+        <td><%= link_to 'Edit', edit_epd_path(epd) %></td>
+        <td><%= link_to 'Destroy', epd, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Epd', new_epd_path %>

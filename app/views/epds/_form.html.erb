@@ -1,0 +1,74 @@
+
+EPD: <%= @epd.id %>
+<%= simple_form_for(@epd) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :classification %>
+    <%= f.input :general_comment %>
+    <%= f.input :data_set_lca_report %>
+    <%= f.input :generic_data_uncertaintiy_loads %>
+    <%= f.input :description_generic_data_uncertainty_loads %>
+    <%= f.input :scenario_name %>
+    <%= f.input :scenario_default %>
+    <%= f.input :scenario_group %>
+    <%= f.input :scenario_description %>
+    <%= f.input :module_name %>
+    <%= f.input :module_product_system_id %>
+    <%= f.input :reference_flow %>
+    <%= f.input :functional_unit %>
+    <%= f.input :reference_year %>
+    <%= f.input :data_set_valid_until %>
+    <%= f.input :time_representativeness_description %>
+    <%= f.input :location %>
+    <%= f.input :geographical_representativeness_description %>
+    <%= f.input :technology_description %>
+    <%= f.input :technical_purpose_of_product %>
+    <%= f.input :pictogram_of_technology %>
+    <%= f.input :flow_diagram_picture %>
+    <%= f.input :lca_methodology_report %>
+    <%= f.input :subtype %>
+    <%= f.input :data_sources %>
+    <%= f.input :use_advise_for_data_set %>
+    <%= f.input :type_of_review %>
+    <%= f.input :review_details %>
+    <%= f.input :reviewer_name %>
+    <%= f.input :complete_review_report %>
+    <%= f.input :compliance_system_name %>
+    <%= f.input :data_set_format %>
+    <%= f.input :data_entry_by %>
+    <%= f.input :date_of_last_revision %>
+    <%= f.input :issuer %>
+    <%= f.input :registration_number %>
+    <%= f.input :owner_of_data_set %>
+    <%= f.input :copyright %>
+
+    <table>
+      <tr>
+        <th>Indicador</th>
+        <th>A1-A3</th>
+        <th>A4</th>
+        <th>A5</th>
+      </tr>
+      <%= f.simple_fields_for :epd_indicators do |indicator| %>
+        <tr>
+          <td><%= indicator.input :indicator %></td>
+          <td><%= indicator.input :a1_a3 %></td>
+          <td><%= indicator.input :a4 %></td>
+          <td><%= indicator.input :a5 %></td>
+        </tr>
+      <% end %>
+    </table>
+      
+      
+    
+  </div>
+
+  
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

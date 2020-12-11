@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_28_111437) do
+ActiveRecord::Schema.define(version: 2020_11_29_205802) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -159,6 +160,73 @@ ActiveRecord::Schema.define(version: 2020_02_28_111437) do
     t.string "email"
     t.text "web"
     t.text "altres"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "epd_indicators", force: :cascade do |t|
+    t.uuid "epd_id"
+    t.string "indicator"
+    t.string "unit"
+    t.float "a1_a3"
+    t.float "a4"
+    t.float "a5"
+    t.float "b1"
+    t.float "b2"
+    t.float "b3"
+    t.float "b4"
+    t.float "b5"
+    t.float "b6"
+    t.float "b7"
+    t.float "c1"
+    t.float "c2"
+    t.float "c3"
+    t.float "c4"
+    t.float "d"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "epds", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "classification"
+    t.text "general_comment"
+    t.string "data_set_lca_report"
+    t.decimal "generic_data_uncertaintiy_loads"
+    t.text "description_generic_data_uncertainty_loads"
+    t.string "scenario_name"
+    t.boolean "scenario_default"
+    t.string "scenario_group"
+    t.text "scenario_description"
+    t.string "module_name"
+    t.integer "module_product_system_id"
+    t.string "reference_flow"
+    t.string "functional_unit"
+    t.integer "reference_year"
+    t.integer "data_set_valid_until"
+    t.text "time_representativeness_description"
+    t.string "location"
+    t.text "geographical_representativeness_description"
+    t.text "technology_description"
+    t.text "technical_purpose_of_product"
+    t.string "pictogram_of_technology"
+    t.string "flow_diagram_picture"
+    t.string "lca_methodology_report"
+    t.text "subtype"
+    t.string "data_sources"
+    t.text "use_advise_for_data_set"
+    t.text "type_of_review"
+    t.text "review_details"
+    t.string "reviewer_name"
+    t.string "complete_review_report"
+    t.string "compliance_system_name"
+    t.string "data_set_format"
+    t.string "data_entry_by"
+    t.date "date_of_last_revision"
+    t.string "issuer"
+    t.string "registration_number"
+    t.string "owner_of_data_set"
+    t.boolean "copyright"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

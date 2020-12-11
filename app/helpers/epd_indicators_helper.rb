@@ -1,0 +1,2 @@
+module EpdIndicatorsHelper
+end
