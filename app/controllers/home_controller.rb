@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-  	@noticies = Noticia.order('data').last(2)
+  	@noticies = Noticia.where(dapc: false).order('data').last(2)
   end
 
   def panel
