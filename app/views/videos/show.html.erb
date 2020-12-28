@@ -32,20 +32,22 @@
       </div>
       <div class="noticies-container">
         <% @noticies.each do |noticia| %>
-          <div class="noticia-lateral-container">
-            <% if noticia.imatge_noticia.attached? %>
-              <%= image_tag noticia.imatge_noticia %>
-            <% end %>
-            <h3 class="noticia-lateral-titol">
-              <% if params[:locale] == 'ca' %>
-                <%= noticia.titol_ca %>
-              <% elsif params[:locale] == 'es' %>
-                <%= noticia.titol_es %>
-              <% else %>
-                <%= noticia.titol_en %>
+          <%= link_to noticia_path(noticia) do %>
+            <div class="noticia-lateral-container">
+              <% if noticia.imatge_noticia.attached? %>
+                <%= image_tag noticia.imatge_noticia %>
               <% end %>
-            </h3>
-          </div>
+              <h3 class="noticia-lateral-titol">
+                <% if params[:locale] == 'ca' %>
+                  <%= noticia.titol_ca %>
+                <% elsif params[:locale] == 'es' %>
+                  <%= noticia.titol_es %>
+                <% else %>
+                  <%= noticia.titol_en %>
+                <% end %>
+              </h3>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>

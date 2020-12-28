@@ -13,7 +13,7 @@ class VideosController < ApplicationController
   def show
     #@ultims = Video.offset(rand(Video.count) - 1).limit(4)
     @ultims = Video.where.not(id: params[:id]).order(created_at: :desc).limit(4)
-    @noticies = Noticia.last(4)
+    @noticies = Noticia.all.order(created_at: :desc).first(4)
   end
 
   # GET /videos/new
