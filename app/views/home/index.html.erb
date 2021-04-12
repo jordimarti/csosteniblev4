@@ -135,12 +135,21 @@
 			<div class="titol-seccio">
 				<%= t('.newsletter') %>
 			</div>
-			<a href="http://eepurl.com/VGTzD">
-				<div class="newsletter-container">
-          <span class="newsletter-titol"><%= t('.subscriu_newsletter') %></span>
-          <p><span class="newsletter-text"><%= t('.text_newsletter') %></span></p>
-	      </div>
-	    </a>
+			<% if params[:locale] == 'ca' %>
+				<a href="https://www3.apabcn.cat/l/618811/2019-01-29/5jtr6">
+					<div class="newsletter-container">
+	          <span class="newsletter-titol"><%= t('.subscriu_newsletter') %></span>
+	          <p><span class="newsletter-text"><%= t('.text_newsletter') %></span></p>
+		      </div>
+		    </a>
+		  <% else %>
+		  	<a href="https://www3.apabcn.cat/l/618811/2019-01-29/5jtr2">
+					<div class="newsletter-container">
+	          <span class="newsletter-titol"><%= t('.subscriu_newsletter') %></span>
+	          <p><span class="newsletter-text"><%= t('.text_newsletter') %></span></p>
+		      </div>
+		    </a>
+		  <% end %>
 		
 		
 		
