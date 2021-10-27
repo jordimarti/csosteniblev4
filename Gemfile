@@ -46,6 +46,7 @@ gem 'cancancan', '~> 2.2'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'cocoon', '~> 1.2', '>= 1.2.11'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
+gem 'mimemagic', '~> 0.3.7'
 
 
 group :development, :test do
