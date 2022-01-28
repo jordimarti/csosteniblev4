@@ -3,6 +3,23 @@
 		<div class="grid-x grid-margin-x">
 			<div class="medium-6 cell">
 				<div class="home-top-image-container">
+          <% if params[:locale] == 'es' %>
+						<%= link_to video_path(107) do %>
+          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/Irve_ES_v2', :class => 'responsive-img') %>
+          	<% end %>
+          <% elsif params[:locale] == 'en' %>
+          	<%= link_to video_path(107) do %>
+          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/Irve_EN_v2.jpg', :class => 'responsive-img') %>
+          	<% end %>
+          <% else %>
+          	<%= link_to video_path(107) do %>
+          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/Irve_CA_v2.jpg', :class => 'responsive-img') %>
+          	<% end %>
+          <% end %>
+		    </div>
+			</div>
+			<div class="medium-6 cell">
+				<div class="home-top-image-container">
 					<% if params[:locale] == 'es' %>
 						<%= link_to video_path(106) do %>
           		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/Infraestructura_verda_v2_ES.jpg', :class => 'responsive-img') %>
@@ -14,23 +31,6 @@
           <% else %>
           	<%= link_to video_path(106) do %>
           		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/Infraestructura_verda_v2_CA.jpg', :class => 'responsive-img') %>
-          	<% end %>
-          <% end %>
-		    </div>
-			</div>
-			<div class="medium-6 cell">
-				<div class="home-top-image-container">
-          <% if params[:locale] == 'es' %>
-						<%= link_to video_path(105) do %>
-          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/Aigua_ES.jpg', :class => 'responsive-img') %>
-          	<% end %>
-          <% elsif params[:locale] == 'en' %>
-          	<%= link_to video_path(105) do %>
-          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/Aigua_ES.jpg', :class => 'responsive-img') %>
-          	<% end %>
-          <% else %>
-          	<%= link_to video_path(105) do %>
-          		<%= image_tag('https://dcyqocdz7x3wj.cloudfront.net/imatges/Aigua_CA.jpg', :class => 'responsive-img') %>
           	<% end %>
           <% end %>
 		    </div>
