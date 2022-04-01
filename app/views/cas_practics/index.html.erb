@@ -7,6 +7,78 @@
     </div>
   </div>
 
+  <div class="grid-x grid-margin-x">
+    <div class="medium-12 cell">
+      <% if params[:locale] == 'ca' %>
+        <p>L’objectiu de la secció és fer créixer el coneixement compartint bones pràctiques de construcció sostenible que serveixin d’exemple i tractor per a altres edificacions.</p>
+        
+        <ul class="accordion" data-accordion>
+          <li class="accordion-item" data-accordion-item>
+            <a href="#" class="accordion-title">Instruccions de publicació de casos pràctics</a>
+            <div class="accordion-content" data-tab-content>
+              <p>Per tal de publicar un cas pràctic serà necessari:</p>
+              <ol>
+                <li><a href="https://www.csostenible.net/users/sign_up?locale=ca">Registrar-se com a usuari</a>.</li>
+
+                <li>Omplir les dades que es vulguin publicar dels idiomes als que es vulgui publicar el cas pràctic. Als epígrafs 2, 3 i 4 es fa una proposta d'indicadors interessants, però es poden afegir tots els que es considerin interessants per part de l’autor. Per casos de rehabilitacions disposeu com a referència del cas pràctic “<a href="https://www.csostenible.net/cas_practics/5?locale=ca">Rehabilitació de les façanes i terrats d’un edifici plurifamiliar de 14 plantes i 56 habitatges</a>”. Per casos d’obra nova o rehabilitacions amb canvi d’ús disposeu com a referència del cas pràctic “<a href="https://www.csostenible.net/cas_practics/39?locale=ca">Casal per a joves de Bigues i Riells, La C@va</a>”</li>
+
+                <li>Si és possible, aportar l’arxiu de la certificació energètica de l’edifici. En cas de rehabilitació energètica, idealment el CEE previ i post actuació. Enviar documentació a sostenible@apabcn.cat.</li>
+
+                <li>Rebre el vistiplau dels moderadors de contingut de l’Agenda de Construcció Sostenible.</li>
+              </ol>
+              <br/>
+              <p>Aquí pots descarregar el <a href="https://csosteniblev4.s3.eu-west-1.amazonaws.com/documents/manual_casos_ca.pdf">Manual de Publicació de Casos Pràctics</a> de l’Agenda amb els indicadors proposats.</p>
+            </div>
+          </li>
+        </ul>
+      <% elsif params[:locale] == 'es' %>
+        <p>El objetivo de la sección es hacer crecer el conocimiento compartiendo buenas prácticas de construcción sostenible que sirvan de ejemplo y tractor para otras edificaciones.</p>
+        
+        <ul class="accordion" data-accordion>
+          <li class="accordion-item" data-accordion-item>
+            <a href="#" class="accordion-title">Instrucciones de publicación de casos prácticos</a>
+            <div class="accordion-content" data-tab-content>
+              <p>Para publicar un caso práctico será necesario:</p>
+              <ol>
+                <li><a href="https://www.csostenible.net/users/sign_up?locale=es">Registrarse como usuario</a>.</li>
+
+                <li>Rellenar los datos que se quieran publicar de los idiomas a los que se quiera publicar el caso práctico. En los epígrafes 2, 3 y 4 se hace una propuesta de indicadores interesantes, pero se pueden añadir todos los que se consideren interesantes por parte del autor. Para casos de rehabilitaciones dispuso como referencia del caso práctico "<a href="https://www.csostenible.net/cas_practics/5?locale=es">Rehabilitación de las fachadas y azoteas de un edificio plurifamiliar de 14 plantas y 56 viviendas</a>". Para casos de obra nueva o rehabilitaciones con cambio de uso como referencia del caso práctico "<a href="https://www.csostenible.net/cas_practics/39?locale=es">Casal para jóvenes de Bigues i Riells, La C@va</a>"</li>
+
+                <li>Si es posible, aportar el archivo de la certificación energética del edificio. En caso de rehabilitación energética, idealmente el CEE previo y post actuación.  Enviar documentación a sostenible@apabcn.cat.</li>
+
+                <li>Recibir el visto bueno de los moderadores de contenido de la Agenda de Construcción Sostenible.</li>
+              </ol>
+              <br/>
+              <p>Aquí puedes descargar el <a href="https://csosteniblev4.s3.eu-west-1.amazonaws.com/documents/manual_casos_es.pdf">Manual de Publicación de Casos Prácticos</a> de la Agenda con los indicadores propuestos.</p>
+            </div>
+          </li>
+        </ul>
+      <% elsif params[:locale] == 'en' %>
+        <p>The objective of the section is to grow knowledge by sharing good sustainable construction practices that serve as an example and tractor for other buildings.</p>
+        
+        <ul class="accordion" data-accordion>
+          <li class="accordion-item" data-accordion-item>
+            <a href="#" class="accordion-title">Case study publication instructions</a>
+            <div class="accordion-content" data-tab-content>
+              <p>To publish a case study it will be necessary:</p>
+              <ol>
+                <li><a href="https://www.csostenible.net/users/sign_up?locale=en">Register as a user.</a>.</li>
+
+                <li> Fill in the data that you want to publish of the languages to which you want to publish the case study. In sections 2, 3 and 4 a proposal of interesting indicators is made, but all those that are considered interesting by the author can be added. For cases of rehabilitation, it provided as a reference the practical case "<a href="https://www.csostenible.net/cas_practics/5?locale=en">Rehabilitation of the facades and roofs of a multi-family building of 14 floors and 56 homes</a>". For cases of new construction or rehabilitations with change of use as a reference of the practical case "<a href="https://www.csostenible.net/cas_practics/39?locale=en">Casal for young people of Bigues i Riells, La C@va</a>"</li>
+                
+
+                <li>If possible, provide the file of the energy certification of the building. In case of energy rehabilitation, ideally the CEE prior and post action.  Send documentation to sostenible@apabcn.cat.</li>
+
+                <li>Receive the approval of the content moderators of the Sustainable Construction Agenda.</li>
+              </ol>
+              <br/>
+              <p>Here you can download the <a href="https://csosteniblev4.s3.eu-west-1.amazonaws.com/documents/manual_casos_en.pdf">Guide for Case Studies Publication</a> with the proposal of indicators.</p>
+            </div>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
   
   <% counter = 0 %>
   <div class="casos-array-container">
