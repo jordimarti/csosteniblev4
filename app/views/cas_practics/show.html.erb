@@ -32,6 +32,18 @@
           <span class="text-imatge-cas-practic"><%= @cas_practic.text_imatge_cas_2_ca %></span>
         </div>
       <% end %>
+      <% if @cas_practic.imatge_cas_3.attached? %>
+        <%= image_tag @cas_practic.imatge_cas_3, class: 'img-cas' %>
+        <div class="container-text-imatge-cas-practic">
+          <span class="text-imatge-cas-practic"><%= @cas_practic.text_imatge_cas_3_ca %></span>
+        </div>
+      <% end %>
+      <% if @cas_practic.imatge_cas_4.attached? %>
+        <%= image_tag @cas_practic.imatge_cas_4, class: 'img-cas' %>
+        <div class="container-text-imatge-cas-practic">
+          <span class="text-imatge-cas-practic"><%= @cas_practic.text_imatge_cas_4_ca %></span>
+        </div>
+      <% end %>
 
       <% if params[:locale] == 'ca' %>
         <div class="equip-cas-practic">
