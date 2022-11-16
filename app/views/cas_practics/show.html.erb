@@ -68,6 +68,9 @@
     <div class="medium-7 cell">
       <% if params[:locale] == 'ca' %>
         <div class="text-destacat-cas-practic"><%= @cas_practic.descripcio_ca.html_safe %></div>
+        <% if @cas_practic.video_url != nil %>
+          <div><iframe src="https://player.vimeo.com/video/771481479" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <% end %>
         <% if @cas_practic.arquitectura_ca.present? %>
           <div class="apartat-cas-practic">
             <h3 class="cas-practic">Arquitectura</h3>
